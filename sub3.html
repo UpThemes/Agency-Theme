@@ -1,0 +1,201 @@
+<!doctype html>
+<html>
+<head>
+  <title>Agency Theme</title>
+  <link rel="stylesheet" type="text/css" href="main.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src="assets/jquery.sticky.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      $(".breadcrumb").sticky();
+
+      // Create the dropdown base
+      $("<select />").appendTo("header nav");
+
+      // Create default option "Go to..."
+      $("<option />", {
+         "selected": "selected",
+         "value"   : "",
+         "text"    : "Go to..."
+      }).appendTo("nav select");
+
+      // Populate dropdown with menu items
+      $("header nav a").each(function() {
+       var el = $(this);
+       $("<option />", {
+           "value"   : el.attr("href"),
+           "text"    : el.text()
+       }).appendTo("nav select");
+      });
+
+      $("header nav select").change(function() {
+        window.location = $(this).find("option:selected").val();
+      });
+    });
+  </script>
+  <!--[if lt IE 7]>
+  <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE7.js"></script>
+  <![endif]-->
+  <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <a href="#" class="logo">
+        <img src="temp.gif"/>
+        <span>Politica</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#" class="active">Our Team</a></li>
+          <li class="sub"><a href="#">Services</a>
+            <ul>
+              <li><a href="#">Web Design</a></li>
+              <li><a href="#">Graphics</a></li>
+              <li><a href="#">Illustration</a></li>
+              <li><a href="#">Branding</a></li>
+              <li><a href="#">Print</a></li>
+              <li><a href="#">Motion</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Philosophy</a></li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div><!--/.wrap-->
+  </header>
+  <section class="breadcrumb">
+    <div class="wrap">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Page title</a></li>
+      </ul>
+    </div><!--/.wrap-->
+  </section><!--/.breadcrumb-->
+  <div class="wrap content">
+    <section class="col-pad">
+      <h1>Our Team</h1>
+      <p>Etiam porta sem malesuada magna mollis euismod. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor.</p>
+    </section>
+    <section class="team-member col-25">
+      <img src="temp.gif" class="temp border"/>
+      <strong class="big">Randolph Manganaro</strong>
+      <em>Founder & Creative Director</em>
+      <p>Etiam porta sem malesuada magna mollis euismod. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor.</p>
+      <ul class="social">
+        <li><a href="#"><i class="social-vimeo"></i>Vimeo</a></li>
+        <li><a href="#"><i class="social-twitter"></i>Twitter</a></li>
+        <li><a href="#"><i class="social-linkedin"></i>LinkedIn</a></li>
+      </ul>
+    </section>
+    <section class="team-member col-25">
+      <img src="temp.gif" class="temp border"/>
+      <strong class="big">Randolph Manganaro</strong>
+      <em>Founder & Creative Director</em>
+      <p>Etiam porta sem malesuada magna mollis euismod. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor.</p>
+      <ul class="social">
+        <li><a href="#"><i class="social-vimeo"></i>Vimeo</a></li>
+        <li><a href="#"><i class="social-twitter"></i>Twitter</a></li>
+        <li><a href="#"><i class="social-linkedin"></i>LinkedIn</a></li>
+      </ul>
+    </section>
+    <section class="team-member col-25">
+      <img src="temp.gif" class="temp border"/>
+      <strong class="big">Randolph Manganaro</strong>
+      <em>Founder & Creative Director</em>
+      <p>Etiam porta sem malesuada magna mollis euismod. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor.</p>
+      <ul class="social">
+        <li><a href="#"><i class="social-vimeo"></i>Vimeo</a></li>
+        <li><a href="#"><i class="social-twitter"></i>Twitter</a></li>
+        <li><a href="#"><i class="social-linkedin"></i>LinkedIn</a></li>
+      </ul>
+    </section>
+    <section class="team-member col-25">
+      <img src="temp.gif" class="temp border"/>
+      <strong class="big">Randolph Manganaro</strong>
+      <em>Founder & Creative Director</em>
+      <p>Etiam porta sem malesuada magna mollis euismod. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor.</p>
+      <ul class="social">
+        <li><a href="#"><i class="social-vimeo"></i>Vimeo</a></li>
+        <li><a href="#"><i class="social-twitter"></i>Twitter</a></li>
+        <li><a href="#"><i class="social-linkedin"></i>LinkedIn</a></li>
+      </ul>
+    </section>
+    <section class="team-member col-25">
+      <img src="temp.gif" class="temp border"/>
+      <strong class="big">Randolph Manganaro</strong>
+      <em>Founder & Creative Director</em>
+      <p>Etiam porta sem malesuada magna mollis euismod. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor.</p>
+      <ul class="social">
+        <li><a href="#"><i class="social-vimeo"></i>Vimeo</a></li>
+        <li><a href="#"><i class="social-twitter"></i>Twitter</a></li>
+        <li><a href="#"><i class="social-linkedin"></i>LinkedIn</a></li>
+      </ul>
+    </section>
+    <section class="team-member col-25">
+      <img src="temp.gif" class="temp border"/>
+      <strong class="big">Randolph Manganaro</strong>
+      <em>Founder & Creative Director</em>
+      <p>Etiam porta sem malesuada magna mollis euismod. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor.</p>
+      <ul class="social">
+        <li><a href="#"><i class="social-vimeo"></i>Vimeo</a></li>
+        <li><a href="#"><i class="social-twitter"></i>Twitter</a></li>
+        <li><a href="#"><i class="social-linkedin"></i>LinkedIn</a></li>
+      </ul>
+    </section>
+    <section class="team-member col-25">
+      <img src="temp.gif" class="temp border"/>
+      <strong class="big">Randolph Manganaro</strong>
+      <em>Founder & Creative Director</em>
+      <p>Etiam porta sem malesuada magna mollis euismod. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor.</p>
+      <ul class="social">
+        <li><a href="#"><i class="social-vimeo"></i>Vimeo</a></li>
+        <li><a href="#"><i class="social-twitter"></i>Twitter</a></li>
+        <li><a href="#"><i class="social-linkedin"></i>LinkedIn</a></li>
+      </ul>
+    </section>
+    <section class="team-member col-25">
+      <img src="temp.gif" class="temp border"/>
+      <strong class="big">Randolph Manganaro</strong>
+      <em>Founder & Creative Director</em>
+      <p>Etiam porta sem malesuada magna mollis euismod. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor.</p>
+      <ul class="social">
+        <li><a href="#"><i class="social-vimeo"></i>Vimeo</a></li>
+        <li><a href="#"><i class="social-twitter"></i>Twitter</a></li>
+        <li><a href="#"><i class="social-linkedin"></i>LinkedIn</a></li>
+      </ul>
+    </section>
+  </div><!--/.wrap-->
+  <footer>
+    <div class="wrap">
+      <div class="col-50">
+        <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </nav>
+        <sub>Copyright 2010 Agency. All Rights Reserved.</sub>
+      </div><!--/.col-50-->
+      <div class="col-25">
+        <h4>Agency</h4>
+        555 Main St., Suite 100<br/>
+        San Diego, CA 55555-5454
+      </div>
+      <div class="col-25">
+        <h4>Get In Touch</h4>
+        <em>phone</em> (555) 555-5555<br/>
+        <em>email</em> <a href="mailto:info@agency.com">info@agency.com</a><br/>
+        <em>twitter</em> <a href="#">@agency</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
