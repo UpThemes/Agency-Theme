@@ -2668,7 +2668,11 @@ ul.social li {
 ul.social li:hover {
   opacity: 1;
 }
-/* line 393, main.scss */
+/* line 391, main.scss */
+ul.social li:hover a {
+  background-color: #7cbbbf;
+}
+/* line 397, main.scss */
 ul.social a {
   display: block;
   background: #888;
@@ -2678,75 +2682,75 @@ ul.social a {
   font-size: 0;
   text-indent: -999em;
 }
-/* line 403, main.scss */
+/* line 407, main.scss */
 ul.social i {
   display: block;
   width: 100%;
   height: 100%;
-  background-image: url("assets/icon-social.png");
+  background-image: url("assets/icons.png");
 }
-/* line 409, main.scss */
+/* line 413, main.scss */
 ul.social i.social-vimeo {
   background-position: -180px 0;
 }
-/* line 413, main.scss */
+/* line 417, main.scss */
 ul.social i.social-twitter {
   background-position: -150px 0;
 }
-/* line 417, main.scss */
+/* line 421, main.scss */
 ul.social i.social-linkedin {
   background-position: -120px 0;
 }
-/* line 421, main.scss */
+/* line 425, main.scss */
 ul.social i.social-forrst {
   background-position: -90px 0;
 }
-/* line 425, main.scss */
+/* line 429, main.scss */
 ul.social i.social-flickr {
   background-position: -60px 0;
 }
-/* line 429, main.scss */
+/* line 433, main.scss */
 ul.social i.social-facebook {
   background-position: -30px 0;
 }
-/* line 433, main.scss */
+/* line 437, main.scss */
 ul.social i.social-dribbble {
   background-position: 0;
 }
 
-/* line 439, main.scss */
+/* line 443, main.scss */
 .blog-post {
   overflow: hidden;
 }
-/* line 442, main.scss */
+/* line 446, main.scss */
 .blog-post h4 {
   color: #272727;
   margin: 0 0 10px 0;
   font-size: 14px;
 }
-/* line 448, main.scss */
+/* line 452, main.scss */
 .blog-post a {
   margin: 0;
   padding: 0;
   line-height: 0;
 }
-/* line 454, main.scss */
+/* line 458, main.scss */
 .blog-post p {
   font-weight: normal;
   margin: .5em 0;
 }
-/* line 459, main.scss */
+/* line 463, main.scss */
 .blog-post img {
   float: left;
   width: 100px;
   margin-right: 15px;
 }
-/* line 465, main.scss */
+/* line 469, main.scss */
 .blog-post + .blog-post {
   margin-top: 20px;
 }
 
-/* line 472, main.scss */
+/* line 476, main.scss */
 .testimonial p {
   font-family: Georgia, serif;
   font-size: 14px;
@@ -2754,7 +2758,7 @@ ul.social i.social-dribbble {
   padding-left: 40px;
   background: url("assets/icon-quote.png") center left no-repeat;
 }
-/* line 480, main.scss */
+/* line 484, main.scss */
 .testimonial em {
   display: block;
   text-align: right;
@@ -2763,19 +2767,19 @@ ul.social i.social-dribbble {
   font-style: normal;
   color: #676767;
 }
-/* line 489, main.scss */
+/* line 493, main.scss */
 .testimonial + .testimonial {
   margin-top: 40px;
 }
 
-/* line 494, main.scss */
+/* line 498, main.scss */
 .wrap {
   max-width: 1000px;
   width: 95%;
   margin: 0 auto;
 }
 
-/* line 500, main.scss */
+/* line 504, main.scss */
 footer {
   background: #f1f1f1 url("assets/rotator-bg.png");
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) inset;
@@ -2786,28 +2790,28 @@ footer {
   line-height: 1.6em;
   color: #8d8d8d;
 }
-/* line 510, main.scss */
+/* line 514, main.scss */
 footer ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
 }
-/* line 516, main.scss */
+/* line 520, main.scss */
 footer li {
   display: inline;
 }
-/* line 520, main.scss */
+/* line 524, main.scss */
 footer a {
   margin-right: 20px;
   padding: 10px 0;
   display: block;
   float: left;
 }
-/* line 531, main.scss */
+/* line 535, main.scss */
 footer sub {
   font-size: 12px;
 }
-/* line 535, main.scss */
+/* line 539, main.scss */
 footer em {
   font-style: normal;
   font-size: 12px;
@@ -2816,19 +2820,19 @@ footer em {
   display: block;
   float: left;
 }
-/* line 544, main.scss */
+/* line 548, main.scss */
 footer h4 {
   margin: 0 0 5px 0;
   font-size: 12px;
   color: #3e3e3e;
 }
-/* line 550, main.scss */
+/* line 554, main.scss */
 footer a {
   display: inline;
   float: none;
 }
 
-/* line 556, main.scss */
+/* line 560, main.scss */
 .rotator {
   background: #f1f1f1 url("assets/rotator-bg.png");
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) inset;
@@ -2837,15 +2841,15 @@ footer a {
   border-top: solid 5px #fff;
   overflow: hidden;
 }
-/* line 564, main.scss */
+/* line 568, main.scss */
 .rotator .wrap {
   overflow: visible;
 }
-/* line 568, main.scss */
+/* line 572, main.scss */
 .rotator h1 {
   margin: 0;
 }
-/* line 572, main.scss */
+/* line 576, main.scss */
 .rotator h3 {
   font-size: 18px;
   color: #bcbcbc;
@@ -2853,7 +2857,7 @@ footer a {
   margin: 1em 0 1.5em 0;
   line-height: 1.4em;
 }
-/* line 580, main.scss */
+/* line 584, main.scss */
 .rotator .slide {
   padding: 5px;
   border: 1px solid #ddd;
@@ -2865,7 +2869,7 @@ footer a {
   overflow: hidden;
   margin: 0 10px;
 }
-/* line 592, main.scss */
+/* line 596, main.scss */
 .rotator img {
   display: block;
   float: left;
@@ -2873,7 +2877,7 @@ footer a {
   background: #222;
   padding: 0;
 }
-/* line 600, main.scss */
+/* line 604, main.scss */
 .rotator .slide-content {
   background: #222;
   color: white;
@@ -2881,17 +2885,17 @@ footer a {
   min-height: 260px;
   padding: 40px;
 }
-/* line 608, main.scss */
+/* line 612, main.scss */
 .rotator .slide-controls {
   text-align: center;
   margin: 1em 0 -1em 0;
   padding: 0;
 }
-/* line 613, main.scss */
+/* line 617, main.scss */
 .rotator .slide-controls li {
   display: inline;
 }
-/* line 616, main.scss */
+/* line 620, main.scss */
 .rotator .slide-controls li a {
   padding: 3px;
   font-size: 0;
@@ -2899,14 +2903,14 @@ footer a {
   border-radius: 10px;
   border: 2px solid #848484;
 }
-/* line 623, main.scss */
+/* line 627, main.scss */
 .rotator .slide-controls li a.active {
   padding: 5px;
   background: #848484;
   border: 0;
 }
 
-/* line 635, main.scss */
+/* line 639, main.scss */
 i.link {
   background: url("assets/icon-link.png") no-repeat;
   width: 10px;
@@ -2916,7 +2920,7 @@ i.link {
   top: -1px;
 }
 
-/* line 646, main.scss */
+/* line 650, main.scss */
 form input[type=text] {
   border-radius: 2px;
   border: 1px solid #eee;
@@ -2928,7 +2932,7 @@ form input[type=text] {
   color: #333;
   margin-bottom: 10px;
 }
-/* line 658, main.scss */
+/* line 662, main.scss */
 form textarea {
   border-radius: 2px;
   border: 1px solid #eee;
@@ -2940,11 +2944,11 @@ form textarea {
   color: #333;
   margin-bottom: 10px;
 }
-/* line 670, main.scss */
+/* line 674, main.scss */
 form#contact textarea {
   height: 205px;
 }
-/* line 674, main.scss */
+/* line 678, main.scss */
 form input[type=submit] {
   float: right;
   border: 0;
@@ -2959,53 +2963,53 @@ form input[type=submit] {
   margin-top: 10px;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 0.3em rgba(0, 0, 0, 0.1);
 }
-/* line 688, main.scss */
+/* line 692, main.scss */
 form input[type=submit]:hover {
   color: #272727;
 }
 
-/* line 696, main.scss */
+/* line 700, main.scss */
 section h1 + hr {
   margin-top: -1.5em;
 }
-/* line 700, main.scss */
+/* line 704, main.scss */
 section hr {
   margin: 0;
 }
-/* line 704, main.scss */
+/* line 708, main.scss */
 section .section-h {
   margin-bottom: 20px;
   overflow: hidden;
 }
-/* line 708, main.scss */
+/* line 712, main.scss */
 section .section-h h2 {
   float: left;
   margin: 0;
   padding: 0;
 }
-/* line 713, main.scss */
+/* line 717, main.scss */
 section .section-h h2 + a {
   float: left;
   margin-left: 10px;
   line-height: 18px;
 }
-/* line 721, main.scss */
+/* line 725, main.scss */
 section p {
   font-size: 14px;
   line-height: 1.6em;
 }
 
-/* line 727, main.scss */
+/* line 731, main.scss */
 .margin-none {
   margin: 0;
 }
 
-/* line 731, main.scss */
+/* line 735, main.scss */
 .viewer-controls {
   float: right;
   font-size: 0;
 }
-/* line 735, main.scss */
+/* line 739, main.scss */
 .viewer-controls a {
   display: inline-block;
   background: #888;
@@ -3017,21 +3021,30 @@ section p {
   text-indent: -999em;
   opacity: .75;
 }
-/* line 746, main.scss */
+/* line 750, main.scss */
 .viewer-controls a.list-view {
   border-radius: 0;
+  background: #888888 url("assets/icons.png") -210px 0 no-repeat;
 }
-/* line 750, main.scss */
+/* line 755, main.scss */
+.viewer-controls a.next {
+  background: #888888 url("assets/icons.png") -270px 0 no-repeat;
+}
+/* line 759, main.scss */
+.viewer-controls a.previous {
+  background: #888888 url("assets/icons.png") -240px 0 no-repeat;
+}
+/* line 763, main.scss */
 .viewer-controls a:hover {
   opacity: 1;
   background-color: #7cbbbf;
 }
 
-/* line 757, main.scss */
+/* line 770, main.scss */
 .viewer-meta {
   margin-top: -30px;
 }
-/* line 760, main.scss */
+/* line 773, main.scss */
 .viewer-meta em {
   font-size: 14px;
   font-family: Georgia, serif;
@@ -3039,14 +3052,14 @@ section p {
   padding-left: 10px;
 }
 
-/* line 768, main.scss */
+/* line 781, main.scss */
 section img.temp {
   width: 100%;
   height: 150px;
   margin-bottom: 1em;
 }
 
-/* line 774, main.scss */
+/* line 787, main.scss */
 .button {
   padding: .6em 1.5em;
   background: #fff;
@@ -3057,15 +3070,15 @@ section img.temp {
   text-decoration: none;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5), 0 0 0 0.3em rgba(255, 255, 255, 0.2);
 }
-/* line 784, main.scss */
+/* line 797, main.scss */
 .button:hover {
   color: #272727;
 }
-/* line 788, main.scss */
+/* line 801, main.scss */
 .button + .button {
   margin-left: 10px;
 }
-/* line 792, main.scss */
+/* line 805, main.scss */
 .button.light-bg {
   border: 0;
   margin-right: .3em;
@@ -3079,13 +3092,13 @@ section img.temp {
   margin-top: 10px;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 0.3em rgba(0, 0, 0, 0.1);
 }
-/* line 806, main.scss */
+/* line 819, main.scss */
 .button.viewer-visit {
   top: -10px;
   margin-left: 10px;
 }
 
-/* line 812, main.scss */
+/* line 825, main.scss */
 hr {
   clear: both;
   background: #f2f2f2;
@@ -3096,15 +3109,15 @@ hr {
 }
 
 @media screen and (max-width: 600px) {
-  /* line 823, main.scss */
+  /* line 836, main.scss */
   header nav {
     overflow: hidden;
   }
-  /* line 826, main.scss */
+  /* line 839, main.scss */
   header nav ul {
     display: none;
   }
-  /* line 830, main.scss */
+  /* line 843, main.scss */
   header nav select {
     display: block;
     float: right;
