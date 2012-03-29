@@ -91,6 +91,10 @@
   float:right;
 }
 
+.pad-14 {
+  margin-left:120px;
+}
+
 @media screen and (max-width: 1024px) {
   .col-25 {
     width:50%;
@@ -98,6 +102,12 @@
 }
 
 @media screen and (max-width: 768px) {
+  .pad-14 {
+    margin-left:0;
+  }
+
+  section article i.post-icon {display:none!important}
+
   .col-5,
   .col-10,
   .col-15,

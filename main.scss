@@ -125,7 +125,7 @@ input#search {
   border-color:#efefef;
   border-width:4px;
   padding:5px 10px;
-  text-indent:15px;
+  padding-left:25px;
   background:url("assets/icons.png") -300px -2px no-repeat;
   box-shadow:0 0 0 1px #e1e1e1 inset,
              0 5px 5px rgba(#999,.1) inset;
@@ -690,6 +690,16 @@ ul.social {
   }
 }
 
+.post-standard article i.post-icon {background-image:url("assets/post-standard.png")}
+.post-aside    article i.post-icon {background-image:url("assets/post-standard.png")}
+.post-image    article i.post-icon {background-image:url("assets/post-photo.png")}
+.post-link     article i.post-icon {background-image:url("assets/post-link.png")}
+.post-quote    article i.post-icon {background-image:url("assets/post-quote.png")}
+.post-status   article i.post-icon {background-image:url("assets/post-status.png")}
+.post-video    article i.post-icon {background-image:url("assets/post-video.png")}
+.post-audio    article i.post-icon {background-image:url("assets/post-audio.png")}
+.post-gallery  article i.post-icon {background-image:url("assets/post-gallery.png")}
+
 section {
 
   h1 + hr {
@@ -729,8 +739,14 @@ section {
   }
 
   article {
-    background:url("assets/icon-post.png") no-repeat;
     padding-bottom:20px;
+
+    i.post-icon {
+      display:block;
+      width:90px;
+      height:82px;
+      float:left;
+    }
 
     h1 + h4 {
       margin-top:-20px;
@@ -773,10 +789,6 @@ section {
       margin:20px 0;
       color:#999;
       background:url("assets/icon-quote.png") center left no-repeat;
-    }
-
-    .pad-14 {
-      padding-left:14%;
     }
   }
 }
