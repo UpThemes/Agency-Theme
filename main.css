@@ -2661,7 +2661,7 @@ header nav ul li.sub > a:after {
 .rotator {
   background: #f1f1f1 url("assets/rotator-bg.png");
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) inset;
-  padding: 40px 0;
+  padding: 40px 0 50px 0;
   margin: 0;
   border-top: solid 5px #fff;
   overflow: hidden;
@@ -2670,11 +2670,15 @@ header nav ul li.sub > a:after {
 .rotator .wrap {
   overflow: visible;
 }
-/* line 387, main.scss */
+/* line 386, main.scss */
+.rotator .wrap ul.slides {
+  margin: 0 10px;
+}
+/* line 391, main.scss */
 .rotator h1 {
   margin: 0;
 }
-/* line 391, main.scss */
+/* line 395, main.scss */
 .rotator h3 {
   font-size: 18px;
   color: #bcbcbc;
@@ -2682,7 +2686,7 @@ header nav ul li.sub > a:after {
   margin: 1em 0 1.5em 0;
   line-height: 1.4em;
 }
-/* line 399, main.scss */
+/* line 403, main.scss */
 .rotator .slide {
   padding: 5px;
   border: 1px solid #ddd;
@@ -2692,9 +2696,8 @@ header nav ul li.sub > a:after {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   background: white;
   overflow: hidden;
-  margin: 0 10px;
 }
-/* line 411, main.scss */
+/* line 414, main.scss */
 .rotator img {
   display: block;
   float: left;
@@ -2702,7 +2705,7 @@ header nav ul li.sub > a:after {
   background: #222;
   padding: 0;
 }
-/* line 419, main.scss */
+/* line 422, main.scss */
 .rotator .slide-content {
   background: #222;
   color: white;
@@ -2710,17 +2713,17 @@ header nav ul li.sub > a:after {
   min-height: 260px;
   padding: 40px;
 }
-/* line 427, main.scss */
+/* line 430, main.scss */
 .rotator .slide-controls {
   text-align: center;
   margin: 1em 0 -1em 0;
   padding: 0;
 }
-/* line 432, main.scss */
+/* line 435, main.scss */
 .rotator .slide-controls li {
   display: inline;
 }
-/* line 435, main.scss */
+/* line 438, main.scss */
 .rotator .slide-controls li a {
   padding: 3px;
   font-size: 0;
@@ -2728,45 +2731,45 @@ header nav ul li.sub > a:after {
   border-radius: 10px;
   border: 2px solid #848484;
 }
-/* line 442, main.scss */
+/* line 445, main.scss */
 .rotator .slide-controls li a.active {
   padding: 5px;
   background: #848484;
   border: 0;
 }
 
-/* line 454, main.scss */
+/* line 457, main.scss */
 .portfolio-item img {
   width: 100%;
   height: 130px;
   margin-bottom: 5px;
 }
 
-/* line 461, main.scss */
+/* line 464, main.scss */
 .team-member {
   font-size: 13px;
 }
-/* line 464, main.scss */
+/* line 467, main.scss */
 .team-member strong {
   display: block;
 }
-/* line 467, main.scss */
+/* line 470, main.scss */
 .team-member strong.big {
   font-size: 1.25em;
 }
-/* line 472, main.scss */
+/* line 475, main.scss */
 .team-member img {
   width: 100%;
   height: 130px;
   margin-bottom: 10px;
 }
 
-/* line 479, main.scss */
+/* line 482, main.scss */
 .viewer-controls {
   float: right;
   font-size: 0;
 }
-/* line 483, main.scss */
+/* line 486, main.scss */
 .viewer-controls a {
   display: inline-block;
   background: #888;
@@ -2778,30 +2781,30 @@ header nav ul li.sub > a:after {
   text-indent: -999em;
   opacity: .75;
 }
-/* line 494, main.scss */
+/* line 497, main.scss */
 .viewer-controls a.list-view {
   border-radius: 0;
   background: #888888 url("assets/icons.png") -210px 0 no-repeat;
 }
-/* line 499, main.scss */
+/* line 502, main.scss */
 .viewer-controls a.next {
   background: #888888 url("assets/icons.png") -270px 0 no-repeat;
 }
-/* line 503, main.scss */
+/* line 506, main.scss */
 .viewer-controls a.previous {
   background: #888888 url("assets/icons.png") -240px 0 no-repeat;
 }
-/* line 507, main.scss */
+/* line 510, main.scss */
 .viewer-controls a:hover {
   opacity: 1;
   background-color: #7cbbbf;
 }
 
-/* line 514, main.scss */
+/* line 517, main.scss */
 .viewer-meta {
   margin-top: -30px;
 }
-/* line 517, main.scss */
+/* line 520, main.scss */
 .viewer-meta em {
   font-size: 14px;
   font-family: Georgia, serif;
@@ -2809,12 +2812,12 @@ header nav ul li.sub > a:after {
   padding-left: 10px;
 }
 
-/* line 527, main.scss */
+/* line 530, main.scss */
 .comments h1 {
   margin: 20px 0;
   font-size: 28px;
 }
-/* line 532, main.scss */
+/* line 535, main.scss */
 .comments .comment {
   border: 3px solid #eee;
   padding: 15px;
@@ -2822,57 +2825,57 @@ header nav ul li.sub > a:after {
   margin-bottom: 30px;
   font-size: 12px;
 }
-/* line 539, main.scss */
+/* line 542, main.scss */
 .comments .comment p {
   font-size: 12px;
   margin: 5px 0 0 0;
 }
-/* line 543, main.scss */
+/* line 546, main.scss */
 .comments .comment p + p {
   margin-top: 10px;
 }
-/* line 548, main.scss */
+/* line 551, main.scss */
 .comments .comment .image-wrap {
   float: left;
   width: 10%;
   margin-bottom: 0;
   overflow: hidden;
 }
-/* line 555, main.scss */
+/* line 558, main.scss */
 .comments .comment .comment-wrap {
   float: right;
   width: 90%;
   padding-left: 15px;
 }
-/* line 561, main.scss */
+/* line 564, main.scss */
 .comments .comment img.temp {
   width: 100%;
   height: auto;
   margin: 0;
 }
 
-/* line 569, main.scss */
+/* line 572, main.scss */
 ul.social {
   overflow: hidden;
   list-style: none;
   margin: 0;
   padding: 0;
 }
-/* line 575, main.scss */
+/* line 578, main.scss */
 ul.social li {
   float: left;
   margin: 3px;
   opacity: .75;
 }
-/* line 580, main.scss */
+/* line 583, main.scss */
 ul.social li:hover {
   opacity: 1;
 }
-/* line 583, main.scss */
+/* line 586, main.scss */
 ul.social li:hover a {
   background-color: #7cbbbf;
 }
-/* line 589, main.scss */
+/* line 592, main.scss */
 ul.social a {
   display: block;
   background: #888;
@@ -2882,75 +2885,75 @@ ul.social a {
   font-size: 0;
   text-indent: -999em;
 }
-/* line 599, main.scss */
+/* line 602, main.scss */
 ul.social i {
   display: block;
   width: 100%;
   height: 100%;
   background-image: url("assets/icons.png");
 }
-/* line 605, main.scss */
+/* line 608, main.scss */
 ul.social i.social-vimeo {
   background-position: -180px 0;
 }
-/* line 609, main.scss */
+/* line 612, main.scss */
 ul.social i.social-twitter {
   background-position: -150px 0;
 }
-/* line 613, main.scss */
+/* line 616, main.scss */
 ul.social i.social-linkedin {
   background-position: -120px 0;
 }
-/* line 617, main.scss */
+/* line 620, main.scss */
 ul.social i.social-forrst {
   background-position: -90px 0;
 }
-/* line 621, main.scss */
+/* line 624, main.scss */
 ul.social i.social-flickr {
   background-position: -60px 0;
 }
-/* line 625, main.scss */
+/* line 628, main.scss */
 ul.social i.social-facebook {
   background-position: -30px 0;
 }
-/* line 629, main.scss */
+/* line 632, main.scss */
 ul.social i.social-dribbble {
   background-position: 0;
 }
 
-/* line 635, main.scss */
+/* line 638, main.scss */
 .blog-post {
   overflow: hidden;
 }
-/* line 638, main.scss */
+/* line 641, main.scss */
 .blog-post h4 {
   color: #272727;
   margin: 0 0 10px 0;
   font-size: 14px;
 }
-/* line 644, main.scss */
+/* line 647, main.scss */
 .blog-post a {
   margin: 0;
   padding: 0;
   line-height: 0;
 }
-/* line 650, main.scss */
+/* line 653, main.scss */
 .blog-post p {
   font-weight: normal;
   margin: .5em 0;
 }
-/* line 655, main.scss */
+/* line 658, main.scss */
 .blog-post img {
   float: left;
   width: 100px;
   margin-right: 15px;
 }
-/* line 661, main.scss */
+/* line 664, main.scss */
 .blog-post + .blog-post {
   margin-top: 20px;
 }
 
-/* line 668, main.scss */
+/* line 671, main.scss */
 .testimonial p {
   font-family: Georgia, serif;
   font-size: 14px;
@@ -2958,7 +2961,7 @@ ul.social i.social-dribbble {
   padding-left: 40px;
   background: url("assets/icon-quote.png") center left no-repeat;
 }
-/* line 676, main.scss */
+/* line 679, main.scss */
 .testimonial em {
   display: block;
   text-align: right;
@@ -2967,73 +2970,73 @@ ul.social i.social-dribbble {
   font-style: normal;
   color: #676767;
 }
-/* line 685, main.scss */
+/* line 688, main.scss */
 .testimonial + .testimonial {
   margin-top: 40px;
 }
 
-/* line 692, main.scss */
+/* line 695, main.scss */
 section h1 + hr {
   margin-top: -1.5em;
 }
-/* line 696, main.scss */
+/* line 699, main.scss */
 section hr {
   margin: 0;
 }
-/* line 700, main.scss */
+/* line 703, main.scss */
 section .section-h {
   margin-bottom: 20px;
   overflow: hidden;
 }
-/* line 704, main.scss */
+/* line 707, main.scss */
 section .section-h h2 {
   float: left;
   margin: 0;
   padding: 0;
 }
-/* line 709, main.scss */
+/* line 712, main.scss */
 section .section-h h2 + a {
   float: left;
   margin-left: 10px;
   line-height: 18px;
 }
-/* line 717, main.scss */
+/* line 720, main.scss */
 section p {
   font-size: 14px;
   line-height: 1.6em;
 }
-/* line 722, main.scss */
+/* line 725, main.scss */
 section img.temp {
   width: 100%;
   height: 150px;
   margin-bottom: 1em;
 }
-/* line 728, main.scss */
+/* line 731, main.scss */
 section article {
   background: url("assets/icon-post.png") no-repeat;
   padding-bottom: 20px;
 }
-/* line 732, main.scss */
+/* line 735, main.scss */
 section article h1 + h4 {
   margin-top: -20px;
 }
-/* line 736, main.scss */
+/* line 739, main.scss */
 section article h4 {
   font-size: 13px;
   color: #666;
 }
-/* line 740, main.scss */
+/* line 743, main.scss */
 section article h4 a {
   display: inline;
   line-height: 1em;
   padding: 0;
   margin: 0;
 }
-/* line 748, main.scss */
+/* line 751, main.scss */
 section article .meta {
   margin-bottom: 10px;
 }
-/* line 753, main.scss */
+/* line 756, main.scss */
 section article .meta a.comments {
   background: #333;
   padding: 1px 5px;
@@ -3042,7 +3045,7 @@ section article .meta a.comments {
   border-radius: 2px;
   margin-right: 10px;
 }
-/* line 764, main.scss */
+/* line 767, main.scss */
 section article blockquote {
   font-family: Georgia, serif;
   font-size: 16px;
@@ -3053,12 +3056,12 @@ section article blockquote {
   color: #999;
   background: url("assets/icon-quote.png") center left no-repeat;
 }
-/* line 775, main.scss */
+/* line 778, main.scss */
 section article .pad-14 {
   padding-left: 14%;
 }
 
-/* line 781, main.scss */
+/* line 784, main.scss */
 footer {
   background: #f1f1f1 url("assets/rotator-bg.png");
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) inset;
@@ -3069,28 +3072,28 @@ footer {
   line-height: 1.6em;
   color: #8d8d8d;
 }
-/* line 791, main.scss */
+/* line 794, main.scss */
 footer ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
 }
-/* line 797, main.scss */
+/* line 800, main.scss */
 footer li {
   display: inline;
 }
-/* line 801, main.scss */
+/* line 804, main.scss */
 footer a {
   margin-right: 20px;
   padding: 10px 0;
   display: block;
   float: left;
 }
-/* line 812, main.scss */
+/* line 815, main.scss */
 footer sub {
   font-size: 12px;
 }
-/* line 816, main.scss */
+/* line 819, main.scss */
 footer em {
   font-style: normal;
   font-size: 12px;
@@ -3099,28 +3102,28 @@ footer em {
   display: block;
   float: left;
 }
-/* line 825, main.scss */
+/* line 828, main.scss */
 footer h4 {
   margin: 0 0 5px 0;
   font-size: 12px;
   color: #3e3e3e;
 }
-/* line 831, main.scss */
+/* line 834, main.scss */
 footer a {
   display: inline;
   float: none;
 }
 
 @media screen and (max-width: 600px) {
-  /* line 839, main.scss */
+  /* line 842, main.scss */
   header nav {
     overflow: hidden;
   }
-  /* line 842, main.scss */
+  /* line 845, main.scss */
   header nav ul {
     display: none;
   }
-  /* line 846, main.scss */
+  /* line 849, main.scss */
   header nav select {
     display: block;
     float: right;

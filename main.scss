@@ -375,13 +375,17 @@ header {
 .rotator {
   background:#f1f1f1 url("assets/rotator-bg.png");
   box-shadow:0 0 10px rgba(#000,.1) inset;
-  padding:40px 0;
+  padding:40px 0 50px 0;
   margin:0;
   border-top:solid 5px #fff;
   overflow:hidden;
 
   .wrap {
     overflow:visible;
+
+    ul.slides {
+      margin:0 10px;
+    }
   }
 
   h1 {
@@ -405,7 +409,6 @@ header {
     box-shadow:0 2px 5px rgba(#000,.2);
     background:white;
     overflow:hidden;
-    margin:0 10px;
   }
 
   img {

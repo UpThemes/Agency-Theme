@@ -3,11 +3,14 @@
 <head>
   <title>Agency Theme</title>
   <link rel="stylesheet" type="text/css" href="main.css"/>
+  <link rel="stylesheet" type="text/css" href="assets/flexslider.css"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   <script src="assets/jquery.sticky.js"></script>
+  <script src="assets/jquery.flexslider-min.js"></script>
   <script type="text/javascript">
     $(function(){
+      $('.flexslider').flexslider();
       $(".breadcrumb").sticky();
 
       // Create the dropdown base
@@ -78,15 +81,16 @@
   </section><!--/.breadcrumb-->
   <section class="rotator">
     <div class="wrap">
-        <div class="slide">
-          <img src="temp.gif" class="col-100"/>
-        </div><!--/.slide-->
-        <ul class="slide-controls">
-          <li><a href="#" class="active">&nbsp;</a></li>
-          <li><a href="#">&nbsp;</a></li>
-          <li><a href="#">&nbsp;</a></li>
-          <li><a href="#">&nbsp;</a></li>
-        </ul><!--/.slide-controls-->
+      <div class="flexslider">
+        <ul class="slides">
+          <li class="slide">
+            <img src="temp.gif" class="col-100"/>
+          </li>
+          <li class="slide">
+            <img src="temp.gif" class="col-100"/>
+          </li>
+        </ul>
+      </div>
     </div><!--/.wrap-->
   </section><!--/.rotator-->
   <div class="wrap content">
