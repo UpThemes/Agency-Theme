@@ -320,6 +320,16 @@ header {
           }
         }
 
+        &.sub.last ul {
+          margin-left:-75%;
+          left:-1px;
+          border-radius:5px 0 5px 5px;
+
+          li:first-child a {
+            border-radius:5px 0 0 0;
+          }
+        }
+
         &.sub {
 
           > a {
