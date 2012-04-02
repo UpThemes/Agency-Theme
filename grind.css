@@ -1,4 +1,20 @@
-/* line 12, grind.scss */
+/* line 13, grind.scss */
+.debug ._1,
+.debug ._1-2,
+.debug ._1-3,
+.debug ._2-3,
+.debug ._1-4,
+.debug ._3-4,
+.debug ._1-5,
+.debug ._2-5,
+.debug ._3-5,
+.debug ._4-5,
+.debug ._1-6,
+.debug ._5-6 {
+  background: rgba(255, 100, 100, 0.5);
+}
+
+/* line 29, grind.scss */
 ._1,
 ._1-2,
 ._1-3,
@@ -17,78 +33,78 @@
   -moz-box-sizing: border-box;
 }
 
-/* line 19, grind.scss */
+/* line 36, grind.scss */
 ._parent {
   padding: 0;
 }
 
-/* line 21, grind.scss */
+/* line 38, grind.scss */
 ._pad {
   margin: .5em;
 }
 
-/* line 23, grind.scss */
+/* line 40, grind.scss */
 ._1 {
   width: 100%;
 }
 
-/* line 24, grind.scss */
+/* line 41, grind.scss */
 ._1-2 {
   width: 50%;
 }
 
-/* line 25, grind.scss */
+/* line 42, grind.scss */
 ._1-3 {
   width: 33.33333%;
 }
 
-/* line 26, grind.scss */
+/* line 43, grind.scss */
 ._2-3 {
   width: 66.666666%;
 }
 
-/* line 27, grind.scss */
+/* line 44, grind.scss */
 ._1-4 {
   width: 25%;
 }
 
-/* line 28, grind.scss */
+/* line 45, grind.scss */
 ._3-4 {
   width: 75%;
 }
 
-/* line 29, grind.scss */
+/* line 46, grind.scss */
 ._1-5 {
   width: 20%;
 }
 
-/* line 30, grind.scss */
+/* line 47, grind.scss */
 ._2-5 {
   width: 40%;
 }
 
-/* line 31, grind.scss */
+/* line 48, grind.scss */
 ._3-5 {
   width: 60%;
 }
 
-/* line 32, grind.scss */
+/* line 49, grind.scss */
 ._4-5 {
   width: 80%;
 }
 
-/* line 33, grind.scss */
+/* line 50, grind.scss */
 ._1-6 {
   width: 16.6666667%;
 }
 
-/* line 34, grind.scss */
+/* line 51, grind.scss */
 ._5-6 {
   width: 83.3333333%;
 }
 
 @media (max-width: 768px) {
-  /* line 48, grind.scss */
+  /* line 65, grind.scss */
   ._1,
   ._1-2,
   ._1-3,
@@ -103,7 +119,7 @@
   ._5-6 {
     width: 100%;
   }
-  /* line 62, grind.scss */
+  /* line 79, grind.scss */
   ._1 ._1,
   ._1 ._1-2,
   ._1 ._1-3,
@@ -251,13 +267,13 @@
     width: 100%;
   }
 
-  /* line 67, grind.scss */
+  /* line 84, grind.scss */
   ._1-2 {
     width: 50%;
   }
 }
 @media (max-width: 480px) {
-  /* line 83, grind.scss */
+  /* line 100, grind.scss */
   ._1,
   ._1-2,
   ._1-3,
@@ -271,7 +287,7 @@
   ._5-6 {
     width: 100%;
   }
-  /* line 97, grind.scss */
+  /* line 114, grind.scss */
   ._1 ._1,
   ._1 ._1-2,
   ._1 ._1-3,
