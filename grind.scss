@@ -28,14 +28,34 @@
 ._1-6,
 ._5-6 {
   float:left;
-  padding:.5em;
-  box-sizing:border-box;
+  padding:1.75em .75em;
+  box-sizing:border-box; *behavior: url(/assets/boxsizing.htc);
   -moz-box-sizing:border-box;
+  
+  ._1,
+  ._1-2,
+  ._1-3,
+  ._2-3,
+  ._1-4,
+  ._3-4,
+  ._1-5,
+  ._2-5,
+  ._3-5,
+  ._4-5,
+  ._1-6,
+  ._5-6 {
+    padding:.5 .75em;
+  }
 }
 
 ._parent {padding:0}
 
 ._pad {margin:.5em}
+
+._no-t {padding-top:0;margin-top:0;}
+._no-r {padding-right:0;margin-right:0;}
+._no-b {padding-bottom:0;margin-bottom:0;}
+._no-l {padding-left:0;margin-left:0;}
 
 ._1   {width:100%}
 ._1-2 {width:50%}

@@ -12,7 +12,7 @@ $serif:Georgia,serif;
 
 * {
   -moz-box-sizing: border-box;
-  box-sizing: border-box;
+  box-sizing: border-box; *behavior: url(/assets/boxsizing.htc);
   position: relative;
 }
 
@@ -77,7 +77,7 @@ a {
 
 h1 {
   font-size:36px;
-  margin:0 0 1em 0;
+  margin:0 0 .5em 0;
 }
 
 h2 {
@@ -90,7 +90,11 @@ h3 {
   font-size:16px;
   color:#262626;
   font-weight:normal;
-  margin:1em 0;
+  margin:0 0 1em 0;
+}
+
+p + h2, p + h3 {
+  margin-top:2em;
 }
 
 p {
@@ -424,16 +428,16 @@ header {
   img {
     display:block;
     float:left;
-    height:$rotator-height;
     background:#222;
     padding:0;
+    height:$rotator-height;
   }
 
   .slide-content {
     background:#222;
     color:white;
     overflow:hidden;
-    min-height:$rotator-height;
+    height:$rotator-height;
     padding:40px;
   }
 
@@ -459,6 +463,12 @@ header {
         }
       }
     }
+  }
+}
+
+.portfolio-module {
+  .section-h {
+    margin-bottom:0;
   }
 }
 
@@ -492,6 +502,7 @@ header {
 .viewer-controls {
   float:right;
   font-size:0;
+  margin-bottom:20px;
 
   a {
     display:inline-block;
@@ -525,7 +536,7 @@ header {
 }
 
 .viewer-meta {
-  margin-top:-30px;
+  margin-top:-10px;
 
   em {
     font-size:14px;
@@ -700,6 +711,10 @@ ul.social {
   }
 }
 
+.post-pad-left {
+  margin-left:120px;
+}
+
 .post-standard article i.post-icon {background-image:url("assets/post-standard.png")}
 .post-aside    article i.post-icon {background-image:url("assets/post-standard.png")}
 .post-image    article i.post-icon {background-image:url("assets/post-photo.png")}
@@ -749,6 +764,7 @@ section {
   }
 
   article {
+    margin-top:20px;
     padding-bottom:20px;
 
     i.post-icon {
@@ -759,7 +775,7 @@ section {
     }
 
     h1 + h4 {
-      margin-top:-20px;
+      margin-top:-10px;
     }
 
     h4 {
@@ -806,7 +822,7 @@ section {
 footer {
   background:#f1f1f1 url("assets/rotator-bg.png");
   box-shadow:0 0 10px rgba(#000,.1) inset;
-  padding:0;
+  padding:20px 0;
   clear:both;
   overflow:hidden;
   font-size:12px;
