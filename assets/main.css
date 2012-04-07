@@ -975,8 +975,10 @@ table {
   ._1-6,
   ._5-6 {
     width: 100%;
+    padding-left: .5em;
+    padding-right: .5em;
   }
-  /* line 134, grind.scss */
+  /* line 136, grind.scss */
   ._1 ._1,
   ._1 ._1-2,
   ._1 ._1-3,
@@ -1110,9 +1112,234 @@ table {
   ._5-6 ._1-6,
   ._5-6 ._5-6 {
     width: 100%;
+    padding: .5em;
+  }
+
+  /* line 142, grind.scss */
+  ._parent {
+    padding: 0;
   }
 }
-/* line 13, main.scss */
+/*
+ * jQuery FlexSlider v1.8
+ * http://www.woothemes.com/flexslider/
+ *
+ * Copyright 2012 WooThemes
+ * Free to use under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ */
+/* Browser Resets */
+/* line 14, flexslider.scss */
+.flex-container a:active,
+.flexslider a:active,
+.flex-container a:focus,
+.flexslider a:focus {
+  outline: none;
+}
+
+/* line 17, flexslider.scss */
+.slides,
+.flex-control-nav,
+.flex-direction-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* FlexSlider Necessary Styles
+*********************************/
+/* line 21, flexslider.scss */
+.flexslider {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 22, flexslider.scss */
+.flexslider .slides > li {
+  display: none;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Hide the slides before the JS is loaded. Avoids image jumping */
+/* line 23, flexslider.scss */
+.flexslider .slides img {
+  max-width: 100%;
+  display: block;
+}
+
+/* line 24, flexslider.scss */
+.flex-pauseplay span {
+  text-transform: capitalize;
+}
+
+/* Clearfix for the .slides element */
+/* line 27, flexslider.scss */
+.slides:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+/* line 28, flexslider.scss */
+html[xmlns] .slides {
+  display: block;
+}
+
+/* line 29, flexslider.scss */
+* html .slides {
+  height: 1%;
+}
+
+/* No JavaScript Fallback */
+/* If you are not using another script, such as Modernizr, make sure you
+ * include js that eliminates this class on page load */
+/* line 34, flexslider.scss */
+.no-js .slides > li:first-child {
+  display: block;
+}
+
+/* FlexSlider Default Theme
+*********************************/
+/* line 40, flexslider.scss */
+.flexslider .slides {
+  zoom: 1;
+}
+
+/* line 41, flexslider.scss */
+.flexslider .slides > li {
+  position: relative;
+}
+
+/* Suggested container for "Slide" animation setups. Can replace this with your own, if you wish */
+/* line 43, flexslider.scss */
+.flex-container {
+  zoom: 1;
+  position: relative;
+}
+
+/* Caption style */
+/* IE rgba() hack */
+/* line 47, flexslider.scss */
+.flex-caption {
+  background: none;
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000);
+  zoom: 1;
+}
+
+/* line 49, flexslider.scss */
+.flex-caption {
+  width: 96%;
+  padding: 2%;
+  margin: 0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+  font-size: 14px;
+  line-height: 18px;
+}
+
+/* Direction Nav */
+/* line 52, flexslider.scss */
+.flex-direction-nav {
+  height: 0;
+  top: 50%;
+  position: absolute;
+  display: none;
+}
+
+/* line 53, flexslider.scss */
+.flex-direction-nav li a {
+  width: 52px;
+  height: 52px;
+  margin: -13px 0 0;
+  display: block;
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+  text-indent: -999em;
+}
+
+/* line 54, flexslider.scss */
+.flex-direction-nav li .next {
+  background-position: -52px 0;
+  right: -40px;
+}
+
+/* line 55, flexslider.scss */
+.flex-direction-nav li .prev {
+  left: -40px;
+}
+
+/* line 56, flexslider.scss */
+.flex-direction-nav li .disabled {
+  opacity: .3;
+  filter: alpha(opacity=30);
+  cursor: default;
+}
+
+/* Control Nav */
+/* line 59, flexslider.scss */
+.flex-control-nav {
+  width: 100%;
+  position: absolute;
+  bottom: -30px;
+  text-align: center;
+}
+
+/* line 60, flexslider.scss */
+.flex-control-nav li {
+  margin: 0 0 0 5px;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+}
+
+/* line 61, flexslider.scss */
+.flex-control-nav li:first-child {
+  margin: 0;
+}
+
+/* line 62, flexslider.scss */
+.flex-control-nav li a {
+  width: 10px;
+  height: 10px;
+  display: block;
+  cursor: pointer;
+  text-indent: -999em;
+}
+
+/* line 64, flexslider.scss */
+.flex-control-nav a {
+  padding: 3px;
+  font-size: 0;
+  background: transparent;
+  border-radius: 10px;
+  border: 2px solid #848484;
+}
+
+/* line 72, flexslider.scss */
+.flex-control-nav a.active, .flex-control-nav a.active:hover {
+  padding: 5px;
+  background: #848484;
+  border: 0;
+}
+
+/* line 78, flexslider.scss */
+.flex-control-nav a:hover {
+  padding: 3px;
+  border: 2px solid #848484;
+  background: #ccc;
+}
+
+/* line 14, main.scss */
 * {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -1120,56 +1347,58 @@ table {
   position: relative;
 }
 
-/* line 19, main.scss */
+/* line 20, main.scss */
 html {
   -webkit-font-smoothing: antialiased;
 }
 
-/* line 23, main.scss */
+/* line 24, main.scss */
 .wrap {
   max-width: 1000px;
   width: 95%;
   margin: 0 auto;
 }
 
-/* line 29, main.scss */
+/* line 30, main.scss */
 a {
   color: #7cbbbf;
   text-decoration: none;
   font-size: 13px;
   font-weight: bold;
 }
-/* line 35, main.scss */
+/* line 36, main.scss */
 a:hover {
   color: #468b8f;
 }
 
-/* line 40, main.scss */
+/* line 41, main.scss */
 .button {
   padding: .6em 1.5em;
-  background: #fff;
+  background: #efefef;
   background: -webkit-linear-gradient(white, #ebebeb);
+  background: -moz-linear-gradient(white, #ebebeb);
   border-radius: 1.2em;
   font-size: 13px;
   color: #555;
   text-decoration: none;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5), 0 0 0 0.3em rgba(255, 255, 255, 0.2);
 }
-/* line 50, main.scss */
+/* line 52, main.scss */
 .button:hover {
   color: #272727;
 }
-/* line 54, main.scss */
+/* line 56, main.scss */
 .button + .button {
   margin-left: 10px;
 }
-/* line 58, main.scss */
+/* line 60, main.scss */
 .button.light-bg {
   border: 0;
   margin-right: .3em;
   padding: .6em 1.5em;
   background: #fff;
   background: -webkit-linear-gradient(white, #ebebeb);
+  background: -moz-linear-gradient(white, #ebebeb);
   border-radius: 1.2em;
   font-size: 13px;
   color: #555;
@@ -1177,26 +1406,26 @@ a:hover {
   margin-top: 10px;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 0.3em rgba(0, 0, 0, 0.1);
 }
-/* line 72, main.scss */
+/* line 75, main.scss */
 .button.viewer-visit {
   top: -10px;
   margin-left: 10px;
 }
 
-/* line 78, main.scss */
+/* line 81, main.scss */
 h1 {
   font-size: 36px;
   margin: 0 0 .5em 0;
 }
 
-/* line 83, main.scss */
+/* line 86, main.scss */
 h2 {
   font-size: 16px;
   color: #272727;
   margin: 0 0 1em 0;
 }
 
-/* line 89, main.scss */
+/* line 92, main.scss */
 h3 {
   font-size: 16px;
   color: #262626;
@@ -1204,19 +1433,19 @@ h3 {
   margin: 0 0 1em 0;
 }
 
-/* line 96, main.scss */
+/* line 99, main.scss */
 p + h2, p + h3 {
   margin-top: 2em;
 }
 
-/* line 100, main.scss */
+/* line 103, main.scss */
 p {
   font-size: 13px;
   color: #656556;
   line-height: 1.4em;
 }
 
-/* line 106, main.scss */
+/* line 109, main.scss */
 hr {
   clear: both;
   background: #f2f2f2;
@@ -1226,9 +1455,9 @@ hr {
   margin: 0 10px;
 }
 
-/* line 117, main.scss */
+/* line 120, main.scss */
 i.link {
-  background: url("assets/icon-link.png") no-repeat;
+  background: url("/assets/icon-link.png") no-repeat;
   width: 10px;
   height: 10px;
   display: inline-block;
@@ -1236,36 +1465,36 @@ i.link {
   top: -1px;
 }
 
-/* line 127, main.scss */
+/* line 130, main.scss */
 input#search {
   border-radius: 100px;
   border-color: #efefef;
   border-width: 4px;
   padding: 5px 10px;
   padding-left: 25px;
-  background: url("assets/icons.png") -300px -2px no-repeat;
+  background: url("/assets/icons.png") -300px -2px no-repeat;
   box-shadow: 0 0 0 1px #e1e1e1 inset, 0 5px 5px rgba(153, 153, 153, 0.1) inset;
 }
 
-/* line 143, main.scss */
+/* line 146, main.scss */
 form#comment-form textarea {
   margin-top: 7px;
   height: 150px;
 }
 
-/* line 149, main.scss */
+/* line 152, main.scss */
 ul.sidebar-list {
   margin: -5px 0 15px 0;
   padding: 0;
   list-style: none;
 }
-/* line 154, main.scss */
+/* line 157, main.scss */
 ul.sidebar-list a {
   display: block;
   padding: 5px 0;
 }
 
-/* line 160, main.scss */
+/* line 163, main.scss */
 img.border {
   padding: 5px;
   background: #eee;
@@ -1276,7 +1505,7 @@ img.border {
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.3);
 }
 
-/* line 171, main.scss */
+/* line 174, main.scss */
 form input[type=text] {
   border-radius: 2px;
   border: 1px solid #eee;
@@ -1288,7 +1517,7 @@ form input[type=text] {
   color: #333;
   margin-bottom: 10px;
 }
-/* line 183, main.scss */
+/* line 186, main.scss */
 form textarea {
   border-radius: 2px;
   border: 1px solid #eee;
@@ -1300,17 +1529,18 @@ form textarea {
   color: #333;
   margin-bottom: 10px;
 }
-/* line 195, main.scss */
+/* line 198, main.scss */
 form#contact textarea {
   height: 205px;
 }
-/* line 199, main.scss */
+/* line 202, main.scss */
 form input[type=submit] {
   float: right;
   border: 0;
   margin-right: .3em;
   padding: .6em 1.5em;
   background: #fff;
+  background: -webkit-linear-gradient(white, #ebebeb);
   background: -webkit-linear-gradient(white, #ebebeb);
   border-radius: 1.2em;
   font-size: 13px;
@@ -1319,29 +1549,29 @@ form input[type=submit] {
   margin-top: 10px;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 0.3em rgba(0, 0, 0, 0.1);
 }
-/* line 213, main.scss */
+/* line 217, main.scss */
 form input[type=submit]:hover {
   color: #272727;
 }
 
-/* line 219, main.scss */
+/* line 223, main.scss */
 header {
   background-color: #222;
-  background: url("assets/header-bg.png"), -webkit-linear-gradient(#303030, #171717);
-  background: url("assets/header-bg.png"), -moz-linear-gradient(#303030, #171717);
+  background: url("/assets/header-bg.png"), -webkit-linear-gradient(#303030, #171717);
+  background: url("/assets/header-bg.png"), -moz-linear-gradient(#303030, #171717);
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
   padding: 2em 0;
   z-index: 2;
 }
-/* line 227, main.scss */
+/* line 231, main.scss */
 header .wrap {
   overflow: visible;
 }
-/* line 231, main.scss */
+/* line 235, main.scss */
 header .logo {
   float: left;
 }
-/* line 234, main.scss */
+/* line 238, main.scss */
 header .logo span {
   font-size: 24px;
   line-height: 24px;
@@ -1349,162 +1579,168 @@ header .logo span {
   color: white;
   text-transform: uppercase;
 }
-/* line 245, main.scss */
+/* line 248, main.scss */
 header nav select {
   float: right;
   display: none;
 }
-/* line 250, main.scss */
+/* line 253, main.scss */
 header nav ul {
   text-align: right;
   margin: 0;
   padding: 0;
 }
-/* line 255, main.scss */
+/* line 258, main.scss */
 header nav ul ul {
   display: none;
   text-align: left;
-}
-/* line 260, main.scss */
-header nav ul li {
-  display: inline;
-}
-/* line 263, main.scss */
-header nav ul li a {
-  padding: .5em 1em;
-  color: white;
-}
-/* line 267, main.scss */
-header nav ul li a:hover {
-  color: #7cbbbf;
-}
-/* line 271, main.scss */
-header nav ul li a.active {
-  border-radius: 1em;
-  background: #000;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
-}
-/* line 280, main.scss */
-header nav ul li.sub:hover > a {
-  border-radius: 5px 5px 0 0;
-  background: #fff;
-  color: #272727;
-}
-/* line 286, main.scss */
-header nav ul li.sub:hover ul {
-  display: block;
   position: absolute;
-  left: 0;
   width: 175%;
   top: 1.40em;
+  z-index: -1;
   background: #fff;
   border-radius: 0 5px 5px 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
-/* line 296, main.scss */
-header nav ul li.sub:hover ul li {
+/* line 269, main.scss */
+header nav ul ul li {
   display: block;
 }
-/* line 299, main.scss */
-header nav ul li.sub:hover ul li:first-child a {
+/* line 272, main.scss */
+header nav ul ul li:first-child a {
   border-radius: 0 5px 0 0;
 }
-/* line 303, main.scss */
-header nav ul li.sub:hover ul li:last-child a {
+/* line 276, main.scss */
+header nav ul ul li:last-child a {
   border-radius: 0 0 5px 5px;
 }
-/* line 307, main.scss */
-header nav ul li.sub:hover ul li + li {
+/* line 280, main.scss */
+header nav ul ul li + li {
   border-top: 1px solid #eee;
 }
-/* line 311, main.scss */
-header nav ul li.sub:hover ul li a {
+/* line 284, main.scss */
+header nav ul ul li a {
   display: block;
   padding: .75em 1em;
   font-size: 12px;
   color: #272727;
 }
-/* line 317, main.scss */
-header nav ul li.sub:hover ul li a:hover {
+/* line 290, main.scss */
+header nav ul ul li a:hover {
   color: #7cbbbf;
   background-color: #f4f4f4;
   background: -webkit-linear-gradient(white, #f4f4f4);
+  background: -moz-linear-gradient(white, #f4f4f4);
 }
-/* line 327, main.scss */
-header nav ul li.sub.last ul {
-  margin-left: -75%;
-  left: -1px;
-  border-radius: 5px 0 5px 5px;
+/* line 300, main.scss */
+header nav ul li {
+  display: inline-block;
+}
+/* line 303, main.scss */
+header nav ul li a {
+  padding: .5em 1em;
+  color: white;
+}
+/* line 307, main.scss */
+header nav ul li a:hover {
+  color: #7cbbbf;
+}
+/* line 311, main.scss */
+header nav ul li a.active {
+  border-radius: 1em;
+  background: #000;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+/* line 320, main.scss */
+header nav ul li.sub:hover > a, header nav ul li.sub.active > a {
+  border-radius: 5px 5px 0 0;
+  background: #fff;
+  color: #272727;
+}
+/* line 326, main.scss */
+header nav ul li.sub:hover ul, header nav ul li.sub.active ul {
+  display: block;
+  left: 0;
 }
 /* line 332, main.scss */
+header nav ul li.sub.last ul {
+  border-radius: 5px 0 5px 5px;
+  right: 0;
+  left: auto;
+}
+/* line 337, main.scss */
 header nav ul li.sub.last ul li:first-child a {
   border-radius: 5px 0 0 0;
 }
-/* line 341, main.scss */
+/* line 346, main.scss */
 header nav ul li.sub > a:after {
   content: "\25be";
   padding-left: .5em;
 }
 
-/* line 352, main.scss */
+/* line 357, main.scss */
 .breadcrumb {
   background: #7cbbbf;
   background: -webkit-linear-gradient(#7cbbbf, #5aa9ae);
+  background: -moz-linear-gradient(#7cbbbf, #5aa9ae);
   border-bottom: 5px solid #ececec;
   box-shadow: 0 1px 0 #c1c1c1;
   z-index: 1;
   width: 100%;
 }
-/* line 360, main.scss */
+/* line 366, main.scss */
 .breadcrumb.is-sticky {
   box-shadow: 0 1px 0 #c1c1c1, 0 0 10px rgba(0, 0, 0, 0.2);
 }
-/* line 365, main.scss */
+/* line 371, main.scss */
 .breadcrumb ul {
   margin: 0 10px;
   padding: 0;
   overflow: hidden;
 }
-/* line 371, main.scss */
+/* line 377, main.scss */
 .breadcrumb li {
   float: left;
   list-style: none;
 }
-/* line 375, main.scss */
-.breadcrumb li + li a:before {
+/* line 381, main.scss */
+.breadcrumb li.seperator {
   content: "\25b6";
+  padding: 10px;
   font-size: .5em;
-  padding: 0 10px;
+  top: 3px;
+  color: #fff;
+  display: block;
 }
-/* line 382, main.scss */
+/* line 391, main.scss */
 .breadcrumb a {
   color: #fff;
   display: block;
   padding: 10px 0;
 }
 
-/* line 389, main.scss */
+/* line 398, main.scss */
 .rotator {
-  background: #f1f1f1 url("assets/rotator-bg.png");
+  background: #f1f1f1 url("/assets/rotator-bg.png");
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) inset;
   padding: 40px 0 50px 0;
   margin: 0;
   border-top: solid 5px #fff;
   overflow: hidden;
 }
-/* line 397, main.scss */
+/* line 406, main.scss */
 .rotator .wrap {
   overflow: visible;
 }
-/* line 400, main.scss */
+/* line 409, main.scss */
 .rotator .wrap ul.slides {
   margin: 0 10px;
 }
-/* line 405, main.scss */
+/* line 414, main.scss */
 .rotator h1 {
   margin: 0;
 }
-/* line 409, main.scss */
+/* line 418, main.scss */
 .rotator h3 {
   font-size: 18px;
   color: #bcbcbc;
@@ -1512,7 +1748,7 @@ header nav ul li.sub > a:after {
   margin: 1em 0 1.5em 0;
   line-height: 1.4em;
 }
-/* line 417, main.scss */
+/* line 426, main.scss */
 .rotator .slide {
   padding: 5px;
   border: 1px solid #ddd;
@@ -1523,7 +1759,7 @@ header nav ul li.sub > a:after {
   background: white;
   overflow: hidden;
 }
-/* line 428, main.scss */
+/* line 437, main.scss */
 .rotator img {
   display: block;
   float: left;
@@ -1531,7 +1767,7 @@ header nav ul li.sub > a:after {
   padding: 0;
   height: 260px;
 }
-/* line 436, main.scss */
+/* line 445, main.scss */
 .rotator .slide-content {
   background: #222;
   color: white;
@@ -1539,17 +1775,17 @@ header nav ul li.sub > a:after {
   height: 260px;
   padding: 40px;
 }
-/* line 444, main.scss */
+/* line 453, main.scss */
 .rotator .slide-controls {
   text-align: center;
   margin: 1em 0 -1em 0;
   padding: 0;
 }
-/* line 449, main.scss */
+/* line 458, main.scss */
 .rotator .slide-controls li {
   display: inline;
 }
-/* line 452, main.scss */
+/* line 461, main.scss */
 .rotator .slide-controls li a {
   padding: 3px;
   font-size: 0;
@@ -1557,51 +1793,51 @@ header nav ul li.sub > a:after {
   border-radius: 10px;
   border: 2px solid #848484;
 }
-/* line 459, main.scss */
+/* line 468, main.scss */
 .rotator .slide-controls li a.active {
   padding: 5px;
   background: #848484;
   border: 0;
 }
 
-/* line 470, main.scss */
+/* line 479, main.scss */
 .portfolio-module .section-h {
   margin-bottom: 0;
 }
 
-/* line 477, main.scss */
+/* line 486, main.scss */
 .portfolio-item img {
   width: 100%;
   height: 130px;
   margin-bottom: 5px;
 }
 
-/* line 484, main.scss */
+/* line 493, main.scss */
 .team-member {
   font-size: 13px;
 }
-/* line 487, main.scss */
+/* line 496, main.scss */
 .team-member strong {
   display: block;
 }
-/* line 490, main.scss */
+/* line 499, main.scss */
 .team-member strong.big {
   font-size: 1.25em;
 }
-/* line 495, main.scss */
+/* line 504, main.scss */
 .team-member img {
   width: 100%;
   height: 130px;
   margin-bottom: 10px;
 }
 
-/* line 502, main.scss */
+/* line 511, main.scss */
 .viewer-controls {
   float: right;
   font-size: 0;
   margin-bottom: 20px;
 }
-/* line 507, main.scss */
+/* line 516, main.scss */
 .viewer-controls a {
   display: inline-block;
   background: #888;
@@ -1613,30 +1849,30 @@ header nav ul li.sub > a:after {
   text-indent: -999em;
   opacity: .75;
 }
-/* line 518, main.scss */
+/* line 527, main.scss */
 .viewer-controls a.list-view {
   border-radius: 0;
-  background: #888888 url("assets/icons.png") -210px 0 no-repeat;
+  background: #888888 url("/assets/icons.png") -210px 0 no-repeat;
 }
-/* line 523, main.scss */
+/* line 532, main.scss */
 .viewer-controls a.next {
-  background: #888888 url("assets/icons.png") -270px 0 no-repeat;
+  background: #888888 url("/assets/icons.png") -270px 0 no-repeat;
 }
-/* line 527, main.scss */
+/* line 536, main.scss */
 .viewer-controls a.previous {
-  background: #888888 url("assets/icons.png") -240px 0 no-repeat;
+  background: #888888 url("/assets/icons.png") -240px 0 no-repeat;
 }
-/* line 531, main.scss */
+/* line 540, main.scss */
 .viewer-controls a:hover {
   opacity: 1;
   background-color: #7cbbbf;
 }
 
-/* line 538, main.scss */
+/* line 547, main.scss */
 .viewer-meta {
   margin-top: -10px;
 }
-/* line 541, main.scss */
+/* line 550, main.scss */
 .viewer-meta em {
   font-size: 14px;
   font-family: Georgia, serif;
@@ -1644,12 +1880,12 @@ header nav ul li.sub > a:after {
   padding-left: 10px;
 }
 
-/* line 551, main.scss */
+/* line 560, main.scss */
 .comments h1 {
   margin: 20px 0;
   font-size: 28px;
 }
-/* line 556, main.scss */
+/* line 565, main.scss */
 .comments .comment {
   border: 3px solid #eee;
   padding: 15px;
@@ -1657,57 +1893,57 @@ header nav ul li.sub > a:after {
   margin-bottom: 30px;
   font-size: 12px;
 }
-/* line 563, main.scss */
+/* line 572, main.scss */
 .comments .comment p {
   font-size: 12px;
   margin: 5px 0 0 0;
 }
-/* line 567, main.scss */
+/* line 576, main.scss */
 .comments .comment p + p {
   margin-top: 10px;
 }
-/* line 572, main.scss */
+/* line 581, main.scss */
 .comments .comment .image-wrap {
   float: left;
   width: 10%;
   margin-bottom: 0;
   overflow: hidden;
 }
-/* line 579, main.scss */
+/* line 588, main.scss */
 .comments .comment .comment-wrap {
   float: right;
   width: 90%;
   padding-left: 15px;
 }
-/* line 585, main.scss */
+/* line 594, main.scss */
 .comments .comment img.temp {
   width: 100%;
   height: auto;
   margin: 0;
 }
 
-/* line 593, main.scss */
+/* line 602, main.scss */
 ul.social {
   overflow: hidden;
   list-style: none;
   margin: 0;
   padding: 0;
 }
-/* line 599, main.scss */
+/* line 608, main.scss */
 ul.social li {
   float: left;
   margin: 3px;
   opacity: .75;
 }
-/* line 604, main.scss */
+/* line 613, main.scss */
 ul.social li:hover {
   opacity: 1;
 }
-/* line 607, main.scss */
+/* line 616, main.scss */
 ul.social li:hover a {
   background-color: #7cbbbf;
 }
-/* line 613, main.scss */
+/* line 622, main.scss */
 ul.social a {
   display: block;
   background: #888;
@@ -1717,83 +1953,83 @@ ul.social a {
   font-size: 0;
   text-indent: -999em;
 }
-/* line 623, main.scss */
+/* line 632, main.scss */
 ul.social i {
   display: block;
   width: 100%;
   height: 100%;
-  background-image: url("assets/icons.png");
+  background-image: url("/assets/icons.png");
 }
-/* line 629, main.scss */
+/* line 638, main.scss */
 ul.social i.social-vimeo {
   background-position: -180px 0;
 }
-/* line 633, main.scss */
+/* line 642, main.scss */
 ul.social i.social-twitter {
   background-position: -150px 0;
 }
-/* line 637, main.scss */
+/* line 646, main.scss */
 ul.social i.social-linkedin {
   background-position: -120px 0;
 }
-/* line 641, main.scss */
+/* line 650, main.scss */
 ul.social i.social-forrst {
   background-position: -90px 0;
 }
-/* line 645, main.scss */
+/* line 654, main.scss */
 ul.social i.social-flickr {
   background-position: -60px 0;
 }
-/* line 649, main.scss */
+/* line 658, main.scss */
 ul.social i.social-facebook {
   background-position: -30px 0;
 }
-/* line 653, main.scss */
+/* line 662, main.scss */
 ul.social i.social-dribbble {
   background-position: 0;
 }
 
-/* line 659, main.scss */
+/* line 668, main.scss */
 .blog-post {
   overflow: hidden;
 }
-/* line 662, main.scss */
+/* line 671, main.scss */
 .blog-post h4 {
   color: #272727;
   margin: 0 0 10px 0;
   font-size: 14px;
 }
-/* line 668, main.scss */
+/* line 677, main.scss */
 .blog-post a {
   margin: 0;
   padding: 0;
   line-height: 0;
 }
-/* line 674, main.scss */
+/* line 683, main.scss */
 .blog-post p {
   font-weight: normal;
   margin: .5em 0;
 }
-/* line 679, main.scss */
+/* line 688, main.scss */
 .blog-post img {
   float: left;
   width: 100px;
   margin-right: 15px;
 }
-/* line 685, main.scss */
+/* line 694, main.scss */
 .blog-post + .blog-post {
   margin-top: 20px;
 }
 
-/* line 692, main.scss */
+/* line 701, main.scss */
 .testimonial p {
   font-family: Georgia, serif;
   font-size: 14px;
   font-style: italic;
   padding-left: 40px;
-  background: url("assets/icon-quote.png") center left no-repeat;
+  background: url("/assets/icon-quote.png") center left no-repeat;
 }
-/* line 700, main.scss */
+/* line 709, main.scss */
 .testimonial em {
   display: block;
   text-align: right;
@@ -1802,130 +2038,130 @@ ul.social i.social-dribbble {
   font-style: normal;
   color: #676767;
 }
-/* line 709, main.scss */
+/* line 718, main.scss */
 .testimonial + .testimonial {
   margin-top: 40px;
 }
 
-/* line 714, main.scss */
+/* line 723, main.scss */
 .post-pad-left {
   margin-left: 120px;
 }
 
-/* line 718, main.scss */
-.post-standard article i.post-icon {
-  background-image: url("assets/post-standard.png");
+/* line 727, main.scss */
+article.post-standard i.post-icon {
+  background-position: -270px 0;
 }
 
-/* line 719, main.scss */
-.post-aside article i.post-icon {
-  background-image: url("assets/post-standard.png");
+/* line 728, main.scss */
+article.post-aside i.post-icon {
+  background-position: -270px 0;
 }
 
-/* line 720, main.scss */
-.post-image article i.post-icon {
-  background-image: url("assets/post-photo.png");
-}
-
-/* line 721, main.scss */
-.post-link article i.post-icon {
-  background-image: url("assets/post-link.png");
-}
-
-/* line 722, main.scss */
-.post-quote article i.post-icon {
-  background-image: url("assets/post-quote.png");
-}
-
-/* line 723, main.scss */
-.post-status article i.post-icon {
-  background-image: url("assets/post-status.png");
-}
-
-/* line 724, main.scss */
-.post-video article i.post-icon {
-  background-image: url("assets/post-video.png");
-}
-
-/* line 725, main.scss */
-.post-audio article i.post-icon {
-  background-image: url("assets/post-audio.png");
-}
-
-/* line 726, main.scss */
-.post-gallery article i.post-icon {
-  background-image: url("assets/post-gallery.png");
+/* line 729, main.scss */
+article.post-image i.post-icon {
+  background-position: -450px 0;
 }
 
 /* line 730, main.scss */
+article.post-link i.post-icon {
+  background-position: -540px 0;
+}
+
+/* line 731, main.scss */
+article.post-quote i.post-icon {
+  background-position: -360px 0;
+}
+
+/* line 732, main.scss */
+article.post-status i.post-icon {
+  background-position: -180px 0;
+}
+
+/* line 733, main.scss */
+article.post-video i.post-icon {
+  background-position: -90px 0;
+}
+
+/* line 734, main.scss */
+article.post-audio i.post-icon {
+  background-position: 0px 0;
+}
+
+/* line 735, main.scss */
+article.post-gallery i.post-icon {
+  background-position: -630px 0;
+}
+
+/* line 739, main.scss */
 section h1 + hr {
   margin-top: -1.5em;
 }
-/* line 734, main.scss */
+/* line 743, main.scss */
 section hr {
   margin: 0;
 }
-/* line 738, main.scss */
+/* line 747, main.scss */
 section .section-h {
   margin-bottom: 20px;
   overflow: hidden;
 }
-/* line 742, main.scss */
+/* line 751, main.scss */
 section .section-h h2 {
   float: left;
   margin: 0;
   padding: 0;
 }
-/* line 747, main.scss */
+/* line 756, main.scss */
 section .section-h h2 + a {
   float: left;
   margin-left: 10px;
   line-height: 18px;
 }
-/* line 755, main.scss */
+/* line 764, main.scss */
 section p {
   font-size: 14px;
   line-height: 1.6em;
 }
-/* line 760, main.scss */
+/* line 769, main.scss */
 section img.temp {
   width: 100%;
   height: 150px;
   margin-bottom: 1em;
 }
-/* line 766, main.scss */
+/* line 775, main.scss */
 section article {
-  margin-top: 20px;
   padding-bottom: 20px;
 }
-/* line 770, main.scss */
+/* line 778, main.scss */
 section article i.post-icon {
   display: block;
   width: 90px;
   height: 82px;
   float: left;
+  background: url("/assets/post-icons.png") 0 82px no-repeat;
 }
-/* line 777, main.scss */
+/* line 786, main.scss */
 section article h1 + h4 {
   margin-top: -10px;
 }
-/* line 781, main.scss */
+/* line 790, main.scss */
 section article h4 {
   font-size: 13px;
   color: #666;
 }
-/* line 785, main.scss */
+/* line 794, main.scss */
 section article h4 a {
   display: inline;
   line-height: 1em;
   padding: 0;
   margin: 0;
 }
-/* line 793, main.scss */
+/* line 802, main.scss */
 section article .meta {
   margin-bottom: 10px;
 }
-/* line 798, main.scss */
+/* line 807, main.scss */
 section article .meta a.comments {
   background: #333;
   padding: 1px 5px;
@@ -1934,7 +2170,7 @@ section article .meta a.comments {
   border-radius: 2px;
   margin-right: 10px;
 }
-/* line 809, main.scss */
+/* line 818, main.scss */
 section article blockquote {
   font-family: Georgia, serif;
   font-size: 16px;
@@ -1943,12 +2179,12 @@ section article blockquote {
   padding-left: 50px;
   margin: 20px 0;
   color: #999;
-  background: url("assets/icon-quote.png") center left no-repeat;
+  background: url("/assets/icon-quote.png") center left no-repeat;
 }
 
-/* line 822, main.scss */
+/* line 831, main.scss */
 footer {
-  background: #f1f1f1 url("assets/rotator-bg.png");
+  background: #f1f1f1 url("/assets/rotator-bg.png");
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) inset;
   padding: 20px 0;
   clear: both;
@@ -1957,28 +2193,28 @@ footer {
   line-height: 1.6em;
   color: #8d8d8d;
 }
-/* line 832, main.scss */
+/* line 841, main.scss */
 footer ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
 }
-/* line 838, main.scss */
+/* line 847, main.scss */
 footer li {
   display: inline;
 }
-/* line 842, main.scss */
+/* line 851, main.scss */
 footer a {
   margin-right: 20px;
   padding: 10px 0;
   display: block;
   float: left;
 }
-/* line 853, main.scss */
+/* line 862, main.scss */
 footer sub {
   font-size: 12px;
 }
-/* line 857, main.scss */
+/* line 866, main.scss */
 footer em {
   font-style: normal;
   font-size: 12px;
@@ -1987,30 +2223,87 @@ footer em {
   display: block;
   float: left;
 }
-/* line 866, main.scss */
+/* line 875, main.scss */
 footer h4 {
   margin: 0 0 5px 0;
   font-size: 12px;
   color: #3e3e3e;
 }
-/* line 872, main.scss */
+/* line 881, main.scss */
 footer a {
   display: inline;
   float: none;
 }
 
-@media screen and (max-width: 600px) {
-  /* line 880, main.scss */
+@media (max-width: 768px) {
+  /* line 888, main.scss */
+  .rotator .slide-content {
+    padding: 30px 40px;
+  }
+  /* line 891, main.scss */
+  .rotator .slide-content h1 {
+    font-size: 28px;
+  }
+  /* line 895, main.scss */
+  .rotator .slide-content h3 {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 480px) {
+  /* line 903, main.scss */
   header nav {
     overflow: hidden;
   }
-  /* line 883, main.scss */
+  /* line 906, main.scss */
   header nav ul {
     display: none;
   }
-  /* line 887, main.scss */
+  /* line 910, main.scss */
   header nav select {
     display: block;
     float: right;
+  }
+
+  /* line 917, main.scss */
+  header {
+    padding: 15px 0;
+  }
+
+  /* line 921, main.scss */
+  .rotator {
+    padding: 20px 0 20px 0;
+  }
+
+  /* line 927, main.scss */
+  .slide img {
+    height: 100px;
+  }
+  /* line 931, main.scss */
+  .slide .slide-content {
+    padding: 20px 20px 30px 20px;
+    height: auto;
+  }
+  /* line 935, main.scss */
+  .slide .slide-content h1 {
+    font-size: 18px;
+  }
+  /* line 939, main.scss */
+  .slide .slide-content h3 {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+
+  /* line 948, main.scss */
+  section article i.post-icon {
+    display: none;
+  }
+  /* line 950, main.scss */
+  section article h1 {
+    font-size: 24px;
+  }
+
+  /* line 955, main.scss */
+  .post-pad-left {
+    margin-left: 0;
   }
 }

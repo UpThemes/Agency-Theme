@@ -458,8 +458,10 @@
   ._1-6,
   ._5-6 {
     width: 100%;
+    padding-left: .5em;
+    padding-right: .5em;
   }
-  /* line 134, grind.scss */
+  /* line 136, grind.scss */
   ._1 ._1,
   ._1 ._1-2,
   ._1 ._1-3,
@@ -593,5 +595,11 @@
   ._5-6 ._1-6,
   ._5-6 ._5-6 {
     width: 100%;
+    padding: .5em;
+  }
+
+  /* line 142, grind.scss */
+  ._parent {
+    padding: 0;
   }
 }
