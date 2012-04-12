@@ -2,12 +2,12 @@
 <html>
 <head>
   <title>Agency Theme</title>
-  <link rel="stylesheet" type="text/css" href="/assets/main.css"/>
+  <link rel="stylesheet" type="text/css" href="assets/main.css"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   <meta name="apple-mobile-web-app-capable" content="yes" />  
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script src="/assets/jquery.sticky.js"></script>
-  <script src="/assets/jquery.flexslider-min.js"></script>
+  <script src="assets/jquery.sticky.js"></script>
+  <script src="assets/jquery.flexslider-min.js"></script>
   <script type="text/javascript">
     $(function(){
       $('.flexslider').flexslider();

@@ -1,5 +1,5 @@
 <?php
-  $path = $_SERVER['DOCUMENT_ROOT'] . "/header.inc.php";
+  $path = "header.inc.php";
   include_once($path);
 ?>
 <section class="rotator">
@@ -133,6 +133,6 @@
   </section><!--/.office-module-->
 </div><!--/.wrap-->
 <?php
-  $path = $_SERVER['DOCUMENT_ROOT'] . "/footer.inc.php";
- include_once($path);
+  $path = "footer.inc.php";
+  include_once($path);
 ?>
