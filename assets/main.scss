@@ -27,6 +27,8 @@ html {
   margin:0 auto;
 }
 
+.clear {clear:both}
+
 a {
   color:$accent-color;
   text-decoration:none;
@@ -273,6 +275,7 @@ header {
 
         li {
           display:block;
+          float:none;
 
           &:first-child a {
             border-radius:0 5px 0 0;

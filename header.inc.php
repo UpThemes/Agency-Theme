@@ -78,5 +78,6 @@
           </li>
         </ul>
       </nav>
+      <div class="clear"></div>
     </div><!--/.wrap-->
   </header>
