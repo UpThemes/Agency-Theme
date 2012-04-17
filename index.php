@@ -1,7 +1,5 @@
-<?php
-  $path = "header.inc.php";
-  include_once($path);
-?>
+<?php get_header(); ?>
+
 <section class="rotator">
   <div class="wrap">
     <div class="flexslider">
@@ -132,7 +130,5 @@
     <a href="#"><i class="link"></i>More About Us</a>
   </section><!--/.office-module-->
 </div><!--/.wrap-->
-<?php
-  $path = "footer.inc.php";
-  include_once($path);
-?>
+
+<?php get_footer(); ?>
