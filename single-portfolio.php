@@ -1,7 +1,5 @@
-<?php
-  $path = "header.inc.php";
-  include_once($path);
-?>
+<?php get_header(); ?>
+
 <section class="breadcrumb">
   <div class="wrap">
     <ul>
@@ -59,7 +57,5 @@
     <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
   </section>
 </div><!--/.wrap-->
-<?php
-  $path = "footer.inc.php";
-  include_once($path);
-?>
+
+<?php get_footer(); ?>
