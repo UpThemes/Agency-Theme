@@ -276,7 +276,7 @@ function agency_register_cpt() {
 
   function agency_setup_portfolio_metaboxes(){
 
-    $appdata = array( 
+    $portfoliodata = array( 
       array( 'type' => 'text', 'title' => 'Website URL' ), 
       array( 'type' => 'text', 'title' => 'Launch Date' ), 
       array( 'type' => 'upload', 'title' => 'Portfolio Slide Images', 'description' => 'Requires a files with a size of 968 wide x 260 high.' )
@@ -288,7 +288,7 @@ function agency_register_cpt() {
       'post_type' => 'portfolio',
       'single' => true,
       'meta_name' => 'portinfo',
-      'meta_array' => $appdata
+      'meta_array' => $portfoliodata
     );
 
     new WCK_CFC_Wordpress_Creation_Kit( $args );
