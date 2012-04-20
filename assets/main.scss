@@ -13,7 +13,7 @@ $serif:Georgia,serif;
 
 * {
   -moz-box-sizing: border-box;
-  box-sizing: border-box; *behavior: url(boxsizing.htc);
+  box-sizing: border-box; *behavior: url(assets/boxsizing.htc);
   position: relative;
 }
 
@@ -41,6 +41,8 @@ a {
 }
 
 .button {
+  display:inline-block;
+  margin:5px 0;
   padding:.6em 1.5em;
   background:#efefef;
   background:-webkit-linear-gradient(#fff,#ebebeb);
@@ -262,7 +264,7 @@ header {
         display:none;
         text-align:left;
         position:absolute;
-        width:175%;
+        width:200px;
         top:1.40em;
         z-index:-1;
         background:#fff;
@@ -448,6 +450,7 @@ header {
     box-shadow:0 2px 5px rgba(#000,.2);
     background:white;
     overflow:hidden;
+    min-height:$rotator-height;
   }
 
   img {
@@ -462,7 +465,7 @@ header {
     background:#222;
     color:white;
     overflow:hidden;
-    height:$rotator-height;
+    min-height:$rotator-height;
     padding:40px;
   }
 
@@ -945,8 +948,9 @@ footer {
     }
 
     .slide-content {
-      padding:20px 20px 30px 20px;
+      padding:20px;
       height:auto;
+      min-height:0;
 
       h1 {
         font-size:18px;

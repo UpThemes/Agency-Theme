@@ -6,6 +6,7 @@
   <div class="wrap">
     <ul>
       <li><a href="#">Home</a></li>
+      <li class="seperator">&#9654;</li>
       <li><a href="#">Page title</a></li>
     </ul>
   </div><!--/.wrap-->
@@ -25,7 +26,7 @@
   </div><!--/.wrap-->
 </section><!--/.rotator-->
 <div class="wrap content">
-  <section class="_4-5 _no-b">
+  <section class="_4-5">
     <h1>GoBible Downloads <a href="#" class="button light-bg left viewer-visit">Visit Website</a></h1>
     <div class="viewer-meta">
       <a href="#">Website</a>
