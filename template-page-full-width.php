@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Sub page 1
+Template Name: Full Width Page Template
 */
 ?>
 <?php get_header(); ?>

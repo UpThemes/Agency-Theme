@@ -1,8 +1,3 @@
-<?php
-/*
-Template Name: Sub page 2
-*/
-?>
 <?php get_header(); ?>
 
 <section class="breadcrumb">
