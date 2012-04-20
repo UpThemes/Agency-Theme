@@ -21,6 +21,9 @@ define('THEME_VERSION',$theme_data['Version']);
 // Load UpThemes Framework
 require_once( get_template_directory().'/admin/admin.php' );
 
+// Load WP ThemeLib.
+require_once( get_template_directory().'themelib/load.php');
+
 // Load Theme Specific Goodies
 require_once( get_template_directory().'/library/load.php');
 
