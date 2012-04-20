@@ -1,15 +1,27 @@
   <footer>
     <div class="wrap">
       <section class="_1-2">
-        <nav>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact Us</a></li>
-          </ul>
-        </nav>
+        <?php
+
+        if ( function_exists( 'wp_nav_menu' ) ) {
+        
+                $args = array(
+                  'container'     => false,
+                  'menu_id'       => 'navigation',
+                  'theme_location'=> 'footer_menu',
+                  'fallback_cb'   => 'agency_nav_callout',
+                  'link_before'   => '<span>',
+                  'link_after'    => '</span>',
+                  'depth'         => 1
+                );
+
+          echo wp_nav_menu( $args );
+
+        } else {
+          agency_nav_callout();
+        }
+
+        ?>
         <sub>Copyright 2010 Agency. All Rights Reserved.</sub>
       </section>
       <section class="_1-4">
@@ -26,5 +38,7 @@
     </div><!--/.wrap-->
   </footer>
   <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+
+  <?php wp_footer(); ?>
 </body>
 </html>

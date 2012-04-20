@@ -1,3 +1,16 @@
+/*
+Theme Name: Agency
+Theme URI: http://upthemes.com/themes/agency
+Author: UpThemes
+Author URI: http://upthemes.com
+Description: The world's greatest agency WordPress theme.
+Version: 0.1.0
+License: GNU General Public License
+License URI: license.txt
+Tags: dark, light, white, black, gray, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready, custom-post-types
+*/
+
+
 @import "normalize";
 @import "grind";
 @import "compass/css3";
@@ -13,7 +26,7 @@ $serif:Georgia,serif;
 
 * {
   -moz-box-sizing: border-box;
-  box-sizing: border-box; *behavior: url(boxsizing.htc);
+  box-sizing: border-box; *behavior: url("assets/boxsizing.htc");
   position: relative;
 }
 
@@ -120,7 +133,7 @@ hr {
 i {
 
   &.link {
-    background:url("icon-link.png") no-repeat;
+    background:url("assets/icon-link.png") no-repeat;
     width:10px;
     height:10px;
     display:inline-block;
@@ -135,7 +148,7 @@ input#search {
   border-width:4px;
   padding:5px 10px;
   padding-left:25px;
-  background:url("icons.png") -300px -2px no-repeat;
+  background:url("assets/icons.png") -300px -2px no-repeat;
   box-shadow:0 0 0 1px #e1e1e1 inset,
              0 5px 5px rgba(#999,.1) inset;
 }
@@ -224,8 +237,8 @@ form {
 
 header {
   background-color:#222;
-  background:url("header-bg.png"), -webkit-linear-gradient(#303030,#171717);
-  background:url("header-bg.png"), -moz-linear-gradient(#303030,#171717);
+  background:url("assets/header-bg.png"), -webkit-linear-gradient(#303030,#171717);
+  background:url("assets/header-bg.png"), -moz-linear-gradient(#303030,#171717);
   box-shadow:0 0 10px 5px rgba(#000,.1);
   padding:2em 0;
   z-index:2;
@@ -316,15 +329,16 @@ header {
           &:hover {
             color:$accent-color;
           }
-
-          &.active {
-            border-radius:1em;
-            background:#000;
-            box-shadow:0 1px 0 rgba(#fff,.2);
-          }
         }
 
-        &.sub:hover,&.sub.active {
+        &.current-menu-item > a {
+          border-radius:1em;
+          background:#000;
+          box-shadow:0 1px 0 rgba(#fff,.2);
+        }
+
+
+        &.sub:hover,&.sub.current-menu-item:hover {
 
           > a {
             border-radius:5px 5px 0 0;
@@ -332,9 +346,9 @@ header {
             color:$heading-color;
           }
 
-          ul {
+          > ul {
             display:block;
-            left:0;
+            left: 1px;
           }
         }
 
@@ -369,6 +383,7 @@ header {
     }
   }
 }
+
 
 .breadcrumb {
   background:$accent-color;
@@ -412,7 +427,7 @@ header {
 }
 
 .rotator {
-  background:#f1f1f1 url("rotator-bg.png");
+  background:#f1f1f1 url("assets/rotator-bg.png");
   box-shadow:0 0 10px rgba(#000,.1) inset;
   padding:40px 0 50px 0;
   margin:0;
@@ -542,15 +557,15 @@ header {
 
     &.list-view {
       border-radius:0;
-      background:#888 url("icons.png") -210px 0 no-repeat;
+      background:#888 url("assets/icons.png") -210px 0 no-repeat;
     }
 
     &.next {
-      background:#888 url("icons.png") -270px 0 no-repeat;
+      background:#888 url("assets/icons.png") -270px 0 no-repeat;
     }
 
     &.previous {
-      background:#888 url("icons.png") -240px 0 no-repeat;
+      background:#888 url("assets/icons.png") -240px 0 no-repeat;
     }
 
     &:hover {
@@ -649,7 +664,7 @@ ul.social {
     display:block;
     width:100%;
     height:100%;
-    background-image:url("icons.png");
+    background-image:url("assets/icons.png");
 
     &.social-vimeo {
       background-position:-180px 0;
@@ -719,7 +734,7 @@ ul.social {
     font-size:14px;
     font-style:italic;
     padding-left:40px;
-    background:url("icon-quote.png") center left no-repeat;
+    background:url("assets/icon-quote.png") center left no-repeat;
   }
 
   em {
@@ -796,7 +811,7 @@ section {
       width:90px;
       height:82px;
       float:left;
-      background:url("post-icons.png") 0 82px no-repeat;
+      background:url("assets/post-icons.png") 0 82px no-repeat;
     }
 
     h1 + h4 {
@@ -839,13 +854,13 @@ section {
       padding-left:50px;
       margin:20px 0;
       color:#999;
-      background:url("icon-quote.png") center left no-repeat;
+      background:url("assets/icon-quote.png") center left no-repeat;
     }
   }
 }
 
 footer {
-  background:#f1f1f1 url("rotator-bg.png");
+  background:#f1f1f1 url("assets/rotator-bg.png");
   box-shadow:0 0 10px rgba(#000,.1) inset;
   padding:20px 0;
   clear:both;
