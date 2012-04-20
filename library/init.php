@@ -1,6 +1,19 @@
 <?php
 
-function agency_init(){
+/**
+ * Initializes Menus  - agency_menu_init()
+ * Sidebars           - agency_register_sidebars()
+ * Enqueue Styles     - agency_styles()
+ * Enqueue Scripts    - agency_scripts()
+ * Custom Post Types  - agency_post_types()
+ *
+ * And their corresponding theme calls.
+ */
+
+
+
+
+function agency_menu_init(){
 
   /**
    * Register Theme locations for custom nav menus
@@ -19,19 +32,19 @@ function agency_init(){
    * if the wp_nav_menu() function does not exist (i.e.
    * if the current version of WordPress is < 3.0). 
    * 
-   * Template files: header.php
+   * Template files: header.php & footer.php
    * 
-   * @link 		http://codex.wordpress.org/Function_Reference/_2		__()
+   * @link    http://codex.wordpress.org/Function_Reference/_2    __()
    * 
-   * @since	AppTheme 1.0
+   * @since Agency 1.0
    */
   function agency_nav_callout(){
 
-  	echo '<div id="navigation" class="error">' . __( 'Please configure your menu in the admin panel: Appearance > Menus', 'agency' ) . '</div>';
+    echo '<div id="navigation" class="error">' . __( 'Please configure your menu in the admin panel: Appearance > Menus', 'agency' ) . '</div>';
 
   }
 
-  
+
   add_filter('wp_nav_menu_objects', function ($items) {
       $hasSub = function ($menu_item_id, &$items) {
           foreach ($items as $item) {
@@ -41,7 +54,7 @@ function agency_init(){
           }
           return false;
       };
-  
+
       foreach ($items as &$item) {
           if ($hasSub($item->ID, &$items)) {
               $item->classes[] = 'sub';
@@ -51,9 +64,8 @@ function agency_init(){
       return $items;
   });
 
-
 }
-add_action("after_setup_theme","agency_init");
+add_action("after_setup_theme","agency_menu_init");
 
 
 
@@ -149,9 +161,6 @@ add_action( 'widgets_init', 'agency_register_sidebars' );
 
 
 
-
-
-
 function agency_styles() {
 
   $up_options = upfw_get_options();
@@ -175,6 +184,98 @@ add_action('wp_enqueue_scripts','agency_scripts');
 
 
 
+function agency_register_cpt() {
 
+
+  function agency_register_portfolio() {
+
+      $labels = array( 
+          'name' => _x( 'Portoflio', 'portfolio' ),
+          'singular_name' => _x( 'Portfolio Item', 'portfolio' ),
+          'add_new' => _x( 'Add New', 'portfolio' ),
+          'add_new_item' => _x( 'Add New Portfolio Item', 'portfolio' ),
+          'edit_item' => _x( 'Edit Portfolio Item', 'portfolio' ),
+          'new_item' => _x( 'New Portfolio Item', 'portfolio' ),
+          'view_item' => _x( 'View Portfolio Item', 'portfolio' ),
+          'search_items' => _x( 'Search Portfolio', 'portfolio' ),
+          'not_found' => _x( 'No Portfolio Items Found', 'portfolio' ),
+          'not_found_in_trash' => _x( 'No Portfolio Items Found in Trash', 'portfolio' ),
+          'parent_item_colon' => _x( 'Parent Portfolio Item:', 'portfolio' ),
+          'menu_name' => _x( 'Portfolio', 'portfolio' ),
+      );
+
+      $args = array( 
+          'labels' => $labels,
+          'hierarchical' => false,
+          'description' => 'A post type for portfolio items.',
+          'supports' => array( 'title', 'editor', 'revisions' ),
+          'public' => true,
+          'show_ui' => true,
+          'show_in_menu' => true,
+          'menu_position' => 4,
+          'menu_icon' => get_template_directory_uri() . '/themelib/images/agency_portfolio_menu.png',
+          'show_in_nav_menus' => true,
+          'publicly_queryable' => true,
+          'exclude_from_search' => false,
+          'has_archive' => true,
+          'query_var' => true,
+          'can_export' => true,
+          'rewrite' => true,
+          'capability_type' => 'post'
+      );
+
+      register_post_type( 'portfolio', $args );
+
+  }
+  add_action( 'init', 'agency_register_portfolio' );
+
+
+
+  function agency_register_testimonial() {
+
+      $labels = array( 
+          'name' => _x( 'Testimonials', 'testimonial' ),
+          'singular_name' => _x( 'Testimonial', 'testimonial' ),
+          'add_new' => _x( 'Add New', 'testimonial' ),
+          'add_new_item' => _x( 'Add New Testimonial', 'testimonial' ),
+          'edit_item' => _x( 'Edit Testimonial', 'testimonial' ),
+          'new_item' => _x( 'New Testimonial', 'testimonial' ),
+          'view_item' => _x( 'View Testimonial', 'testimonial' ),
+          'search_items' => _x( 'Search Testimonials', 'testimonial' ),
+          'not_found' => _x( 'No Testimonial Found', 'testimonial' ),
+          'not_found_in_trash' => _x( 'No Testimonial Found in Trash', 'testimonial' ),
+          'parent_item_colon' => _x( 'Parent Testimonial:', 'testimonial' ),
+          'menu_name' => _x( 'Testimonials', 'testimonial' ),
+      );
+
+      $args = array( 
+          'labels' => $labels,
+          'hierarchical' => false,
+          'description' => 'A post type for testimonials.',
+          'supports' => array( 'title', 'editor', 'revisions' ),
+          'public' => true,
+          'show_ui' => true,
+          'show_in_menu' => true,
+          'menu_position' => 4,
+          'menu_icon' => get_template_directory_uri() . '/themelib/images/agency_testimonial_menu.png',
+          'show_in_nav_menus' => true,
+          'publicly_queryable' => true,
+          'exclude_from_search' => true,
+          'has_archive' => false,
+          'query_var' => true,
+          'can_export' => true,
+          'rewrite' => true,
+          'capability_type' => 'post'
+      );
+
+      register_post_type( 'testimonial', $args );
+
+  }
+  add_action( 'init', 'agency_register_testimonial' );
+
+
+
+}
+agency_register_cpt();
 
 
