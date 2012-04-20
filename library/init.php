@@ -274,6 +274,50 @@ function agency_register_cpt() {
   add_action( 'init', 'agency_register_testimonial' );
 
 
+  function agency_setup_portfolio_metaboxes(){
+
+    $appdata = array( 
+      array( 'type' => 'text', 'title' => 'Website URL' ), 
+      array( 'type' => 'text', 'title' => 'Launch Date' ), 
+      array( 'type' => 'upload', 'title' => 'Portfolio Slide Images', 'description' => 'Requires a files with a size of 968 wide x 260 high.' )
+    );
+
+    $args = array(
+      'metabox_id' => 'portinfo',
+      'metabox_title' => 'Portfolio Information',
+      'post_type' => 'portfolio',
+      'single' => true,
+      'meta_name' => 'portinfo',
+      'meta_array' => $appdata
+    );
+
+    new WCK_CFC_Wordpress_Creation_Kit( $args );
+
+  }
+  add_action('after_setup_theme','agency_setup_portfolio_metaboxes');
+
+
+
+  function agency_setup_testimonial_metaboxes(){
+
+    $appdata = array( 
+      array( 'type' => 'text', 'title' => 'Testimonial Author' ),
+    );
+
+    $args = array(
+      'metabox_id' => 'testimonial-info',
+      'metabox_title' => 'Testimonial Information',
+      'post_type' => 'testimonial',
+      'single' => true,
+      'meta_name' => 'testimonial-info',
+      'meta_array' => $appdata
+    );
+
+    new WCK_CFC_Wordpress_Creation_Kit( $args );
+
+  }
+  add_action('after_setup_theme','agency_setup_testimonial_metaboxes');
+
 
 }
 agency_register_cpt();
