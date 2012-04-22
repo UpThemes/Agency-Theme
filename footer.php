@@ -1,4 +1,3 @@
-<?php $up_options = upfw_get_options(); ?>
 
   <footer>
     <div class="wrap">
@@ -24,22 +23,23 @@
         }
 
         ?>
-        <sub>Copyright 2010 Agency. All Rights Reserved.</sub>
+        <sub><?php echo agency_get_theme_option('copyright_text'); ?></sub>
       </section>
       <section class="_1-4">
-        <h4>Agency</h4>
+        <h4><?php bloginfo('name'); ?></h4>
         <?php echo agency_get_theme_option('address_text1'); ?><br/>
-        San Diego, CA 55555-5454
+        <?php echo agency_get_theme_option('address_text2'); ?>
       </section>
       <section class="_1-4">
         <h4>Get In Touch</h4>
-        <em>phone</em> <?php echo $up_options->phone_text; ?><br/>
-        <em>email</em> <a href="mailto:<?php echo $up_options->phone_text; ?>"><?php echo $up_options->phone_text; ?></a><br/>
-        <em>twitter</em> <a href="#">@agency</a>
+        <em>phone</em> <?php echo agency_get_theme_option('phone_text'); ?><br/>
+        <em>email</em> <a href="mailto:<?php echo agency_get_theme_option('email_text'); ?>">
+                        <?php echo agency_get_theme_option('email_text'); ?>
+                       </a><br/>
+        <?php agency_get_social_footer(); ?>
       </section>
     </div><!--/.wrap-->
   </footer>
-  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 
   <?php wp_footer(); ?>
 </body>

@@ -1,6 +1,6 @@
-<?php global $up_options; ?>
 <?php
 if (function_exists('upfw_get_options'))
+  global $up_options;
   $up_options = upfw_get_options();
 ?>
 <!DOCTYPE html>
@@ -71,8 +71,7 @@ if (function_exists('upfw_get_options'))
   <header>
     <div class="wrap">
       <a href="#" class="logo">
-        <img src="<?php  bloginfo('template_directory') ?>/temp.gif"/>
-        <span>Politica</span>
+        <span><?php bloginfo('name'); ?></span>
       </a>
       <nav>
       <?php

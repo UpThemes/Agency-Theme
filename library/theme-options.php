@@ -178,7 +178,7 @@ $options = array(
     "type" => "text",
     "default" => ""
 	),
-	'forst_user' => array(
+	'forrst_user' => array(
 		'tab' => "social-media",
 		"name" => "forst_user",
 		"title" => "Forst Username",
@@ -202,10 +202,10 @@ $options = array(
     "valid_options" => array(
     	'Twitter' => array(
     		"name" => "twitter",
-    		"title" => __( 'twitter', 'agency' )
+    		"title" => __( 'Twitter', 'agency' )
     	),
     	'LinkedIn' => array(
-    		"name" => "linked-in",
+    		"name" => "linkedin",
     		"title" => __( 'LinkedIn', 'agency' )
     	),
     	'Facebook' => array(
@@ -224,8 +224,8 @@ $options = array(
     		"name" => "flickr",
     		"title" => __( 'Flickr', 'agency' )
     	),
-    	'Forst' => array(
-    		"name" => "forst",
+    	'Forrst' => array(
+    		"name" => "forrst",
     		"title" => __( 'Forst', 'agency' )
     	)
     )

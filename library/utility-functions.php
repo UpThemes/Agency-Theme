@@ -6,20 +6,37 @@
 
 // General Stuff
 
-function storefrontal_the_404_content(){ ?>
-	<h2><?php _e("Not Found","storefrontal"); ?></h2>
-	<p><?php _e("Sorry, but you are looking for something that isn't here.","storefrontal"); ?></p> <?php
-	get_search_form();
-	
+
+function agency_the_404_content(){ ?>
+
+  <h2><?php _e("Not Found","storefrontal"); ?></h2>
+  <p><?php _e("Sorry, but you are looking for something that isn't here.","storefrontal"); ?></p> <?php
+  get_search_form();
+  
 }
 
 
 
 function agency_get_theme_option($option) {
-  $the_option = $up_options->$option;
-  return($the_option); 
+
+  $up_options = upfw_get_options();
+  return $up_options->$option;
+
 }
 
+
+
+function agency_get_social_footer() {
+
+  $up_options = upfw_get_options();
+  $selected_social_footer = $up_options->social_footer_select;
+
+  $selected_social_footer_option = $selected_social_footer."_user";
+  $selected_social_value = $up_options->$selected_social_footer_option;
+
+  echo "<em>$selected_social_footer</em> $selected_social_value";
+
+}
 
 
 // Portfolio Stuff
