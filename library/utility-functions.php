@@ -1,4 +1,28 @@
 <?php
+// General Stuff
+// Portfolio Stuff
+// Team member stuff
+
+
+// General Stuff
+
+function storefrontal_the_404_content(){ ?>
+	<h2><?php _e("Not Found","storefrontal"); ?></h2>
+	<p><?php _e("Sorry, but you are looking for something that isn't here.","storefrontal"); ?></p> <?php
+	get_search_form();
+	
+}
+
+
+
+function agency_get_theme_option($option) {
+  $the_option = $up_options->$option;
+  return($the_option); 
+}
+
+
+
+// Portfolio Stuff
 
 function agency_get_portfolio_slides($slide_imgs_arry){
 
@@ -11,6 +35,8 @@ function agency_get_portfolio_slides($slide_imgs_arry){
   }
 
 }
+
+
 
 function agency_portfolio_slide_builder($postID){
 
@@ -33,6 +59,8 @@ function agency_portfolio_slide_builder($postID){
 
 }
 
+
+
 function agency_portfolio_url($postID){
 
   $portinfo = get_post_meta($postID,'portinfo',true);
@@ -41,6 +69,8 @@ function agency_portfolio_url($postID){
     echo '<a href="'. $portinfo[0]['website-url'] .'" class="button light-bg left viewer-visit">Visit Website</a>';
 
 }
+
+
 
 function agency_portfolio_services($postID){
 
@@ -51,8 +81,8 @@ function agency_portfolio_services($postID){
     echo '<p>'. $portinfo[0]['services-provided-paragraph'] .'</p>';
   }
 
-
 }
+
 
 
 function agency_portfolio_launch_date($postID){
@@ -63,3 +93,7 @@ function agency_portfolio_launch_date($postID){
     echo '<em>'. $portinfo[0]['launch-date'] .'</em>';
 
 }
+
+
+
+// Team member stuff

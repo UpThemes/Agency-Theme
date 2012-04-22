@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 
+
 <section class="breadcrumb">
   <div class="wrap">
     <ul>
@@ -9,16 +10,50 @@
     </ul>
   </div><!--/.wrap-->
 </section><!--/.breadcrumb-->
+
+
 <div class="wrap content">
   <section class="_4-5">
-    <h1>About Us</h1>
-    <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Sed posuere consectetur est at lobortis. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Maecenas faucibus mollis interdum.</p>
-    <h2>Cras dapibus</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Maecenas faucibus mollis interdum.</p>
-    <h3>Aliquam lorem</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Maecenas faucibus mollis interdum.</p>
+
+  	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+
+  	<div id="post-<?php the_ID(); ?>" <?php post_class('postwrapper'); ?>>
+
+      <h1><?php the_title(); ?></h1>
+  
+      <?php the_content(); ?>
+
+			<?php wp_link_pages(); ?>
+
+		</div><!-- /.postwrapper -->
+
+		<?php 
+		if ( comments_open() && ! post_password_required() ) {
+			/**
+			 * Include the comments template
+			 * 
+			 * Includes the comments.php template part file
+			 */
+			comments_template(); 
+		}
+		?>
+		
+		<?php endwhile; ?>
+		
+		<?php else : ?>
+	
+		<?php 
+		/**
+		 * Output no-post content
+		 */
+		agency_the_404_content(); 
+		?>
+	
+		<?php endif; ?>
+
+    
   </section>
+
   <section class="_1-5">
     <h2>Agency</h2>
     <p>

@@ -17,7 +17,12 @@ $up_options = upfw_get_options();
 
 <?php agency_portfolio_slide_builder($post->ID); ?>
 
+
+
 <div class="wrap content">
+
+<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+
   <section class="_4-5 _no-b">
     <h1><?php the_title();?> <?php agency_portfolio_url($post->ID); ?></h1>
     <div class="viewer-meta">
@@ -33,19 +38,36 @@ $up_options = upfw_get_options();
     </div>
   </section>
   <hr/>
-  <section class="_2-3 _parent">
-    <div class="_1-2">
-      <h3><strong>About</strong></h3>
-      <?php the_content(); ?>
-    </div>
+
+  <section class="_2-3">
+    <h3><strong>About</strong></h3>
+    <?php the_content(); ?>
   </section>
+
   <section class="_1-3">
 
-<?php agency_portfolio_services($post->ID); ?>
-    
+
+    <?php agency_portfolio_services($post->ID); ?>
+
     <h3><strong>Testimonials</strong></h3>
     <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+
   </section>
+
+<?php endwhile; ?>
+
+<?php else : ?>
+
+<?php 
+/**
+ * Output no-post content
+ */
+agency_the_404_content(); 
+?>
+
+<?php endif; ?>
+
+
 </div><!--/.wrap-->
 
 <?php get_footer(); ?>

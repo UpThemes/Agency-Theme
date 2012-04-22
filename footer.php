@@ -1,3 +1,5 @@
+<?php $up_options = upfw_get_options(); ?>
+
   <footer>
     <div class="wrap">
       <section class="_1-2">
@@ -26,13 +28,13 @@
       </section>
       <section class="_1-4">
         <h4>Agency</h4>
-        555 Main St., Suite 100<br/>
+        <?php echo agency_get_theme_option('address_text1'); ?><br/>
         San Diego, CA 55555-5454
       </section>
       <section class="_1-4">
         <h4>Get In Touch</h4>
-        <em>phone</em> (555) 555-5555<br/>
-        <em>email</em> <a href="mailto:info@agency.com">info@agency.com</a><br/>
+        <em>phone</em> <?php echo $up_options->phone_text; ?><br/>
+        <em>email</em> <a href="mailto:<?php echo $up_options->phone_text; ?>"><?php echo $up_options->phone_text; ?></a><br/>
         <em>twitter</em> <a href="#">@agency</a>
       </section>
     </div><!--/.wrap-->
