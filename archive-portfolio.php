@@ -25,46 +25,23 @@
     </ul>
   </section>
   <section class="_4-5 _parent">
-    <div class="_1-3">
-      <img src="temp.gif" class="temp">
-      <strong>Core Essentials</strong>
-      <p>Maecenas faucibus mollis interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+
+    <div class="_1-3 post">
+
+      <a href="<?php the_permalink(); ?>"><img src="temp.gif" class="temp"></a>
+      <strong><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></strong>
+      <?php the_excerpt(); ?>
+
     </div>
-    <div class="_1-3">
-      <img src="temp.gif" class="temp">
-      <strong>Core Essentials</strong>
-      <p>Maecenas faucibus mollis interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </div>
-    <div class="_1-3">
-      <img src="temp.gif" class="temp">
-      <strong>Core Essentials</strong>
-      <p>Maecenas faucibus mollis interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </div>
-    <div class="_1-3">
-      <img src="temp.gif" class="temp">
-      <strong>Core Essentials</strong>
-      <p>Maecenas faucibus mollis interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </div>
-    <div class="_1-3">
-      <img src="temp.gif" class="temp">
-      <strong>Core Essentials</strong>
-      <p>Maecenas faucibus mollis interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </div>
-    <div class="_1-3">
-      <img src="temp.gif" class="temp">
-      <strong>Core Essentials</strong>
-      <p>Maecenas faucibus mollis interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </div>
-    <div class="_1-3">
-      <img src="temp.gif" class="temp">
-      <strong>Core Essentials</strong>
-      <p>Maecenas faucibus mollis interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </div>
-    <div class="_1-3">
-      <img src="temp.gif" class="temp">
-      <strong>Core Essentials</strong>
-      <p>Maecenas faucibus mollis interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </div>
+  <?php endwhile; ?>
+
+  <?php agency_navigation(); ?>
+
+  <?php else : ?>
+    <?php agency_the_404_content(); ?>
+  <?php endif; ?>
+
   </section>
 </div><!--/.wrap-->
 

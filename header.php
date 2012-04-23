@@ -70,7 +70,7 @@ if (function_exists('upfw_get_options'))
 <body>
   <header>
     <div class="wrap">
-      <a href="#" class="logo">
+      <a href="<?php echo home_url('/'); ?>" class="logo">
         <span><?php bloginfo('name'); ?></span>
       </a>
       <nav>

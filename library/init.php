@@ -208,7 +208,7 @@ function agency_register_cpt() {
           'labels' => $labels,
           'hierarchical' => false,
           'description' => 'A post type for portfolio items.',
-          'supports' => array( 'title', 'editor', 'revisions' ),
+          'supports' => array( 'title', 'editor', 'revisions', 'thumbnail' ),
           'public' => true,
           'show_ui' => true,
           'show_in_menu' => true,
@@ -280,18 +280,18 @@ function agency_register_cpt() {
   function agency_register_team_members() {
 
       $labels = array( 
-          'name' => _x( 'Team Members', 'teammember' ),
-          'singular_name' => _x( 'Team Member', 'teammember' ),
-          'add_new' => _x( 'Add New', 'teammember' ),
-          'add_new_item' => _x( 'Add New Team Member', 'teammember' ),
-          'edit_item' => _x( 'Edit Team Member', 'teammember' ),
-          'new_item' => _x( 'New Team Member', 'teammember' ),
-          'view_item' => _x( 'View Team Members', 'teammember' ),
-          'search_items' => _x( 'Search Team Members', 'teammember' ),
-          'not_found' => _x( 'No Team Members Found', 'teammember' ),
-          'not_found_in_trash' => _x( 'No Team Members Found in Trash', 'teammember' ),
-          'parent_item_colon' => _x( 'Parent Team Member:', 'teammember' ),
-          'menu_name' => _x( 'Team Members', 'teammember' ),
+          'name' => _x( 'Team Members', 'team' ),
+          'singular_name' => _x( 'Team Member', 'team' ),
+          'add_new' => _x( 'Add New', 'team' ),
+          'add_new_item' => _x( 'Add New Team Member', 'team' ),
+          'edit_item' => _x( 'Edit Team Member', 'team' ),
+          'new_item' => _x( 'New Team Member', 'team' ),
+          'view_item' => _x( 'View Team Members', 'team' ),
+          'search_items' => _x( 'Search Team Members', 'team' ),
+          'not_found' => _x( 'No Team Members Found', 'team' ),
+          'not_found_in_trash' => _x( 'No Team Members Found in Trash', 'team' ),
+          'parent_item_colon' => _x( 'Parent Team Member:', 'team' ),
+          'menu_name' => _x( 'Team Members', 'team' ),
       );
 
       $args = array( 
@@ -303,19 +303,19 @@ function agency_register_cpt() {
           'show_ui' => true,
           'show_in_menu' => true,
           'menu_position' => 4,
-          'menu_icon' => get_template_directory_uri() . '/themelib/images/agency_teammember_menu.png',
+          'menu_icon' => get_template_directory_uri() . '/themelib/images/agency_team_menu.png',
           'show_in_nav_menus' => true,
           'publicly_queryable' => true,
           'exclude_from_search' => true,
           'taxonomies' => array('post_tag'),
-          'has_archive' => false,
+          'has_archive' => true,
           'query_var' => true,
           'can_export' => true,
           'rewrite' => true,
           'capability_type' => 'post'
       );
 
-      register_post_type( 'teammember', $args );
+      register_post_type( 'team', $args );
 
   }
   add_action( 'init', 'agency_register_team_members' );

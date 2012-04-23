@@ -6,13 +6,74 @@
 
 // General Stuff
 
+function filter_next_post_link($link) {
+
+    global $post;
+    $post = get_post($post_id);
+    $next_post = get_next_post();
+    $title = $next_post->post_title;
+    $link = str_replace("rel=", 'class="next" rel=', $link);
+    return $link;
+
+}
+add_filter('next_post_link', 'filter_next_post_link');
+
+
+
+function filter_previous_post_link($link) {
+
+    global $post;
+    $post = get_post($post_id);
+    $previous_post = get_previous_post();
+    $title = $previous_post->post_title;
+    $link = str_replace("rel=", 'class="previous" rel=', $link);
+    return $link;
+
+}
+add_filter('previous_post_link', 'filter_previous_post_link');
+
+
+
+function next_posts_link_attributes(){
+	return 'class="next"';
+}
+add_filter('next_posts_link_attributes', 'next_posts_link_attributes');
+
+
+
+function prev_posts_link_attributes(){
+	return 'class="previous"';
+}
+add_filter('previous_posts_link_attributes', 'prev_posts_link_attributes');
+
+
+
+function agency_navigation(){
+
+  if( function_exists('wp_pagenavi') ) : ?>
+  <div class="paging">
+    <div class="paging-holder">
+      <div class="paging-frame">
+        <?php wp_pagenavi(); ?>
+      </div>
+    </div>
+  </div>
+  <?php else : ?>
+    <div class="navigation">
+      <?php next_posts_link(__('Older Entries','agency')) ?>
+      <?php previous_posts_link(__('Newer Entries','agency')) ?>
+    </div>
+  <?php endif;
+
+}
+
 
 function agency_the_404_content(){ ?>
 
   <h2><?php _e("Not Found","storefrontal"); ?></h2>
   <p><?php _e("Sorry, but you are looking for something that isn't here.","storefrontal"); ?></p> <?php
   get_search_form();
-  
+
 }
 
 
@@ -39,7 +100,72 @@ function agency_get_social_footer() {
 }
 
 
+
+function agency_social_links() {
+
+  $up_options = upfw_get_options();
+
+  // Array for supported social media sites.
+  $social_array = array('twitter', 'facebook', 'vimeo', 'linkedin', 'dribbble', 'flickr', 'forrst');
+
+  foreach ($social_array as &$v){
+    $s = $v . "_user";
+    $u = $up_options->$s;
+    if ($u)
+      agency_build_social_link($v, $u);
+  }
+
+}
+
+
+
+function agency_calculate_social_link($s, $u){
+
+  if ($s == 'twitter')
+    return 'http://twitter.com/'. $u;
+  else if ($s == 'facebook')
+    return 'http://facebook.com/'. $u;
+  else if ($s == 'vimeo')
+    return 'http://vimeo.com/'. $u;
+  else if ($s == 'linkedin')
+    return 'http://linkedin.com/in/'. $u;
+  else if ($s == 'dribbble')
+    return 'http://dribbble.com/'. $u;
+  else if ($s == 'flickr')
+    return 'http://flickr.com/people/'. $u;
+  else if ($s == 'forrst')
+    return 'http://forrst.com/'. $u;
+  else
+    return;
+
+}
+
+
+
+function agency_build_social_link($social_network, $username) {
+
+  $social_network = strtolower($social_network);
+  $cap_social_network = strtoupper(substr($social_network, 0, 1)) . substr($social_network, 1);
+
+  $link = agency_calculate_social_link($social_network, $username);
+
+  echo '<li><a href="'. $link .'"><i class="social-'. $social_network . '"></i>' . $cap_social_network . "</a></li>";
+
+}
+
+
+
+
 // Portfolio Stuff
+
+function agency_portfolio_navigation(){ ?>
+
+      <?php previous_post_link('%link', 'Previous Portfolio Item'); ?>
+      <a href="<?php echo home_url('/portfolio'); ?>" class="list-view" title="Portfolio List">Portfolio List View</a>
+      <?php next_post_link('%link', 'Next Portfolio Item'); ?>
+
+<?php }
+
 
 function agency_get_portfolio_slides($slide_imgs_arry){
 

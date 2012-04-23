@@ -32,9 +32,9 @@ $up_options = upfw_get_options();
   </section>
   <section class="_1-5">
     <div class="viewer-controls">
-      <a href="#" class="previous">Previous Project</a>
-      <a href="#" class="list-view">List View</a>
-      <a href="#" class="next">Next Project</a>
+
+      <?php agency_portfolio_navigation(); ?>
+
     </div>
   </section>
   <hr/>
