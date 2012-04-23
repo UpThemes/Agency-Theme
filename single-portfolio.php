@@ -26,7 +26,7 @@ $up_options = upfw_get_options();
   <section class="_4-5 _no-b">
     <h1><?php the_title();?> <?php agency_portfolio_url($post->ID); ?></h1>
     <div class="viewer-meta">
-      <?php the_category(' - ', $post->ID); ?>
+      <?php the_terms( $post->ID, 'portfolio_category', '<span class="portfolio-category">', ' - ', '</span>' ); ?>
       <?php agency_portfolio_launch_date($post->ID); ?>
     </div>
   </section>
