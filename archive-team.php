@@ -1,4 +1,10 @@
-<?php get_header();?>
+<?php
+
+get_header();
+
+$up_options = upfw_get_options();
+
+?>
 
 <section class="breadcrumb">
   <div class="wrap">
@@ -15,94 +21,29 @@
     <p>Etiam porta sem malesuada magna mollis euismod. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor.</p>
   </section>
   <hr/>
-  <section class="team-member _1-4">
-    <img src="temp.gif" class="temp border"/>
-    <strong class="big">Randolph Manganaro</strong>
-    <em>Founder & Creative Director</em>
-    <p>Etiam porta sem malesuada magna mollis euismod. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor.</p>
-    <ul class="social">
-      <li><a href="#"><i class="social-vimeo"></i>Vimeo</a></li>
-      <li><a href="#"><i class="social-twitter"></i>Twitter</a></li>
-      <li><a href="#"><i class="social-linkedin"></i>LinkedIn</a></li>
-    </ul>
-  </section>
-  <section class="team-member _1-4">
-    <img src="temp.gif" class="temp border"/>
-    <strong class="big">Randolph Manganaro</strong>
-    <em>Founder & Creative Director</em>
-    <p>Etiam porta sem malesuada magna mollis euismod. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor.</p>
-    <ul class="social">
-      <li><a href="#"><i class="social-vimeo"></i>Vimeo</a></li>
-      <li><a href="#"><i class="social-twitter"></i>Twitter</a></li>
-      <li><a href="#"><i class="social-linkedin"></i>LinkedIn</a></li>
-    </ul>
-  </section>
-  <section class="team-member _1-4">
-    <img src="temp.gif" class="temp border"/>
-    <strong class="big">Randolph Manganaro</strong>
-    <em>Founder & Creative Director</em>
-    <p>Etiam porta sem malesuada magna mollis euismod. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor.</p>
-    <ul class="social">
-      <li><a href="#"><i class="social-vimeo"></i>Vimeo</a></li>
-      <li><a href="#"><i class="social-twitter"></i>Twitter</a></li>
-      <li><a href="#"><i class="social-linkedin"></i>LinkedIn</a></li>
-    </ul>
-  </section>
-  <section class="team-member _1-4">
-    <img src="temp.gif" class="temp border"/>
-    <strong class="big">Randolph Manganaro</strong>
-    <em>Founder & Creative Director</em>
-    <p>Etiam porta sem malesuada magna mollis euismod. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor.</p>
-    <ul class="social">
-      <li><a href="#"><i class="social-vimeo"></i>Vimeo</a></li>
-      <li><a href="#"><i class="social-twitter"></i>Twitter</a></li>
-      <li><a href="#"><i class="social-linkedin"></i>LinkedIn</a></li>
-    </ul>
-  </section>
-  <section class="team-member _1-4">
-    <img src="temp.gif" class="temp border"/>
-    <strong class="big">Randolph Manganaro</strong>
-    <em>Founder & Creative Director</em>
-    <p>Etiam porta sem malesuada magna mollis euismod. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor.</p>
-    <ul class="social">
-      <li><a href="#"><i class="social-vimeo"></i>Vimeo</a></li>
-      <li><a href="#"><i class="social-twitter"></i>Twitter</a></li>
-      <li><a href="#"><i class="social-linkedin"></i>LinkedIn</a></li>
-    </ul>
-  </section>
-  <section class="team-member _1-4">
-    <img src="temp.gif" class="temp border"/>
-    <strong class="big">Randolph Manganaro</strong>
-    <em>Founder & Creative Director</em>
-    <p>Etiam porta sem malesuada magna mollis euismod. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor.</p>
-    <ul class="social">
-      <li><a href="#"><i class="social-vimeo"></i>Vimeo</a></li>
-      <li><a href="#"><i class="social-twitter"></i>Twitter</a></li>
-      <li><a href="#"><i class="social-linkedin"></i>LinkedIn</a></li>
-    </ul>
-  </section>
-  <section class="team-member _1-4">
-    <img src="temp.gif" class="temp border"/>
-    <strong class="big">Randolph Manganaro</strong>
-    <em>Founder & Creative Director</em>
-    <p>Etiam porta sem malesuada magna mollis euismod. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor.</p>
-    <ul class="social">
-      <li><a href="#"><i class="social-vimeo"></i>Vimeo</a></li>
-      <li><a href="#"><i class="social-twitter"></i>Twitter</a></li>
-      <li><a href="#"><i class="social-linkedin"></i>LinkedIn</a></li>
-    </ul>
-  </section>
-  <section class="team-member _1-4">
-    <img src="temp.gif" class="temp border"/>
-    <strong class="big">Randolph Manganaro</strong>
-    <em>Founder & Creative Director</em>
-    <p>Etiam porta sem malesuada magna mollis euismod. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor.</p>
-    <ul class="social">
-      <li><a href="#"><i class="social-vimeo"></i>Vimeo</a></li>
-      <li><a href="#"><i class="social-twitter"></i>Twitter</a></li>
-      <li><a href="#"><i class="social-linkedin"></i>LinkedIn</a></li>
-    </ul>
-  </section>
+
+	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+
+  
+    <section class="team-member _1-4">
+      <img src="temp.gif" class="temp border"/>
+      <strong class="big"><?php the_title(); ?></strong>
+      <?php agency_team_member_title($post->ID); ?>
+      <?php the_excerpt(); ?>
+
+      <ul class="social">
+        <?php agency_team_member_social($post->ID); ?>
+      </ul>
+    </section>
+
+  <?php endwhile; ?>
+
+  <?php agency_navigation(); ?>
+
+  <?php else : ?>
+    <?php agency_the_404_content(); ?>
+  <?php endif; ?>
+
 </div><!--/.wrap-->
 
 <?php get_footer(); ?>

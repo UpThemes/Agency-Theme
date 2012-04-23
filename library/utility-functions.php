@@ -101,18 +101,45 @@ function agency_get_social_footer() {
 
 
 
-function agency_social_links() {
+function agency_social_links($array_of_social_values='') {
 
   $up_options = upfw_get_options();
 
-  // Array for supported social media sites.
-  $social_array = array('twitter', 'facebook', 'vimeo', 'linkedin', 'dribbble', 'flickr', 'forrst');
+  if ($array_of_social_values == '') { // If it's not for members custom post type
 
-  foreach ($social_array as &$v){
-    $s = $v . "_user";
-    $u = $up_options->$s;
-    if ($u)
-      agency_build_social_link($v, $u);
+    // Array for supported social media sites.
+    $social_array = array('twitter', 'facebook', 'vimeo', 'linkedin', 'dribbble', 'flickr', 'forrst');
+  
+    foreach ($social_array as &$v){
+      $s = $v . "_user";
+      $u = $up_options->$s;
+      if ($u)
+        agency_build_social_link($v, $u);
+    }
+  } else { // If it is for members custom post type
+
+    $index = 0;
+
+    foreach ($array_of_social_values as &$item) {
+
+      foreach ( $item as $k => $v) {
+
+        $index += 1;
+
+        if( $index % 2 == 0)
+          $u = $v;
+        else
+          $s = $v;
+
+      }
+
+      agency_build_social_link($s, $u);
+
+
+    }
+    
+
+
   }
 
 }
@@ -240,3 +267,25 @@ function agency_portfolio_launch_date($postID){
 
 
 // Team member stuff
+
+function agency_team_member_title($postID){
+
+  $teaminfo = get_post_meta($postID,'team-info',false);
+
+  if( count($teaminfo) > 0 )
+    echo '<em>'. $teaminfo[0][0]['team-member-job-title'] .'</em>';
+
+}
+
+
+
+function agency_team_member_social($postID){
+
+  $teamsocial = get_post_meta($postID,'team-social',false);
+
+  if($teamsocial != null)
+    agency_social_links( $teamsocial[0] );
+
+
+
+}
