@@ -93,41 +93,16 @@
   </section><!--/.testimonial-module-->
 <hr/>
   <section class="team-module">
-    <div class="team-member _1-4">
-      <img src="temp.gif"/>
-      <strong>Randolph Manganaro</strong>
-      <em>Founder & Creative Director</em>
-    </div><!--/.team-member-->
-    <div class="team-member _1-4">
-      <img src="temp.gif"/>
-      <strong>Preston Vannostrand</strong>
-      <em>Senior Developer</em>
-    </div><!--/.team-member-->
-    <div class="team-member _1-4">
-      <img src="temp.gif"/>
-      <strong>Clare Witts</strong>
-      <em>Designer</em>
-    </div><!--/.team-member-->
-    <div class="team-member _1-4">
-      <img src="temp.gif"/>
-      <strong>Malinda Stair</strong>
-      <em>Office Manager</em>
-    </div><!--/.team-member-->
+
+    <?php agency_team_members_home_list(); ?>
+
   </section><!--/.team-module-->
   <hr/>
   <section class="about-module _1-2">
-    <div class="section-h">
-      <h2>About Us</h2>
-    </div><!--/.section-h-->
-    <p>Agency is one of the premier design firms in the Pacific Northwest, rivaling companies like Frog Design and Giraffe Interactive for the top spot as the PN's best in the west.</p>
-    <a href="#"><i class="link"></i>More About Us</a>
+    <?php get_sidebar('home-1'); ?>
   </section><!--/.about-module-->
   <section class="office-module _1-2">
-    <div class="section-h">  
-      <h2>Our Office</h2>
-    </div><!--/.section-h-->
-    <p>Agency is one of the premier design firms in the Pacific Northwest, rivaling companies like Frog Design and Giraffe Interactive for the top spot as the PN's best in the west.</p>
-    <a href="#"><i class="link"></i>More About Us</a>
+    <?php get_sidebar('home-2'); ?>
   </section><!--/.office-module-->
 </div><!--/.wrap-->
 

@@ -121,25 +121,15 @@ function agency_social_links($array_of_social_values='') {
     $index = 0;
 
     foreach ($array_of_social_values as &$item) {
-
-      foreach ( $item as $k => $v) {
-
+      foreach ( $item as $k => $v) { // Splice off important array values and prep them for a useful format
         $index += 1;
-
         if( $index % 2 == 0)
           $u = $v;
         else
           $s = $v;
-
       }
-
       agency_build_social_link($s, $u);
-
-
     }
-    
-
-
   }
 
 }
@@ -179,7 +169,6 @@ function agency_build_social_link($social_network, $username) {
   echo '<li><a href="'. $link .'"><i class="social-'. $social_network . '"></i>' . $cap_social_network . "</a></li>";
 
 }
-
 
 
 
@@ -266,6 +255,18 @@ function agency_portfolio_launch_date($postID){
 
 
 
+function agency_list_portfolio_categories(){
+
+  $args = array(
+    'taxonomy' => 'portfolio_category',
+    'title_li' => ''
+  );
+
+  return wp_list_categories( $args );
+
+}
+
+
 // Team member stuff
 
 function agency_team_member_title($postID){
@@ -286,6 +287,33 @@ function agency_team_member_social($postID){
   if($teamsocial != null)
     agency_social_links( $teamsocial[0] );
 
+}
 
+
+
+function agency_team_members_home_list(){
+
+  $query = new WP_Query(
+    array(
+      'post_type' => 'team',
+      'orderby'   => 'rand',
+      'posts_per_page'  => '4'
+    )
+  );
+  
+  if ($query->have_posts() ){
+    while ( $query->have_posts() ) : $query->the_post(); ?>
+
+      <div class="team-member _1-4">
+        <img src="temp.gif"/>
+        <strong><?php the_title(); ?></strong>
+        <?php agency_team_member_title(get_the_id()); ?>
+
+      </div><!--/.team-member-->
+  
+    <?php endwhile;
+  }
+
+  wp_reset_postdata();
 
 }

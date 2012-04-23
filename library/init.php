@@ -217,7 +217,7 @@ function agency_register_cpt() {
           'show_in_nav_menus' => true,
           'publicly_queryable' => true,
           'exclude_from_search' => false,
-          'taxonomies' => array( 'category', 'post_tag'),
+          'taxonomies' => array( 'portfolio_category', 'post_tag'),
           'has_archive' => true,
           'query_var' => true,
           'can_export' => true,
@@ -424,4 +424,35 @@ function agency_register_cpt() {
 }
 agency_register_cpt();
 
+
+
+function create_portfolio_categories(){
+
+
+  $labels = array(
+    'name' => _x( 'Portfolio Categories', 'taxonomy general name' ),
+    'singular_name' => _x( 'Portfolio Category', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Portfolio Categories' ),
+    'all_items' => __( 'All of the Portfolio Categories' ),
+    'parent_item' => __( 'Parent Portfolio Category' ),
+    'parent_item_colon' => __( 'Parent Portfolio Category:' ),
+    'edit_item' => __( 'Edit Portfolio Category' ), 
+    'update_item' => __( 'Update Portfolio Category' ),
+    'add_new_item' => __( 'Add New Portfolio Category' ),
+    'new_item_name' => __( 'New Portfolio Category Name' ),
+    'menu_name' => __( 'Portfolio Categories' ),
+  );
+
+
+  register_taxonomy('portfolio_category',array('portfolio'), array(
+      'hierarchical' => true,
+      'labels' => $labels,
+      'show_ui' => true,
+      'query_var' => true,
+      'rewrite' => array( 'slug' => 'portfolio-category' ),
+    ));
+
+
+}
+add_action('init', 'create_portfolio_categories', 0);
 
