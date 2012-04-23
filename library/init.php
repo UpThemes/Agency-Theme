@@ -386,20 +386,37 @@ function agency_register_cpt() {
 
   function agency_setup_teammember_metaboxes(){
 
-    $teammemberdata = array( 
+    $teamdata = array( 
       array( 'type' => 'text', 'title' => 'Team Member Job Title' )
     );
 
     $args = array(
-      'metabox_id' => 'teammember-info',
+      'metabox_id' => 'team-info',
       'metabox_title' => 'Team Member Information',
-      'post_type' => 'teammember',
+      'post_type' => 'team',
       'single' => true,
-      'meta_name' => 'teammember-info',
-      'meta_array' => $teammemberdata
+      'meta_name' => 'team-info',
+      'meta_array' => $teamdata
     );
 
     new WCK_CFC_Wordpress_Creation_Kit( $args );
+
+
+    $teamsocial = array( 
+      array( 'type' => 'select', 'title' => 'Social Network', 'options' => array( 'twitter', 'facebook', 'vimeo', 'linkedin', 'dribbble', 'flickr', 'forrst' ) ),
+      array( 'type' => 'text', 'title' => 'Username')
+    );
+
+    $socialargs = array(
+      'metabox_id' => 'team-social',
+      'metabox_title' => 'Team Member Social Information',
+      'post_type' => 'team',
+      'single' => true,
+      'meta_name' => 'team-social',
+      'meta_array' => $teamsocial
+    );
+
+    new WCK_CFC_Wordpress_Creation_Kit( $socialargs );
 
   }
   add_action('after_setup_theme','agency_setup_teammember_metaboxes');
