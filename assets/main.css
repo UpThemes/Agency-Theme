@@ -2150,16 +2150,15 @@ section p {
   line-height: 1.6em;
 }
 /* line 788, main.scss */
-section img.temp {
+section img {
   width: 100%;
-  height: 150px;
   margin-bottom: 1em;
 }
-/* line 794, main.scss */
+/* line 793, main.scss */
 section article {
   padding-bottom: 20px;
 }
-/* line 797, main.scss */
+/* line 796, main.scss */
 section article i.post-icon {
   display: block;
   width: 90px;
@@ -2167,27 +2166,27 @@ section article i.post-icon {
   float: left;
   background: url("post-icons.png") 0 82px no-repeat;
 }
-/* line 805, main.scss */
+/* line 804, main.scss */
 section article h1 + h4 {
   margin-top: -10px;
 }
-/* line 809, main.scss */
+/* line 808, main.scss */
 section article h4 {
   font-size: 13px;
   color: #666;
 }
-/* line 813, main.scss */
+/* line 812, main.scss */
 section article h4 a {
   display: inline;
   line-height: 1em;
   padding: 0;
   margin: 0;
 }
-/* line 821, main.scss */
+/* line 820, main.scss */
 section article .meta {
   margin-bottom: 10px;
 }
-/* line 826, main.scss */
+/* line 825, main.scss */
 section article .meta a.comments {
   background: #333;
   padding: 1px 5px;
@@ -2196,7 +2195,7 @@ section article .meta a.comments {
   border-radius: 2px;
   margin-right: 10px;
 }
-/* line 837, main.scss */
+/* line 836, main.scss */
 section article blockquote {
   font-family: Georgia, serif;
   font-size: 16px;
@@ -2208,7 +2207,7 @@ section article blockquote {
   background: url("icon-quote.png") center left no-repeat;
 }
 
-/* line 850, main.scss */
+/* line 849, main.scss */
 footer {
   background: #f1f1f1 url("rotator-bg.png");
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) inset;
@@ -2219,28 +2218,28 @@ footer {
   line-height: 1.6em;
   color: #8d8d8d;
 }
-/* line 860, main.scss */
+/* line 859, main.scss */
 footer ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
 }
-/* line 866, main.scss */
+/* line 865, main.scss */
 footer li {
   display: inline;
 }
-/* line 870, main.scss */
+/* line 869, main.scss */
 footer a {
   margin-right: 20px;
   padding: 10px 0;
   display: block;
   float: left;
 }
-/* line 881, main.scss */
+/* line 880, main.scss */
 footer sub {
   font-size: 12px;
 }
-/* line 885, main.scss */
+/* line 884, main.scss */
 footer em {
   font-style: normal;
   font-size: 12px;
@@ -2249,87 +2248,87 @@ footer em {
   display: block;
   float: left;
 }
-/* line 894, main.scss */
+/* line 893, main.scss */
 footer h4 {
   margin: 0 0 5px 0;
   font-size: 12px;
   color: #3e3e3e;
 }
-/* line 900, main.scss */
+/* line 899, main.scss */
 footer a {
   display: inline;
   float: none;
 }
 
 @media (max-width: 768px) {
-  /* line 907, main.scss */
+  /* line 906, main.scss */
   .rotator .slide-content {
     padding: 30px 40px;
   }
-  /* line 910, main.scss */
+  /* line 909, main.scss */
   .rotator .slide-content h1 {
     font-size: 28px;
   }
-  /* line 914, main.scss */
+  /* line 913, main.scss */
   .rotator .slide-content h3 {
     font-size: 16px;
   }
 }
 @media screen and (max-width: 480px) {
-  /* line 922, main.scss */
+  /* line 921, main.scss */
   header nav {
     overflow: hidden;
   }
-  /* line 925, main.scss */
+  /* line 924, main.scss */
   header nav ul {
     display: none;
   }
-  /* line 929, main.scss */
+  /* line 928, main.scss */
   header nav select {
     display: block;
     float: right;
   }
 
-  /* line 936, main.scss */
+  /* line 935, main.scss */
   header {
     padding: 15px 0;
   }
 
-  /* line 940, main.scss */
+  /* line 939, main.scss */
   .rotator {
     padding: 20px 0 20px 0;
   }
 
-  /* line 946, main.scss */
+  /* line 945, main.scss */
   .slide img {
     height: 100px;
   }
-  /* line 950, main.scss */
+  /* line 949, main.scss */
   .slide .slide-content {
     padding: 20px;
     height: auto;
     min-height: 0;
   }
-  /* line 955, main.scss */
+  /* line 954, main.scss */
   .slide .slide-content h1 {
     font-size: 18px;
   }
-  /* line 959, main.scss */
+  /* line 958, main.scss */
   .slide .slide-content h3 {
     font-size: 14px;
     margin-top: 10px;
   }
 
-  /* line 968, main.scss */
+  /* line 967, main.scss */
   section article i.post-icon {
     display: none;
   }
-  /* line 970, main.scss */
+  /* line 969, main.scss */
   section article h1 {
     font-size: 24px;
   }
 
-  /* line 975, main.scss */
+  /* line 974, main.scss */
   .post-pad-left {
     margin-left: 0;
   }
