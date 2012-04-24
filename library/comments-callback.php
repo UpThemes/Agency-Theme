@@ -5,15 +5,13 @@ function agency_comments($comment, $args, $depth) {
   $GLOBALS['comment'] = $comment;
   $GLOBALS['comment_depth'] = $depth;
     ?>
-        <div id="comment-<?php comment_ID() ?>" class="comment">
+        <div id="comment-<?php comment_ID() ?>" class="comment depth-<?php echo $depth; ?>">
           <div class="image-wrap">
             <?php echo get_avatar( $comment, 74 ); ?>
           </div><!--/.image-wrap-->
           <div class="comment-wrap">
             <strong><?php comment_author(); ?></strong> said<br/>
-
-        <?php if ($comment->comment_approved == '0') _e("\t\t\t\t\t<span class='unapproved'>Your comment is awaiting moderation.</span>\n", 'agency') ?>
-
+            <?php if ($comment->comment_approved == '0') _e("\t\t\t\t\t<span class='unapproved'>Your comment is awaiting moderation.</span>\n", 'agency') ?>
 
             <?php comment_text() ?>
 
@@ -31,7 +29,7 @@ function agency_comments($comment, $args, $depth) {
             ?>
 
           </div><!--/.comment-wrap-->
-        </div><!--/.comment-->
+
 
 
 <?php }

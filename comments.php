@@ -1,5 +1,3 @@
-    <div id="comments" class="comments">
-
 <?php
   $req = get_option('require_name_email'); // Checks if fields are required.
   if ( 'comments.php' == basename($_SERVER['SCRIPT_FILENAME']) )
@@ -7,42 +5,36 @@
   if ( ! empty($post->post_password) ) :
     if ( $_COOKIE['wp-postpass_' . COOKIEHASH] != $post->post_password ) :
 ?>
-      <div class="nopassword">
-        <h2><?php _e('This post is password protected. Enter the password to view any comments.', 'agency') ?></h2>
-      </div>
-    </div><!--/.comments-->
-<?php
-    return;
+    <div id="comments" class="comments nopassword">
+      <h2><?php _e('This post is password protected. Enter the password to view any comments.', 'agency') ?></h2>
+    </div>
+<?php return;
   endif;
-endif;
-?>
+endif; ?>
 
-
-<?php if ( have_comments() ) : ?>
-
+    <div id="comments" class="comments">
+<?php if ( have_comments() ) { ?>
 <?php /* numbers of pings and comments */
 $ping_count = $comment_count = 0;
-foreach ( $comments as $comment )
+
+foreach ( $comments as $comment ) 
   get_comment_type() == "comment" ? ++$comment_count : ++$ping_count;
 ?>
 
-<?php if ( ! empty($comments_by_type['comment']) ) : ?>
+<?php // if ( !empty($comments_by_type['comment']) ) : ?>
 
-
-        <div id="comments-list" class="comments">
-          <h1><?php printf($comment_count > 1 ? __('<span>%d</span> Responses', 'agency') : __('<span>1</span> Response', 'agency'), $comment_count) ?></h1>
-
+      <div id="comments-list" class="comment-list _1">
+        <h1><?php printf($comment_count > 1 ? __('<span>%d</span> Responses', 'agency') : __('<span>1</span> Response', 'agency'), $comment_count) ?></h1>
 
 <?php wp_list_comments( array('style' => 'div', 'type' => 'comment', 'avatar_size' => 74, 'callback' => 'agency_comments') ); ?>
 
+        <div id="comments-nav-below" class="comment-navigation">
+          <div class="paginated-comments-links"><?php paginate_comments_links(); ?></div>
+        </div>
 
-          <div id="comments-nav-below" class="comment-navigation">
-            <div class="paginated-comments-links"><?php paginate_comments_links(); ?></div>
-          </div>
-          
-        </div><!-- #comments-list .comments -->
+      </div><!-- #comments-list .comments -->
 
-<?php endif; /* if ( $comment_count ) */ ?>
+<?php // endif; ?>
 <?php endif; /* if ( $comments ) */ ?>
 
       <form id="comment-form" class="_1 _parent" action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post">
@@ -81,4 +73,3 @@ foreach ( $comments as $comment )
         </div>
       </form><!--/#comment-form-->
     </div><!--/.comments-->
-
