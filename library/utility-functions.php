@@ -487,3 +487,27 @@ function agency_testimonial_home_list(){
   wp_reset_postdata();
 
 }
+
+
+function agency_get_post_class($postID){
+
+  $post_format =  get_post_format($postID);
+  if (!$post_format) {
+    echo ' post-standard ';
+  } else if ($post_format == 'link') {
+    echo ' post-link ';
+  } else if ($post_format == 'quote') {
+    echo ' post-quote ';  
+  } else if ($post_format == 'status') {
+    echo ' post-status ';  
+  } else if ($post_format == 'image') {
+    echo ' post-image ';  
+  } else if ($post_format == 'video') {
+    echo ' post-video ';  
+  } else if ($post_format == 'audio') {
+    echo ' post-audio ';  
+  } else if ($post_format == 'gallery') {
+    echo ' post-gallery ';  
+  } else { }
+
+}

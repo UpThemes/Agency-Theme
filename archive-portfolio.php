@@ -12,8 +12,7 @@
 <div class="wrap content">
   <section class="_1">
     <h1>Our Portfolio</h1>
-    <p>Etiam porta sem malesuada magna mollis euismod. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor.</p>
-    <hr/>
+    <?php get_sidebar('portfolio-top'); ?>
   </section>
   <section class="_1-5">
     <ul class="portfolio-categories">

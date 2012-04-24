@@ -11,152 +11,39 @@
 
 <div class="wrap content">
 
-<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
 
   <section class="_4-5">
+
+  <?php
+
+  $counter = 0;
+
+  if (have_posts()) : while (have_posts()) : the_post();
+
+    if($counter != 0){
+      echo '     <hr/><br/><br/>'."\n";
+    }
+
+    $counter++;
+
+   ?>
+
     <div>
-      <article class="post-standard">
+      <article class="<?php agency_get_post_class($post->ID); ?>">
         <i class="post-icon"></i>
         <div class="meta post-pad-left">
-          <a href="#" class="comments">2</a><a href="#">Design Resources</a>
+          <a href="<?php comments_link(); ?>" title="<?php comments_number('0 Comments', '1 Comment', '% Comments'); ?>" class="comments"><?php comments_number('0', '1', '%'); ?></a> <?php the_category(', '); ?>
         </div>
-        <h1 class="post-pad-left">A Recent Photo Shoot for This Random Person in a Field</a></h1>
-        <h4 class="post-pad-left">Posted at 4:15 PM on Feb 21st, 2011 by <a href="#">Rich Hemsley</a></h4>
-        <p class="post-pad-left">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Sed posuere consectetur est at lobortis. Aenean lacinia bibendum nulla sed consectetur. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+
+        <h1 class="post-pad-left"><?php the_title(); ?></h1>
+        <h4 class="post-pad-left">Posted at <?php the_time(); ?> on <?php the_date(); ?> by <?php the_author_posts_link(); ?></h4>
+
+        <div class="post-pad-left">
+          <?php the_content(); ?>
+        </div>
+
       </article>
     </div>
-    <hr/><br/><br/>
-    <div>
-      <article class="post-aside">
-        <i class="post-icon"></i>
-        <div class="meta post-pad-left">
-          <a href="#" class="comments">2</a><a href="#">Design Resources</a>
-        </div>
-        <h1 class="post-pad-left">A Recent Photo Shoot for This Random Person in a Field</h1>
-        <h4 class="post-pad-left">Posted at 4:15 PM on Feb 21st, 2011 by <a href="#">Rich Hemsley</a></h4>
-        <p class="post-pad-left">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Sed posuere consectetur est at lobortis. Aenean lacinia bibendum nulla sed consectetur. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-      </article>
-    </div>
-    <hr/><br/><br/>
-    <div>
-      <article class="post-image">
-        <i class="post-icon"></i>
-        <div class="meta post-pad-left">
-          <a href="#" class="comments">2</a><a href="#">Design Resources</a>
-        </div>
-        <h1 class="post-pad-left">A Recent Photo Shoot for This Random Person in a Field</h1>
-        <h4 class="post-pad-left">Posted at 4:15 PM on Feb 21st, 2011 by <a href="#">Rich Hemsley</a></h4>
-        <p class="post-pad-left">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Sed posuere consectetur est at lobortis. Aenean lacinia bibendum nulla sed consectetur. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-      </article>
-    </div>
-    <hr/><br/><br/>
-    <div>
-      <article class="post-link">
-        <i class="post-icon"></i>
-        <div class="meta post-pad-left">
-          <a href="#" class="comments">2</a><a href="#">Design Resources</a>
-        </div>
-        <h1 class="post-pad-left">A Recent Photo Shoot for This Random Person in a Field</h1>
-        <h4 class="post-pad-left">Posted at 4:15 PM on Feb 21st, 2011 by <a href="#">Rich Hemsley</a></h4>
-        <p class="post-pad-left">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Sed posuere consectetur est at lobortis. Aenean lacinia bibendum nulla sed consectetur. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-      </article>
-    </div>
-    <hr/><br/><br/>
-    <div>
-      <article class="post-quote">
-        <i class="post-icon"></i>
-        <div class="meta post-pad-left">
-          <a href="#" class="comments">2</a><a href="#">Design Resources</a>
-        </div>
-        <h1 class="post-pad-left">A Recent Photo Shoot for This Random Person in a Field</h1>
-        <h4 class="post-pad-left">Posted at 4:15 PM on Feb 21st, 2011 by <a href="#">Rich Hemsley</a></h4>
-        <p class="post-pad-left">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Sed posuere consectetur est at lobortis. Aenean lacinia bibendum nulla sed consectetur. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-      </article>
-    </div>
-    <hr/><br/><br/>
-    <div>
-      <article class="post-status">
-        <i class="post-icon"></i>
-        <div class="meta post-pad-left">
-          <a href="#" class="comments">2</a><a href="#">Design Resources</a>
-        </div>
-        <h1 class="post-pad-left">A Recent Photo Shoot for This Random Person in a Field</h1>
-        <h4 class="post-pad-left">Posted at 4:15 PM on Feb 21st, 2011 by <a href="#">Rich Hemsley</a></h4>
-        <p class="post-pad-left">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Sed posuere consectetur est at lobortis. Aenean lacinia bibendum nulla sed consectetur. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-      </article>
-    </div>
-    <hr/><br/><br/>
-    <div>
-      <article class="post-video">
-        <i class="post-icon"></i>
-        <div class="meta post-pad-left">
-          <a href="#" class="comments">2</a><a href="#">Design Resources</a>
-        </div>
-        <h1 class="post-pad-left">A Recent Photo Shoot for This Random Person in a Field</h1>
-        <h4 class="post-pad-left">Posted at 4:15 PM on Feb 21st, 2011 by <a href="#">Rich Hemsley</a></h4>
-        <p class="post-pad-left">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Sed posuere consectetur est at lobortis. Aenean lacinia bibendum nulla sed consectetur. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-      </article>
-    </div>
-    <hr/><br/><br/>
-    <div>
-      <article class="post-audio">
-        <i class="post-icon"></i>
-        <div class="meta post-pad-left">
-          <a href="#" class="comments">2</a><a href="#">Design Resources</a>
-        </div>
-        <h1 class="post-pad-left">A Recent Photo Shoot for This Random Person in a Field</h1>
-        <h4 class="post-pad-left">Posted at 4:15 PM on Feb 21st, 2011 by <a href="#">Rich Hemsley</a></h4>
-        <p class="post-pad-left">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Sed posuere consectetur est at lobortis. Aenean lacinia bibendum nulla sed consectetur. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-      </article>
-    </div>
-    <hr/><br/><br/>
-    <div>
-      <article class="post-gallery">
-        <i class="post-icon"></i>
-        <div class="meta post-pad-left">
-          <a href="#" class="comments">2</a><a href="#">Design Resources</a>
-        </div>
-        <h1 class="post-pad-left">A Recent Photo Shoot for This Random Person in a Field</h1>
-        <h4 class="post-pad-left">Posted at 4:15 PM on Feb 21st, 2011 by <a href="#">Rich Hemsley</a></h4>
-        <p class="post-pad-left">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Sed posuere consectetur est at lobortis. Aenean lacinia bibendum nulla sed consectetur. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-      </article>
-    </div>
-  </section>
-  <section class="_1-5">
-    <form>
-      <input type="text" name="search" id="search" placeholder="search">
-    </form>
-    <hr/>
-    <br/>
-    <h2>Categories</h2>
-    <ul class="sidebar-list">
-      <li><a href="#">Case Studies</a></li>
-      <li><a href="#">General</a></li>
-      <li><a href="#">Interviews</a></li>
-      <li><a href="#">News & Updates</a></li>
-      <li><a href="#">Team</a></li>
-    </ul>
-    <hr/>
-    <br/>
-    <h2>Archive</h2>
-    <ul class="sidebar-list">
-      <li><a href="#">February 2011</a></li>
-      <li><a href="#">January 2011</a></li>
-      <li><a href="#">December 2010</a></li>
-      <li><a href="#">November 2010</a></li>
-      <li><a href="#">October 2010</a></li>
-      <li><a href="#">September 2010</a></li>
-      <li><a href="#">August 2010</a></li>
-    </ul>
-    <hr/>
-    <br/>
-    <h2>Agency on Dribbble</h2>
-    <a href="#">
-      <img src="temp.gif" class="temp"/>
-      Vacation Theme
-    </a>
-  </section>
 
 <?php endwhile; ?>
 
@@ -170,6 +57,14 @@ agency_the_404_content();
 ?>
 
 <?php endif; ?>
+
+  </section>
+
+
+  <section class="_1-5">
+    <?php get_sidebar(); ?>
+  </section>
+
 
 </div><!--/.wrap-->
 

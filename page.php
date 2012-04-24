@@ -55,26 +55,8 @@
   </section>
 
   <section class="_1-5">
-    <h2>Agency</h2>
-    <p>
-      555 Main St., Suite 100<br/>
-      San Diego, CA 55555-5454<br/>
-      <br/>
-      <i class="phone"></i>(555) 555-5555<br/>
-      <i class="phone"></i><a href="mailto:info@agency.com">info@agency.com</a>
-    </p>
-
-    <h2>Social Networking</h2>
-    <ul class="social">
-      <li><a href="#"><i class="social-vimeo"></i>Vimeo</a></li>
-      <li><a href="#"><i class="social-twitter"></i>Twitter</a></li>
-      <li><a href="#"><i class="social-linkedin"></i>LinkedIn</a></li>
-      <li><a href="#"><i class="social-forrst"></i>Forrst</a></li>
-      <li><a href="#"><i class="social-flickr"></i>Flickr</a></li>
-      <li><a href="#"><i class="social-facebook"></i>Facebook</a></li>
-      <li><a href="#"><i class="social-dribbble"></i>Dribbble</a></li>
-    </ul>
-  </section>
+    <?php get_sidebar('default-top'); ?>
+    <?php get_sidebar('default-bottom'); ?>
 </div><!--/.wrap-->
 
 <?php get_footer();?>

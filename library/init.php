@@ -98,17 +98,17 @@ function agency_register_sidebars() {
     'description'   => 'Second Widget Area (Right) on Homepage',
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget'  => '</div>',
-    'before_title'  => '<h2 class="widgettitle">',
-    'after_title'   => '</h2>' 
+    'before_title'  => '<div class="secion-h"><h2 class="widgettitle">',
+    'after_title'   => '</h2></div>' 
   ) );
 
   /**
-   * Register Archive Top Dynamic Sidebar
+   * Register Team Top Dynamic Sidebar
    */
   register_sidebar( array(
-    'name'          => sprintf( __( 'Archive Top' ), 'agency' ),
-    'id'            => 'archive-top',
-    'description'   => 'Top Widget Area on the Archive Templates',
+    'name'          => sprintf( __( 'Team Top' ), 'agency' ),
+    'id'            => 'team-top',
+    'description'   => 'Top Widget Area on the Team Archive Template',
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget'  => '</div>',
     'before_title'  => '<h2 class="widgettitle">',
@@ -116,12 +116,12 @@ function agency_register_sidebars() {
   ) );
 
   /**
-   * Register Single Bottom Dynamic Sidebar
+   * Register Portfolio Top Dynamic Sidebar
    */
   register_sidebar( array(
-    'name'          => sprintf( __( 'Archive Bottom' ), 'agency' ),
-    'id'            => 'archive-bottom',
-    'description'   => 'Bottom Widget Area on the Archive Templates',
+    'name'          => sprintf( __( 'Portfolio Top' ), 'agency' ),
+    'id'            => 'portfolio-top',
+    'description'   => 'Top Widget Area on the Portfolio Archive Template',
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget'  => '</div>',
     'before_title'  => '<h2 class="widgettitle">',
@@ -132,9 +132,9 @@ function agency_register_sidebars() {
    * Register Single Top Dynamic Sidebar
    */
   register_sidebar( array(
-    'name'          => sprintf( __( 'Single Top' ), 'agency' ),
-    'id'            => 'single-top',
-    'description'   => 'Top Widget Area on the Single Post Templates',
+    'name'          => sprintf( __( 'Default Top' ), 'agency' ),
+    'id'            => 'default-top',
+    'description'   => 'Top Widget Area on the Default Sidebar',
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget'  => '</div>',
     'before_title'  => '<h2 class="widgettitle">',
@@ -145,9 +145,9 @@ function agency_register_sidebars() {
    * Register Single Bottom Dynamic Sidebar
    */
   register_sidebar( array(
-    'name'          => sprintf( __( 'Single Bottom' ), 'agency' ),
-    'id'            => 'single-bottom',
-    'description'   => 'Bottom Widget Area on the Single Post Templates',
+    'name'          => sprintf( __( 'Default Bottom' ), 'agency' ),
+    'id'            => 'default-bottom',
+    'description'   => 'Bottom Widget Area on the Default Sidebar',
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget'  => '</div>',
     'before_title'  => '<h2 class="widgettitle">',
@@ -189,3 +189,4 @@ if ( function_exists( 'add_theme_support' ) ) {
   add_image_size('responsive', 999, 9999, true ); // Bigguns for responsitivity
 }
 
+add_theme_support( 'post-formats', array( 'link', 'quote', 'status', 'image', 'video', 'audio', 'gallery' ) );

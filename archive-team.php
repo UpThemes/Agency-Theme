@@ -18,9 +18,8 @@ $up_options = upfw_get_options();
 <div class="wrap content">
   <section class="_1 _no-b">
     <h1>Our Team</h1>
-    <p>Etiam porta sem malesuada magna mollis euismod. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor.</p>
+    <?php get_sidebar('team-top'); ?>
   </section>
-  <hr/>
 
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
