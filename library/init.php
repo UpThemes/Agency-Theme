@@ -189,7 +189,7 @@ function agency_register_image_sizes(){
   if ( function_exists( 'add_theme_support' ) ) {
     add_theme_support( 'post-thumbnails' );
     set_post_thumbnail_size( 100, 100, true ); // Normal post thumbnails
-    add_image_size('responsive', 705, 150, true );
+    add_image_size('responsive', 705, 9999, true );
   }
 
 }
