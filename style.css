@@ -1491,7 +1491,7 @@ header {
 
 .portfolio-item img {
   width: 100%;
-  height: 130px;
+  height: auto;
   margin-bottom: 5px; }
 
 .team-member {
@@ -1502,7 +1502,7 @@ header {
       font-size: 1.25em; }
   .team-member img {
     width: 100%;
-    height: 130px;
+    height: auto;
     margin-bottom: 10px; }
 
 .viewer-controls {
