@@ -269,6 +269,16 @@ function agency_list_portfolio_categories(){
 
 // Team member stuff
 
+
+
+function agency_team_member_image($postID){
+
+
+
+}
+
+
+
 function agency_team_member_title($postID){
 
   $teaminfo = get_post_meta($postID,'team-info',false);
@@ -305,7 +315,7 @@ function agency_team_members_home_list(){
     while ( $query->have_posts() ) : $query->the_post(); ?>
 
       <div class="team-member _1-4">
-        <img src="temp.gif"/>
+        <?php agency_team_member_image(get_the_id()); ?>
         <strong><?php the_title(); ?></strong>
         <?php agency_team_member_title(get_the_id()); ?>
 

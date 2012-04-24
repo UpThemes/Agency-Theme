@@ -4,6 +4,9 @@
 // Load some basic init stuff
 require_once("init.php");
 
+// Load Theme Custom Post Types
+require_once("theme-cpt.php");
+
 // Load Theme Options
 require_once("theme-options.php");
 
