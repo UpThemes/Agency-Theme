@@ -8,7 +8,12 @@
     </ul>
   </div><!--/.wrap-->
 </section><!--/.breadcrumb-->
+
 <div class="wrap content">
+
+<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+
+
   <section class="_4-5">
     <div>
       <article class="post-standard">
@@ -152,6 +157,20 @@
       Vacation Theme
     </a>
   </section>
+
+<?php endwhile; ?>
+
+<?php else : ?>
+
+<?php 
+/**
+ * Output no-post content
+ */
+agency_the_404_content(); 
+?>
+
+<?php endif; ?>
+
 </div><!--/.wrap-->
 
 <?php get_footer(); ?>

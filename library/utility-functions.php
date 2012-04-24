@@ -193,6 +193,7 @@ function agency_get_portfolio_slides($slide_imgs_arry){
     }
   }
 
+
 }
 
 
@@ -201,6 +202,7 @@ function agency_portfolio_slide_builder($postID){
 
   $slide_imgs = get_post_meta($postID, 'portslides', true);
 
+  $post_img =  get_the_post_thumbnail($postID, 'responsive', array('class' => '_1'));
 
   if ( $slide_imgs != null ) {
 
@@ -208,6 +210,13 @@ function agency_portfolio_slide_builder($postID){
     echo '  <div class="wrap">        '."\n";
     echo '    <div class="flexslider">'."\n";
     echo '      <ul class="slides">   '."\n";
+
+    if ($post_img){
+     echo '        <li class="slide">' . "\n";
+     echo '          ' . $post_img . "\n";
+     echo '        </li>' . "\n";
+    }
+
     agency_get_portfolio_slides($slide_imgs);
     echo '      </ul>                 '."\n";
     echo '    </div>                  '."\n";
@@ -244,6 +253,58 @@ function agency_portfolio_services($postID){
 
 
 
+function agency_portfolio_testimonials($postID){
+
+  $the_tags = get_the_tags($postID);
+  $tag_array = array();
+  foreach ( $the_tags as $tag ){
+    array_push($tag_array, $tag->name);
+  }
+
+
+  $query = new WP_Query(
+    array(
+      'post_type' => 'testimonial',
+      'posts_per_page'  => -1
+      
+    )
+  );
+
+  $testimonial_title = 0;
+
+  if ($query->have_posts() ){
+    while ( $query->have_posts() ) : $query->the_post();
+
+      if (has_tag($tag_array) && $testimonial_title == 0) {
+
+        $testimonial_title = 1;
+        echo '    <h3><strong>Testimonials</strong></h3>'."\n";
+      ?>
+
+        <div class="testimonial">
+          <?php the_content(); ?>
+          <em>- <?php the_title(); ?></em>
+        </div>
+  
+      <?php } else if (has_tag($tag_array)) { ?>
+
+        <div class="testimonial">
+          <?php the_content(); ?>
+          <em>- <?php the_title(); ?></em>
+        </div>
+
+      <?php }
+
+    endwhile;
+
+  }
+
+  wp_reset_postdata();
+
+}
+
+
+
 function agency_portfolio_launch_date($postID){
 
   $portinfo = get_post_meta($postID,'portinfo',true);
@@ -267,15 +328,44 @@ function agency_list_portfolio_categories(){
 }
 
 
-// Team member stuff
+
+function agency_portfolio_home_list(){
+
+  $query = new WP_Query(
+    array(
+      'post_type' => 'portfolio',
+      'orderby'   => 'rand',
+      'posts_per_page'  => '4'
+    )
+  );
+  
+  if ($query->have_posts() ){
+    while ( $query->have_posts() ) : $query->the_post(); ?>
 
 
+      <div class="portfolio-item _1-4">
+        <a href="<?php the_permalink(); ?>">
+          <?php
+            $post_img =  get_the_post_thumbnail(get_the_ID());
+            if ($post_img):
+          ?>
+          <?php echo $post_img; ?>
+          <?php endif; ?>
 
-function agency_team_member_image($postID){
+          <?php the_title(); ?>
+        </a>
+      </div><!--/.portfolio-item-->
+  
+    <?php endwhile;
+  }
 
-
+  wp_reset_postdata();
 
 }
+
+
+
+// Team member stuff
 
 
 
@@ -315,12 +405,82 @@ function agency_team_members_home_list(){
     while ( $query->have_posts() ) : $query->the_post(); ?>
 
       <div class="team-member _1-4">
-        <?php agency_team_member_image(get_the_id()); ?>
+        
+        
+        <?php
+          $post_img =  get_the_post_thumbnail(get_the_ID(), 'responsive');
+          if ($post_img):
+        ?>
+        <a href="<?php the_permalink(); ?>"><?php echo $post_img; ?></a>
+        <?php endif; ?>
         <strong><?php the_title(); ?></strong>
         <?php agency_team_member_title(get_the_id()); ?>
 
       </div><!--/.team-member-->
   
+    <?php endwhile;
+  }
+
+  wp_reset_postdata();
+
+}
+
+
+
+// Misc
+
+function agency_blog_home_list(){
+
+  $query = new WP_Query(
+    array(
+      'post_type' => 'post',
+      'posts_per_page'  => '2'
+    )
+  );
+  
+  if ($query->have_posts() ){
+    while ( $query->have_posts() ) : $query->the_post(); ?>
+
+
+    <article class="blog-post">
+      <?php
+        $post_img =  get_the_post_thumbnail(get_the_ID());
+        if ($post_img):
+      ?>
+      <?php echo $post_img; ?>
+      <?php endif; ?>
+      <h4><?php the_title(); ?></h4>
+      <p>Yea, I just wanted to make sure you realize how awesome I am.</p>
+      <a href="<?php the_permalink(); ?>">continue reading</a>
+    </article><!--/.blog-post-->
+
+    <?php endwhile;
+  }
+
+  wp_reset_postdata();
+
+}
+
+
+
+function agency_testimonial_home_list(){
+
+  $query = new WP_Query(
+    array(
+      'post_type' => 'testimonial',
+      'orderby'   => 'rand',
+      'posts_per_page'  => '2'
+    )
+  );
+  
+  if ($query->have_posts() ){
+    while ( $query->have_posts() ) : $query->the_post(); ?>
+
+    <div class="testimonial">
+      <?php the_content(); ?>
+      <em>- <?php the_title(); ?></em>
+    </div><!--/.testimonial-->
+
     <?php endwhile;
   }
 

@@ -49,8 +49,7 @@ $up_options = upfw_get_options();
 
     <?php agency_portfolio_services($post->ID); ?>
 
-    <h3><strong>Testimonials</strong></h3>
-    <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+    <?php agency_portfolio_testimonials($post->ID); ?>
 
   </section>
 

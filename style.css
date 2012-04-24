@@ -1693,6 +1693,7 @@ section p {
   line-height: 1.6em; }
 section img {
   width: 100%;
+  height: auto;
   margin-bottom: 1em; }
 section article {
   padding-bottom: 20px; }

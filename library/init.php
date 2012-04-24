@@ -85,8 +85,8 @@ function agency_register_sidebars() {
     'description'   => 'First Widget Area (Left) on Homepage',
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget'  => '</div>',
-    'before_title'  => '<h2 class="widgettitle">',
-    'after_title'   => '</h2>' 
+    'before_title'  => '<div class="secion-h"><h2 class="widgettitle">',
+    'after_title'   => '</h2></div>' 
   ) );
 
   /**
@@ -183,13 +183,9 @@ add_action('wp_enqueue_scripts','agency_scripts');
 
 
 
-
-function agency_register_image_sizes(){
-
-  if ( function_exists( 'add_theme_support' ) ) {
-    add_theme_support( 'post-thumbnails' );
-    set_post_thumbnail_size( 100, 100, true ); // Normal post thumbnails
-    add_image_size('responsive', 705, 9999, true );
-  }
-
+if ( function_exists( 'add_theme_support' ) ) {
+  add_theme_support( 'post-thumbnails' );
+  set_post_thumbnail_size( 100, 100, true ); // Normal post thumbnails
+  add_image_size('responsive', 999, 9999, true ); // Bigguns for responsitivity
 }
+
