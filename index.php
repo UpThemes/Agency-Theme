@@ -1,71 +1,76 @@
 <?php get_header(); ?>
 
-<section class="breadcrumb">
+<section class="rotator">
   <div class="wrap">
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Page title</a></li>
-    </ul>
-  </div><!--/.wrap-->
-</section><!--/.breadcrumb-->
-
-<div class="wrap content">
-
-
-  <section class="_4-5">
-
-  <?php
-
-  $counter = 0;
-
-  if (have_posts()) : while (have_posts()) : the_post();
-
-    if($counter != 0){
-      echo '     <hr/><br/><br/>'."\n";
-    }
-
-    $counter++;
-
-   ?>
-
-    <div>
-      <article class="<?php agency_get_post_class($post->ID); ?>">
-        <i class="post-icon"></i>
-        <div class="meta post-pad-left">
-          <a href="<?php comments_link(); ?>" title="<?php comments_number('0 Comments', '1 Comment', '% Comments'); ?>" class="comments"><?php comments_number('0', '1', '%'); ?></a> <?php the_category(', '); ?>
-        </div>
-
-        <h1 class="post-pad-left"><?php the_title(); ?></h1>
-        <h4 class="post-pad-left">Posted at <?php the_time(); ?> on <?php the_date(); ?> by <?php the_author_posts_link(); ?></h4>
-
-        <div class="post-pad-left">
-          <?php the_content(); ?>
-        </div>
-
-      </article>
+    <div class="flexslider">
+      <ul class="slides">
+        <li class="slide">
+          <img src="temp.gif" class="_1-2"/>
+          <div class="slide-content _1-2">
+            <h1>We are Agency.</h1>
+            <h3>We're a design company that builds websites of pure awesomeness.</h3>
+            <a href="#" class="button">Our Portfolio</a>
+            <a href="#" class="button">Services</a>
+          </div><!--/.slide-content-->
+        </li>
+        <li class="slide">
+          <img src="temp.gif" class="_1-2"/>
+          <div class="slide-content _1-2">
+            <h1>We are Agency.</h1>
+            <h3>We're a design company that builds websites of pure awesomeness.</h3>
+            <a href="#" class="button">Our Portfolio</a>
+            <a href="#" class="button">Services</a>
+          </div><!--/.slide-content-->
+        </li>
+      </ul>
     </div>
+  </div><!--/.wrap-->
+</section><!--/.rotator-->
+<div class="wrap content">
+  <section class="portfolio-module">
+    <div class="section-h _1 _no-b">
+      <h2>Selections from the Portfolio</h2>
+      <a href="<?php echo home_url('/portfolio/'); ?>"><i class="link"></i>view complete portfolio</a>
+    </div><!--/.section-h-->
+    <div class="_1 _parent _no-t">
 
-<?php endwhile; ?>
+      <?php agency_portfolio_home_list(); ?>
 
-<?php else : ?>
+    </div>
+  </section><!--/.portfolio-module-->
+<hr/>
+  <section class="blog-module _1-2">
+    <div class="section-h">
+      <h2>Recently on the Blog</h2>
+      <a href="<?php agency_posts_url(); ?>"><i class="link"></i>Read the Blog</a>
+    </div><!--/.section-h-->
 
-<?php 
-/**
- * Output no-post content
- */
-agency_the_404_content(); 
-?>
+    <?php agency_blog_home_list(); ?>
 
-<?php endif; ?>
+  </section><!--/.blog-module-->
+  <section class="testimonial-module _1-2">
+    <div class="section-h">
+      <h2>Testimonials</h2>
+    </div><!--/.section-h-->
 
-  </section>
+    <?php agency_testimonial_home_list(); ?>
 
+  </section><!--/.testimonial-module-->
+<hr/>
+  <section class="team-module">
 
-  <section class="_1-5">
-    <?php get_sidebar(); ?>
-  </section>
+    <?php agency_team_members_home_list(); ?>
 
+  </section><!--/.team-module-->
 
+  <hr/>
+
+  <section class="about-module _1-2">
+    <?php get_sidebar('home-1'); ?>
+  </section><!--/.about-module-->
+  <section class="office-module _1-2">
+    <?php get_sidebar('home-2'); ?>
+  </section><!--/.office-module-->
 </div><!--/.wrap-->
 
 <?php get_footer(); ?>

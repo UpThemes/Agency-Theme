@@ -511,3 +511,14 @@ function agency_get_post_class($postID){
   } else { }
 
 }
+
+
+
+function agency_posts_url() {
+
+if( get_option( 'show_on_front' ) == 'page' )
+  echo get_permalink( get_option('page_for_posts' ) );
+else
+  echo bloginfo('url');
+
+}

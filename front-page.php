@@ -1,8 +1,9 @@
 <?php
-/*
-Template Name: Home Page Template
-*/
-?>
+  if( get_option( 'show_on_front' ) != 'page' ) {
+    require_once("home.php");
+  } else { ?>
+
+
 <?php get_header(); ?>
 
 <section class="rotator">
@@ -47,7 +48,7 @@ Template Name: Home Page Template
   <section class="blog-module _1-2">
     <div class="section-h">
       <h2>Recently on the Blog</h2>
-      <a href="#"><i class="link"></i>Read the Blog</a>
+      <a href="<?php agency_posts_url(); ?>"><i class="link"></i>Read the Blog</a>
     </div><!--/.section-h-->
 
     <?php agency_blog_home_list(); ?>
@@ -79,3 +80,6 @@ Template Name: Home Page Template
 </div><!--/.wrap-->
 
 <?php get_footer(); ?>
+
+
+<?php  } ?>

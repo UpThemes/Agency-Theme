@@ -111,6 +111,10 @@ h3 {
   margin:0 0 1em 0;
 }
 
+h1 a, h2 a, h3 a, h4 a, h5 a {
+  font-size: inherit;
+}
+
 p + h2, p + h3 {
   margin-top:2em;
 }
