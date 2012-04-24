@@ -15,3 +15,6 @@ require_once("theme-plugins.php");
 
 // Load some utility theme specific functions
 require_once("utility-functions.php");
+
+// Load comments callback
+require_once("comments-callback.php");
