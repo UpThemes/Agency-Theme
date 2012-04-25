@@ -14,27 +14,30 @@
 <section class="rotator">
   <div class="wrap">
     <div class="flexslider">
-      <div class="slide-content _1-2">
-        <h1><?php echo agency_get_theme_option('home_slides_title'); ?></h1>
-        <h3><?php echo agency_get_theme_option('home_slides_blurb'); ?></h3>
 
-        <?php if ( function_exists( 'wp_nav_menu' ) ) {
-
-                  $args = array(
-                    'container'     => false,
-                    'menu_id'       => 'slide-nav',
-                    'theme_location'=> 'home_slides_menu',
-                    'fallback_cb'   => 'agency_nav_callout',
-                    'link_before'   => '',
-                    'link_after'    => '',
-                    'depth'         => 1
-                  );
-
-            echo wp_nav_menu( $args );
-
-          } else {
-            agency_nav_callout();
-          } ?>
+      <div class="slide-content-wrapper _1-2">
+        <div class="slide-content">
+          <h1><?php echo agency_get_theme_option('home_slides_title'); ?></h1>
+          <h3><?php echo agency_get_theme_option('home_slides_blurb'); ?></h3>
+  
+          <?php if ( function_exists( 'wp_nav_menu' ) ) {
+  
+                    $args = array(
+                      'container'     => false,
+                      'menu_id'       => 'slide-nav',
+                      'theme_location'=> 'home_slides_menu',
+                      'fallback_cb'   => 'agency_nav_callout',
+                      'link_before'   => '',
+                      'link_after'    => '',
+                      'depth'         => 1
+                    );
+  
+              echo wp_nav_menu( $args );
+  
+            } else {
+              agency_nav_callout();
+            } ?>
+        </div>
       </div>
 
       <ul class="slides">

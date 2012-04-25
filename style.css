@@ -1008,12 +1008,19 @@ table {
   display: block;
   position: relative; }
 
-.flexslider .slide-content {
+.flexslider .slide-content-wrapper {
   position: absolute;
   top: 0;
-  right: 0;
+  right: 10px;
   z-index: 100;
-  margin: 7px 17px 0 0; }
+  padding: 7px 7px 7px 0;
+  height: 100%;
+  background: transparent; }
+
+.flexslider .slide-content {
+  position: relative;
+  z-index: 100;
+  margin: 0; }
 
 .flexslider .slides > li {
   display: none;
