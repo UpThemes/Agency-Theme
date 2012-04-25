@@ -1022,6 +1022,11 @@ table {
   z-index: 100;
   margin: 0; }
 
+.flexslider .slide-content li {
+  position: relative;
+  display: inline;
+  list-style: none; }
+
 .flexslider .slides > li {
   display: none;
   -webkit-backface-visibility: hidden; }

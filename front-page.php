@@ -29,7 +29,8 @@
                       'fallback_cb'   => 'agency_nav_callout',
                       'link_before'   => '',
                       'link_after'    => '',
-                      'depth'         => 1
+                      'depth'         => 1,
+                      'walker'        => new Agency_Walker_Nav_Menu()
                     );
   
               echo wp_nav_menu( $args );
