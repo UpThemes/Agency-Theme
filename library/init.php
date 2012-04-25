@@ -18,8 +18,9 @@ function agency_menu_init(){
    * Register Theme locations for custom nav menus
    */
   register_nav_menus( array(
-    'header_menu' => __( 'Header Navigation', 'agency' ),
-    'footer_menu' => __( 'Footer Navigation', 'agency' )
+    'header_menu'       => __( 'Header Navigation', 'agency' ),
+    'home_slides_menu'  => __( 'Home Slideshow Navigation', 'agency' ),
+    'footer_menu'       => __( 'Footer Navigation', 'agency' )
   ) );
 
 
