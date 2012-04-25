@@ -3,50 +3,13 @@
     require_once("home.php");
   } else {
 
-//  global $up_options;
-//  $up_options = upfw_get_options();
-
 ?>
 
 
 <?php get_header(); ?>
 
-<section class="rotator">
-  <div class="wrap">
-    <div class="flexslider">
+<?php agency_home_slide_builder($post->ID); ?>
 
-      <div class="slide-content-wrapper _1-2">
-        <div class="slide-content">
-          <h1><?php echo agency_get_theme_option('home_slides_title'); ?></h1>
-          <h3><?php echo agency_get_theme_option('home_slides_blurb'); ?></h3>
-  
-          <?php if ( function_exists( 'wp_nav_menu' ) ) {
-  
-                    $args = array(
-                      'container'     => false,
-                      'menu_id'       => 'slide-nav',
-                      'theme_location'=> 'home_slides_menu',
-                      'fallback_cb'   => 'agency_nav_callout',
-                      'link_before'   => '',
-                      'link_after'    => '',
-                      'depth'         => 1,
-                      'walker'        => new Agency_Walker_Nav_Menu()
-                    );
-  
-              echo wp_nav_menu( $args );
-  
-            } else {
-              agency_nav_callout();
-            } ?>
-        </div>
-      </div>
-
-      <ul class="slides">
-        <?php agency_home_slide_builder($post->ID); ?>
-      </ul>
-    </div>
-  </div><!--/.wrap-->
-</section><!--/.rotator-->
 <div class="wrap content">
   <section class="portfolio-module">
     <div class="section-h _1 _no-b">
