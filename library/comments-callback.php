@@ -5,7 +5,7 @@ function agency_comment($comment, $args, $depth) {
 
   <div <?php comment_class(); ?> id="comment-<?php comment_ID() ?>">
 
-    <div class="comment-body">
+    <div class="comment-body clearfix">
 
       <div class="image-wrap">
         <?php echo get_avatar( $comment->comment_author_email, 48 ); ?>
