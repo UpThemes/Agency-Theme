@@ -57,6 +57,8 @@
   <section class="_1-5">
     <?php get_sidebar('default-top'); ?>
     <?php get_sidebar('default-bottom'); ?>
+  </section>
+
 </div><!--/.wrap-->
 
 <?php get_footer();?>
