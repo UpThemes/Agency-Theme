@@ -42,7 +42,9 @@ foreach ( $comments as $comment )
 <?php } ?>
       <form id="comment-form" class="_1 _parent" action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post">
         <div class="_1 _no-t _no-b">
+<?php if ( have_comments() ) { ?>
           <hr/>
+<?php } ?>
           <h1>Leave a comment</h1>
 
 <?php if ( $user_ID ) : ?>
