@@ -1,57 +1,37 @@
 <?php
 
-// Custom callback to list comments in the Thematic style
-function agency_comments($comment, $args, $depth) {
-  $GLOBALS['comment'] = $comment;
-  $GLOBALS['comment_depth'] = $depth;
-    ?>
-        <div id="comment-<?php comment_ID() ?>" class="comment depth-<?php echo $depth; ?>">
-          <div class="image-wrap">
-            <?php echo get_avatar( $comment, 74 ); ?>
-          </div><!--/.image-wrap-->
-          <div class="comment-wrap">
-            <strong><?php comment_author(); ?></strong> said<br/>
-            <?php if ($comment->comment_approved == '0') _e("\t\t\t\t\t<span class='unapproved'>Your comment is awaiting moderation.</span>\n", 'agency') ?>
+function agency_comment($comment, $args, $depth) {
+   $GLOBALS['comment'] = $comment; ?>
 
-            <?php comment_text() ?>
+   <div <?php comment_class(); ?> id="comment-<?php comment_ID() ?>">
+
+      <div class="image-wrap">
+        <?php echo get_avatar( $comment->comment_author_email, 48 ); ?>
+      </div><!--/.image-wrap-->
 
 
-            <?php // echo the comment reply link with help from Justin Tadlock http://justintadlock.com/ and Will Norris http://willnorris.com/
-              if($args['type'] == 'all' || get_comment_type() == 'comment') :
-                comment_reply_link(array_merge($args, array(
-                  'reply_text' => __('Add Reply','agency'), 
-                  'login_text' => __('Log in to reply.','agency'),
-                  'depth' => $depth,
-                  'before' => '<div class="comment-reply-link">', 
-                  'after' => '</div>'
-                )));
-              endif;
-            ?>
+      <div class="comment-wrap">
 
-          </div><!--/.comment-wrap-->
+        <strong><?php comment_author_link(); ?></strong> <?php echo __('says'); ?><br/>
+
+        <?php if ($comment->comment_approved == '0') : ?>
+           <em><?php _e('Your comment is awaiting moderation.') ?></em>
+           <br />
+        <?php endif; ?>
+  
+        <?php comment_text() ?>
+  
+
+        <div class="comment-meta commentmetadata">
+          <a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ) ?>">
+            <?php printf(__('%1$s at %2$s'), get_comment_date(),  get_comment_time()) ?>
+          </a>
+          <?php edit_comment_link(__('(Edit)'),'  ','') ?> - 
+          <span class="reply"><?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?></span>
+        </div>
+
+      </div><!--/.comment-wrap-->
 
 
-
-<?php }
-
-
-
-// Custom callback to list pings in the Thematic style
-function agency_pings($comment, $args, $depth) {
-       $GLOBALS['comment'] = $comment;
-        ?>
-        <div id="comment-<?php comment_ID() ?>" class="comment pingback">
-
-          <div class="comment-author"><?php printf(__('By %1$s on %2$s at %3$s', 'agency'),
-              get_comment_author_link(),
-              get_comment_date(),
-              get_comment_time() );
-              edit_comment_link(__('Edit', 'agency'), ' <span class="meta-sep">|</span> <span class="edit-link">', '</span>'); ?>
-          </div>
-
-    <?php if ($comment->comment_approved == '0') _e('\t\t\t\t\t<span class="unapproved">Your trackback is awaiting moderation.</span>\n', 'agency') ?>
-            <div class="comment-content">
-          <?php comment_text() ?>
-      </div>
-
-<?php }
+<?php
+        }
