@@ -1011,21 +1011,31 @@ table {
 .flexslider .slide-content-wrapper {
   position: absolute;
   top: 0;
-  right: 10px;
-  z-index: 100;
-  padding: 7px 7px 7px 0;
+  right: 0;
+  z-index: 2;
+  margin: 0;
   height: 100%;
-  background: transparent; }
+  background: transparent;
+  padding: 6px 16px; }
 
 .flexslider .slide-content {
   position: relative;
   z-index: 100;
   margin: 0; }
 
+.flexslider .slide-content ul {
+  padding: 0;
+  display: block; }
+
 .flexslider .slide-content li {
   position: relative;
-  display: inline;
-  list-style: none; }
+  display: block;
+  list-style: none;
+  float: left; }
+
+.flexslider .slide-content li .button {
+  margin: 0 15px 15px 0;
+  display: block; }
 
 .flexslider .slides > li {
   display: none;
@@ -1352,7 +1362,7 @@ header {
   background: url("assets/header-bg.png"), -moz-linear-gradient(#303030, #171717);
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
   padding: 2em 0;
-  z-index: 2; }
+  z-index: 5; }
   header .wrap {
     overflow: visible; }
   header .logo {
