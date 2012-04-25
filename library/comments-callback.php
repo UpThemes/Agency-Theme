@@ -1,9 +1,11 @@
 <?php
 
 function agency_comment($comment, $args, $depth) {
-   $GLOBALS['comment'] = $comment; ?>
+  $GLOBALS['comment'] = $comment; ?>
 
-   <div <?php comment_class(); ?> id="comment-<?php comment_ID() ?>">
+  <div <?php comment_class(); ?> id="comment-<?php comment_ID() ?>">
+
+    <div class="comment-body">
 
       <div class="image-wrap">
         <?php echo get_avatar( $comment->comment_author_email, 48 ); ?>
@@ -30,7 +32,9 @@ function agency_comment($comment, $args, $depth) {
           <span class="reply"><?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?></span>
         </div>
 
-      </div><!--/.comment-wrap-->
+      </div>
+
+    </div>
 
 
 <?php
