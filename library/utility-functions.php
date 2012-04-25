@@ -35,14 +35,14 @@ add_filter('previous_post_link', 'filter_previous_post_link');
 
 
 function next_posts_link_attributes(){
-	return 'class="next"';
+  return 'class="next"';
 }
 add_filter('next_posts_link_attributes', 'next_posts_link_attributes');
 
 
 
 function prev_posts_link_attributes(){
-	return 'class="previous"';
+  return 'class="previous"';
 }
 add_filter('previous_posts_link_attributes', 'prev_posts_link_attributes');
 
@@ -516,9 +516,41 @@ function agency_get_post_class($postID){
 
 function agency_posts_url() {
 
-if( get_option( 'show_on_front' ) == 'page' )
-  echo get_permalink( get_option('page_for_posts' ) );
-else
-  echo bloginfo('url');
+  if( get_option( 'show_on_front' ) == 'page' )
+    echo get_permalink( get_option('page_for_posts' ) );
+  else
+    echo bloginfo('url');
+
+}
+
+
+function agency_home_slide_builder() {
+
+  global $post;
+  $the_slides = agency_get_home_slides($post->ID);
+
+  foreach ($the_slides as $the_slide) {
+    echo '        <li class="slide">'."\n";
+    echo $the_slide ."\n";
+    echo '        </li>'."\n";
+  }
+
+}
+
+function agency_get_home_slides($postID) {
+
+
+
+  $photos = get_children( array('post_parent' => $postID, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => 'ASC', 'orderby' => 'menu_order ID') );
+
+  $results = array();
+
+  if ($photos) {
+    foreach ($photos as $photo) {
+      $results[] = wp_get_attachment_image($photo->ID, 'full');
+    }
+  }
+ 
+  return $results;
 
 }

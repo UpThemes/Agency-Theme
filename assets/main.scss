@@ -479,13 +479,14 @@ header {
     background:#222;
     padding:0;
     height:auto;
+    margin-bottom:0;
   }
 
   .slide-content {
-    background:#222;
+    background: rgba(22, 22, 22, .80);
     color:white;
     overflow:hidden;
-    height:$rotator-height;
+    height: 100%;
     padding:40px;
   }
 
@@ -936,7 +937,6 @@ footer {
 
 @media (max-width: 768px) {
   .rotator .slide-content {
-    padding:30px 40px;
 
     h1 {
       font-size:28px;
@@ -973,10 +973,6 @@ footer {
   }
 
   .slide {
-
-    img {
-      height:100px;
-    }
 
     .slide-content {
       padding:20px 20px 30px 20px;
