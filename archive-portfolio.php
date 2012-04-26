@@ -19,7 +19,7 @@
       <?php agency_list_portfolio_categories(); ?>
     </ul>
   </section>
-  <section class="_4-5 _parent">
+  <section class="_4-5 _parent _uniform-children">
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
     <div class="_1-3 post">

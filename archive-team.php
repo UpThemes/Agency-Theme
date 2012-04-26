@@ -21,6 +21,8 @@ $up_options = upfw_get_options();
     <?php get_sidebar('team-top'); ?>
   </section>
 
+
+  <div class="_parent _uniform-children">
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
   
@@ -42,6 +44,7 @@ $up_options = upfw_get_options();
     </section>
 
   <?php endwhile; ?>
+  </div>
 
   <?php agency_navigation(); ?>
 

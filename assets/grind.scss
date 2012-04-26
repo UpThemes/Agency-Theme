@@ -47,6 +47,14 @@
     padding:.5 .75em;
   }
 }
+  
+._parent._uniform-children ._1-2:nth-child(2n+1),
+._parent._uniform-children ._1-3:nth-child(3n+1),
+._parent._uniform-children ._1-4:nth-child(4n+1),
+._parent._uniform-children ._1-5:nth-child(5n+1),
+._parent._uniform-children ._1-6:nth-child(6n+1) {
+  clear: both;
+}
 
 ._parent {padding:0}
 
