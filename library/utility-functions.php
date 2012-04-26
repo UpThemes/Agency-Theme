@@ -233,8 +233,12 @@ function agency_portfolio_url($postID){
 
   $portinfo = get_post_meta($postID,'portinfo',true);
 
-  if($portinfo[0]['website-url'])
-    echo '<a href="'. $portinfo[0]['website-url'] .'" class="button light-bg left viewer-visit">Visit Website</a>';
+  if ( is_array($portinfo) ){
+
+    if( $portinfo[0]['website-url'] )
+      echo '<a href="'. $portinfo[0]['website-url'] .'" class="button light-bg left viewer-visit">Visit Website</a>';
+
+  } else { }
 
 }
 
@@ -244,10 +248,15 @@ function agency_portfolio_services($postID){
 
   $portinfo = get_post_meta($postID,'portinfo',true);
 
-  if($portinfo[0]['services-provided-paragraph']){
-    echo '<h3><strong>Services Provided</strong></h3>';
-    echo '<p>'. $portinfo[0]['services-provided-paragraph'] .'</p>';
-  }
+  if ( is_array($portinfo) ){
+
+    if($portinfo[0]['services-provided-paragraph']){
+      echo '<h3><strong>Services Provided</strong></h3>';
+      echo '<p>'. $portinfo[0]['services-provided-paragraph'] .'</p>';
+    }
+
+  } else { }
+
 
 }
 
@@ -256,23 +265,27 @@ function agency_portfolio_services($postID){
 function agency_portfolio_testimonials($postID){
 
   $the_tags = get_the_tags($postID);
-  $tag_array = array();
-  foreach ( $the_tags as $tag ){
-    array_push($tag_array, $tag->name);
+
+  if ($the_tags) {
+
+    $tag_array = array();
+    foreach ( $the_tags as $tag ){
+      array_push($tag_array, $tag->name);
+    }
+
+    $query = new WP_Query(
+      array(
+        'post_type' => 'testimonial',
+        'posts_per_page'  => -1
+        
+      )
+    );
+
   }
-
-
-  $query = new WP_Query(
-    array(
-      'post_type' => 'testimonial',
-      'posts_per_page'  => -1
-      
-    )
-  );
 
   $testimonial_title = 0;
 
-  if ($query->have_posts() ){
+  if ( $query != null && $query->have_posts() ){
     while ( $query->have_posts() ) : $query->the_post();
 
       if (has_tag($tag_array) && $testimonial_title == 0) {
@@ -309,8 +322,14 @@ function agency_portfolio_launch_date($postID){
 
   $portinfo = get_post_meta($postID,'portinfo',true);
 
-  if($portinfo[0]['launch-date'])
-    echo '<em>'. $portinfo[0]['launch-date'] .'</em>';
+
+  if ( is_array($portinfo) ){
+
+    if($portinfo[0]['launch-date'])
+      echo '<em>'. $portinfo[0]['launch-date'] .'</em>';
+
+  } else { }
+
 
 }
 
