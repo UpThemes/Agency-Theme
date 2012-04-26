@@ -35,6 +35,9 @@ if (function_exists('upfw_get_options'))
   <!--[if lt IE 9]>
   <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
+  <!--[if (gte IE 6)&(lte IE 8)]>
+    <script type="text/javascript" src="<?php echo get_template_directory_uri() ?>/assets/selectivizr-min.js"></script>
+  <![endif]-->
 
 </head>
 <body>
