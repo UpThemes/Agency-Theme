@@ -181,8 +181,8 @@ $options = array(
   ),
   'forrst_user' => array(
     'tab' => "social-media",
-    "name" => "forst_user",
-    "title" => "Forst Username",
+    "name" => "forrst_user",
+    "title" => "Forrst Username",
     'description' => __( 'Enter your forrst username', 'agency' ),
     'section' => 'social',
     'since' => '1.0',

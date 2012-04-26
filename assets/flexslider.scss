@@ -19,7 +19,13 @@
 /* FlexSlider Necessary Styles
 *********************************/
 .flexslider {width: 100%; margin: 0; padding: 0; display: block; position: relative;}
-.flexslider .slide-content { position: absolute; top: 0; right: 0; z-index: 100; margin: 7px 17px 0 0; }
+.flexslider .slide-content-wrapper { position: absolute; top: 0; right: 0; z-index: 2; margin: 0; height: 100%; background: transparent; padding: 6px 16px;}
+.flexslider .slide-content { position: relative; z-index: 100; margin: 0;}
+.flexslider .slide-content ul { padding: 0; display: block;}
+.flexslider .slide-content li { position: relative; display: block; list-style: none; float: left; }
+.flexslider .slide-content li .button { margin: 0 15px 15px 0; display: block;}
+
+
 .flexslider .slides > li {display: none; -webkit-backface-visibility: hidden;} /* Hide the slides before the JS is loaded. Avoids image jumping */
 .flexslider .slides img {max-width: 100%; display: block;}
 .flex-pauseplay span {text-transform: capitalize;}
