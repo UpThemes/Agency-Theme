@@ -1400,10 +1400,6 @@ header {
         color: white; }
         header nav ul li a:hover {
           color: #7cbbbf; }
-      header nav ul li.current-menu-item > a {
-        border-radius: 1em;
-        background: #000;
-        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2); }
       header nav ul li.sub:hover > a, header nav ul li.sub.current-menu-item:hover > a {
         border-radius: 5px 5px 0 0;
         background: #fff;
@@ -1411,12 +1407,27 @@ header {
       header nav ul li.sub:hover > ul, header nav ul li.sub.current-menu-item:hover > ul {
         display: block;
         left: 1px; }
+      header nav ul li.sub ul {
+        border-radius: 0 5px 5px 5px;
+        right: 0;
+        left: auto; }
+        header nav ul li.sub ul li:first-child a {
+          border-radius: 0 5px 0 0!important; }
       header nav ul li.sub.last ul {
         border-radius: 5px 0 5px 5px;
         right: 0;
         left: auto; }
         header nav ul li.sub.last ul li:first-child a {
           border-radius: 5px 0 0 0; }
+      header nav ul li.current-menu-item > a {
+        border-radius: 1em;
+        background: #000;
+        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2); }
+      header nav ul li ul li.current-menu-item > a {
+        border-radius: 0;
+        background: white;
+        color: #7cbbbf;
+        box-shadow: 0; }
       header nav ul li.sub > a {
         border: solid 1px transparent;
         border: solid 0 rgba(0, 0, 0, 0); }

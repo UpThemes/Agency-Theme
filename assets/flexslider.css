@@ -7,7 +7,6 @@
  * http://www.opensource.org/licenses/mit-license.php
  */
 /* Browser Resets */
-/* line 14, flexslider.scss */
 .flex-container a:active,
 .flexslider a:active,
 .flex-container a:focus,
@@ -15,7 +14,6 @@
   outline: none;
 }
 
-/* line 17, flexslider.scss */
 .slides,
 .flex-control-nav,
 .flex-direction-nav {
@@ -26,33 +24,38 @@
 
 /* FlexSlider Necessary Styles
 *********************************/
-/* line 21, flexslider.scss */
 .flexslider {
   width: 100%;
   margin: 0;
   padding: 0;
+  display: block;
+  position: relative;
 }
 
-/* line 22, flexslider.scss */
+.flexslider .slide-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  margin: 7px 17px 0 0;
+}
+
 .flexslider .slides > li {
   display: none;
   -webkit-backface-visibility: hidden;
 }
 
 /* Hide the slides before the JS is loaded. Avoids image jumping */
-/* line 23, flexslider.scss */
 .flexslider .slides img {
   max-width: 100%;
   display: block;
 }
 
-/* line 24, flexslider.scss */
 .flex-pauseplay span {
   text-transform: capitalize;
 }
 
 /* Clearfix for the .slides element */
-/* line 27, flexslider.scss */
 .slides:after {
   content: ".";
   display: block;
@@ -62,12 +65,10 @@
   height: 0;
 }
 
-/* line 28, flexslider.scss */
 html[xmlns] .slides {
   display: block;
 }
 
-/* line 29, flexslider.scss */
 * html .slides {
   height: 1%;
 }
@@ -75,25 +76,21 @@ html[xmlns] .slides {
 /* No JavaScript Fallback */
 /* If you are not using another script, such as Modernizr, make sure you
  * include js that eliminates this class on page load */
-/* line 34, flexslider.scss */
 .no-js .slides > li:first-child {
   display: block;
 }
 
 /* FlexSlider Default Theme
 *********************************/
-/* line 40, flexslider.scss */
 .flexslider .slides {
   zoom: 1;
 }
 
-/* line 41, flexslider.scss */
 .flexslider .slides > li {
   position: relative;
 }
 
 /* Suggested container for "Slide" animation setups. Can replace this with your own, if you wish */
-/* line 43, flexslider.scss */
 .flex-container {
   zoom: 1;
   position: relative;
@@ -101,7 +98,6 @@ html[xmlns] .slides {
 
 /* Caption style */
 /* IE rgba() hack */
-/* line 47, flexslider.scss */
 .flex-caption {
   background: none;
   -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000);
@@ -109,7 +105,6 @@ html[xmlns] .slides {
   zoom: 1;
 }
 
-/* line 49, flexslider.scss */
 .flex-caption {
   width: 96%;
   padding: 2%;
@@ -125,7 +120,6 @@ html[xmlns] .slides {
 }
 
 /* Direction Nav */
-/* line 52, flexslider.scss */
 .flex-direction-nav {
   height: 0;
   top: 50%;
@@ -133,7 +127,6 @@ html[xmlns] .slides {
   display: none;
 }
 
-/* line 53, flexslider.scss */
 .flex-direction-nav li a {
   width: 52px;
   height: 52px;
@@ -145,18 +138,15 @@ html[xmlns] .slides {
   text-indent: -999em;
 }
 
-/* line 54, flexslider.scss */
 .flex-direction-nav li .next {
   background-position: -52px 0;
   right: -40px;
 }
 
-/* line 55, flexslider.scss */
 .flex-direction-nav li .prev {
   left: -40px;
 }
 
-/* line 56, flexslider.scss */
 .flex-direction-nav li .disabled {
   opacity: .3;
   filter: alpha(opacity=30);
@@ -164,7 +154,6 @@ html[xmlns] .slides {
 }
 
 /* Control Nav */
-/* line 59, flexslider.scss */
 .flex-control-nav {
   width: 100%;
   position: absolute;
@@ -172,7 +161,6 @@ html[xmlns] .slides {
   text-align: center;
 }
 
-/* line 60, flexslider.scss */
 .flex-control-nav li {
   margin: 0 0 0 5px;
   display: inline-block;
@@ -180,12 +168,10 @@ html[xmlns] .slides {
   *display: inline;
 }
 
-/* line 61, flexslider.scss */
 .flex-control-nav li:first-child {
   margin: 0;
 }
 
-/* line 62, flexslider.scss */
 .flex-control-nav li a {
   width: 10px;
   height: 10px;
@@ -194,7 +180,6 @@ html[xmlns] .slides {
   text-indent: -999em;
 }
 
-/* line 64, flexslider.scss */
 .flex-control-nav a {
   padding: 3px;
   font-size: 0;
@@ -203,14 +188,12 @@ html[xmlns] .slides {
   border: 2px solid #848484;
 }
 
-/* line 72, flexslider.scss */
 .flex-control-nav a.active, .flex-control-nav a.active:hover {
   padding: 5px;
   background: #848484;
   border: 0;
 }
 
-/* line 78, flexslider.scss */
 .flex-control-nav a:hover {
   padding: 3px;
   border: 2px solid #848484;

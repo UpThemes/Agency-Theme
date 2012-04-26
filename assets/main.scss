@@ -339,13 +339,6 @@ header {
           }
         }
 
-        &.current-menu-item > a {
-          border-radius:1em;
-          background:#000;
-          box-shadow:0 1px 0 rgba(#fff,.2);
-        }
-
-
         &.sub:hover,&.sub.current-menu-item:hover {
 
           > a {
@@ -360,6 +353,16 @@ header {
           }
         }
 
+        &.sub ul {
+          border-radius:0 5px 5px 5px;
+          right:0;
+          left:auto;
+
+          li:first-child a {
+            border-radius:0 5px 0 0!important;
+          }
+        }
+
         &.sub.last ul {
           border-radius:5px 0 5px 5px;
           right:0;
@@ -368,6 +371,19 @@ header {
           li:first-child a {
             border-radius:5px 0 0 0;
           }
+        }
+
+        &.current-menu-item > a {
+          border-radius:1em;
+          background:#000;
+          box-shadow:0 1px 0 rgba(#fff,.2);
+        }
+
+        ul li.current-menu-item > a {
+          border-radius:0;
+          background:white;
+          color:$accent-color;
+          box-shadow:0;
         }
 
         &.sub {
