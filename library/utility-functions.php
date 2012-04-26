@@ -95,7 +95,9 @@ function agency_get_social_footer() {
   $selected_social_footer_option = $selected_social_footer."_user";
   $selected_social_value = $up_options->$selected_social_footer_option;
 
-  echo "<em>$selected_social_footer</em> $selected_social_value";
+  $link = agency_calculate_social_link($selected_social_footer, $selected_social_value);
+
+  echo "<em>$selected_social_footer</em> <a href=\"" . $link . "\" title=\"Link to $selected_social_value on $selected_social_footer\">$selected_social_value</a>";
 
 }
 
