@@ -1,7 +1,11 @@
 <?php get_header(); ?>
 
-<div id="content">
-	<?php agency_the_404_content(); ?>
+<div class="wrap content">
+  <section class="_1 ">
+
+  <?php agency_the_404_content(); ?>
+
+  </section>
 </div>
 
 <?php get_sidebar(); ?>
