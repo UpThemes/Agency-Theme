@@ -266,55 +266,58 @@ function agency_portfolio_services($postID){
 
 function agency_portfolio_testimonials($postID){
 
-  $the_tags = get_the_tags($postID);
+  $testimonial = get_post_meta(get_the_ID(), 'portfolio_related_testimonial', true);
+  echo $testimonial;
+//
+//  $the_tags = get_the_tags($postID);
+//
+//  if ($the_tags) {
+//
+//    $tag_array = array();
+//    foreach ( $the_tags as $tag ){
+//      array_push($tag_array, $tag->name);
+//    }
+//
+//    $query = new WP_Query(
+//      array(
+//        'post_type' => 'testimonial',
+//        'posts_per_page'  => -1
+//        
+//      )
+//    );
+//
+//  }
+//
+//  $testimonial_title = 0;
+//
+//  if ( $query != null && $query->have_posts() ){
+//    while ( $query->have_posts() ) : $query->the_post();
+//
+//      if (has_tag($tag_array) && $testimonial_title == 0) {
+//
+//        $testimonial_title = 1;
+//        echo '    <h3><strong>Testimonials</strong></h3>'."\n";
+      
+//
+//        <div class="testimonial">
+//           the_content();
+//          <em>- the_title(); </em>
+//        </div>
+//  
+//       // } else if (has_tag($tag_array)) { 
+//
+//        <div class="testimonial">
+//           the_content();
+//          <em>-  the_title(); </em>
+//        </div>
 
-  if ($the_tags) {
+// }
 
-    $tag_array = array();
-    foreach ( $the_tags as $tag ){
-      array_push($tag_array, $tag->name);
-    }
+//    endwhile;
 
-    $query = new WP_Query(
-      array(
-        'post_type' => 'testimonial',
-        'posts_per_page'  => -1
-        
-      )
-    );
+//}
 
-  }
-
-  $testimonial_title = 0;
-
-  if ( $query != null && $query->have_posts() ){
-    while ( $query->have_posts() ) : $query->the_post();
-
-      if (has_tag($tag_array) && $testimonial_title == 0) {
-
-        $testimonial_title = 1;
-        echo '    <h3><strong>Testimonials</strong></h3>'."\n";
-      ?>
-
-        <div class="testimonial">
-          <?php the_content(); ?>
-          <em>- <?php the_title(); ?></em>
-        </div>
-  
-      <?php } else if (has_tag($tag_array)) { ?>
-
-        <div class="testimonial">
-          <?php the_content(); ?>
-          <em>- <?php the_title(); ?></em>
-        </div>
-
-      <?php }
-
-    endwhile;
-
-  }
-
-  wp_reset_postdata();
+//  wp_reset_postdata();
 
 }
 

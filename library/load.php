@@ -4,11 +4,12 @@
 // Load some basic init stuff
 require_once("init.php");
 
+require_once("meta_handler.php");
+
 // Load Theme Custom Post Types
 require_once("theme-cpt.php");
 
 // Load Theme Custom Post Types To Handle Slides
-require_once("meta_handler.php");
 require_once("slides.php");
 
 // Load Theme Options

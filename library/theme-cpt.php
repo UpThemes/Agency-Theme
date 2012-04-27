@@ -41,6 +41,7 @@ function agency_register_cpt() {
           'show_in_nav_menus' => true,
           'publicly_queryable' => true,
           'exclude_from_search' => false,
+          'register_meta_box_cb' => 'portfolio_testimonial_meta',
           'taxonomies' => array( 'portfolio_category', 'post_tag'),
           'has_archive' => true,
           'query_var' => true,
@@ -167,7 +168,7 @@ function agency_register_cpt() {
 
 
     $portfolioslides = array( 
-      array( 'type' => 'upload', 'title' => 'Portfolio Slide Image', 'description' => 'Requires a files with a size of 968 wide x 260 high. (Supports multiple slides.)' )
+      array( 'type' => 'upload', 'title' => 'Portfolio Slide Image', 'description' => 'Use a pretty big image so it\'ll look nice in large slideshows. <br/>(Supports multiple slides, & automatically includes the featured image as a slide.)' )
     );
 
     $slideargs = array(
@@ -181,10 +182,28 @@ function agency_register_cpt() {
 
     new WCK_CFC_Wordpress_Creation_Kit( $slideargs );
 
+
+    function portfolio_testimonial_meta(){
+      add_meta_box( 'portfolio_testimonial_metabox', __('Slide Details', 'agency'), 'portfolio_testimonial_metabox_output', 'portfolio' ,'side', 'default' );
+    }
+
+
+    function portfolio_testimonial_metabox_output(){
+
+      global $post;
+      meta_handler(array(
+        'id'      => 'portfolio_related_testimonial',
+        'name'    => __('Portfolio Item Testimonials', 'agency'),
+        'descr'   => __('Add a testimonial to this portfolio item.'),
+        'type'    => 'related_post',
+        'options' => array('post_types' => array('testimonial'))
+      ));
+
+    }
+
+
   }
   add_action('after_setup_theme','agency_setup_portfolio_metaboxes');
-
-
 
   function agency_setup_testimonial_metaboxes(){
 
