@@ -12,7 +12,7 @@ $general_tab = array(
     'contact' => array(
       'name' => 'contact',
       'title' => __('Contact', 'agency'),
-      'description' => __('Settings related to contact.', 'agency')
+      'description' => __('Settings related to the contact info.', 'agency')
     )
   )
 );
@@ -36,27 +36,27 @@ $social_media_tab = array(
 
 $options = array(
 
-  'home_slides_title' => array(
+  'highlight_color' => array(
     'tab' => "general",
-    "name" => "home_slides_title",
-    "title" => "Home Slideshow Title",
-    'description' => __( 'Enter the text you\'d like to have in the home slideshow title.', 'agency' ),
+    "name" => "highlight_color",
+    "title" => "Link & Highlight Color",
+    'description' => __( 'Enter the highlight color you\'d like to use for links & other theme highlights.', 'agency' ),
     'section' => 'general',
     'since' => '1.0',
     "id" => "general",
-    "type" => "text",
-    "default" => "We are Agency."
+    "type" => "color",
+    "default" => "#7CBBBF"
   ),
-  'home_slides_blurb' => array(
+  'link_color_hover' => array(
     'tab' => "general",
-    "name" => "home_slides_blurb",
-    "title" => "Home Slideshow Blurb",
-    'description' => __( 'Enter the blurb you\'d like to have in the home slideshow.', 'agency' ),
+    "name" => "link_color_hover",
+    "title" => "Link Hover Color",
+    'description' => __( 'Enter the color you\'d like to have for link hover effects.', 'agency' ),
     'section' => 'general',
     'since' => '1.0',
     "id" => "general",
-    "type" => "text",
-    "default" => "We're a design company that builds websites of pure awesomeness."
+    "type" => "color",
+    "default" => "#468B8F"
   ),
   'copyright_text' => array(
     'tab' => "general",
