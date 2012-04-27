@@ -59,10 +59,10 @@ function get_slides_meta(){
          ),
          array(
         'id' => 'slide_related_content',
-        'name' => __('Related Post or Portfolio Item','agency'),
-        'descr' => __('Select a post or portfolio item to associate with this slide.','agency'),
+        'name' => __('Related Post, Team Member or Portfolio Item','agency'),
+        'descr' => __('Select a post, team member or portfolio item to associate with this slide.','agency'),
         'type' => 'related_post',
-        'options' => array('post_types' => array('post','portfolio'))
+        'options' => array('post_types' => array('post','portfolio', 'team'))
         ),
         array(
         'id' => 'slide_blurb',
