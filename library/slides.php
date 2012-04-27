@@ -13,8 +13,8 @@ function slides_init() {
   $icon =  trailingslashit( get_template_directory_uri() ).'library/images/slides_icon.png';
 
   $show_labels = array(
-    'name' => __( 'Slides','agency' ),
-    'singular_name' => __( 'Slide','agency' ),
+    'name' => __( 'Home Slides','agency' ),
+    'singular_name' => __( 'Home Slide','agency' ),
     'add_new' => __( 'Add New','agency' ),
     'add_new_item' => __( 'Add New Slide','agency' ),
     'edit' => __( 'Edit','agency' ),
