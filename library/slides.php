@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Custom Content Type for Series
+ * Custom Content Type for Slides
  ***********************************************/
 
 function slides_init() {
