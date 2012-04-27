@@ -112,7 +112,6 @@ function slides_metabox_output(){
   <p class="meta item">
   Upload an image or select an existing image from the Media Library:
   <a class="button thickbox" href="<?php echo get_admin_url(); ?>media-upload.php?post_id=<?php echo $post->ID; ?>&TB_iframe=1" id="upload-attachments" style="margin:5px;">Set/Update Featured Image</a>
-  <br><em>Slide image size: 960px X 340px</em>
   </p>
   <?php
   foreach( $slides_custom_meta as $meta ):
