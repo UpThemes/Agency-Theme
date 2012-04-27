@@ -1287,7 +1287,7 @@ hr {
   margin: 0 10px; }
 
 i.link {
-  background: url("assets/icon-link.png") no-repeat;
+  background: #7cbbbf url("assets/icon-link.png") no-repeat;
   width: 10px;
   height: 10px;
   display: inline-block;

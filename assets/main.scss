@@ -141,12 +141,12 @@ hr {
 i {
 
   &.link {
-    background:url("assets/icon-link.png") no-repeat;
+    background:$accent-color url("assets/icon-link.png") no-repeat;
     width:10px;
     height:10px;
     display:inline-block;
     margin-right:5px;
-    top:-1px
+    top:-1px;
   }
 }
 
