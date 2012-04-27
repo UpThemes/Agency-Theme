@@ -17,6 +17,9 @@ require_once("theme-options.php");
 // Load some default plugins
 require_once("theme-plugins.php");
 
+// Load Breadcrumb function
+require_once("breadcrumbs.php");
+
 // Load some utility theme specific functions
 require_once("utility-functions.php");
 

@@ -662,3 +662,25 @@ function agency_get_home_slides() {
 
 
 }
+
+
+function agency_breadcrumbs() {
+
+  $args = array(
+    'show_on_home'  => 0,
+    'delimiter'     => '<li class="seperator">&#9654;</li>',
+    'home'          => 'Home',
+    'showCurrent'   => 1,
+    'before'        => '<span class="current">',
+    'after'         => '</span>'
+  ); ?>
+
+
+<section class="breadcrumb">
+  <div class="wrap">
+<?php  make_breadcrumbs($args); ?>
+  </div><!--/.wrap-->
+</section><!--/.breadcrumb-->
+
+
+<?php }

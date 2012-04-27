@@ -1,14 +1,7 @@
 <?php get_header(); ?>
 
-<section class="breadcrumb">
-  <div class="wrap">
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li class="seperator">&#9654;</li>
-      <li><a href="#">Page title</a></li>
-    </ul>
-  </div><!--/.wrap-->
-</section><!--/.breadcrumb-->
+<?php agency_breadcrumbs(); ?>
+
 
 <div class="wrap content">
 
