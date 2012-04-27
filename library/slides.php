@@ -10,7 +10,7 @@ function slides_init() {
   wp_enqueue_script('sundance', get_template_directory_uri() . '/library/scripts/global.js', array('jquery','fancybox'));
   wp_enqueue_style('metaboxes', get_template_directory_uri() . "/library/styles/metaboxes.css", false, false, false);
 
-  $icon =  trailingslashit( get_template_directory_uri() ).'/library/images/slides_icon.png';
+  $icon =  trailingslashit( get_template_directory_uri() ).'library/images/slides_icon.png';
 
   $show_labels = array(
     'name' => __( 'Slides','agency' ),
@@ -59,10 +59,10 @@ function get_slides_meta(){
          ),
          array(
         'id' => 'slide_related_content',
-        'name' => __('Related Post or Product','agency'),
+        'name' => __('Related Post or Portfolio','agency'),
         'descr' => __('Select a post or product to associate with this slide.','agency'),
         'type' => 'related_post',
-        'options' => array('post_types' => array('post','wpsc-product'))
+        'options' => array('post_types' => array('post','portfolio'))
         ),
         array(
         'id' => 'slide_blurb',
@@ -141,8 +141,8 @@ function save_slides(){
 
 function slides_columns($columns) {
     unset($columns['categories']); 
-      $columns['slides_image'] = 'Slide';
-      $columns['menu_order'] = 'Order';
+    $columns['slides_image'] = 'Slide';
+    $columns['menu_order'] = 'Order';
     return $columns;
 }
 
