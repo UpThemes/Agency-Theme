@@ -29,8 +29,8 @@ function slides_init() {
   );
   
   $args = array(
-      'labels' => $show_labels,
-      'menu_icon' => $icon,
+    'labels' => $show_labels,
+    'menu_icon' => $icon,
     'public' => false,
     'show_ui' => true,
     'capability_type' => 'page',
@@ -59,8 +59,8 @@ function get_slides_meta(){
          ),
          array(
         'id' => 'slide_related_content',
-        'name' => __('Related Post or Portfolio','agency'),
-        'descr' => __('Select a post or product to associate with this slide.','agency'),
+        'name' => __('Related Post or Portfolio Item','agency'),
+        'descr' => __('Select a post or portfolio item to associate with this slide.','agency'),
         'type' => 'related_post',
         'options' => array('post_types' => array('post','portfolio'))
         ),

@@ -1023,7 +1023,7 @@ table {
   margin: 0;
   height: 100%;
   background: transparent;
-  padding: 6px 16px; }
+  padding: 5px; }
 
 .flexslider .slide-content {
   position: relative;
@@ -1866,8 +1866,7 @@ footer {
     padding: 20px 0 20px 0; }
 
   .slide .slide-content {
-    padding: 20px 20px 30px 20px;
-    height: auto; }
+    padding: 20px 20px 30px 20px; }
     .slide .slide-content h1 {
       font-size: 18px; }
     .slide .slide-content h3 {

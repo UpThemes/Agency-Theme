@@ -548,9 +548,30 @@ function agency_posts_url() {
 function agency_home_slide_builder() {
 
   global $post;
-  $the_slides = agency_get_home_slides($post->ID);
+  $the_slides = agency_get_home_slides();
 
   if ($the_slides) {
+
+
+  if ( function_exists( 'wp_nav_menu' ) ) {
+  
+    $args = array(
+      'container'     => false,
+      'menu_id'       => 'slide-nav',
+      'theme_location'=> 'home_slides_menu',
+      'fallback_cb'   => 'agency_nav_callout',
+      'link_before'   => '',
+      'link_after'    => '',
+      'echo'          => false,
+      'depth'         => 1,
+      'walker'        => new Agency_Walker_Nav_Menu()
+    );
+
+    $slides_nav =  wp_nav_menu( $args );
+
+  } else {
+    $slides_nav = agency_nav_callout();
+  }
 
 ?>
 
@@ -559,39 +580,34 @@ function agency_home_slide_builder() {
   <div class="wrap">
     <div class="flexslider">
 
+<!-- 
       <div class="slide-content-wrapper _1-2">
         <div class="slide-content">
           <h1><?php echo agency_get_theme_option('home_slides_title'); ?></h1>
           <h3><?php echo agency_get_theme_option('home_slides_blurb'); ?></h3>
   
-          <?php if ( function_exists( 'wp_nav_menu' ) ) {
-  
-                    $args = array(
-                      'container'     => false,
-                      'menu_id'       => 'slide-nav',
-                      'theme_location'=> 'home_slides_menu',
-                      'fallback_cb'   => 'agency_nav_callout',
-                      'link_before'   => '',
-                      'link_after'    => '',
-                      'depth'         => 1,
-                      'walker'        => new Agency_Walker_Nav_Menu()
-                    );
-  
-              echo wp_nav_menu( $args );
-  
-            } else {
-              agency_nav_callout();
-            } ?>
+          
         </div>
       </div>
-
+ -->
       <ul class="slides">
-
   <?php
+
     foreach ($the_slides as $the_slide) {
       echo '        <li class="slide">'."\n";
-      echo '        ' . $the_slide ."\n";
+      echo '          <div class="slide-content-wrapper _1-2 clearfix">'."\n";
+      echo '            <div class="slide-content">'."\n";
+      echo '              <h1>' . $the_slide['title'] ."</h1>\n";
+      echo '              <h3>' . $the_slide['blurb'] . "\n";
+      if ($the_slide['link'])
+        echo '              <a href="' . $the_slide['link'] . '" title="'.$the_slide['title'].'">See more</a>'."\n";
+      echo '              </h3>'."\n";
+      echo '              ' . $slides_nav ."\n";
+      echo '            </div>'."\n";
+      echo '          </div>'."\n";
+      echo '          ' . $the_slide['image'] ."\n";
       echo '        </li>'."\n";
+
     } ?>
 
       </ul>
@@ -606,20 +622,43 @@ function agency_home_slide_builder() {
 
 }
 
-function agency_get_home_slides($postID) {
+function agency_get_home_slides() {
 
 
+  $query = new WP_Query(
+    array(
+      'post_type'       => 'slide',
+      'orderby'         => 'menu_order',
+      'order'           => 'ASC',
+      'posts_per_page'  => '-1'
+    )
+  );
+  
+  if ($query->have_posts() ){
 
-  $photos = get_children( array('post_parent' => $postID, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => 'ASC', 'orderby' => 'menu_order ID') );
+    $results = array();
 
-  $results = array();
+    while ( $query->have_posts() ) : $query->the_post();
 
-  if ($photos) {
-    foreach ($photos as $photo) {
-      $results[] = wp_get_attachment_image($photo->ID, 'full');
-    }
-  }
- 
+      $slidedata = array(
+        'title' => get_the_title(),
+        'image' => get_the_post_thumbnail(get_the_ID(), 'responsive'),
+        'blurb' => get_post_meta(get_the_ID(), 'slide_blurb',true),
+        'link'  => get_post_meta(get_the_ID(), 'slide_link', true),
+        'id'    => get_the_ID()
+      );
+
+      $results[] = $slidedata;
+
+
+    endwhile;
+
+  wp_reset_postdata();
+
   return $results;
+
+
+  };
+
 
 }
