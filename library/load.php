@@ -7,6 +7,9 @@ require_once("init.php");
 // Load Theme Custom Post Types
 require_once("theme-cpt.php");
 
+// Load Theme Custom Post Types To Handle Slides
+require_once("slides.php");
+
 // Load Theme Options
 require_once("theme-options.php");
 
