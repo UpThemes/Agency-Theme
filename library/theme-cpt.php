@@ -15,9 +15,9 @@ function agency_register_cpt() {
 
       $labels = array( 
           'name' => _x( 'Portoflio', 'portfolio' ),
-          'singular_name' => _x( 'Portfolio Item', 'portfolio' ),
+          'singular_name' => _x( 'Portfolio', 'portfolio' ),
           'add_new' => _x( 'Add New', 'portfolio' ),
-          'add_new_item' => _x( 'Add New Portfolio Item', 'portfolio' ),
+          'add_new_item' => _x( 'Add New', 'portfolio' ),
           'edit_item' => _x( 'Edit Portfolio Item', 'portfolio' ),
           'new_item' => _x( 'New Portfolio Item', 'portfolio' ),
           'view_item' => _x( 'View Portfolio Item', 'portfolio' ),
