@@ -651,7 +651,8 @@ function agency_home_slide_builder() {
   <?php
 
     foreach ($the_slides as $the_slide) {
-      echo "\n".'          <li class="slide">'."\n";
+      echo "\n";
+      echo '          <li class="slide">'."\n";
       echo '            <div class="slide-content-wrapper _1-2 clearfix">'."\n";
       echo '              <div class="slide-content">'."\n";
       echo '                <h1>' . $the_slide['title'] ."</h1>\n";
