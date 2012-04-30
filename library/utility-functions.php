@@ -174,6 +174,43 @@ function agency_build_social_link($social_network, $username) {
 
 
 
+
+
+function agency_custom_styles(){
+  
+  global $up_options;
+  
+  if( !is_admin() && !in_array( $GLOBALS['pagenow'], array( 'wp-login.php', 'wp-register.php' ) ) ):
+    
+    $styles = '<style type="text/css">'."\n";
+
+    if( $up_options->highlight_color ) {
+      $highlight_color = $up_options->highlight_color; // Get Set Color
+      $gradient_color = '#' . dechex(hexdec(substr($highlight_color, 1)) - 2232849); // Trim the '#', make dec, do math & make hex.
+
+      $styles .= "a{ color: $highlight_color; }\n";
+      $styles .= ".breadcrumb {
+  background: $highlight_color;
+  background: -webkit-linear-gradient($highlight_color, $gradient_color);
+  background: -moz-linear-gradient($highlight_color, $gradient_color);
+}\n";
+    }
+
+    if( $up_options->link_color_hover )
+      $styles .= "a:hover{ color: {$up_options->link_color_hover}; }\n";
+
+    $styles .= '</style>'."\n";
+
+    echo $styles;
+
+  endif;
+
+}
+// Hook agency_custom_styles() into wp_enqueue_scripts
+add_action( 'wp_head', 'agency_custom_styles');
+
+
+
 // Portfolio Stuff
 
 function agency_portfolio_navigation(){ ?>
