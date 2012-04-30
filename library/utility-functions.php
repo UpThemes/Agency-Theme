@@ -223,7 +223,7 @@ function agency_custom_styles(){
     }
 
     if( $up_options->link_color_hover )
-      $styles .= "a:hover{ color: {$up_options->link_color_hover}; }\n";
+      $styles .= "a:hover, header nav ul li a:hover, header nav ul ul li a:hover{ color: {$up_options->link_color_hover}; }\n";
 
     $styles .= '</style>'."\n";
 
