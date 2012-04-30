@@ -646,31 +646,22 @@ function agency_home_slide_builder() {
   <div class="wrap">
     <div class="flexslider">
 
-<!-- 
-      <div class="slide-content-wrapper _1-2">
-        <div class="slide-content">
-          <h1><?php echo agency_get_theme_option('home_slides_title'); ?></h1>
-          <h3><?php echo agency_get_theme_option('home_slides_blurb'); ?></h3>
-  
-          
-        </div>
-      </div>
- -->
+
       <ul class="slides">
   <?php
 
     foreach ($the_slides as $the_slide) {
-      echo '        <li class="slide">'."\n";
-      echo '          <div class="slide-content-wrapper _1-2 clearfix">'."\n";
-      echo '            <div class="slide-content">'."\n";
-      echo '              <h1>' . $the_slide['title'] ."</h1>\n";
-      echo '              <h3>' . $the_slide['blurb'] . "\n";
+      echo "\n".'          <li class="slide">'."\n";
+      echo '            <div class="slide-content-wrapper _1-2 clearfix">'."\n";
+      echo '              <div class="slide-content">'."\n";
+      echo '                <h1>' . $the_slide['title'] ."</h1>\n";
+      echo '                <h3>' . $the_slide['blurb'] . "\n";
       if ($the_slide['link'])
-        echo '              <a href="' . $the_slide['link'] . '" title="'.$the_slide['title'].'">See more</a>'."\n";
-      echo '              </h3>'."\n";
-      echo '              ' . $slides_nav ."\n";
+        echo '                <a href="' . $the_slide['link'] . '" title="'.$the_slide['title'].'">See more</a>'."\n";
+      echo '                </h3>'."\n";
+      echo '                ' . $slides_nav ."\n";
+      echo '              </div>'."\n";
       echo '            </div>'."\n";
-      echo '          </div>'."\n";
       echo '          ' . $the_slide['image'] ."\n";
       echo '        </li>'."\n";
 
