@@ -177,6 +177,29 @@ function agency_build_social_link($social_network, $username) {
 
 
 function agency_custom_styles(){
+
+  function calculate_gradient_offset($six_digit_hexcolor, $six_digit_hex_offset="221211") {
+
+
+    function catch_neg_color($decimal) {
+      $decimal > 0 ? $decimal = $decimal : $decimal = 0;
+      $decimal != 0 ? $hex = dechex($decimal) : $hex = "00";
+      return $hex;
+    }
+
+
+    $r_color = catch_neg_color(hexdec(substr($six_digit_hexcolor, 1, 2)) - hexdec(substr($six_digit_hex_offset, 0, 2)));
+    $g_color = catch_neg_color(hexdec(substr($six_digit_hexcolor, 3, 2)) - hexdec(substr($six_digit_hex_offset, 2, 2)));
+    $b_color = catch_neg_color(hexdec(substr($six_digit_hexcolor, 5, 2)) - hexdec(substr($six_digit_hex_offset, 4, 2)));
+    $offset_gradient = '#'.$r_color.$g_color.$b_color;
+
+    return $offset_gradient;
+
+  }
+
+
+
+
   
   global $up_options;
   
@@ -186,7 +209,10 @@ function agency_custom_styles(){
 
     if( $up_options->highlight_color ) {
       $highlight_color = $up_options->highlight_color; // Get Set Color
-      $gradient_color = '#' . dechex(hexdec(substr($highlight_color, 1)) - 2232849); // Trim the '#', make dec, do math & make hex.
+
+
+
+      $gradient_color = calculate_gradient_offset($highlight_color);
 
       $styles .= "a{ color: $highlight_color; }\n";
       $styles .= ".breadcrumb {
