@@ -1,0 +1,34 @@
+/* =============================================================================
+   Styles Directly related to error & notifications
+   ========================================================================== */
+
+/*
+ * Error
+ */
+
+
+$error-color: #B94A48;
+
+
+.error-notification, .error {
+  color: $error-color;
+}
+
+.error-notification {
+  clear: both;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+form input[type="text"].error,
+form textarea.error {
+  border-color: $error-color;
+}
+
+span.error {
+  display: block;
+  font-size: 13px;
+  padding: 0 10px;
+  margin-bottom: 15px;
+}
+

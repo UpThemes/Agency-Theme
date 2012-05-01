@@ -744,9 +744,17 @@ function agency_breadcrumbs() {
 <?php }
 
 
-
-function agency_error_output($error){
+function agency_error_class($error) {
   if(isset($error)) {
+    echo 'error ';
+  }
+}
+
+
+function agency_error_output($error, $format){
+  if(isset($error) && $format == true) {
+    echo '<span class="error _1-3 ">' . $error . '</span>';
+  } else if(isset($error)){
     echo '<span class="error">' . $error . '</span>';
   }
 
@@ -773,12 +781,12 @@ function agency_contact_form($error_log, $hasError, $emailSent, $_POST){ ?>
 
       <div class="_1-3 col-no-left col-no-top">
 
-        <input type="text" name="contact-name" id="name" placeholder="Name" value="<?php if(isset($_POST['contact-name'])) echo $_POST['contact-name'];?>">
+        <input type="text" name="contact-name" id="name" class="<?php agency_error_class($error_log["nameError"]); ?>" placeholder="Name" value="<?php if(isset($_POST['contact-name'])) echo $_POST['contact-name'];?>">
         <?php agency_error_output($error_log["nameError"]); ?>
 
         <input type="text" name="contact-company" id="company" placeholder="Company" value="<?php if(isset($_POST['contact-company'])) echo $_POST['company'];?>">
 
-        <input type="text" name="contact-email-address" id="email-address" placeholder="Email Address" value="<?php if(isset($_POST['contact-email-address'])) echo $_POST['contact-email-address'];?>">
+        <input type="text" name="contact-email-address" id="email-address" class="<?php agency_error_class($error_log["emailError"]); ?>" placeholder="Email Address" value="<?php if(isset($_POST['contact-email-address'])) echo $_POST['contact-email-address'];?>">
         <?php agency_error_output($error_log["emailError"]); ?>
 
         <input type="text" name="contact-phone" id="phone" placeholder="Phone" value="<?php if(isset($_POST['contact-phone'])) echo $_POST['contact-phone'];?>">
@@ -787,8 +795,8 @@ function agency_contact_form($error_log, $hasError, $emailSent, $_POST){ ?>
       </div>
 
       <div class="_2-3 col-no-right col-no-top">
-        <textarea id="contact-message" name="contact-message"><?php if( isset($_POST['contact-message']) ) echo $_POST['contact-message']; ?></textarea>
-        <?php agency_error_output($error_log["messageError"]); ?>
+        <textarea id="contact-message" class="<?php agency_error_class($error_log["messageError"]); ?>" name="contact-message"><?php if( isset($_POST['contact-message']) ) echo $_POST['contact-message']; ?></textarea>
+        <?php agency_error_output($error_log["messageError"], true); ?>
 
         <input type="submit" id="send" value="Send Message"/>
         <input type="hidden" id="submitted" name="submitted" value="true" />

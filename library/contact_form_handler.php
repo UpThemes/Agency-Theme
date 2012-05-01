@@ -56,7 +56,7 @@ if(isset($_POST['submitted'])) {
     if (!isset($emailTo) || ($emailTo == '') ) { $emailTo = get_option('admin_email'); }
     $subject = '[Contact Form Entry] From '. $name;
     $body = "Name: $name \n\nEmail: $email \n\nComments: $message";
-    $headers = 'From: ' . get_option('blogname').' <wordpress@'.$domain.'>' . "\r\n" . 'Reply-To: ' . $email;
+      $headers = 'From: ' . get_option('blogname').' <mail@'.$domain.'>' . "\r\n" . 'Reply-To: ' . $email;
 
     wp_mail($emailTo, $subject, $body, $headers);
     $emailSent = true;

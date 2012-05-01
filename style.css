@@ -1180,6 +1180,30 @@ html[xmlns] .slides {
   border: 2px solid #848484;
   background: #ccc; }
 
+/* =============================================================================
+   Styles Directly related to error & notifications
+   ========================================================================== */
+/*
+ * Error
+ */
+.error-notification, .error {
+  color: #b94a48; }
+
+.error-notification {
+  clear: both;
+  margin-bottom: 0;
+  padding-bottom: 0; }
+
+form input[type="text"].error,
+form textarea.error {
+  border-color: #b94a48; }
+
+span.error {
+  display: block;
+  font-size: 13px;
+  padding: 0 10px;
+  margin-bottom: 15px; }
+
 * {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
