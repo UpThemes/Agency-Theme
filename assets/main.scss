@@ -285,7 +285,7 @@ header {
         position:absolute;
         width:175%;
         top:1.40em;
-        z-index:-1;
+        z-index:1;
         background:#fff;
         border:solid 1px #999;
         border-bottom:solid 2px #777;
@@ -349,7 +349,6 @@ header {
 
           > ul {
             display:block;
-            z-index:10px;
             left: 1px;
           }
         }
