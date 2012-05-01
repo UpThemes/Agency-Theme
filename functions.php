@@ -19,11 +19,11 @@ $theme_data = get_theme_data( get_theme_root() . '/' . $theme_name . '/style.css
 define('THEME_VERSION',$theme_data['Version']);
 
 // Load UpThemes Framework
-require_once( get_template_directory().'/admin/admin.php' );
+include_once( get_template_directory().'/admin/admin.php' );
 
 // Load WP ThemeLib.
-require_once( get_template_directory().'/lib/load.php');
+include_once( get_template_directory().'/lib/load.php');
 
 // Load Theme Specific Goodies
-require_once( get_template_directory().'/library/load.php');
+include_once( get_template_directory().'/library/load.php');
 
