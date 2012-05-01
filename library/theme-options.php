@@ -69,6 +69,17 @@ $options = array(
     "type" => "text",
     "default" => "Copyright " . date('Y') . " UpThemes.com. All Rights Reserved."
   ),
+  'agency_email' => array(
+    'tab' => "general",
+    "name" => "agency_email",
+    "title" => "Email for contact template",
+    'description' => __( 'Enter an email', 'agency' ),
+    'section' => 'contact',
+    'since' => '1.0',
+    "id" => "general",
+    "type" => "text",
+    "default" => ""
+  ),
   'address_text1' => array(
     'tab' => "general",
     "name" => "address_text1",

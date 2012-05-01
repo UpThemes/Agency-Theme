@@ -3,6 +3,7 @@
 Template Name: Contact Page Template
 */
 ?>
+<?php require_once("library/contact_form_handler.php"); ?>
 <?php get_header(); ?>
 
 <?php agency_breadcrumbs(); ?>
@@ -17,19 +18,9 @@ Template Name: Contact Page Template
   </section>
   <hr/>
   <section class="_4-5 _parent">
-    <form id="contact">
-      <div class="_1-3 col-no-left col-no-top">
-        <input type="text" name="name" id="name" placeholder="Name"/>
-        <input type="text" name="company" id="company" placeholder="Company"/>
-        <input type="text" name="email-address" id="email-address" placeholder="Email Address"/>
-        <input type="text" name="phone" id="phone" placeholder="Phone"/>
-        <input type="text" name="web-url" id="web-url" placeholder="Web URL"/>
-      </div>
-      <div class="_2-3 col-no-right col-no-top">
-        <textarea id="message"></textarea>
-        <input type="submit" id="send" value="Send Message"/>
-      </div>
-    </form>
+
+    <?php agency_contact_form($error_log, $hasError, $emailSent, $_POST); ?>
+
   </section>
   <section class="_1-5">
     <h2><?php bloginfo('name'); ?></h2>

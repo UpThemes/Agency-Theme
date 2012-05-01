@@ -742,3 +742,61 @@ function agency_breadcrumbs() {
 
 
 <?php }
+
+
+
+function agency_error_output($error){
+  if(isset($error)) {
+    echo '<span class="error">' . $error . '</span>';
+  }
+
+}
+
+
+
+function agency_contact_form($error_log, $hasError, $emailSent, $_POST){ ?>
+
+
+  <?php if(isset($emailSent) && $emailSent == true) { ?>
+
+    <div class="thanks">
+      <h1 class="_1 success-notification">Thank you, your email was sent successfully.</h1>
+    </div>
+
+  <?php } else { ?>
+
+    <?php if(isset($hasError) || isset($captchaError)) { ?>
+        <h3 class="_1 error-notification">We're sorry, something seems to have gone wrong. Check your errors or reach out on a social media channel.</h3>
+    <?php } ?>
+
+    <form id="contact" action="<?php the_permalink(); ?>" method="post">
+
+      <div class="_1-3 col-no-left col-no-top">
+
+        <input type="text" name="contact-name" id="name" placeholder="Name" value="<?php if(isset($_POST['contact-name'])) echo $_POST['contact-name'];?>">
+        <?php agency_error_output($error_log["nameError"]); ?>
+
+        <input type="text" name="contact-company" id="company" placeholder="Company" value="<?php if(isset($_POST['contact-company'])) echo $_POST['company'];?>">
+
+        <input type="text" name="contact-email-address" id="email-address" placeholder="Email Address" value="<?php if(isset($_POST['contact-email-address'])) echo $_POST['contact-email-address'];?>">
+        <?php agency_error_output($error_log["emailError"]); ?>
+
+        <input type="text" name="contact-phone" id="phone" placeholder="Phone" value="<?php if(isset($_POST['contact-phone'])) echo $_POST['contact-phone'];?>">
+
+        <input type="text" name="contact-web-url" id="web-url" placeholder="Web URL" value="<?php if(isset($_POST['contact-web-url'])) echo $_POST['contact-web-url'];?>">
+      </div>
+
+      <div class="_2-3 col-no-right col-no-top">
+        <textarea id="contact-message" name="contact-message"><?php if( isset($_POST['contact-message']) ) echo $_POST['contact-message']; ?></textarea>
+        <?php agency_error_output($error_log["messageError"]); ?>
+
+        <input type="submit" id="send" value="Send Message"/>
+        <input type="hidden" id="submitted" name="submitted" value="true" />
+      </div>
+
+    </form>
+
+  <?php } 
+
+
+}

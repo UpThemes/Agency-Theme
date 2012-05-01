@@ -282,8 +282,6 @@ function agency_styles() {
 
   $up_options = upfw_get_options();
   wp_enqueue_style('style', get_template_directory_uri() . "/style.css", false, THEME_VERSION, 'all');
-//  if( $up_options->disable_custom_fonts == false )
-    // wp_enqueue_style('fonts',get_template_directory_uri() . "/css/fonts.css", array('style'), THEME_VERSION, 'all');
 
 }
 add_action('wp_enqueue_scripts','agency_styles');

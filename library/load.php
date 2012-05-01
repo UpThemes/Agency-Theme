@@ -26,3 +26,4 @@ require_once("utility-functions.php");
 
 // Load comments callback
 require_once("comments-callback.php");
+
