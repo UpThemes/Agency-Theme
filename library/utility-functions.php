@@ -199,8 +199,6 @@ function agency_custom_styles(){
 
 
 
-
-  
   global $up_options;
   
   if( !is_admin() && !in_array( $GLOBALS['pagenow'], array( 'wp-login.php', 'wp-register.php' ) ) ):
@@ -210,16 +208,13 @@ function agency_custom_styles(){
     if( $up_options->highlight_color ) {
       $highlight_color = $up_options->highlight_color; // Get Set Color
 
-
-
       $gradient_color = calculate_gradient_offset($highlight_color);
 
       $styles .= "a{ color: $highlight_color; }\n";
       $styles .= ".breadcrumb {
   background: $highlight_color;
   background: -webkit-linear-gradient($highlight_color, $gradient_color);
-  background: -moz-linear-gradient($highlight_color, $gradient_color);
-}\n";
+  background: -moz-linear-gradient($highlight_color, $gradient_color);\n}\n";
     }
 
     if( $up_options->link_color_hover )

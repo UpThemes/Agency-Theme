@@ -31,6 +31,7 @@ if (function_exists('upfw_get_options'))
 
   <!--[if lt IE 7]>
   <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE7.js"></script>
+  <style type="text/css">*{behavior: url("<?php echo get_template_directory_uri() ?>/assets/boxsizing.htc")}</style>
   <![endif]-->
   <!--[if lt IE 9]>
   <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
