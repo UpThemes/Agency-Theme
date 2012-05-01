@@ -623,7 +623,7 @@ function agency_home_slide_builder() {
   
     $args = array(
       'container'     => false,
-      'menu_id'       => 'slide-nav',
+      'menu_id'       => 'home-slides-nav',
       'theme_location'=> 'home_slides_menu',
       'fallback_cb'   => 'agency_nav_callout',
       'link_before'   => '',
@@ -645,14 +645,12 @@ function agency_home_slide_builder() {
 <section class="rotator">
   <div class="wrap">
     <div class="flexslider">
-
-
       <ul class="slides">
   <?php
 
     foreach ($the_slides as $the_slide) {
       echo "\n";
-      echo '          <li class="slide">'."\n";
+      echo '          <li class="slide">'."\n\n";
       echo '            <div class="slide-content-wrapper _1-2 clearfix">'."\n";
       echo '              <div class="slide-content">'."\n";
       echo '                <h1>' . $the_slide['title'] ."</h1>\n";
@@ -663,7 +661,7 @@ function agency_home_slide_builder() {
       echo '                ' . $slides_nav ."\n";
       echo '              </div>'."\n";
       echo '            </div>'."\n";
-      echo '          ' . $the_slide['image'] ."\n";
+      echo '          ' . $the_slide['image'] ."\n\n";
       echo '        </li>'."\n";
 
     } ?>
