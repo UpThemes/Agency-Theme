@@ -324,58 +324,46 @@ function agency_portfolio_services($postID){
 
 function agency_portfolio_testimonials($postID){
 
-  $testimonial = get_post_meta(get_the_ID(), 'portfolio_related_testimonial', true);
-  echo $testimonial;
-//
-//  $the_tags = get_the_tags($postID);
-//
-//  if ($the_tags) {
-//
-//    $tag_array = array();
-//    foreach ( $the_tags as $tag ){
-//      array_push($tag_array, $tag->name);
-//    }
-//
-//    $query = new WP_Query(
-//      array(
-//        'post_type' => 'testimonial',
-//        'posts_per_page'  => -1
-//        
-//      )
-//    );
-//
-//  }
-//
-//  $testimonial_title = 0;
-//
-//  if ( $query != null && $query->have_posts() ){
-//    while ( $query->have_posts() ) : $query->the_post();
-//
-//      if (has_tag($tag_array) && $testimonial_title == 0) {
-//
-//        $testimonial_title = 1;
-//        echo '    <h3><strong>Testimonials</strong></h3>'."\n";
-      
-//
-//        <div class="testimonial">
-//           the_content();
-//          <em>- the_title(); </em>
-//        </div>
-//  
-//       // } else if (has_tag($tag_array)) { 
-//
-//        <div class="testimonial">
-//           the_content();
-//          <em>-  the_title(); </em>
-//        </div>
+  $testimonials = get_post_meta($postID, 'porttestimonials', true);
 
-// }
+  if(is_array($testimonials)) { // Has Testimonials Associated with Portfolio item
+    echo '    <h3><strong>Testimonials</strong></h3>'."\n"; // Display Section Title
 
-//    endwhile;
+    foreach($testimonials as $testimonial){
+      $post_id_and_title = $testimonial["select-associated-testimonial"];
+      $post_id_and_title = explode("ID: ",$post_id_and_title);
+      $post_id_and_title = explode(" - ", $post_id_and_title[1]);
 
-//}
+      $post_ids[] = $post_id_and_title[0];
 
-//  wp_reset_postdata();
+    }
+
+    $query = new WP_Query(
+      array(
+        'post_type'       => 'testimonial',
+        'post__in'        => $post_ids,
+        'posts_per_page'  => '-1'
+      )
+    );
+
+
+    if ($query->have_posts() ){
+      while ( $query->have_posts() ) : $query->the_post(); ?>
+
+      <div class="testimonial">
+        <?php the_content(); ?>
+        <em>- <?php the_title() ?></em>
+      </div>
+
+<?php endwhile;
+
+      wp_reset_postdata();
+    };
+
+  } else {
+    return; // No Testimonials, exit
+  }
+
 
 }
 
@@ -798,6 +786,38 @@ function agency_contact_form($error_log, $hasError, $emailSent, $_POST){ ?>
     </form>
 
   <?php } 
+
+
+}
+
+
+
+function agency_get_testimonials_list() {
+
+  $query = new WP_Query(
+    array(
+      'post_type'       => 'testimonial',
+      'posts_per_page'  => '-1'
+    )
+  );
+  
+  if ($query->have_posts() ){
+
+    $results = array();
+
+    while ( $query->have_posts() ) : $query->the_post();
+
+      $testimonialdata = "ID: " . get_the_ID() . " - " . get_the_title() ;
+
+      $results[] = $testimonialdata;
+
+    endwhile;
+
+  wp_reset_postdata();
+
+  return $results;
+
+  };
 
 
 }

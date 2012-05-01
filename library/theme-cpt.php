@@ -168,7 +168,7 @@ function agency_register_cpt() {
 
 
     $portfolioslides = array( 
-      array( 'type' => 'upload', 'title' => 'Portfolio Slide Image', 'description' => 'Use a pretty big image so it\'ll look nice in large slideshows. <br/>(Supports multiple slides, & automatically includes the featured image as a slide.)' )
+      array( 'type' => 'upload', 'title' => 'Portfolio Slide Image', 'description' => 'Use a pretty big image so it\'ll look nice in large slideshows. <br/>(Supports multiple slides & automatically includes the featured image as a slide.)' )
     );
 
     $slideargs = array(
@@ -183,47 +183,28 @@ function agency_register_cpt() {
     new WCK_CFC_Wordpress_Creation_Kit( $slideargs );
 
 
-    function portfolio_testimonial_meta(){
-      add_meta_box( 'portfolio_testimonial_metabox', __('Slide Details', 'agency'), 'portfolio_testimonial_metabox_output', 'portfolio' ,'side', 'default' );
-    }
+    $portfoliotestimonials = array( 
+      array(
+        'type' => 'select',
+        'title' => 'Select Associated Testimonial',
+        'options' => agency_get_testimonials_list()
+      )
+    );
 
+    $testargs = array(
+      'metabox_id' => 'porttestimonials',
+      'metabox_title' => 'Associated Portfolio Item Testimonials',
+      'post_type' => 'portfolio',
+      'single' => true,
+      'meta_name' => 'porttestimonials',
+      'meta_array' => $portfoliotestimonials
+    );
 
-    function portfolio_testimonial_metabox_output(){
-
-      global $post;
-      meta_handler(array(
-        'id'      => 'portfolio_related_testimonial',
-        'name'    => __('Portfolio Item Testimonials', 'agency'),
-        'descr'   => __('Add a testimonial to this portfolio item.'),
-        'type'    => 'related_post',
-        'options' => array('post_types' => array('testimonial'))
-      ));
-
-    }
+    new WCK_CFC_Wordpress_Creation_Kit( $testargs );
 
 
   }
   add_action('after_setup_theme','agency_setup_portfolio_metaboxes');
-
-  function agency_setup_testimonial_metaboxes(){
-
-    $testimonialdata = array( 
-      array( 'type' => 'text', 'title' => 'Testimonial Author' )
-    );
-
-    $args = array(
-      'metabox_id' => 'testimonial-info',
-      'metabox_title' => 'Testimonial Information',
-      'post_type' => 'testimonial',
-      'single' => true,
-      'meta_name' => 'testimonial-info',
-      'meta_array' => $testimonialdata
-    );
-
-    new WCK_CFC_Wordpress_Creation_Kit( $args );
-
-  }
-  add_action('after_setup_theme','agency_setup_testimonial_metaboxes');
 
 
 
