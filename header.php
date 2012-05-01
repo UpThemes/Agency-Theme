@@ -41,6 +41,8 @@ if (function_exists('upfw_get_options'))
 
 </head>
 <body>
+  <div id="pagewrap">
+    <div id="footerpad" class="clearfix">
   <header>
     <div class="wrap">
       <a href="<?php echo home_url('/'); ?>" class="logo">

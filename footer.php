@@ -1,4 +1,5 @@
-
+</div>
+</div>
   <footer>
     <div class="wrap">
       <section class="_1-2">

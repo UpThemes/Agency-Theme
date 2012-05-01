@@ -21,7 +21,7 @@ foreach ( $comments as $comment )
   get_comment_type() == "comment" ? ++$comment_count : ++$ping_count;
 ?>
 
-      <div id="comments-list" class="comment-list _1">
+      <div id="comments-list" class="comment-list">
         <h1><?php printf($comment_count > 1 ? __('<span>%d</span> Responses', 'agency') : __('<span>1</span> Response', 'agency'), $comment_count) ?></h1>
 
 <?php wp_list_comments( array('style' => 'div', 'type' => 'comment', 'avatar_size' => 74, 'callback' => 'agency_comment') ); ?>
@@ -41,7 +41,7 @@ foreach ( $comments as $comment )
 
 <?php } ?>
       <form id="comment-form" class="_1 _parent" action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post">
-        <div class="_1 _no-t _no-b">
+        <div class="_1 _parent">
 <?php if ( have_comments() ) { ?>
           <hr/>
 <?php } ?>
@@ -56,19 +56,19 @@ foreach ( $comments as $comment )
 <?php else : ?>
         </div>
 
-        <div class="_1-3 _no-t _no-b">
+        <div class="_1-3 _no-t _no-b _no-l">
           <input type="text" name="author" id="author" placeholder="Name" value="<?php echo $comment_author ?>" size="30" maxlength="20" tabindex="3" />
         </div>
         <div class="_1-3 _no-t _no-b">
           <input type="text" name="email" id="email" placeholder="Email Address" value="<?php echo $comment_author_email ?>" size="30" maxlength="50" tabindex="4" />
         </div>
-        <div class="_1-3 _no-t _no-b">
+        <div class="_1-3 _no-t _no-b _no-r">
           <input type="text" name="url" id="url" placeholder="Web Url" value="<?php echo $comment_author_url ?>" size="30" maxlength="50" tabindex="5" />
         </div>
 
 <?php endif; /* if ( $user_ID ) */ ?>
 
-        <div class="_1 _no-t">
+        <div class="_1 _parent">
           <textarea name="comment" id="comment"></textarea>
           <input type="submit" id="submit" value="<?php _e('Post Comment', 'agency') ?>"  tabindex="7"/>
           <input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" /></div>

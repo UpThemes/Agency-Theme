@@ -553,6 +553,29 @@ header {
   }
 }
 
+.portfolio-categories {
+  list-style:none;
+  margin:0;
+  padding:0;
+
+  li {
+    overflow:hidden;
+  }
+
+  a {
+    display:block;
+    padding:5px;
+    color:black;
+    font-weight:normal;
+  }
+
+  .current-cat a {
+    background:#f5f4ac;
+    font-weight:bold;
+    float:left;
+  }
+}
+
 .team-member {
   font-size:13px;
 
@@ -1024,3 +1047,26 @@ footer {
     margin-left:0;
   }
 }
+
+html, body, #pagewrap { height: 100%; }
+
+body > #pagewrap {height: auto; min-height: 100%;}
+
+#footerpad { padding-bottom: 150px; }
+
+footer {
+  margin-top:-150px;
+  height: 150px;
+} 
+
+/* CLEAR FIX*/
+.clearfix:after {content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;}
+.clearfix {display: inline-block;}
+/* Hides from IE-mac \*/
+* html .clearfix { height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */
