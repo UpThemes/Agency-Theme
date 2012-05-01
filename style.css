@@ -457,7 +457,6 @@ table {
   float: left;
   padding: 1.75em .75em;
   box-sizing: border-box;
-  *behavior: url("wp-content/themes/agency/assets/boxsizing.htc");
   -moz-box-sizing: border-box; }
   ._1 ._1,
   ._1 ._1-2,
@@ -1207,7 +1206,6 @@ span.error {
 * {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  *behavior: url("wp-content/themes/agency/assets/boxsizing.htc");
   position: relative; }
 
 .clearfix:after {
