@@ -2,28 +2,28 @@
 
 
 // Load some basic init stuff
-require_once("init.php");
+include_once("init.php");
 
-require_once("meta_handler.php");
+include_once("meta_handler.php");
 
 // Load Theme Custom Post Types
-require_once("theme-cpt.php");
+include_once("theme-cpt.php");
 
 // Load Theme Custom Post Types To Handle Slides
-require_once("slides.php");
+include_once("slides.php");
 
 // Load Theme Options
-require_once("theme-options.php");
+include_once("theme-options.php");
 
 // Load some default plugins
-require_once("theme-plugins.php");
+include_once("theme-plugins.php");
 
 // Load Breadcrumb function
-require_once("breadcrumbs.php");
+include_once("breadcrumbs.php");
 
 // Load some utility theme specific functions
-require_once("utility-functions.php");
+include_once("utility-functions.php");
 
 // Load comments callback
-require_once("comments-callback.php");
+include_once("comments-callback.php");
 
