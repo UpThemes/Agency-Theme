@@ -68,10 +68,10 @@ function agency_navigation(){
 }
 
 
-function agency_the_404_content(){ ?>
+function agency_no_post_content(){ ?>
 
-  <h1><?php _e("Not Found","storefrontal"); ?></h1>
-  <h2><?php _e("Sorry, but you are looking for something that isn't here.","storefrontal"); ?></h2> <?php
+  <h1><?php _e("No Posts Found","storefrontal"); ?></h1>
+  <h2><?php _e("We couldn't find any posts that matched your query.","storefrontal"); ?></h2> <?php
   get_search_form();
 
 }

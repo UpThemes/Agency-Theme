@@ -34,7 +34,7 @@
   <?php agency_navigation(); ?>
 
   <?php else : ?>
-    <?php agency_the_404_content(); ?>
+    <?php agency_no_post_content(); ?>
   <?php endif; ?>
 
   </section>

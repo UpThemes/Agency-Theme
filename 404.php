@@ -3,7 +3,7 @@
 <div class="wrap content">
   <section class="_1 ">
 
-  <?php agency_the_404_content(); ?>
+  <?php agency_no_post_content(); ?>
 
   </section>
 </div>

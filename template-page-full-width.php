@@ -36,7 +36,7 @@ Template Name: Full Width Page Template
 /**
  * Output no-post content
  */
-agency_the_404_content(); 
+agency_no_post_content(); 
 ?>
 
 <?php endif; ?>
