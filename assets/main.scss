@@ -26,7 +26,7 @@ $serif:Georgia,serif;
 
 * {
   -moz-box-sizing: border-box;
-  box-sizing: border-box; *behavior: url("assets/boxsizing.htc");
+  box-sizing: border-box; *behavior: url("wp-content/themes/agency/assets/boxsizing.htc");
   position: relative;
 }
 
@@ -506,6 +506,7 @@ header {
   }
 
   .slide-content {
+    background:black;
     background: rgba(22, 22, 22, .80);
     color:white;
     overflow:hidden;
