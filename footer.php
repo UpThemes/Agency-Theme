@@ -11,7 +11,7 @@
                   'container'     => false,
                   'menu_id'       => 'navigation',
                   'theme_location'=> 'footer_menu',
-                  'fallback_cb'   => 'agency_nav_callout',
+                  'fallback_cb'   => 'wp_page_menu',
                   'link_before'   => '<span>',
                   'link_after'    => '</span>',
                   'depth'         => 1
@@ -20,7 +20,7 @@
           echo wp_nav_menu( $args );
 
         } else {
-          agency_nav_callout();
+          wp_page_menu();
         }
 
         ?>

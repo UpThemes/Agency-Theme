@@ -57,7 +57,7 @@ if (function_exists('upfw_get_options'))
                 'container'     => false,
                 'menu_id'       => 'navigation',
                 'theme_location'=> 'header_menu',
-                'fallback_cb'   => 'agency_nav_callout',
+                'fallback_cb'   => 'wp_page_menu',
                 'link_before'   => '<span>',
                 'link_after'    => '</span>',
                 'depth'         => 2
@@ -66,7 +66,7 @@ if (function_exists('upfw_get_options'))
         echo wp_nav_menu( $args );
       
       } else {
-        agency_nav_callout();
+        wp_page_menu();
       }
       ?>
       </nav>
