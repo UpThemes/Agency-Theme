@@ -1823,7 +1823,10 @@ section article {
     height: 82px;
     float: left;
     background: url("assets/post-icons.png") 0 82px no-repeat; }
-  section article h1 + h4 {
+  section article .post-meta {
+    color: #666;
+    font-size: 13px;
+    font-weight: bold;
     margin-top: -10px; }
   section article h4 {
     font-size: 13px;

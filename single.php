@@ -17,7 +17,7 @@
 
 
       <h1 class="post-pad-left"><?php the_title(); ?></h1>
-      <h4 class="post-pad-left">Posted at <?php the_time(); ?> on <?php the_date(); ?> by <?php the_author_posts_link(); ?></h4>
+      <div class="post-meta post-pad-left">Posted at <?php the_time(); ?> on <?php the_date(); ?> by <?php the_author_posts_link(); ?></div>
 
       <div class="post-pad-left">
         <?php the_content(); ?>

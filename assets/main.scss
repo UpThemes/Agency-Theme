@@ -882,7 +882,10 @@ section {
       background:url("assets/post-icons.png") 0 82px no-repeat;
     }
 
-    h1 + h4 {
+    .post-meta {
+      color:#666;
+      font-size:13px;
+      font-weight:bold;
       margin-top:-10px;
     }
 
