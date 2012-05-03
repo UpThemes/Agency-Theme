@@ -40,7 +40,7 @@ if (function_exists('upfw_get_options'))
   <![endif]-->
 
 </head>
-<body>
+<body <?php body_class(); ?>>
   <div id="pagewrap">
     <div id="footerpad" class="clearfix">
   <header>

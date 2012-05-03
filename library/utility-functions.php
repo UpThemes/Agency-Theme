@@ -413,7 +413,7 @@ function agency_portfolio_home_list(){
     while ( $query->have_posts() ) : $query->the_post(); ?>
 
 
-      <div class="portfolio-item _1-4">
+      <div <?php post_class("portfolio-item _1-4"); ?>>
         <a href="<?php the_permalink(); ?>">
           <?php
             $post_img =  get_the_post_thumbnail(get_the_ID());
@@ -474,7 +474,7 @@ function agency_team_members_home_list(){
   if ($query->have_posts() ){
     while ( $query->have_posts() ) : $query->the_post(); ?>
 
-      <div class="team-member _1-4">
+      <div <?php post_class("team-member _1-4"); ?>>
         
         
         <?php
@@ -512,7 +512,7 @@ function agency_blog_home_list(){
     while ( $query->have_posts() ) : $query->the_post(); ?>
 
 
-    <article class="blog-post">
+    <article <?php post_class("blog-post"); ?>>
       <?php
         $post_img =  get_the_post_thumbnail(get_the_ID());
         if ($post_img):
@@ -546,7 +546,7 @@ function agency_testimonial_home_list(){
   if ($query->have_posts() ){
     while ( $query->have_posts() ) : $query->the_post(); ?>
 
-    <div class="testimonial">
+    <div <?php post_class("testimonial"); ?>>
       <?php the_content(); ?>
       <em>- <?php the_title(); ?></em>
     </div><!--/.testimonial-->
@@ -559,7 +559,13 @@ function agency_testimonial_home_list(){
 }
 
 
-function agency_get_post_class($postID){
+function agency_get_post_class($postID, $is_single=false){
+
+  if ($is_single == true) {
+    foreach ( get_post_class($postID) as $class) {
+      echo "$class ";
+    }
+  }
 
   $post_format =  get_post_format($postID);
   if (!$post_format) {

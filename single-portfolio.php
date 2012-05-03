@@ -17,7 +17,7 @@ $up_options = upfw_get_options();
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-  <section class="_4-5 _no-b">
+  <section <?php post_class("_4-5 _no-b"); ?>>
     <h1><?php the_title();?> <?php agency_portfolio_url($post->ID); ?></h1>
     <div class="viewer-meta">
       <?php the_terms( $post->ID, 'portfolio_category', '<span class="portfolio-category">', ' - ', '</span>' ); ?>
@@ -33,7 +33,7 @@ $up_options = upfw_get_options();
   </section>
   <hr/>
 
-  <section class="_2-3">
+  <section <?php post_class("_2-3"); ?>>
     <h3><strong>About</strong></h3>
     <?php the_content(); ?>
   </section>

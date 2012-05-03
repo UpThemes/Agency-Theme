@@ -9,7 +9,7 @@
   <section class="_4-5 _parent">
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-    <article class="_1 <?php agency_get_post_class($post->ID); ?>">
+    <article class="_1 <?php agency_get_post_class($post->ID, true); ?>">
       <i class="post-icon"></i>
       <div class="meta post-pad-left">
         <a href="<?php comments_link(); ?>" title="<?php comments_number('0 Comments', '1 Comment', '% Comments'); ?>" class="comments"><?php comments_number('0', '1', '%'); ?></a> <?php the_category(', '); ?>

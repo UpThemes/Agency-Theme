@@ -22,8 +22,8 @@
 
    ?>
 
-    <div>
-      <article class="<?php agency_get_post_class($post->ID); ?>">
+    <div <?php post_class(); ?>>
+      <article <?php agency_get_post_class($post->ID); ?>>
         <i class="post-icon"></i>
         <div class="meta post-pad-left">
           <a href="<?php comments_link(); ?>" title="<?php comments_number('0 Comments', '1 Comment', '% Comments'); ?>" class="comments"><?php comments_number('0', '1', '%'); ?></a> <?php the_category(', '); ?>

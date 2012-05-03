@@ -21,7 +21,7 @@
 
    ?>
 
-    <div>
+    <div <?php body_class(); ?>>
       <article class="<?php agency_get_post_class($post->ID); ?>">
         <i class="post-icon"></i>
         <div class="meta post-pad-left">

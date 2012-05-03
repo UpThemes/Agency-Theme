@@ -12,7 +12,7 @@ Template Name: Contact Page Template
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-  <section class="_1 _no-b">
+  <section <?php post_class("_1 _no-b"); ?>>
     <h1><?php the_title(); ?></h1>
     <?php the_content(); ?>
   </section>

@@ -19,7 +19,7 @@ $up_options = upfw_get_options();
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
   
-    <section class="team-member _1-4">
+    <section <?php post_class("team-member _1-4"); ?>>
 
       <?php
         $post_img =  get_the_post_thumbnail(get_the_ID(), 'responsive', array('class' => 'temp border'));

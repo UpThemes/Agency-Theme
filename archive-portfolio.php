@@ -15,7 +15,7 @@
   <section class="_4-5 _parent _uniform-children">
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-    <div class="_1-3 post">
+    <div <?php post_class("_1-3 post"); ?>>
 
       <a href="<?php the_permalink(); ?>">
         <?php
