@@ -74,12 +74,22 @@ function make_breadcrumbs($opts = array(
 
     } elseif ( is_attachment() ) {
       $parent = get_post($post->post_parent);
-      $cat = get_the_category($parent->ID); $cat = $cat[0];
-      $cats = get_category_parents($cat, TRUE, "</li>\n  " . $delimiter . "\n  <li>");
-      if ($showCurrent == 0) $cats = preg_replace("/^(.+)\s$delimiter\s$/", "$1", $cats);
-      echo "  <li>" . $cats;
-      echo '  <li><a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a></li>' . "\n";
-      if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . '  <li>'. $before . get_the_title() . $after . '</li>' . "\n";
+
+      if ( has_term('', 'category', $parent->ID ) ) {
+
+        $cat = get_the_category($parent->ID); $cat = $cat[0];
+
+        $cats = get_category_parents($cat, TRUE, "</li>\n  " . $delimiter . "\n  <li>");
+        if ($showCurrent == 0) $cats = preg_replace("/^(.+)\s$delimiter\s$/", "$1", $cats);
+        echo "  <li>" . $cats;
+        echo '  <li><a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a></li>' . "\n";
+        if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . '  <li>'. $before . get_the_title() . $after . '</li>' . "\n";
+      } else {
+        if ($parent->post_title != 'Home') echo '  <li><a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a></li>' . "\n  " . $delimiter . "\n";
+        if ($showCurrent == 1) echo '  <li>'. $before . get_the_title() . $after . '</li>' . "\n";
+      }
+      
+      
 
     } elseif ( is_page() && !$post->post_parent ) {
       if ($showCurrent == 1) echo '  <li>' . $before . get_the_title() . $after . '</li>' . "\n";
