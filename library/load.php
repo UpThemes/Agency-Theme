@@ -27,3 +27,5 @@ include_once("utility-functions.php");
 // Load comments callback
 include_once("comments-callback.php");
 
+// Load Theme Specific Widgets
+include_once("widgets/load.php");
