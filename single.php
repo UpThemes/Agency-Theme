@@ -55,8 +55,7 @@ agency_no_post_content();
 
 
   <section class="_1-5">
-    <?php get_sidebar('default-top'); ?>
-    <?php get_sidebar('default-bottom'); ?>
+    <?php get_sidebar(); ?>
   </section>
 </div><!--/.wrap-->
 
