@@ -27,3 +27,6 @@ include_once( get_template_directory().'/lib/load.php');
 // Load Theme Specific Goodies
 include_once( get_template_directory().'/library/load.php');
 
+// Load Theme Specific Widget
+include_once(get_template_directory().'/team-member-widget/team-member-widget.php');
+

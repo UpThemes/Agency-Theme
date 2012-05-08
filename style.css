@@ -1618,6 +1618,12 @@ header {
     height: auto;
     margin-bottom: 10px; }
 
+.team-member-widget .flex-control-nav {
+  display: none; }
+
+.team-member-widget-content h3 {
+  margin-bottom: 0; }
+
 .viewer-controls {
   float: right;
   font-size: 0;

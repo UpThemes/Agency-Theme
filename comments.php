@@ -75,6 +75,6 @@ foreach ( $comments as $comment )
 
 <?php comment_id_fields(); ?>
 
-        </div>
+
       </form><!--/#comment-form-->
     </div><!--/.comments-->
