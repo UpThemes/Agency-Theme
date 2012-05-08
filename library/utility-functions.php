@@ -829,10 +829,12 @@ function agency_get_testimonials_list() {
 }
 
 
-function agency_default_top_sidebar() {
+function agency_default_sidebar() {
 
 
-// Display Default widgets in Default Top Sidebar
+the_widget('WP_Widget_Categories');
+
+the_widget('WP_Widget_Search');
 
 
 }

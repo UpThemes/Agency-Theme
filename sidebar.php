@@ -1,12 +1,12 @@
-<?php if (is_active_sidebar('default-top')) : ?>
+<?php if (is_active_sidebar('default')) { ?>
 <div class="block">
-    <?php dynamic_sidebar('default-top'); ?>
+    <?php dynamic_sidebar('default'); ?>
 </div>
-<?php endif; ?>
+<?php } else { ?>
+
+<div class="block">
+    <?php agency_default_sidebar(); ?>
+</div>
 
 
-<?php if (is_active_sidebar('default-bottom')) : ?>
-<div class="block">
-    <?php dynamic_sidebar('default-bottom'); ?>
-</div>
-<?php endif; ?>
+<?php } ?>

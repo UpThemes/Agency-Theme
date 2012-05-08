@@ -247,30 +247,18 @@ function agency_register_sidebars() {
   ) );
 
   /**
-   * Register Single Top Dynamic Sidebar
+   * Register Sidebar
    */
   register_sidebar( array(
-    'name'          => sprintf( __( 'Default Top' ), 'agency' ),
-    'id'            => 'default-top',
-    'description'   => 'Top Widget Area on the Default Sidebar',
+    'name'          => sprintf( __( 'Default Sidebar' ), 'agency' ),
+    'id'            => 'default',
+    'description'   => 'Widget Area on the Default Sidebar',
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget'  => '</div>',
     'before_title'  => '<h2 class="widgettitle">',
     'after_title'   => '</h2>' 
   ) );
 
-  /**
-   * Register Single Bottom Dynamic Sidebar
-   */
-  register_sidebar( array(
-    'name'          => sprintf( __( 'Default Bottom' ), 'agency' ),
-    'id'            => 'default-bottom',
-    'description'   => 'Bottom Widget Area on the Default Sidebar',
-    'before_widget' => '<div id="%1$s" class="widget %2$s">',
-    'after_widget'  => '</div>',
-    'before_title'  => '<h2 class="widgettitle">',
-    'after_title'   => '</h2>' 
-  ) );
 
 }
 // Hook into 'widgeets_init'
