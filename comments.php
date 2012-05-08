@@ -40,7 +40,7 @@ foreach ( $comments as $comment )
 
 
 <?php } ?>
-      <form id="comment-form" class="_1 _parent" action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post">
+      <form id="comment-form" class="_1" action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post">
         <div class="_1 _parent">
 <?php if ( have_comments() ) { ?>
           <hr/>
