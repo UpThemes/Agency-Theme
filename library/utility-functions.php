@@ -738,7 +738,7 @@ function agency_error_class($error) {
 }
 
 
-function agency_error_output($error, $format){
+function agency_error_output($error, $format=''){
   if(isset($error) && $format == true) {
     echo '<span class="error _1-3 ">' . $error . '</span>';
   } else if(isset($error)){

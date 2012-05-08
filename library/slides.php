@@ -6,10 +6,11 @@
 
 function slides_init() {
 
+if (is_admin()){
   wp_enqueue_script('metab-jquery', get_template_directory_uri() . '/library/scripts/metaboxes.jquery.js', array('jquery'));
   wp_enqueue_script('sundance', get_template_directory_uri() . '/library/scripts/global.js', array('jquery','fancybox'));
   wp_enqueue_style('metaboxes', get_template_directory_uri() . "/library/styles/metaboxes.css", false, false, false);
-
+}
   $icon =  trailingslashit( get_template_directory_uri() ).'library/images/slides_icon.png';
 
   $show_labels = array(
