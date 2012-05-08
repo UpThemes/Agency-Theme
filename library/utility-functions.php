@@ -831,10 +831,8 @@ function agency_get_testimonials_list() {
 
 function agency_default_sidebar() {
 
-
 the_widget('WP_Widget_Categories');
 
 the_widget('WP_Widget_Search');
-
 
 }
