@@ -45,7 +45,7 @@ $options = array(
     'since' => '1.0',
     "id" => "general",
     "type" => "color",
-    "default" => "#7CBBBF"
+    "default" => "7CBBBF"
   ),
   'link_color_hover' => array(
     'tab' => "general",
@@ -56,7 +56,7 @@ $options = array(
     'since' => '1.0',
     "id" => "general",
     "type" => "color",
-    "default" => "#468B8F"
+    "default" => "468B8F"
   ),
   'copyright_text' => array(
     'tab' => "general",
