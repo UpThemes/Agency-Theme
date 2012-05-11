@@ -755,13 +755,13 @@ function agency_contact_form($error_log, $hasError, $emailSent, $_POST){ ?>
   <?php if(isset($emailSent) && $emailSent == true) { ?>
 
     <div class="thanks">
-      <h1 class="_1 success-notification">Thank you, your email was sent successfully.</h1>
+      <h1 class="_1 success-notification"><?php _e("Thank you, your email was sent successfully.","agency"); ?></h1>
     </div>
 
   <?php } else { ?>
 
     <?php if(isset($hasError) || isset($captchaError)) { ?>
-        <h3 class="_1 error-notification">We're sorry, something seems to have gone wrong. Check your errors or reach out on a social media channel.</h3>
+        <h3 class="_1 error-notification"><?php _e("We're sorry, something seems to have gone wrong. Check your errors or reach out on a social media channel.","agency"); ?></h3>
     <?php } ?>
 
     <form id="contact" action="<?php the_permalink(); ?>" method="post">
@@ -829,10 +829,14 @@ function agency_get_testimonials_list() {
 }
 
 
+function agency_wp_page_menu(){
+	echo '<nav>';
+	wp_page_menu();
+	echo '</nav>';
+}
+
+
 function agency_default_sidebar() {
-
-the_widget('WP_Widget_Categories');
-
-the_widget('WP_Widget_Search');
-
+	the_widget('WP_Widget_Categories');
+	the_widget('WP_Widget_Search');
 }
