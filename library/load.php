@@ -2,6 +2,9 @@
 
 
 // Load some basic init stuff
+include_once("theme-setup.php");
+
+// Load some basic init stuff
 include_once("init.php");
 
 include_once("meta_handler.php");

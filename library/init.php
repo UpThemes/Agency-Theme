@@ -10,8 +10,6 @@
  */
 
 
-
-
 function agency_menu_init(){
 
   /**
@@ -22,28 +20,6 @@ function agency_menu_init(){
     'home_slides_menu'  => __( 'Home Slideshow Navigation', 'agency' ),
     'footer_menu'       => __( 'Footer Navigation', 'agency' )
   ) );
-
-
-  /**
-   * Output Navigation menu fallback
-   * 
-   * Outputs a message if either no custom navigation
-   * menu is applied to the current Theme location, or
-   * if the wp_nav_menu() function does not exist (i.e.
-   * if the current version of WordPress is < 3.0). 
-   * 
-   * Template files: header.php & footer.php
-   * 
-   * @link    http://codex.wordpress.org/Function_Reference/_2    __()
-   * 
-   * @since Agency 1.0
-   */
-  function agency_nav_callout(){
-
-    echo '<div id="navigation" class="error">' . __( 'Please configure your menu in the admin panel: Appearance > Menus', 'agency' ) . '</div>';
-
-  }
-
 
   add_filter('wp_nav_menu_objects', function ($items) {
       $hasSub = function ($menu_item_id, &$items) {
@@ -66,8 +42,6 @@ function agency_menu_init(){
 
 }
 add_action("after_setup_theme","agency_menu_init");
-
-
 
 /**
  * Creates Agency Walker Nav Menu
@@ -182,10 +156,6 @@ class Agency_Walker_Nav_Menu extends Walker_Nav_Menu {
 
 }
 
-
-
-
-
 /**
  * Register Dynamic Sidebars
  * 
@@ -261,10 +231,8 @@ function agency_register_sidebars() {
 
 
 }
-// Hook into 'widgeets_init'
+// Hook into 'widgets_init'
 add_action( 'widgets_init', 'agency_register_sidebars' );
-
-
 
 function agency_styles() {
 
@@ -285,13 +253,3 @@ function agency_scripts() {
 
 }
 add_action('wp_enqueue_scripts','agency_scripts');
-
-
-
-if ( function_exists( 'add_theme_support' ) ) {
-  add_theme_support( 'post-thumbnails' );
-  set_post_thumbnail_size( 100, 100, true ); // Normal post thumbnails
-  add_image_size('responsive', 999, 9999, true ); // Bigguns for responsitivity
-}
-
-add_theme_support( 'post-formats', array( 'link', 'quote', 'status', 'image', 'video', 'audio', 'gallery' ) );

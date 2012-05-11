@@ -1,7 +1,8 @@
 <?php
-if (function_exists('upfw_get_options'))
+if ( function_exists('upfw_get_options') ){
   global $up_options;
   $up_options = upfw_get_options();
+} else $up_options = array();
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
@@ -25,9 +26,7 @@ if (function_exists('upfw_get_options'))
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   <meta name="apple-mobile-web-app-capable" content="yes" />  
 
-
   <?php wp_head(); ?>
-
 
   <!--[if lte IE 7]>
   <style type="text/css">*{behavior: url("<?php echo get_template_directory_uri() ?>/assets/boxsizing.htc")}</style>
@@ -45,16 +44,14 @@ if (function_exists('upfw_get_options'))
     <div id="footerpad" class="clearfix">
   <header>
     <div class="wrap">
-      <a href="<?php echo home_url('/'); ?>" class="logo">
-        <span><?php bloginfo('name'); ?></span>
-      </a>
-      <nav>
-      <?php
 
+			<?php agency_display_custom_header(); ?>
+
+      <?php
       if ( function_exists( 'wp_nav_menu' ) ) {
       
               $args = array(
-                'container'     => false,
+                'container'     => 'nav',
                 'menu_id'       => 'navigation',
                 'theme_location'=> 'header_menu',
                 'fallback_cb'   => 'wp_page_menu',
@@ -66,10 +63,11 @@ if (function_exists('upfw_get_options'))
         echo wp_nav_menu( $args );
       
       } else {
+      	echo '<nav>';
         wp_page_menu();
+        echo '</nav>';
       }
       ?>
-      </nav>
 
       <div class="clear"></div>
     </div><!--/.wrap-->
