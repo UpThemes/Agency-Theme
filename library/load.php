@@ -1,6 +1,5 @@
 <?php
 
-
 // Load some basic init stuff
 include_once("theme-setup.php");
 
@@ -17,9 +16,6 @@ include_once("slides.php");
 
 // Load Theme Options
 include_once("theme-options.php");
-
-// Load some default plugins
-include_once("theme-plugins.php");
 
 // Load Breadcrumb function
 include_once("breadcrumbs.php");
