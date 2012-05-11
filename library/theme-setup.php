@@ -224,8 +224,6 @@ function agency_admin_header_image() { ?>
 		<span><?php bloginfo('name'); ?></span>
 	<?php endif; ?>
 
-	<small><?php bloginfo('description'); ?></small>
-
 	</a>
 		
 </div>
