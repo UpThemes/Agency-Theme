@@ -1,10 +1,6 @@
-<?php
-  if( get_option( 'show_on_front' ) != 'page' ) {
-    require_once("home.php");
-  } else {
-
+<? 
+/* Template Name: Custom Home Page */
 ?>
-
 
 <?php get_header(); ?>
 
@@ -13,8 +9,8 @@
 <div class="wrap content">
   <section class="portfolio-module">
     <div class="section-h _1 _no-b">
-      <h2>Selections from the Portfolio</h2>
-      <a href="<?php echo home_url('/portfolio/'); ?>"><i class="link"></i>view complete portfolio</a>
+      <h2><?php _e('Selections from the Portfolio','agency'); ?></h2>
+      <a href="<?php echo home_url('/portfolio/'); ?>"><i class="link"></i><?php _e('view complete portfolio','agency'); ?></a>
     </div><!--/.section-h-->
     <div class="_1 _parent _no-t">
 
@@ -25,8 +21,8 @@
 <hr/>
   <section class="blog-module _1-2">
     <div class="section-h">
-      <h2>Recently on the Blog</h2>
-      <a href="<?php agency_posts_url(); ?>"><i class="link"></i>Read the Blog</a>
+      <h2><?php _e('Recently on the Blog','agency'); ?></h2>
+      <a href="<?php agency_posts_url(); ?>"><i class="link"></i><?php _e('Read the Blog','agency'); ?></a>
     </div><!--/.section-h-->
 
     <?php agency_blog_home_list(); ?>
@@ -34,7 +30,7 @@
   </section><!--/.blog-module-->
   <section class="testimonial-module _1-2">
     <div class="section-h">
-      <h2>Testimonials</h2>
+      <h2><?php _e('Testimonials','agency'); ?></h2>
     </div><!--/.section-h-->
 
     <?php agency_testimonial_home_list(); ?>
@@ -58,6 +54,3 @@
 </div><!--/.wrap-->
 
 <?php get_footer(); ?>
-
-
-<?php  } ?>
