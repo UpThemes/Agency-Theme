@@ -100,7 +100,6 @@ function agency_display_custom_header(){
 	<?php else: ?>
 	  <span><?php bloginfo('name'); ?></span>
 	<?php endif; ?>
-		<small><?php bloginfo('description'); ?></small>
 	</a>
 <?php
 }
