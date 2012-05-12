@@ -1,12 +1,8 @@
-<?php if (is_active_sidebar('default')) { ?>
-<div class="block">
-    <?php dynamic_sidebar('default'); ?>
+<div class="block sidebar">
+  <?php 
+  if (is_active_sidebar('default'))
+    dynamic_sidebar('default'); 
+  else
+    agency_default_sidebar();
+  ?>
 </div>
-<?php } else { ?>
-
-<div class="block">
-    <?php agency_default_sidebar(); ?>
-</div>
-
-
-<?php } ?>
