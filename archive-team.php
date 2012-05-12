@@ -5,7 +5,7 @@
 <div class="wrap content">
 
   <section class="_1 _no-b">
-    <h1>Our Team</h1>
+    <h1><?php post_type_archive_title(); ?></h1>
     <?php get_sidebar('team-top'); ?>
   </section>
 

@@ -416,7 +416,7 @@ function agency_portfolio_home_list(){
       <div <?php post_class("portfolio-item _1-4"); ?>>
         <a href="<?php the_permalink(); ?>">
           <?php
-            $post_img =  get_the_post_thumbnail(get_the_ID());
+            $post_img =  get_the_post_thumbnail(get_the_ID(),'portfolio-grid');
             if ($post_img):
           ?>
           <?php echo $post_img; ?>

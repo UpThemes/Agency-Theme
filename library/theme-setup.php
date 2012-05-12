@@ -55,9 +55,10 @@ function agency_setup() {
 
 	// Add Agency custom image sizes
   add_image_size('responsive', 999, 380, true ); // Bigguns for responsitivity
+  add_image_size('portfolio-grid', 226, 160, true );
 
 	// Normal post thumbnails
-  set_post_thumbnail_size( 100, 100, true );
+  set_post_thumbnail_size( 140, 140, true );
 
 	add_theme_support( 'post-formats', array( 'link', 'quote', 'status', 'image', 'video', 'audio', 'gallery' ) );
 
