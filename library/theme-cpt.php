@@ -248,8 +248,6 @@ function agency_register_cpt() {
 }
 agency_register_cpt();
 
-
-
 function agency_portfolio_categories(){
 
 
