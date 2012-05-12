@@ -4,9 +4,12 @@
 
 <div class="wrap content">
 
-	<section class="_4-5">
+	<section class="_4-5 _parent">
+
+    <h1><?php printf( __( 'Search Results for: `%s`', 'agency' ), get_search_query() ); ?></h1>
+
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-		<?php get_template_part( 'content', get_post_format() ); ?>
+		<?php get_template_part( 'content', 'default' ); ?>
 		<?php endwhile; ?>
 		<?php else : ?>
 			<?php agency_no_post_content(); ?>
@@ -14,9 +17,9 @@
 	</section>
 
   <section class="_1-5">
-    <?php get_sidebar('default'); ?>
+    <?php get_sidebar(); ?>
   </section>
 
 </div><!--/.wrap-->
 
-<?php get_footer();?>
+<?php get_footer(); ?>

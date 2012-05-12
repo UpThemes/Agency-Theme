@@ -4,7 +4,7 @@
 
 <div class="wrap content">
   <section class="_1">
-    <h1>Our Portfolio</h1>
+    <h1><?php post_type_archive_title(); ?></h1>
     <?php get_sidebar('portfolio-top'); ?>
   </section>
   <section class="_1-5">
@@ -14,21 +14,7 @@
   </section>
   <section class="_4-5 _parent _uniform-children">
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
-    <div <?php post_class("_1-3 post"); ?>>
-
-      <a href="<?php the_permalink(); ?>">
-        <?php
-          $post_img =  get_the_post_thumbnail(get_the_ID(), 'responsive');
-          if ($post_img):
-        ?>
-        <?php echo $post_img; ?>
-        <?php endif; ?>
-      </a>
-      <strong><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></strong>
-      <?php the_excerpt(); ?>
-
-    </div>
+  <?php get_template_part('portfolio/content','grid'); ?>
   <?php endwhile; ?>
 
   <?php agency_navigation(); ?>

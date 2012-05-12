@@ -10,7 +10,7 @@
       <<?php echo $heading; ?> class="post-pad-left"><?php if( !is_singular() ) echo '<a href="' . get_permalink() . '">' ?><?php the_title(); ?><?php if( !is_singular() ) echo '</a>' ?></<?php echo $heading; ?>>
 
       <div class="post-meta post-pad-left">
-      	<?php echo sprintf( __('Posted at %1$s on %2$s by %3$s','agency'), get_the_time( get_option('time_format') ), get_the_time( get_option('date_format') ), get_the_author_link() ); ?>
+        <?php echo sprintf( __('Posted at %1$s on %2$s by %3$s','agency'), get_the_time( get_option('time_format') ), get_the_time( get_option('date_format') ), get_the_author_link() ); ?>
       </div>
 
       <div class="post-pad-left">
@@ -19,4 +19,4 @@
 
     </article>
 
-		<?php if ( comments_open() && ! post_password_required() ) comments_template(); ?>
+    <?php if ( comments_open() && ! post_password_required() ) comments_template(); ?>
