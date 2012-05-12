@@ -604,6 +604,7 @@ function agency_home_slide_builder() {
 
   global $post;
   $the_slides = agency_get_home_slides();
+  $up_options = upfw_get_options();
 
   if ($the_slides) {
 
@@ -630,7 +631,6 @@ function agency_home_slide_builder() {
 
 ?>
 
-
 <section class="rotator">
   <div class="wrap">
     <div class="flexslider">
@@ -641,14 +641,16 @@ function agency_home_slide_builder() {
       echo "\n";
       echo '          <li class="slide">'."\n\n";
       echo '            <div class="slide-content-wrapper _1-2 clearfix">'."\n";
-      echo '              <div class="slide-content">'."\n";
-      echo '                <h1>' . $the_slide['title'] ."</h1>\n";
-      echo '                <h3>' . $the_slide['blurb'] . "\n";
-      if ($the_slide['link'])
-        echo '                <a href="' . $the_slide['link'] . '" title="'.$the_slide['title'].'">See more</a>'."\n";
-      echo '                </h3>'."\n";
-      echo '                ' . $slides_nav ."\n";
-      echo '              </div>'."\n";
+      if( $up_options->enable_carousel_text != 'false' ){
+        echo '              <div class="slide-content">'."\n";
+        echo '                <h1>' . $the_slide['title'] ."</h1>\n";
+        echo '                <h3>' . $the_slide['blurb'] . "\n";
+        if ($the_slide['link'])
+          echo '                <a href="' . $the_slide['link'] . '" title="'.$the_slide['title'].'">See more</a>'."\n";
+        echo '                </h3>'."\n";
+        echo '                ' . $slides_nav ."\n";
+        echo '              </div>'."\n";
+      }
       echo '            </div>'."\n";
       echo '          ' . $the_slide['image'] ."\n\n";
       echo '        </li>'."\n";
