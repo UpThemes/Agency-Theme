@@ -2,7 +2,7 @@
 
       <a href="<?php the_permalink(); ?>">
         <?php
-          $post_img =  get_the_post_thumbnail(get_the_ID(), 'responsive');
+          $post_img =  get_the_post_thumbnail(get_the_ID(), 'portfolio-grid');
           if ($post_img):
         ?>
         <?php echo $post_img; ?>
