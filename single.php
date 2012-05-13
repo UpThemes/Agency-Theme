@@ -14,7 +14,7 @@
   </section>
 
   <section class="_1-5">
-    <?php get_sidebar('default'); ?>
+    <?php get_sidebar(); ?>
   </section>
 
 </div><!--/.wrap-->
