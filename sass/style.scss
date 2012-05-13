@@ -229,8 +229,10 @@ form#comment-form {
 
 }
 
-.error404 .sidebar .widget_search {
-  display:none;
+.error404,.search-no-results {
+  .sidebar .widget_search {
+    display:none;
+  }
 }
 
 .widget_search {
