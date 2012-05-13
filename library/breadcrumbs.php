@@ -10,8 +10,6 @@ function make_breadcrumbs($opts = array(
                                   )) {
 
 
-  
-
   $showOnHome   = $opts['show_on_home']; // 1 - show breadcrumbs on the homepage, 0 - don't show
   $delimiter    = $opts['delimiter']; // delimiter between crumbs
   $home         = $opts['home']; // text for the 'Home' link

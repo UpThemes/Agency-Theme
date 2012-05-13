@@ -6,7 +6,7 @@
         <?php
 
         if ( function_exists( 'wp_nav_menu' ) ) {
-        
+
                 $args = array(
                   'container'     => false,
                   'menu_id'       => 'navigation',

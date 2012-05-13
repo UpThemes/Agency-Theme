@@ -18,15 +18,15 @@ Template Name: Full Width Page Template
 
 
 <?php 
-		if ( comments_open() && ! post_password_required() ) {
-			/**
-			 * Include the comments template
-			 * 
-			 * Includes the comments.php template part file
-			 */
-			comments_template(); 
-		}
-		?>
+    if ( comments_open() && ! post_password_required() ) {
+      /**
+       * Include the comments template
+       * 
+       * Includes the comments.php template part file
+       */
+      comments_template(); 
+    }
+    ?>
   </section>
 
 <?php endwhile; ?>

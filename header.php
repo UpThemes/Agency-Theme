@@ -8,13 +8,13 @@ if ( function_exists('upfw_get_options') ){
 <html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
 <head>
   <title><?php 
-  
+
   if( class_exists('All_in_One_SEO_Pack') ):
     wp_title(); 
   else:
     if( is_front_page() ) echo get_bloginfo('name') . " / " . get_bloginfo('description'); wp_title('',true,'left'); 
   endif;
-  
+
   ?></title>
 
   <?php 
@@ -45,11 +45,11 @@ if ( function_exists('upfw_get_options') ){
   <header>
     <div class="wrap">
 
-			<?php agency_display_custom_header(); ?>
+      <?php agency_display_custom_header(); ?>
 
       <?php
       if ( function_exists( 'wp_nav_menu' ) ) {
-      
+
               $args = array(
                 'container'     => 'nav',
                 'menu_id'       => 'navigation',
@@ -59,11 +59,11 @@ if ( function_exists('upfw_get_options') ){
                 'link_after'    => '</span>',
                 'depth'         => 2
               );
-              
+
         echo wp_nav_menu( $args );
-      
+
       } else {
-				agency_wp_page_menu();
+        agency_wp_page_menu();
       }
       ?>
 

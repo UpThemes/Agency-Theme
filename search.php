@@ -4,17 +4,17 @@
 
 <div class="wrap content">
 
-	<section class="_4-5 _parent">
+  <section class="_4-5 _parent">
 
     <h1><?php printf( __( 'Search Results for: `%s`', 'agency' ), get_search_query() ); ?></h1>
 
-		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-		<?php get_template_part( 'content', 'default' ); ?>
-		<?php endwhile; ?>
-		<?php else : ?>
-			<?php agency_no_post_content(); ?>
-		<?php endif; ?>
-	</section>
+    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+    <?php get_template_part( 'content', 'default' ); ?>
+    <?php endwhile; ?>
+    <?php else : ?>
+      <?php agency_no_post_content(); ?>
+    <?php endif; ?>
+  </section>
 
   <section class="_1-5">
     <?php get_sidebar(); ?>

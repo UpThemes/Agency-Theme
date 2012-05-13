@@ -14,13 +14,13 @@
   </section>
   <section class="_4-5 _parent _uniform-children">
 
-<?php	
-	if (have_posts()) : while (have_posts()) : the_post();
-		get_template_part('portfolio/content','grid');
-  	endwhile;
-  	agency_navigation();
+<?php 
+  if (have_posts()) : while (have_posts()) : the_post();
+    get_template_part('portfolio/content','grid');
+    endwhile;
+    agency_navigation();
   else :
-  	agency_no_post_content(); 
+    agency_no_post_content(); 
   endif;
 ?>
 

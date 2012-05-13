@@ -13,7 +13,7 @@
     </ul>
   </section>
   <section class="_4-5 _parent _uniform-children">
-	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+  <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
   <?php get_template_part('portfolio/content','grid'); ?>
   <?php endwhile; ?>
 

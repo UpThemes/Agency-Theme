@@ -4,12 +4,12 @@
 
 <div class="wrap content">
 
-	<section class="_4-5">
+  <section class="_4-5">
 
     <?php if ( is_category() ) { ?>
-  	<h1>
-  		<span class="fl cat"><?php _e( 'Category Archive:', 'agency' ); ?> <?php echo single_cat_title(); ?></span>
-  	</h1>        
+    <h1>
+      <span class="fl cat"><?php _e( 'Category Archive:', 'agency' ); ?> <?php echo single_cat_title(); ?></span>
+    </h1>        
   
       <?php } elseif ( is_day() ) { ?>
       <h1><?php _e( 'Archive', 'agency' ); ?> | <?php the_time( get_option( 'date_format' ) ); ?></h1>
@@ -28,13 +28,13 @@
       
     <?php } ?>
 
-		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-		<?php get_template_part( 'content', 'default' ); ?>
-		<?php endwhile; ?>
-		<?php else : ?>
-			<?php agency_no_post_content(); ?>
-		<?php endif; ?>
-	</section>
+    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+    <?php get_template_part( 'content', 'default' ); ?>
+    <?php endwhile; ?>
+    <?php else : ?>
+      <?php agency_no_post_content(); ?>
+    <?php endif; ?>
+  </section>
 
   <section class="_1-5">
     <?php get_sidebar(); ?>
