@@ -22,7 +22,6 @@ function agency_comment($comment, $args, $depth) {
         <?php endif; ?>
   
         <?php comment_text() ?>
-  
 
         <div class="comment-meta commentmetadata">
           <a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ) ?>">

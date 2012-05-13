@@ -838,13 +838,13 @@ function agency_get_testimonials_list() {
 
 
 function agency_wp_page_menu(){
-	echo '<nav>';
-	wp_page_menu();
-	echo '</nav>';
+  echo '<nav>';
+  wp_page_menu();
+  echo '</nav>';
 }
 
 
 function agency_default_sidebar() {
-	the_widget('WP_Widget_Categories');
-	the_widget('WP_Widget_Search');
+  the_widget('WP_Widget_Categories');
+  the_widget('WP_Widget_Search');
 }
