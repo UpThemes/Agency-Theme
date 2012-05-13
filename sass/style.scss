@@ -234,7 +234,7 @@ form#comment-form {
     top:1px;
     bottom:1px;
     left:1px;
-    width:66%;
+    width:80%;
     background:#f9f9f9;
     z-index:2;
     pointer-events:none;
@@ -248,7 +248,7 @@ form#comment-form {
     border:solid 1px #ccc;
     border-right:none;
     left:0;
-    width:66%;
+    width:80%;
     border-radius:2px 0 0 2px;
 
     &:active,&:focus {
@@ -262,7 +262,7 @@ form#comment-form {
     right:0;
     bottom:0;
     margin:0;
-    width:34%;
+    width:20%;
     z-index:3;
     box-sizing:content-box;
     padding:0 0 0 1px;
