@@ -437,22 +437,30 @@ function agency_portfolio_home_list(){
 
 // Team member stuff
 
+function agency_team_member_name(){
+  global $post;
+  $name = get_the_title();
+  if( is_singular() ):
+    $name = '<a href="' . get_permalink() . '">' . $name . '</a>';
+  endif;
+  
+  echo $name;
+}
 
-
-function agency_team_member_title($postID){
-
-  $teaminfo = get_post_meta($postID,'team-info',false);
+function agency_team_member_title(){
+  global $post;
+  $teaminfo = get_post_meta($post->ID,'team-info',false);
 
   if( count($teaminfo) > 0 )
-    echo '<em>'. $teaminfo[0][0]['team-member-job-title'] .'</em>';
+    echo $teaminfo[0][0]['team-member-job-title'];
 
 }
 
 
 
-function agency_team_member_social($postID){
-
-  $teamsocial = get_post_meta($postID,'team-social',false);
+function agency_team_member_social(){
+  global $post;
+  $teamsocial = get_post_meta($post->ID,'team-social',false);
 
   if($teamsocial != null)
     agency_social_links( $teamsocial[0] );
@@ -463,7 +471,7 @@ function agency_team_member_social($postID){
 
 function agency_team_members_home_list(){
 
-  $query = new WP_Query(
+  $team_members = new WP_Query(
     array(
       'post_type' => 'team',
       'orderby'   => 'rand',
@@ -471,8 +479,8 @@ function agency_team_members_home_list(){
     )
   );
   
-  if ($query->have_posts() ){
-    while ( $query->have_posts() ) : $query->the_post(); ?>
+  if ($team_members->have_posts() ){
+    while ( $team_members->have_posts() ) : $team_members->the_post(); ?>
 
       <div <?php post_class("team-member _1-4"); ?>>
         <?php
@@ -490,8 +498,6 @@ function agency_team_members_home_list(){
   
     <?php endwhile;
   }
-
-  wp_reset_postdata();
 
 }
 

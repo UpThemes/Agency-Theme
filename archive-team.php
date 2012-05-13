@@ -12,7 +12,7 @@
   <div class="_parent _uniform-children">
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-		<?php get_template_part('team-members/content',get_post_format()); ?>
+		<?php get_template_part('team-members/content','grid'); ?>
 
   <?php endwhile; ?>
   </div>
