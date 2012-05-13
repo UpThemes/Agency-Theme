@@ -10,13 +10,13 @@ License URI: license.txt
 Tags: dark, light, white, black, gray, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready, custom-post-types
 */
 
-
 @import "normalize";
 @import "grind";
 @import "compass/css3";
 @import "flexslider";
 @import "wordpress";
 @import "notifications";
+@import "icons";
 
 $page-width:1000px;
 $rotator-height:260px;
@@ -481,7 +481,7 @@ header {
   background:url("assets/header-bg.png"), -moz-linear-gradient(#303030,#171717);
   box-shadow:0 0 10px 5px rgba(#000,.1);
   padding:2em 0;
-  z-index:5;
+  z-index:11;
 
   .wrap {
     overflow:visible;
