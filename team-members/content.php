@@ -1,15 +1,19 @@
-    <section <?php post_class("team-member _1-4"); ?>>
+    <section class="_1 <?php agency_get_post_class($post->ID, true); ?>">
+      
       <?php
-        $post_img =  get_the_post_thumbnail(get_the_ID(), 'responsive', array('class' => 'temp border'));
-        if ($post_img):
-      ?>
-      <?php echo $post_img; ?>
-      <?php endif; ?>
-      <strong class="big"><?php the_title(); ?></strong>
-      <?php agency_team_member_title($post->ID); ?>
-      <?php the_excerpt(); ?>
+      $post_img =  get_the_post_thumbnail($post->ID, 'responsive',array('class' => 'left'));
+      echo $post_img; ?>
 
+      <h1><?php the_title(); ?></h1>
+      
+      <?php agency_team_member_title($post->ID); ?>
+
+      <div>
+        <?php the_content(); ?>
+      </div>
+      
       <ul class="social">
         <?php agency_team_member_social($post->ID); ?>
       </ul>
+
     </section>

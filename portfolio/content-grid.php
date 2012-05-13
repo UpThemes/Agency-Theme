@@ -1,4 +1,4 @@
-    <div <?php post_class("_1-3 post"); ?>>
+    <div <?php post_class("_1-3"); ?>>
 
       <a href="<?php the_permalink(); ?>">
         <?php
@@ -8,7 +8,7 @@
         <?php echo $post_img; ?>
         <?php endif; ?>
       </a>
-      <strong><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></strong>
+      <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
       
       <?php the_excerpt(); ?>
 
