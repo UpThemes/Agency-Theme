@@ -499,6 +499,12 @@ header {
   }
 
   nav {
+    height:30px;
+    position:absolute;
+    top:50%;
+    margin-top:-15px;
+    right:0;
+
     select {
       float:right;
       display:none;
