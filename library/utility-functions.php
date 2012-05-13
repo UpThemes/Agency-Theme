@@ -848,3 +848,71 @@ function agency_default_sidebar() {
   the_widget('WP_Widget_Categories');
   the_widget('WP_Widget_Search');
 }
+
+
+function agency_archive_recent($number_of_posts=30) {
+
+
+  $query = new WP_Query(
+    array(
+      'post_type' => 'post',
+      'posts_per_page'  => $number_of_posts
+    )
+  );
+  
+  if ($query->have_posts() ){ ?>
+
+      <h3><strong>Latest Posts</strong></h3>
+      <ul class="recent-posts"><?php
+        while ( $query->have_posts() ) : $query->the_post(); ?>
+
+        <li <?php post_class(); ?>>
+          <strong><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></strong>
+        </li>
+        <?php endwhile; ?>
+  
+      </ul>
+<?php }
+
+  wp_reset_postdata();
+
+}
+
+
+function agency_archive_by_month() {
+
+$args = array(
+
+);
+
+
+?>
+
+      <h3><strong>Archives by Month</strong></h3>
+      <ul>
+      <?php wp_get_archives($args);?>
+      </ul>
+
+
+
+<?php 
+
+}
+
+
+function agency_archive_by_categoty() {
+
+
+$args = array(
+  'title_li' => __('')
+);
+
+?>
+
+      <h3><strong>Archives by Category</strong></h3>
+      <ul class="categories-list">
+        <?php wp_list_categories($args); ?>
+      </ul>
+
+<?php
+}

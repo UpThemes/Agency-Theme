@@ -1,3 +1,8 @@
+<?php
+/*
+Template Name: Archives Page Template
+*/
+?>
 <?php get_header(); ?>
 
 <?php agency_breadcrumbs(); ?>
@@ -6,7 +11,7 @@
 
   <section class="_4-5 _parent">
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-    <?php get_template_part( 'page/content', 'default' ); ?>
+    <?php get_template_part( 'page/archive', 'default' ); ?>
     <?php endwhile; ?>
     <?php else : ?>
       <?php agency_no_post_content(); ?>
