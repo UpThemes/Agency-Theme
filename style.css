@@ -1615,7 +1615,7 @@ header {
           font-size: 12px;
           color: #272727; }
           header nav ul ul li a:hover {
-            color: #7cbbbf;
+            color: #7cbbbf !important;
             background-color: #f4f4f4;
             background: -webkit-linear-gradient(white, #f4f4f4);
             background: -moz-linear-gradient(white, #f4f4f4); }
@@ -1626,7 +1626,7 @@ header {
         padding: .5em 1em;
         color: white; }
         header nav ul li a:hover {
-          color: #7cbbbf; }
+          color: #7cbbbf !important; }
       header nav ul li.sub:hover > a, header nav ul li.sub.current-menu-item:hover > a {
         border-radius: 5px 5px 0 0;
         background: #fff;
