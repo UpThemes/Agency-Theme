@@ -71,8 +71,10 @@ function agency_navigation(){
 function agency_no_post_content(){ ?>
 
   <h1><?php _e("No Posts Found","storefrontal"); ?></h1>
-  <h2><?php _e("We couldn't find any posts that matched your query.","storefrontal"); ?></h2> <?php
+  <h2><?php _e("We couldn't find any posts that matched your query.","storefrontal"); ?></h2>
+  <?php echo '<div class="widget widget_search">';
   get_search_form();
+  echo '</div>';
 
 }
 
