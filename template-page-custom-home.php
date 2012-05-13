@@ -10,7 +10,7 @@
   <section class="portfolio-module">
     <div class="section-h _1 _no-b">
       <h2><?php _e('Selections from the Portfolio','agency'); ?></h2>
-      <a href="<?php echo home_url('/portfolio/'); ?>"><?php _e('view complete portfolio','agency'); ?></a>
+      <a href="<?php echo home_url('/portfolio/'); ?>"><span class="icon">&#128279;</span> <?php _e('view complete portfolio','agency'); ?></a>
     </div><!--/.section-h-->
     <div class="_1 _parent _no-t">
 
@@ -22,7 +22,7 @@
   <section class="blog-module _1-2">
     <div class="section-h">
       <h2><?php _e('Recently on the Blog','agency'); ?></h2>
-      <a href="<?php agency_posts_url(); ?>"><?php _e('Read the Blog','agency'); ?></a>
+      <a href="<?php agency_posts_url(); ?>"><span class="icon">&#128279;</span> <?php _e('Read the Blog','agency'); ?></a>
     </div><!--/.section-h-->
 
     <?php agency_blog_home_list(); ?>
@@ -40,7 +40,7 @@
 
   <section class="team-module clear">
 
-    <h2><?php _e("Our Team","agency"); ?>
+    <h2><?php _e("Our Team","agency"); ?></h2>
     <?php agency_team_members_home_list(); ?>
 
   </section><!--/.team-module-->
