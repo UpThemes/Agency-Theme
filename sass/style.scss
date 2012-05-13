@@ -548,7 +548,7 @@ header {
             color:$heading-color;
 
             &:hover {
-              color:$accent-color;
+              color:$accent-color!important;
               background-color:#f4f4f4;
               background:-webkit-linear-gradient(#fff,#f4f4f4);
               background:-moz-linear-gradient(#fff,#f4f4f4);
@@ -566,7 +566,7 @@ header {
           color:white;
           
           &:hover {
-            color:$accent-color;
+            color:$accent-color!important;
           }
         }
 
