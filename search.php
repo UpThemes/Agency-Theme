@@ -4,13 +4,32 @@
 
 <div class="wrap content">
 
-	<section class="_4-5 _parent">
+	<section class="_4-5">
 
     <h1><?php printf( __( 'Search Results for: `%s`', 'agency' ), get_search_query() ); ?></h1>
 
+    <?php echo '<div class="widget widget_search">';
+    get_search_form();
+    echo '</div>'; ?>
+
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-		<?php get_template_part( 'content', 'default' ); ?>
-		<?php endwhile; ?>
+	  <?php 
+	  switch( get_post_type() ):
+      default:
+        get_template_part( 'content', 'search' );
+        break;
+	    case 'team':
+        get_template_part( 'team-members/content', 'search' );    
+	      break;
+      case 'portfolio':
+        get_template_part( 'portfolio/content', 'search' );
+        break;
+      case 'page':
+        get_template_part( 'page/content', 'search' );
+        break;
+	  endswitch;
+    ?>
+    <?php endwhile; ?>
 		<?php else : ?>
 			<?php agency_no_post_content(); ?>
 		<?php endif; ?>
