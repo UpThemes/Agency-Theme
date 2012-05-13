@@ -3,9 +3,6 @@
     <article class="_1 <?php agency_get_post_class($post->ID, true); ?>">
 
       <i class="post-icon"></i>
-      <div class="meta post-pad-left">
-        <a href="<?php comments_link(); ?>" title="<?php comments_number(__('0 Comments','agency'), __('1 Comment','agency'), __('% Comments','agency') ); ?>" class="comments"><?php comments_number('0', '1', '%'); ?></a> <?php the_category(', '); ?>
-      </div>
 
       <<?php echo $heading; ?> class="post-pad-left"><?php if( !is_singular() ) echo '<a href="' . get_permalink() . '">' ?><?php the_title(); ?><?php if( !is_singular() ) echo '</a>' ?></<?php echo $heading; ?>>
 
@@ -15,6 +12,10 @@
 
       <div class="post-pad-left">
         <?php the_content(); ?>
+      </div>
+
+      <div class="meta post-pad-left">
+        <a href="<?php comments_link(); ?>" title="<?php comments_number(__('0 Comments','agency'), __('1 Comment','agency'), __('% Comments','agency') ); ?>" class="comments"><?php comments_number('0', '1', '%'); ?></a> <?php the_category(', '); ?>
       </div>
 
     </article>

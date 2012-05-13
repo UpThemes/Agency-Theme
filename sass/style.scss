@@ -100,18 +100,18 @@ a {
 }
 
 h1 {
-  font-size:36px;
+  font-size:20px;
   margin:0 0 .5em 0;
 }
 
 h2 {
-  font-size:16px;
+  font-size:14px;
   color:$heading-color;
   margin:0 0 1em 0;
 }
 
 h3 {
-  font-size:16px;
+  font-size:14px;
   color:#262626;
   font-weight:normal;
   margin:0 0 1em 0;
@@ -1153,6 +1153,10 @@ section {
   .hentry {
     padding-bottom:20px;
 
+    h2{
+      font-size: 1em;
+    }
+
     i.post-icon {
       display:block;
       width:90px;
@@ -1165,8 +1169,8 @@ section {
       color:#666;
       font-size:13px;
       font-weight:normal;
-      font-style: italic;
       color: #999;
+      margin-bottom: 21px;
 
       a{
         color: #999;
@@ -1195,15 +1199,16 @@ section {
     }
 
     .meta {
-      margin-bottom:10px;
 
       a {
+        font-weight: normal;
+        font-style: italic;
 
         &.comments {
           background:#333;
           padding:1px 5px;
           color:white;
-          font-size:9px;
+          font-size:11px;
           border-radius:2px;
           margin-right:10px;
         }
