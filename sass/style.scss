@@ -1102,15 +1102,23 @@ ul.social {
   margin-left:120px;
 }
 
-.type-standard i.post-icon {background-position:-(90 * 3px) 0}
-.type-aside    i.post-icon {background-position:-(90 * 3px) 0}
-.type-image    i.post-icon {background-position:-(90 * 5px) 0}
-.type-link     i.post-icon {background-position:-(90 * 6px) 0}
-.type-quote    i.post-icon {background-position:-(90 * 4px) 0}
-.type-status   i.post-icon {background-position:-(90 * 2px) 0}
-.type-video    i.post-icon {background-position:-(90 * 1px) 0}
-.type-audio    i.post-icon {background-position:-(90 * 0px) 0}
-.type-gallery  i.post-icon {background-position:-(90 * 7px) 0}
+i.post-icon {
+  display:block;
+  width:90px;
+  height:82px;
+  float:left;
+  background:url("assets/post-icons.png") 0 82px no-repeat;
+}
+
+.format-standard i.post-icon {background-position:-(90 * 3px) 0}
+.format-aside    i.post-icon {background-position:-(90 * 3px) 0}
+.format-image    i.post-icon {background-position:-(90 * 5px) 0}
+.format-link     i.post-icon {background-position:-(90 * 6px) 0}
+.format-quote    i.post-icon {background-position:-(90 * 4px) 0}
+.format-status   i.post-icon {background-position:-(90 * 2px) 0}
+.format-video    i.post-icon {background-position:-(90 * 1px) 0}
+.format-audio    i.post-icon {background-position:-(90 * 0px) 0}
+.format-gallery  i.post-icon {background-position:-(90 * 7px) 0}
 
 section {
 
@@ -1155,14 +1163,6 @@ section {
 
     h2{
       font-size: 1em;
-    }
-
-    i.post-icon {
-      display:block;
-      width:90px;
-      height:82px;
-      float:left;
-      background:url("assets/post-icons.png") 0 82px no-repeat;
     }
 
     .post-meta {
@@ -1335,8 +1335,6 @@ footer {
   }
 
   .hentry {
-
-    i.post-icon {display:none}
 
     h1 {
       font-size:24px;
