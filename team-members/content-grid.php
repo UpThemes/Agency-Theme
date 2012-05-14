@@ -3,11 +3,15 @@
         $post_img =  get_the_post_thumbnail($post->ID, 'responsive',array('class' => 'left'));
         if ($post_img):
       ?>
-        <?php echo $post_img; ?>
+      <div class="ratio-wrap ratio-3-2">
+        <a href="<?php the_permalink(); ?>"><?php echo $post_img; ?></a>
+      </div>
       <?php else: ?>
-        <?php agency_placeholder('team'); ?>
+      <div class="ratio-wrap ratio-3-2">
+        <a href="<?php the_permalink(); ?>"><?php agency_placeholder('team'); ?></a>
+      </div>
       <?php endif; ?>
-      <h2><?php agency_team_member_name(); ?></h2>
+      <h2><a href="<?php the_permalink(); ?>"><?php agency_team_member_name(); ?></a></h2>
       <?php agency_team_member_title(); ?>
       <?php the_excerpt(); ?>
 

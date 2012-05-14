@@ -292,7 +292,7 @@ function agency_portfolio_slide_builder($postID){
 
   $post_img =  get_the_post_thumbnail($postID, 'responsive', array('class' => '_1'));
 
-  if ( $slide_imgs != null ) {
+  if ( $post_img !=null || $slide_imgs != null ) {
 
     echo '<section class="rotator">   '."\n";
     echo '  <div class="wrap">        '."\n";
@@ -985,3 +985,16 @@ function agency_modify_team_posts_query( $query ){
 
 }
 add_action('pre_get_posts', 'agency_modify_team_posts_query');
+
+
+
+function agency_excerpt_length($length){
+  return 20;
+}
+add_filter( 'excerpt_length', 'agency_excerpt_length', 999 );
+
+
+function agency_excerpt_more($more){
+	return '..';
+}
+add_filter('excerpt_more', 'agency_excerpt_more');
