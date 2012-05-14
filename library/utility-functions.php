@@ -963,7 +963,7 @@ function agency_get_custom_ppp($type, $set_ppp) {
 
 function agency_modify_portfolio_posts_query( $query ){
   $post_type = $query->get('post_type');
-  if ( 'portfolio' == $post_type && is_archive() ) {
+  if ( 'portfolio' == $post_type && is_post_type_archive('portfolio') || is_tax() ) {
     $new_ppp = agency_get_custom_ppp('portfolio');
     $query->set('posts_per_page', $new_ppp);
   }
