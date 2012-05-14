@@ -655,7 +655,7 @@ function agency_home_slide_builder() {
     foreach ($the_slides as $the_slide) {
       echo "\n";
       echo '          <li class="slide">'."\n\n";
-      echo '            <div class="slide-content-wrapper _1-2 clearfix">'."\n";
+      echo '            <div class="slide-content-wrapper _1-3 clearfix">'."\n";
       if( $up_options->enable_carousel_text != 'false' ){
         echo '              <div class="slide-content">'."\n";
         echo '                <h1>' . $the_slide['title'] ."</h1>\n";
