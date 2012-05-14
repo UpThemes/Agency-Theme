@@ -52,7 +52,7 @@
     <section class="team-module">
       <div class="section-h _1 _no-b">
         <h2><?php _e("Our Team","agency"); ?></h2>
-        <a href="<?php home_url('/team/'); ?>"><span class="icon">&#128279;</span> <?php _e('Meet the Team','agency'); ?></a>
+        <a href="<?php echo home_url('/team/'); ?>"><span class="icon">&#128279;</span> <?php _e('Meet the Team','agency'); ?></a>
       </div>
 
       <?php agency_team_members_home_list(); ?>
