@@ -928,3 +928,56 @@ $args = array(
 
 <?php
 }
+
+
+function calculate_ppp($old_ppp, $columns) {
+
+  if ($old_ppp < $columns) {
+    return $columns;
+  } else {
+    $remainder = $old_ppp % $columns;
+    $new_ppp = $old_ppp - $remainder;
+    return $new_ppp;
+  }
+
+}
+
+
+function agency_get_custom_ppp($type) {
+
+  $set_ppp = get_option('posts_per_page');
+
+  if($type == 'team') {
+    $team_ppp = calculate_ppp($set_ppp, 4);
+    return $team_ppp;
+  } else if ($type == 'portfolio') {
+    $port_ppp = calculate_ppp($set_ppp, 3);
+    return $port_ppp;
+  } else {
+    return $set_ppp;
+  }
+
+
+}
+
+
+
+function agency_modify_portfolio_posts_query( $query ){
+  $post_type = $query->get('post_type');
+  if ( 'portfolio' == $post_type ) {
+    $new_ppp = agency_get_custom_ppp('portfolio');
+    $query->set('posts_per_page', $new_ppp);
+  }
+}
+add_action('pre_get_posts', 'agency_modify_portfolio_posts_query');
+
+
+function agency_modify_team_posts_query( $query ){
+  $post_type = $query->get('post_type');
+  if ( 'team' == $post_type ) {
+    $new_ppp = agency_get_custom_ppp('team');
+    $query->set('posts_per_page', $new_ppp);
+
+  }
+}
+add_action('pre_get_posts', 'agency_modify_team_posts_query');
