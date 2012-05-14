@@ -125,9 +125,6 @@ function agency_header_style() {
 header{
   padding: 1em 0;
 }
-header nav ul{
-  padding-top: 12px;
-}
 header .logo,
 header .logo img{
   display: block;

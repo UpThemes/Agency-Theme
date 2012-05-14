@@ -451,9 +451,10 @@ function agency_portfolio_home_list(){
           <?php else: ?>
             <?php agency_placeholder('portfolio'); ?>
           <?php endif; ?>
-
-          <?php the_title(); ?>
         </a>
+
+        <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+        
       </div><!--/.portfolio-item-->
   
     <?php endwhile;
@@ -558,7 +559,7 @@ function agency_blog_home_list(){
     while ( $query->have_posts() ) : $query->the_post(); ?>
 
 
-    <article <?php post_class("blog-post"); ?>>
+    <article <?php post_class(); ?>>
       <?php
         $post_img =  get_the_post_thumbnail(get_the_ID());
         if ($post_img):
@@ -566,7 +567,7 @@ function agency_blog_home_list(){
       <?php echo $post_img; ?>
       <?php endif; ?>
       <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-      <p><?php the_content(); ?></p>
+      <p><?php the_excerpt(); ?></p>
       <p><a href="<?php the_permalink(); ?>"><?php _e("Continue Reading &rarr;","agency"); ?></a></p>
     </article><!--/.blog-post-->
 
@@ -659,10 +660,10 @@ function agency_home_slide_builder() {
       if( $up_options->enable_carousel_text != 'false' ){
         echo '              <div class="slide-content">'."\n";
         echo '                <h1>' . $the_slide['title'] ."</h1>\n";
-        echo '                <h3>' . $the_slide['blurb'] . "\n";
+        echo '                <div class="teaser">' . $the_slide['blurb'] . "\n";
         if ($the_slide['link'])
           echo '                <p><a href="' . $the_slide['link'] . '" title="'.$the_slide['title'].'">'.__("Read More &rarr;","agency").'</a></p>'."\n";
-        echo '                </h3>'."\n";
+        echo '                </div>'."\n";
         echo '                ' . $slides_nav ."\n";
         echo '              </div>'."\n";
       }
