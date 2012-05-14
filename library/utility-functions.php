@@ -943,9 +943,8 @@ function calculate_ppp($old_ppp, $columns) {
 }
 
 
-function agency_get_custom_ppp($type) {
+function agency_get_custom_ppp($type, $set_ppp) {
 
-  $set_ppp = get_option('posts_per_page');
 
   if($type == 'team') {
     $team_ppp = calculate_ppp($set_ppp, 4);
@@ -974,10 +973,10 @@ add_action('pre_get_posts', 'agency_modify_portfolio_posts_query');
 
 function agency_modify_team_posts_query( $query ){
   $post_type = $query->get('post_type');
+  $old_ppp = $query->get('posts_per_page');
   if ( 'team' == $post_type ) {
-    $new_ppp = agency_get_custom_ppp('team');
+    $new_ppp = agency_get_custom_ppp('team', $old_ppp);
     $query->set('posts_per_page', $new_ppp);
-
   }
 }
 add_action('pre_get_posts', 'agency_modify_team_posts_query');
