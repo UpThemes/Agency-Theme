@@ -48,23 +48,49 @@ add_filter('previous_posts_link_attributes', 'prev_posts_link_attributes');
 
 
 
-function agency_navigation(){
+function agency_navigation( $type = 'plain', $endsize = 1, $midsize = 1 ) {
 
+echo '  <div class="paging clearfix">'."\n";
   if( function_exists('wp_pagenavi') ) : ?>
-  <div class="paging">
-    <div class="paging-holder">
-      <div class="paging-frame">
-        <?php wp_pagenavi(); ?>
-      </div>
-    </div>
-  </div>
-  <?php else : ?>
-    <div class="navigation">
-      <?php next_posts_link(__('Older Entries','agency')) ?>
-      <?php previous_posts_link(__('Newer Entries','agency')) ?>
-    </div>
-  <?php endif;
 
+    <?php wp_pagenavi(); ?>
+
+  <?php else :
+
+    global $wp_query, $wp_rewrite;  
+    $wp_query->query_vars['paged'] > 1 ? $current = $wp_query->query_vars['paged'] : $current = 1;
+
+    // Sanitize input argument values
+    if ( ! in_array( $type, array( 'plain', 'list', 'array' ) ) ) $type = 'plain';
+    $endsize = (int) $endsize;
+    $midsize = (int) $midsize;
+
+    // Setup argument array for paginate_links()
+    $pagination = array(
+        'base' => @add_query_arg('paged','%#%'),
+        'format' => '',
+        'total' => $wp_query->max_num_pages,
+        'current' => $current,
+        'show_all' => false,
+        'end_size' => $endsize,
+        'mid_size' => $midsize,
+        'type' => $type,
+        'prev_text' => '&lt;&lt;',
+        'next_text' => '&gt;&gt;'
+    );
+
+    if( $wp_rewrite->using_permalinks() )
+        $pagination['base'] = user_trailingslashit( trailingslashit( remove_query_arg( 's', get_pagenum_link( 1 ) ) ) . 'page/%#%/', 'paged' );
+
+    if( !empty($wp_query->query_vars['s']) )
+        $pagination['add_args'] = array( 's' => get_query_var( 's' ) );
+
+    echo "<p><strong>" . paginate_links( $pagination ) . "</strong></p>";
+
+
+  endif;
+
+  echo '  </div>'."\n";
 }
 
 
@@ -872,7 +898,6 @@ $args = array(
 
 
 function agency_archive_by_categoty() {
-
 
 $args = array(
   'title_li' => __('')

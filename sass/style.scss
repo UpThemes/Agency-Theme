@@ -704,6 +704,14 @@ header {
   }
 }
 
+.paging {
+  text-align: right;
+  padding-bottom: 10px;
+  span, a {
+    margin: 0 3px;
+  }
+}
+
 .rotator {
   background:#f1f1f1 url("assets/rotator-bg.png");
   box-shadow:0 0 10px rgba(#000,.1) inset;

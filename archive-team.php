@@ -9,20 +9,15 @@
     <?php get_sidebar('team-top'); ?>
   </section>
 
-  <div class="_parent _uniform-children">
-	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
-		<?php get_template_part('team-members/content','grid'); ?>
-
-  <?php endwhile; ?>
+  <div class="_parent _uniform-children clearfix">
+    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+      <?php get_template_part('team-members/content','grid'); ?>
+    <?php endwhile; ?>
+    <?php else : ?>
+      <?php agency_no_post_content(); ?>
+    <?php endif; ?>
   </div>
-
   <?php agency_navigation(); ?>
-
-  <?php else : ?>
-    <?php agency_no_post_content(); ?>
-  <?php endif; ?>
-
 </div><!--/.wrap-->
 
 <?php get_footer(); ?>
