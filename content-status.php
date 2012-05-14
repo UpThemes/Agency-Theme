@@ -1,6 +1,6 @@
 <?php $heading = is_singular() ? 'h1' : 'h2'; ?>
 
-    <article class="_1 <?php agency_get_post_class($post->ID, true); ?>">
+    <article <?php post_class("_1"); ?>>
 
       <i class="post-icon"></i>
 

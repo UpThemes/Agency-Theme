@@ -1,4 +1,4 @@
-    <section class="_1 <?php agency_get_post_class($post->ID, true); ?>">
+    <section <?php post_class("_1"); ?>>
       
       <?php
       $post_img =  get_the_post_thumbnail($post->ID, 'responsive',array('class' => 'left'));
