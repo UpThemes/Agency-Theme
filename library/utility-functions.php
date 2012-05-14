@@ -661,7 +661,7 @@ function agency_home_slide_builder() {
         echo '                <h1>' . $the_slide['title'] ."</h1>\n";
         echo '                <h3>' . $the_slide['blurb'] . "\n";
         if ($the_slide['link'])
-          echo '                <a href="' . $the_slide['link'] . '" title="'.$the_slide['title'].'">'.__("See more","agency").'</a>'."\n";
+          echo '                <p><a href="' . $the_slide['link'] . '" title="'.$the_slide['title'].'">'.__("Read More &rarr;","agency").'</a></p>'."\n";
         echo '                </h3>'."\n";
         echo '                ' . $slides_nav ."\n";
         echo '              </div>'."\n";

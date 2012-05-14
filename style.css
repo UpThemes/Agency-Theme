@@ -533,8 +533,7 @@ table {
 
 .flexslider .slide-content li .button {
   margin: 0 15px 15px 0;
-  padding-top: 3px;
-  padding-bottom: 3px;
+  padding: 4px 14px;
   display: block; }
 
 .flexslider .slides > li {
