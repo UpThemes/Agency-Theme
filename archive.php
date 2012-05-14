@@ -28,9 +28,12 @@
       
     <?php } ?>
 
-    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+    <?php if (have_posts()) : ?>
+    <div class="clearfix">
+    <?php while (have_posts()) : the_post(); ?>
       <?php get_template_part( 'content', 'default' ); ?>
     <?php endwhile; ?>
+    </div>
       <?php agency_navigation(); ?>
     <?php else : ?>
       <?php agency_no_post_content(); ?>

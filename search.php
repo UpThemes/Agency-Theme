@@ -8,7 +8,9 @@
 
     <h1><?php printf( __( 'Search Results for: `%s`', 'agency' ), get_search_query() ); ?></h1>
 
-    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+    <?php if (have_posts()) : ?>
+    <div class="clearfix">
+    <?php while (have_posts()) : the_post(); ?>
     <?php 
     switch( get_post_type() ):
       default:
@@ -26,6 +28,8 @@
     endswitch;
     ?>
     <?php endwhile; ?>
+    </div>
+      <?php agency_navigation(); ?>
     <?php else : ?>
       <?php agency_no_post_content(); ?>
     <?php endif; ?>
