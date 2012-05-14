@@ -449,7 +449,7 @@ function agency_portfolio_home_list(){
           ?>
             <?php echo $post_img; ?>
           <?php else: ?>
-            <?php agency_placeholder('team'); ?>
+            <?php agency_placeholder('portfolio'); ?>
           <?php endif; ?>
 
           <?php the_title(); ?>
