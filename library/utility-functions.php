@@ -292,7 +292,7 @@ function agency_portfolio_slide_builder($postID){
 
   $post_img =  get_the_post_thumbnail($postID, 'responsive', array('class' => '_1'));
 
-  if ( $slide_imgs != null ) {
+  if ( $post_img !=null || $slide_imgs != null ) {
 
     echo '<section class="rotator">   '."\n";
     echo '  <div class="wrap">        '."\n";
@@ -962,21 +962,28 @@ function agency_get_custom_ppp($type, $set_ppp) {
 
 
 function agency_modify_portfolio_posts_query( $query ){
+
   $post_type = $query->get('post_type');
-  if ( 'portfolio' == $post_type && is_post_type_archive('portfolio') || is_tax() ) {
-    $new_ppp = agency_get_custom_ppp('portfolio');
+  $old_ppp = get_option('posts_per_page');
+
+  if ( ( 'portfolio' == $post_type && is_archive() ) || is_tax() ) {
+    $new_ppp = agency_get_custom_ppp('portfolio', $old_ppp);
     $query->set('posts_per_page', $new_ppp);
   }
+
 }
 add_action('pre_get_posts', 'agency_modify_portfolio_posts_query');
 
 
 function agency_modify_team_posts_query( $query ){
+
   $post_type = $query->get('post_type');
-  $old_ppp = $query->get('posts_per_page');
+  $old_ppp = get_option('posts_per_page');
+
   if ( 'team' == $post_type ) {
     $new_ppp = agency_get_custom_ppp('team', $old_ppp);
     $query->set('posts_per_page', $new_ppp);
   }
+
 }
 add_action('pre_get_posts', 'agency_modify_team_posts_query');
