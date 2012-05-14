@@ -118,7 +118,7 @@ function make_breadcrumbs($opts = array(
 
     if ( get_query_var('paged') ) {
       if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ' (';
-      echo __('Page') . ' ' . get_query_var('paged');
+      echo '  <li><span>&nbsp;&nbsp;-&nbsp;&nbsp;' . __('Page') . ' ' . get_query_var('paged') . '</span></li>'."\n";
       if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
     }
 
