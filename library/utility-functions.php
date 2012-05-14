@@ -928,23 +928,60 @@ $args = array(
 }
 
 
+function calculate_ppp($old_ppp, $columns) {
+
+  if ($old_ppp < $columns) {
+    return $columns;
+  } else {
+    $remainder = $old_ppp % $columns;
+    $new_ppp = $old_ppp - $remainder;
+    return $new_ppp;
+  }
+
+}
+
+
+function agency_get_custom_ppp($type, $set_ppp) {
+
+
+  if($type == 'team') {
+    $team_ppp = calculate_ppp($set_ppp, 4);
+    return $team_ppp;
+  } else if ($type == 'portfolio') {
+    $port_ppp = calculate_ppp($set_ppp, 3);
+    return $port_ppp;
+  } else {
+    return $set_ppp;
+  }
+
+
+}
+
+
 
 function agency_modify_portfolio_posts_query( $query ){
-  $up_options = get_option('theme__options');
+
   $post_type = $query->get('post_type');
-  if ( !is_admin() && ('portfolio' == $post_type && is_main_query() && is_post_type_archive('portfolio') || is_tax() ) ) {
-    $query->set('posts_per_page', $up_options['posts_per_page_portfolio']);
+  $old_ppp = get_option('posts_per_page');
+
+  if ( ( 'portfolio' == $post_type && is_archive() ) || is_tax() ) {
+    $new_ppp = agency_get_custom_ppp('portfolio', $old_ppp);
+    $query->set('posts_per_page', $new_ppp);
   }
-  print_r(get_current_theme_id());
+
 }
 add_action('pre_get_posts', 'agency_modify_portfolio_posts_query');
 
 
 function agency_modify_team_posts_query( $query ){
-  $up_options = (object) get_option('up_agency_options');
+
   $post_type = $query->get('post_type');
-  if ( !is_admin() && ('team' == $post_type && is_main_query() && is_post_type_archive('team') || is_tax() ) ) {
-    $query->set('posts_per_page', $up_options->posts_per_page_team);
+  $old_ppp = get_option('posts_per_page');
+
+  if ( 'team' == $post_type && is_archive() ) {
+    $new_ppp = agency_get_custom_ppp('team', $old_ppp);
+    $query->set('posts_per_page', $new_ppp);
   }
+
 }
 add_action('pre_get_posts', 'agency_modify_team_posts_query');
