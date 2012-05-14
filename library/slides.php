@@ -17,19 +17,19 @@ function slides_init() {
   $icon =  trailingslashit( get_template_directory_uri() ).'library/images/slides_icon.png';
   
   $show_labels = array(
-    'name' => __( 'Slides','storefrontal' ),
-    'singular_name' => __( 'Slide','storefrontal' ),
-    'add_new' => __( 'Add New','storefrontal' ),
-    'add_new_item' => __( 'Add New Slide','storefrontal' ),
-    'edit' => __( 'Edit','storefrontal' ),
-    'edit_item' => __( 'Edit Slides','storefrontal' ),
-    'new_item' => __( 'New Slide','storefrontal' ),
-    'view' => __( 'View Slides','storefrontal' ),
-    'view_item' => __( 'View Slide','storefrontal' ),
-    'search_items' => __( 'Search Slides','storefrontal' ),
-    'not_found' => __( 'No slides found','storefrontal' ),
-    'not_found_in_trash' => __( 'No slides found in Trash','storefrontal' ),
-    'parent' => __( 'Parent Slide','storefrontal' ),
+    'name' => __( 'Slides','agency' ),
+    'singular_name' => __( 'Slide','agency' ),
+    'add_new' => __( 'Add New','agency' ),
+    'add_new_item' => __( 'Add New Slide','agency' ),
+    'edit' => __( 'Edit','agency' ),
+    'edit_item' => __( 'Edit Slides','agency' ),
+    'new_item' => __( 'New Slide','agency' ),
+    'view' => __( 'View Slides','agency' ),
+    'view_item' => __( 'View Slide','agency' ),
+    'search_items' => __( 'Search Slides','agency' ),
+    'not_found' => __( 'No slides found','agency' ),
+    'not_found_in_trash' => __( 'No slides found in Trash','agency' ),
+    'parent' => __( 'Parent Slide','agency' ),
   );
   
   $args = array(
@@ -57,27 +57,27 @@ function get_slides_meta(){
   return array(
         array(
         'id' => 'slide_uploader',
-        'name' => __('Slide Image','storefrontal'),
-        'descr' => __('Upload the slide image.','storefrontal'),
+        'name' => __('Slide Image','agency'),
+        'descr' => __('Upload the slide image.','agency'),
         'type' => 'media_uploader'
          ),
          array(
         'id' => 'slide_related_content',
-        'name' => __('Related Post or Product','storefrontal'),
-        'descr' => __('Select a post or product to associate with this slide.','storefrontal'),
+        'name' => __('Related Post or Product','agency'),
+        'descr' => __('Select a post or product to associate with this slide.','agency'),
         'type' => 'related_post',
-        'options' => array('post_types' => array('post','wpsc-product'))
+        'options' => array('post_types' => array('post','page'))
         ),
         array(
         'id' => 'slide_blurb',
-        'name' => __('Slide Subtitle','storefrontal'),
-        'descr' => __('Appears below the title.','storefrontal'),
+        'name' => __('Slide Subtitle','agency'),
+        'descr' => __('Appears below the title.','agency'),
         'type' => 'textarea'
          ),
         array(
         'id' => 'slide_link',
-        'name' => __('Slide links to','storefrontal'),
-        'descr' => __('Enter the full URL or where you would like the slide to link','storefrontal'),
+        'name' => __('Slide links to','agency'),
+        'descr' => __('Enter the full URL or where you would like the slide to link','agency'),
         'type' => 'text',
         ),
         array(
@@ -92,7 +92,7 @@ function get_slides_meta(){
 }
 
 function slides_custom_meta(){
-  add_meta_box( 'slides_metabox', __('Slide Details', 'storefrontal'), 'slides_metabox_output', 'slide' ,'normal', 'high' );
+  add_meta_box( 'slides_metabox', __('Slide Details', 'agency'), 'slides_metabox_output', 'slide' ,'normal', 'high' );
 }
 
 function slides_metabox_output(){
@@ -121,7 +121,7 @@ function slides_get_post_thumbnail(){
 
   $id = esc_html($_GET['id']);
 
-  if( $post_thumbnail = wp_get_attachment_image( $id, 'blog' ) ){
+  if( $post_thumbnail = wp_get_attachment_image( $id, 'responsive' ) ){
     $success = true;
   } else
     $success = false;
