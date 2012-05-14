@@ -447,7 +447,9 @@ function agency_portfolio_home_list(){
             $post_img =  get_the_post_thumbnail(get_the_ID(),'portfolio-grid');
             if ($post_img):
           ?>
-          <?php echo $post_img; ?>
+            <?php echo $post_img; ?>
+          <?php else: ?>
+            <?php agency_placeholder('team'); ?>
           <?php endif; ?>
 
           <?php the_title(); ?>
@@ -518,7 +520,13 @@ function agency_team_members_home_list(){
         <div class="ratio-wrap ratio-3-2">
           <a href="<?php the_permalink(); ?>"><?php echo $post_img; ?></a>
         </div>
+        <?php else: ?>
+        <div class="ratio-wrap ratio-3-2">
+          <a href="<?php the_permalink(); ?>"><?php agency_placeholder('team'); ?></a>
+        </div>
         <?php endif; ?>
+
+
         <strong><?php the_title(); ?></strong>
         <?php agency_team_member_title(get_the_id()); ?>
 
@@ -532,6 +540,14 @@ function agency_team_members_home_list(){
 
 
 // Misc
+
+
+function agency_placeholder($type){
+
+  echo '<img src="'. get_template_directory_uri() . '/assets/default-' . $type . '.png" >';
+
+}
+
 
 function agency_blog_home_list(){
 

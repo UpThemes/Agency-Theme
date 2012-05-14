@@ -1832,7 +1832,7 @@ header {
           background: #848484;
           border: 0; }
 
-.portfolio-module .section-h {
+.portfolio-module .section-h, .team-module .section-h {
   margin-bottom: 0; }
 
 .portfolio-item img {

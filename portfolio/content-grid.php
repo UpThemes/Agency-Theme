@@ -5,7 +5,9 @@
           $post_img =  get_the_post_thumbnail(get_the_ID(), 'portfolio-grid');
           if ($post_img):
         ?>
-        <?php echo $post_img; ?>
+          <?php echo $post_img; ?>
+        <?php else: ?>
+          <?php agency_placeholder('portfolio'); ?>
         <?php endif; ?>
       </a>
       <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>

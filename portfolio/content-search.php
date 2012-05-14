@@ -5,7 +5,9 @@
           $post_img =  get_the_post_thumbnail(get_the_ID(), 'responsive');
           if ($post_img):
         ?>
-        <?php echo $post_img; ?>
+          <?php echo $post_img; ?>
+        <?php else: ?>
+          <?php agency_placeholder('portfolio'); ?>
         <?php endif; ?>
       </a>
       <strong><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></strong>

@@ -50,7 +50,7 @@
   <div class="row clearfix">
 
     <section class="team-module">
-      <div class="section-h">
+      <div class="section-h _1 _no-b">
         <h2><?php _e("Our Team","agency"); ?></h2>
         <a href="<?php home_url('/team/'); ?>"><span class="icon">&#128279;</span> <?php _e('Meet the Team','agency'); ?></a>
       </div>
