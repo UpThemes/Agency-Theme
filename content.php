@@ -10,7 +10,7 @@
         <?php echo sprintf( __('Posted at %1$s on %2$s by %3$s','agency'), get_the_time( get_option('time_format') ), get_the_time( get_option('date_format') ), get_the_author_link() ); ?>
       </div>
 
-      <div class="post-pad-left">
+      <div class="post-pad-left clearfix">
         <?php the_content(); ?>
       </div>
 
