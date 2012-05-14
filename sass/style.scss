@@ -21,10 +21,11 @@ Tags: dark, light, white, black, gray, one-column, two-columns, left-sidebar, ri
 
 $page-width:1000px;
 $rotator-height:260px;
-$accent-color:#7cbbbf;
+$accent-color:#eee;
 $heading-color:#272727;
 $body-color:#656556;
 $body-size:13px;
+$sans-serif:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $serif:Georgia,serif;
 
 * {
@@ -41,6 +42,12 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 
+body{
+  font-size:14px;
+  line-height:22px;
+  font-family:$sans-serif;
+}
+
 .wrap {
   max-width:$page-width;
   width:95%;
@@ -53,11 +60,14 @@ a {
   color:$accent-color;
   text-decoration:none;
   font-size:$body-size;
-  font-weight:bold;
 
   &:hover {
     color:darken($accent-color,20%);
   }
+}
+
+.row{
+  border-bottom: 2px solid $accent-color;
 }
 
 .button {
@@ -189,8 +199,6 @@ form#comment-form {
     font-size:12px;
     color:#000;
     font-weight:bold;
-    border-bottom:1px solid #ddd;
-    padding-bottom:10px;
   }
 
   .textwidget {
@@ -211,18 +219,20 @@ form#comment-form {
 
     a {
       display:block;
-      padding:3px 0;
+      padding:0;
 
       abbr {
         text-transform:uppercase;
         color:#fff;
         background:#666;
         border-radius:2px;
-        padding:2px 4px 3px 5px;
+        padding:2px 5px;
         top:-2px;
         margin-left:5px;
+        line-height:1em;
         border:0;
         font-size:10px;
+        font-weight: bold;
       }
 
     }
@@ -583,6 +593,7 @@ header {
         a {
           padding:.5em 1em;
           color:#ccc;
+          font-weight:bold;
           
           &:hover {
             color:#fff;
@@ -735,11 +746,12 @@ header {
   }
 
   h1 {
-    margin:0
+    margin:0;
+    font-size:14px;
   }
 
   h3 {
-    font-size:18px;
+    font-size:14px;
     color:#bcbcbc;
     font-weight:normal;
     margin:1em 0 1.5em 0;
@@ -826,7 +838,7 @@ header {
 
   a {
     display:block;
-    padding:5px;
+    padding:5px 10px;
     color:black;
     font-weight:normal;
   }
