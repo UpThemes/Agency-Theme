@@ -1,4 +1,4 @@
-    <div <?php post_class(); ?>>
+    <div <?php post_class('_1'); ?>>
 
       <i class="post-icon"></i>
 
