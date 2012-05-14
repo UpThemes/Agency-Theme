@@ -1,9 +1,6 @@
     <section <?php post_class("_1"); ?>>
-      <?php
-        $post_img =  get_the_post_thumbnail($post->ID, 'responsive',array('class' => 'left'));
-        if ($post_img):
-      ?>
-        <?php echo $post_img; ?>
+      <?php if ( has_post_thumbnail() ): ?>
+        <?php the_post_thumbnail($post->ID, 'responsive'); ?>
       <?php else: ?>
         <?php agency_placeholder('team'); ?>
       <?php endif; ?>
