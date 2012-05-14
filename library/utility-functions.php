@@ -527,7 +527,7 @@ function agency_team_members_home_list(){
         <?php endif; ?>
 
 
-        <strong><?php the_title(); ?></strong>
+        <strong><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></strong>
         <?php agency_team_member_title(get_the_id()); ?>
 
       </div><!--/.team-member-->
@@ -980,10 +980,23 @@ function agency_modify_team_posts_query( $query ){
   $post_type = $query->get('post_type');
   $old_ppp = get_option('posts_per_page');
 
-  if ( 'team' == $post_type ) {
+  if ( 'team' == $post_type && is_archive() ) {
     $new_ppp = agency_get_custom_ppp('team', $old_ppp);
     $query->set('posts_per_page', $new_ppp);
   }
 
 }
 add_action('pre_get_posts', 'agency_modify_team_posts_query');
+
+
+
+function agency_excerpt_length($length){
+  return 20;
+}
+add_filter( 'excerpt_length', 'agency_excerpt_length', 999 );
+
+
+function agency_excerpt_more($more){
+	return '..';
+}
+add_filter('excerpt_more', 'agency_excerpt_more');
