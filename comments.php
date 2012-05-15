@@ -68,7 +68,7 @@ foreach ( $comments as $comment )
 <?php endif; /* if ( $user_ID ) */ ?>
 
         <div class="_1 _parent">
-          <textarea name="comment" id="comment"></textarea>
+          <textarea name="comment" id="comment" placeholder="Your Comment Here"></textarea>
           <input type="submit" id="submit" value="<?php _e('Post Comment', 'agency') ?>"  tabindex="7"/>
           <input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" /></div>
 

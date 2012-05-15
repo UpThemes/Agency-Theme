@@ -290,7 +290,7 @@ function agency_portfolio_slide_builder($postID){
 
   $slide_imgs = get_post_meta($postID, 'portslides', true);
 
-  $post_img =  get_the_post_thumbnail($postID, 'responsive', array('class' => '_1'));
+  $post_img =  get_the_post_thumbnail($postID, 'responsive-large', array('class' => '_1'));
 
   if ( $post_img !=null || $slide_imgs != null ) {
 
@@ -802,7 +802,7 @@ function agency_contact_form($error_log, $hasError, $emailSent, $_POST){ ?>
       </div>
 
       <div class="_2-3 col-no-right col-no-top">
-        <textarea id="contact-message" class="<?php agency_error_class($error_log["messageError"]); ?>" name="contact-message"><?php if( isset($_POST['contact-message']) ) echo $_POST['contact-message']; ?></textarea>
+        <textarea id="contact-message" class="<?php agency_error_class($error_log["messageError"]); ?>" name="contact-message" placeholder="Your Message Here"><?php if( isset($_POST['contact-message']) ) echo $_POST['contact-message']; ?></textarea>
 
         <input type="submit" name="send" id="send" value="<?php _e("Send Message","agency"); ?>"/>
         <input type="hidden" id="submitted" name="submitted" value="true" />
