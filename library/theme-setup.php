@@ -93,6 +93,17 @@ function agency_setup() {
 }
 endif; // agency_setup
 
+function agency_view_js(){ ?>
+	<script>
+	jQuery(document).ready(function(e){ 
+		new View( jQuery('a[href*=".jpg"],a[href*=".png"],a[href*=".gif"]') );
+	});
+	</script>
+	<?php
+}
+
+add_action('wp_footer','agency_view_js');
+
 function agency_display_custom_header(){
 
   $header_img = get_header_image(); ?>
