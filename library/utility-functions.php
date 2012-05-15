@@ -733,7 +733,7 @@ function agency_breadcrumbs() {
 
   $args = array(
     'show_on_home'  => 0,
-    'delimiter'     => '<li class="separator">&#9654;</li>',
+    'delimiter'     => '<li class="separator"><i class="icon icon-right-open"></i></li>',
     'home'          => __("Home","agency"),
     'showCurrent'   => 1,
     'before'        => '<span class="current">',
