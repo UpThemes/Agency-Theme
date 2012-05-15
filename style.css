@@ -787,6 +787,13 @@ span.error {
   box-sizing: border-box;
   position: relative; }
 
+a {
+  -webkit-transition: 200ms all ease-in-out;
+  -moz-transition: 200ms all ease-in-out;
+  -ms-transition: 200ms all ease-in-out;
+  -o-transition: 200ms all ease-in-out;
+  transition: 200ms all ease-in-out; }
+
 .clearfix:after {
   visibility: hidden;
   display: block;
