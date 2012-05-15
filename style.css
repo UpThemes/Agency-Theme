@@ -609,13 +609,17 @@ html[xmlns] .slides {
 .flex-direction-nav {
   height: 0;
   top: 50%;
-  position: absolute;
-  display: none; }
+  left: 0;
+  right: 0;
+  position: absolute; }
+
+.flex-direction-nav li {
+  position: static; }
 
 .flex-direction-nav li a {
   width: 52px;
   height: 52px;
-  margin: -13px 0 0;
+  margin: -40px 0 0;
   display: block;
   position: absolute;
   top: 0;
@@ -623,11 +627,23 @@ html[xmlns] .slides {
   text-indent: -999em; }
 
 .flex-direction-nav li .next {
-  background-position: -52px 0;
-  right: -40px; }
+  right: -50px;
+  width: 40px;
+  height: 80px;
+  background: url("assets/rotator-arrows.png") 0 -80px no-repeat;
+  border-radius: 4px;
+  opacity: .25; }
 
 .flex-direction-nav li .prev {
-  left: -40px; }
+  left: -50px;
+  width: 40px;
+  height: 80px;
+  background: url("assets/rotator-arrows.png") 0 0 no-repeat;
+  border-radius: 4px;
+  opacity: .25; }
+
+.flex-direction-nav li a:hover {
+  opacity: .5; }
 
 .flex-direction-nav li .disabled {
   opacity: .3;
