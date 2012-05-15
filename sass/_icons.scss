@@ -15,3 +15,7 @@
   width: 1em;
   text-align: center;
 }
+
+.icon-rss:before { content: ""; } /* '\e73a' */
+.icon-right-open:before { content: ""; } /* '\e75e' */
+.icon-link:before { content: "🔗"; } /* '\1f517' */
