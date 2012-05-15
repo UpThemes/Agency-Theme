@@ -121,7 +121,7 @@ function slides_get_post_thumbnail(){
 
   $id = esc_html($_GET['id']);
 
-  if( $post_thumbnail = wp_get_attachment_image( $id, 'responsive' ) ){
+  if( $post_thumbnail = wp_get_attachment_image( $id, 'responsive-large' ) ){
     $success = true;
   } else
     $success = false;

@@ -803,10 +803,10 @@ function agency_contact_form($error_log, $hasError, $emailSent, $_POST){ ?>
 
       <div class="_2-3 col-no-right col-no-top">
         <textarea id="contact-message" class="<?php agency_error_class($error_log["messageError"]); ?>" name="contact-message"><?php if( isset($_POST['contact-message']) ) echo $_POST['contact-message']; ?></textarea>
-        <?php agency_error_output($error_log["messageError"], true); ?>
 
-        <input type="submit" id="send" value="<?php_e("Send Message","agency"); ?>"/>
+        <input type="submit" name="send" id="send" value="<?php _e("Send Message","agency"); ?>"/>
         <input type="hidden" id="submitted" name="submitted" value="true" />
+
       </div>
 
     </form>

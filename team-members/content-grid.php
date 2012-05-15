@@ -1,9 +1,6 @@
     <section <?php post_class("team-member _1-4"); ?>>
-      <?php
-        $post_img =  get_the_post_thumbnail($post->ID, 'portfolio-grid',array('class' => 'left'));
-        if ($post_img):
-      ?>
-      <a class="team-photo" href="<?php the_permalink(); ?>"><?php echo $post_img; ?></a>
+      <?php if ( has_post_thumbnail() ): ?>
+      <a class="team-photo" href="<?php the_permalink(); ?>"><?php the_post_thumbnail($post->ID, 'portfolio-grid'); ?></a>
       <?php else: ?>
       <a class="team-photo" href="<?php the_permalink(); ?>"><?php agency_placeholder('team'); ?></a>
       <?php endif; ?>
