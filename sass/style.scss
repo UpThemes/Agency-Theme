@@ -678,7 +678,7 @@ header {
   background:$accent-color;
   background:-webkit-linear-gradient($accent-color,darken($accent-color,10%));
   background:-moz-linear-gradient($accent-color,darken($accent-color,10%));
-  border-bottom:5px solid #ececec;
+  border-bottom:5px solid #fff;
   box-shadow:0 1px 0 #c1c1c1;
   z-index:10;
   width:100%;
@@ -699,12 +699,11 @@ header {
     list-style:none;
 
     &.separator {
-      content:"\25b6";
+      font-family: icons;
       padding:10px;
-      font-size:.5em;
+      font-size:.6em;
       top:3px;
       color:#fff;
-      display:block;
     }
   }
 
@@ -735,7 +734,6 @@ header {
   box-shadow:0 0 10px rgba(#000,.1) inset;
   padding:40px 0 50px 0;
   margin:0;
-  border-top:solid 5px #fff;
   overflow:hidden;
 
   .wrap {
@@ -1156,6 +1154,20 @@ i.post-icon {
 .format-audio    i.post-icon {background-position:-(90 * 0px) 0}
 .format-gallery  i.post-icon {background-position:-(90 * 7px) 0}
 
+.single-team{
+  
+  .wp-post-image{
+    float: left;
+    margin-right: 25px;
+    margin-bottom: 25px;
+    background: $accent-color;
+    padding: 6px;
+    box-shadow: inset 0 0 1px rgba(0,0,0,0.4);
+    max-width: 220px;
+  }
+  
+}
+
 section {
 
   h1 + hr {
@@ -1189,8 +1201,8 @@ section {
   }
 
   img {
-    width:100%;
     height: auto;
+    max-width: 100%;
     margin-bottom:1em;
   }
 
@@ -1272,7 +1284,7 @@ footer {
   overflow:hidden;
   font-size:12px;
   line-height:1.6em;
-  color:#8d8d8d;
+  color:#333;
 
   ul {
     margin:0;
@@ -1289,7 +1301,6 @@ footer {
     padding:10px 0;
     display:block;
     float:left;
-
   }
 
   sub {
