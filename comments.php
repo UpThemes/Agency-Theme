@@ -43,7 +43,6 @@ foreach ( $comments as $comment )
       <form id="comment-form" class="_1" action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post">
         <div class="_1 _parent">
 <?php if ( have_comments() ) { ?>
-          <hr/>
 <?php } ?>
           <h3><?php _e("Leave a comment","agency"); ?></h3>
 
