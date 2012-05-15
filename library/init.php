@@ -249,6 +249,7 @@ function agency_scripts() {
   wp_enqueue_script("jq", "http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js", false, THEME_VERSION, false);
   wp_enqueue_script("sticky", get_template_directory_uri() . "/assets/jquery.sticky.js", false, THEME_VERSION, false);
   wp_enqueue_script("flexslider", get_template_directory_uri() . "/assets/jquery.flexslider-min.js", false, THEME_VERSION, false);
+  wp_enqueue_script("view-js", get_template_directory_uri() . "/assets/view.min.js", false, THEME_VERSION, false);
   wp_enqueue_script("main", get_template_directory_uri() . "/assets/main.js", false, THEME_VERSION, false);
 
 }
