@@ -63,7 +63,7 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endCol
 .flex-direction-nav li a {
   width: 52px;
   height: 52px;
-  margin: -13px 0 0;
+  margin: -40px 0 0;
   display: block;
   position: absolute;
   top: 0;
@@ -71,23 +71,20 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endCol
   text-indent: -999em;
 }
 .flex-direction-nav li .next {
-  background-position: -52px 0;
-  right: -40px;
-  height:0px;
-  width:0px;
+  right: -50px;
+  width:40px;
+  height:80px;
+  background:url("assets/rotator-arrows.png") 0 -80px no-repeat;
+  border-radius:4px;
   opacity:.25;
-  border-left:25px solid black;
-  border-top:25px solid transparent;
-  border-bottom:25px solid transparent;
 }
 .flex-direction-nav li .prev {
-  left: -40px;
-  height:0px;
-  width:0px;
+  left: -50px;
+  width:40px;
+  height:80px;
+  background:url("assets/rotator-arrows.png") 0 0 no-repeat;
+  border-radius:4px;
   opacity:.25;
-  border-right:25px solid black;
-  border-top:25px solid transparent;
-  border-bottom:25px solid transparent;
 }
 .flex-direction-nav li a:hover {
   opacity:.5;
