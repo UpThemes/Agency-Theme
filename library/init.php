@@ -21,7 +21,8 @@ function agency_menu_init(){
     'footer_menu'       => __( 'Footer Navigation', 'agency' )
   ) );
 
-  add_filter('wp_nav_menu_objects', function ($items) {
+  add_filter('wp_nav_menu_objects', 'agency_nav_menu_objects', 10, 1);
+  function agency_nav_menu_objects($items) {
       $hasSub = function ($menu_item_id, &$items) {
           foreach ($items as $item) {
               if ($item->menu_item_parent && $item->menu_item_parent==$menu_item_id) {
@@ -30,7 +31,7 @@ function agency_menu_init(){
           }
           return false;
       };
-
+  
       foreach ($items as &$item) {
           if ($hasSub($item->ID, &$items)) {
               $item->classes[] = 'sub';
@@ -38,7 +39,7 @@ function agency_menu_init(){
           }
       }
       return $items;
-  });
+  }
 
 }
 add_action("after_setup_theme","agency_menu_init");
