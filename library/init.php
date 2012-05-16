@@ -23,14 +23,18 @@ function agency_menu_init(){
 
   add_filter('wp_nav_menu_objects', 'agency_nav_menu_objects', 10, 1);
   function agency_nav_menu_objects($items) {
-      $hasSub = function ($menu_item_id, &$items) {
+
+      function agency_get_menu_object_items ($the_menu_item_id, $items) {
           foreach ($items as $item) {
               if ($item->menu_item_parent && $item->menu_item_parent==$menu_item_id) {
                   return true;
               }
           }
           return false;
-      };
+      }
+      
+      
+      $hasSub = agency_get_menu_items($menu_item_id, $items);
   
       foreach ($items as &$item) {
           if ($hasSub($item->ID, &$items)) {
