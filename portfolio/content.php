@@ -17,6 +17,8 @@
     <?php the_content(); ?>
   </section>
 
+  <hr>
+
   <section class="_1-3">
     <?php agency_portfolio_services($post->ID); ?>
     <?php agency_portfolio_testimonials($post->ID); ?>

@@ -75,8 +75,8 @@ echo '  <div class="paging clearfix">'."\n";
         'end_size' => $endsize,
         'mid_size' => $midsize,
         'type' => $type,
-        'prev_text' => '&lt;&lt;',
-        'next_text' => '&gt;&gt;'
+        'prev_text' => __('&larr; Previous','agency'),
+        'next_text' => __('Next &rarr;','agency')
     );
 
     if( $wp_rewrite->using_permalinks() )
