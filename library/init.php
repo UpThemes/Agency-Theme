@@ -34,7 +34,7 @@ function agency_menu_init(){
       }
       
       
-      $hasSub = agency_get_menu_items($menu_item_id, $items);
+      $hasSub = agency_get_menu_object_items($menu_item_id, $items);
   
       foreach ($items as &$item) {
           if ($hasSub($item->ID, &$items)) {
