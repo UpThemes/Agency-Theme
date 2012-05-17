@@ -9,7 +9,6 @@
  *
  */
 
-
 function agency_menu_init(){
 
   /**
@@ -22,31 +21,29 @@ function agency_menu_init(){
   ) );
 
   add_filter('wp_nav_menu_objects', 'agency_nav_menu_objects', 10, 1);
-  function agency_nav_menu_objects($items) {
-
-      function agency_get_menu_object_items ($the_menu_item_id, $items) {
-          foreach ($items as $item) {
-              if ($item->menu_item_parent && $item->menu_item_parent==$menu_item_id) {
-                  return true;
-              }
-          }
-          return false;
-      }
-      
-      
-      $hasSub = agency_get_menu_object_items($menu_item_id, $items);
-  
-      foreach ($items as &$item) {
-          if ($hasSub($item->ID, &$items)) {
-              $item->classes[] = 'sub';
-              break;
-          }
-      }
-      return $items;
-  }
 
 }
 add_action("after_setup_theme","agency_menu_init");
+
+function agency_nav_menu_objects($items) {
+
+    foreach ($items as &$item) {
+        if ( agency_get_menu_object_items($item->ID, &$items) ) {
+            $item->classes[] = 'sub';
+            break;
+        }
+    }
+    return $items;
+}
+
+function agency_get_menu_object_items($the_menu_item_id, $items) {
+    foreach ($items as $item) {
+        if ($item->menu_item_parent && $item->menu_item_parent == $the_menu_item_id) {
+            return true;
+        }
+    }
+    return false;
+}
 
 /**
  * Creates Agency Walker Nav Menu
