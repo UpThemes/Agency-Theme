@@ -12,12 +12,12 @@
     </div>
   </section>
 
+  <hr>
+
   <section <?php post_class("_2-3"); ?>>
     <h3><strong><?php _e("About","agency"); ?></strong></h3>
     <?php the_content(); ?>
   </section>
-
-  <hr>
 
   <section class="_1-3">
     <?php agency_portfolio_services($post->ID); ?>
