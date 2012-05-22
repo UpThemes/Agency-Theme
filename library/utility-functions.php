@@ -524,7 +524,7 @@ function agency_team_members_home_list(){
         <?php endif; ?>
 
 
-        <strong><?php the_title(); ?></strong>
+        <h5><a href="<?php the_permalink(); ?>"><?php the_title(); ?></h5>
         <?php agency_team_member_title(get_the_id()); ?>
 
       </div><!--/.team-member-->
