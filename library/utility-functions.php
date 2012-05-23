@@ -324,7 +324,7 @@ function agency_portfolio_url($postID){
   if ( is_array($portinfo) ){
 
     if( $portinfo[0]['website-url'] )
-      echo '<a href="'. $portinfo[0]['website-url'] .'" class="button light-bg left viewer-visit">' . _("Visit Website &rarr;","agency") . '</a>';
+      echo '<a href="'. $portinfo[0]['website-url'] .'" class="button light-bg left viewer-visit">' . __("Visit Website &rarr;","agency") . '</a>';
 
   } else { }
 
