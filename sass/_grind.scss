@@ -112,8 +112,19 @@
   }
 
   ._1-2 {
-    width:50%;
+    width: 50%;
   }
+
+  ._parent._uniform-children
+    ._1-2, ._1-4 {
+      width:50%;
+    }
+    ._1-2:nth-child(2n-1), ._1-4:nth-child(2n-1) {
+      padding-right: .75em;
+    }
+    ._1-2:nth-child(2n), ._1-4:nth-child(2n) {
+      padding-left: .75em;
+    }
 }
 
 @media (max-width: 480px) {

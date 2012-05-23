@@ -15,7 +15,7 @@
         <h2><?php _e('Selections from the Portfolio','agency'); ?></h2>
         <a href="<?php echo home_url('/portfolio/'); ?>"><span class="icon">&#128279;</span> <?php _e('view complete portfolio','agency'); ?></a>
       </div><!--/.section-h-->
-      <div class="_1 _parent _no-t">
+      <div class="_parent _uniform-children _no-t">
   
         <?php agency_portfolio_home_list(); ?>
   
@@ -55,8 +55,9 @@
         <a href="<?php echo home_url('/team/'); ?>"><span class="icon">&#128279;</span> <?php _e('Meet the Team','agency'); ?></a>
       </div>
 
-      <?php agency_team_members_home_list(); ?>
-  
+      <div class="_parent _uniform-children">
+        <?php agency_team_members_home_list(); ?>
+      </div>
     </section><!--/.team-module-->
 
   </div>
