@@ -16,6 +16,7 @@ $theme_name = 'agency';
 
 $theme_data = get_theme_data( get_theme_root() . '/' . $theme_name . '/style.css' );
 
+define('THEME_NAME',$theme_name);
 define('THEME_VERSION',$theme_data['Version']);
 
 // Load UpThemes Framework
