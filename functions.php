@@ -14,16 +14,12 @@ $theme_name = 'agency';
 * or get_template_directory() though, because they return local paths.
 */
 
-$theme_data = get_theme_data( get_theme_root() . '/' . $theme_name . '/style.css' );
+$theme_data = wp_get_theme();
 
-define('THEME_VERSION',$theme_data['Version']);
+define('THEME_VERSION',$theme_data->Version);
 
 // Load UpThemes Framework
-require_once( get_template_directory().'/admin/admin.php' );
-
-// Load WP ThemeLib.
-require_once( get_template_directory().'/lib/load.php');
+require_once( get_template_directory().'/options/options.php' );
 
 // Load Theme Specific Goodies
 require_once( get_template_directory().'/library/load.php');
-

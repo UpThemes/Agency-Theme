@@ -1,8 +1,4 @@
-<?php
-if (function_exists('upfw_get_options'))
-  global $up_options;
-  $up_options = upfw_get_options();
-?>
+<?php $up_options = upfw_get_options(); ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
 <head>
@@ -25,9 +21,7 @@ if (function_exists('upfw_get_options'))
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   <meta name="apple-mobile-web-app-capable" content="yes" />  
 
-
   <?php wp_head(); ?>
-
 
   <!--[if lte IE 7]>
   <style type="text/css">*{behavior: url("<?php echo get_template_directory_uri() ?>/assets/boxsizing.htc")}</style>
@@ -45,7 +39,7 @@ if (function_exists('upfw_get_options'))
     <div id="footerpad" class="clearfix">
   <header>
     <div class="wrap">
-      <a href="<?php echo home_url('/'); ?>" class="logo">
+      <a href="<?php echo home_url(); ?>" class="logo">
         <span><?php bloginfo('name'); ?></span>
       </a>
       <nav>

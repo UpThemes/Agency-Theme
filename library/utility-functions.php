@@ -527,8 +527,6 @@ function agency_blog_home_list(){
     <?php endwhile;
   }
 
-  wp_reset_postdata();
-
 }
 
 
@@ -553,8 +551,6 @@ function agency_testimonial_home_list(){
 
     <?php endwhile;
   }
-
-  wp_reset_postdata();
 
 }
 
@@ -601,27 +597,23 @@ function agency_home_slide_builder() {
 
   if ($the_slides) {
 
+    if ( function_exists( 'wp_nav_menu' ) ) {
+      $args = array(
+        'container'     => false,
+        'menu_id'       => 'home-slides-nav',
+        'theme_location'=> 'home_slides_menu',
+        'fallback_cb'   => 'agency_nav_callout',
+        'link_before'   => '',
+        'link_after'    => '',
+        'echo'          => false,
+        'depth'         => 1,
+        'walker'        => new Agency_Walker_Nav_Menu()
+      );
 
-  if ( function_exists( 'wp_nav_menu' ) ) {
-  
-    $args = array(
-      'container'     => false,
-      'menu_id'       => 'home-slides-nav',
-      'theme_location'=> 'home_slides_menu',
-      'fallback_cb'   => 'agency_nav_callout',
-      'link_before'   => '',
-      'link_after'    => '',
-      'echo'          => false,
-      'depth'         => 1,
-      'walker'        => new Agency_Walker_Nav_Menu()
-    );
-
-    $slides_nav =  wp_nav_menu( $args );
-
-  } else {
-    $slides_nav = agency_nav_callout();
-  }
-
+      $slides_nav =  wp_nav_menu( $args );
+    } else {
+      $slides_nav = agency_nav_callout();
+    }
 ?>
 
 
@@ -656,7 +648,7 @@ function agency_home_slide_builder() {
 
 <?php 
 
-  } else { }
+  }
 
 
 }
@@ -732,7 +724,7 @@ function agency_error_class($error) {
 }
 
 
-function agency_error_output($error, $format){
+function agency_error_output($error, $format = false){
   if(isset($error) && $format == true) {
     echo '<span class="error _1-3 ">' . $error . '</span>';
   } else if(isset($error)){
@@ -743,10 +735,9 @@ function agency_error_output($error, $format){
 
 
 
-function agency_contact_form($error_log, $hasError, $emailSent, $_POST){ ?>
+function agency_contact_form($error_log = false, $hasError = false, $emailSent = false){ ?>
 
-
-  <?php if(isset($emailSent) && $emailSent == true) { ?>
+  <?php if(isset($emailSent) && $emailSent) { ?>
 
     <div class="thanks">
       <h1 class="_1 success-notification">Thank you, your email was sent successfully.</h1>
@@ -754,32 +745,32 @@ function agency_contact_form($error_log, $hasError, $emailSent, $_POST){ ?>
 
   <?php } else { ?>
 
-    <?php if(isset($hasError) || isset($captchaError)) { ?>
-        <h3 class="_1 error-notification">We're sorry, something seems to have gone wrong. Check your errors or reach out on a social media channel.</h3>
+    <?php if( isset($hasError) && $hasError == 1 ) { ?>
+        <h3 class="_1 error-notification"><?php _e("There was an error submitting this form. Please try again later.","agency"); ?></h3>
     <?php } ?>
 
     <form id="contact" action="<?php the_permalink(); ?>" method="post">
 
       <div class="_1-3 col-no-left col-no-top">
 
-        <input type="text" name="contact-name" id="name" class="<?php agency_error_class($error_log["nameError"]); ?>" placeholder="Name" value="<?php if(isset($_POST['contact-name'])) echo $_POST['contact-name'];?>">
-        <?php agency_error_output($error_log["nameError"]); ?>
+        <input type="text" name="contact-name" id="name" class="<?php if( isset($error_log["nameError"]) && $error_log["nameError"] ) agency_error_class($error_log["nameError"]); ?>" placeholder="Name" value="<?php if(isset($_POST['contact-name'])) echo esc_html($_POST['contact-name']);?>">
+        <?php if( isset($error_log["nameError"]) && $error_log["nameError"] ) agency_error_output($error_log["nameError"]); ?>
 
-        <input type="text" name="contact-company" id="company" placeholder="Company" value="<?php if(isset($_POST['contact-company'])) echo $_POST['company'];?>">
+        <input type="text" name="contact-company" id="company" placeholder="Company" value="<?php if(isset($_POST['contact-company'])) echo esc_html($_POST['contact-company']); ?>">
 
-        <input type="text" name="contact-email-address" id="email-address" class="<?php agency_error_class($error_log["emailError"]); ?>" placeholder="Email Address" value="<?php if(isset($_POST['contact-email-address'])) echo $_POST['contact-email-address'];?>">
-        <?php agency_error_output($error_log["emailError"]); ?>
+        <input type="text" name="contact-email-address" id="email-address" class="<?php agency_error_class($error_log["emailError"]); ?>" placeholder="Email Address" value="<?php if(isset($_POST['contact-email-address'])) echo esc_html($_POST['contact-email-address']);?>">
+        <?php if( isset($error_log["emailError"]) && $error_log["emailError"] ) agency_error_output($error_log["emailError"]); ?>
 
-        <input type="text" name="contact-phone" id="phone" placeholder="Phone" value="<?php if(isset($_POST['contact-phone'])) echo $_POST['contact-phone'];?>">
+        <input type="text" name="contact-phone" id="phone" placeholder="Phone" value="<?php if(isset($_POST['contact-phone'])) echo esc_html($_POST['contact-phone']);?>">
 
-        <input type="text" name="contact-web-url" id="web-url" placeholder="Web URL" value="<?php if(isset($_POST['contact-web-url'])) echo $_POST['contact-web-url'];?>">
+        <input type="text" name="contact-web-url" id="web-url" placeholder="Web URL" value="<?php if(isset($_POST['contact-web-url'])) echo esc_html($_POST['contact-web-url']);?>">
       </div>
 
       <div class="_2-3 col-no-right col-no-top">
-        <textarea id="contact-message" class="<?php agency_error_class($error_log["messageError"]); ?>" name="contact-message"><?php if( isset($_POST['contact-message']) ) echo $_POST['contact-message']; ?></textarea>
-        <?php agency_error_output($error_log["messageError"], true); ?>
+        <textarea id="contact-message" class="<?php if( isset($error_log["messageError"]) && $error_log["messageError"] ) agency_error_class($error_log["messageError"]); ?>" name="contact-message"><?php if( isset($_POST['contact-message']) ) echo esc_html($_POST['contact-message']); ?></textarea>
+        <?php if( isset($error_log["messageError"]) && $error_log["messageError"] ) agency_error_output($error_log["messageError"], true); ?>
 
-        <input type="submit" id="send" value="Send Message"/>
+        <input type="submit" id="send" value="<?php _e("Send Message","agency"); ?>"/>
         <input type="hidden" id="submitted" name="submitted" value="true" />
       </div>
 
@@ -812,8 +803,6 @@ function agency_get_testimonials_list() {
       $results[] = $testimonialdata;
 
     endwhile;
-
-  wp_reset_postdata();
 
   return $results;
 

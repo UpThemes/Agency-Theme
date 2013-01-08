@@ -1,10 +1,9 @@
 <?php
   if( get_option( 'show_on_front' ) != 'page' ) {
-    require_once("home.php");
+    include("home.php");
   } else {
 
 ?>
-
 
 <?php get_header(); ?>
 

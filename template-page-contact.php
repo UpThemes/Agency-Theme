@@ -19,7 +19,11 @@ Template Name: Contact Page Template
   <hr/>
   <section class="_4-5 _parent">
 
-    <?php agency_contact_form($error_log, $hasError, $emailSent, $_POST); ?>
+    <?php 
+    if( isset($emailSent) ) agency_contact_form(false, false, $emailSent);
+    elseif( isset($hasError) && $hasError == 1 ) agency_contact_form($error_log, $hasError);
+    else agency_contact_form(false,false,false);
+    ?>
 
   </section>
   <section class="_1-5">
