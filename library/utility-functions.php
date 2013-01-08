@@ -273,14 +273,15 @@ function agency_portfolio_navigation(){ ?>
 
 function agency_get_portfolio_slides($slide_imgs_arry){
 
-  foreach ($slide_imgs_arry as &$slide_img) {
-    foreach($slide_img as $key => $value) {
-     echo '        <li class="slide">' . "\n";
-     echo '          <img class="_1" src="' . $value .'" ' . ">\n";
-     echo '        </li>' . "\n";
+  if( is_array($slide_imgs_arry) ){
+    foreach ($slide_imgs_arry as &$slide_img) {
+      foreach($slide_img as $key => $value) {
+       echo '        <li class="slide">' . "\n";
+       echo '          <img class="_1" src="' . $value .'" ' . ">\n";
+       echo '        </li>' . "\n";
+      }
     }
   }
-
 
 }
 
