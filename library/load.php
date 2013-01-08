@@ -6,8 +6,6 @@ include_once("theme-setup.php");
 // Load some basic init stuff
 include_once("init.php");
 
-include_once("meta_handler.php");
-
 include_once("custom-fields-creator/wck-cfc.php");
 
 // Load Theme Custom Post Types

@@ -620,23 +620,27 @@ function agency_home_slide_builder() {
 
   if ($the_slides) {
 
-    if ( function_exists( 'wp_nav_menu' ) ) {
-      $args = array(
-        'container'     => false,
-        'menu_id'       => 'home-slides-nav',
-        'theme_location'=> 'home_slides_menu',
-        'fallback_cb'   => 'agency_nav_callout',
-        'link_before'   => '',
-        'link_after'    => '',
-        'echo'          => false,
-        'depth'         => 1,
-        'walker'        => new Agency_Walker_Nav_Menu()
-      );
 
-      $slides_nav =  wp_nav_menu( $args );
-    } else {
-      $slides_nav = agency_nav_callout();
-    }
+  if ( function_exists( 'wp_nav_menu' ) ) {
+  
+    $args = array(
+      'container'     => false,
+      'menu_id'       => 'home-slides-nav',
+      'theme_location'=> 'home_slides_menu',
+      'fallback_cb'   => 'agency_nav_callout',
+      'link_before'   => '',
+      'link_after'    => '',
+      'echo'          => false,
+      'depth'         => 1,
+      'walker'        => new Agency_Walker_Nav_Menu()
+    );
+
+    $slides_nav =  wp_nav_menu( $args );
+
+  } else {
+    $slides_nav = agency_nav_callout();
+  }
+
 ?>
 
 <section class="rotator">
@@ -771,29 +775,29 @@ function agency_contact_form($error_log = false, $hasError = false, $emailSent =
 
   <?php } else { ?>
 
-    <?php if(isset($hasError) || isset($captchaError)) { ?>
-        <h3 class="_1 error-notification"><?php _e("We're sorry, something seems to have gone wrong. Check your errors or reach out on a social media channel.","agency"); ?></h3>
+    <?php if( isset($hasError) && $hasError == 1 ) { ?>
+        <h3 class="_1 error-notification"><?php _e("An error occurred while sending your form. Please try again or contact us.","agency"); ?></h3>
     <?php } ?>
 
     <form id="contact" action="<?php the_permalink(); ?>" method="post">
 
       <div class="_1-3 col-no-left col-no-top">
 
-        <input type="text" name="contact-name" id="name" class="<?php if( isset($error_log["nameError"]) && $error_log["nameError"] ) agency_error_class($error_log["nameError"]); ?>" placeholder="Name" value="<?php if(isset($_POST['contact-name'])) echo esc_html($_POST['contact-name']);?>">
+        <input type="text" name="contact-name" id="name" class="<?php if( isset($error_log["nameError"]) && $error_log["nameError"] ) agency_error_class($error_log["nameError"]); ?>" placeholder="Name" value="<?php if(isset($_POST['contact-name'])) echo esc_attr($_POST['contact-name']);?>">
         <?php if( isset($error_log["nameError"]) && $error_log["nameError"] ) agency_error_output($error_log["nameError"]); ?>
 
-        <input type="text" name="contact-company" id="company" placeholder="<?php _e("Company","agency"); ?>" value="<?php if(isset($_POST['contact-company'])) echo $_POST['company'];?>">
+        <input type="text" name="contact-company" id="company" placeholder="<?php _e("Company","agency"); ?>" value="<?php if(isset($_POST['contact-company'])) echo esc_attr($_POST['contact-company']); ?>">
 
-        <input type="text" name="contact-email-address" id="email-address" class="<?php agency_error_class($error_log["emailError"]); ?>" placeholder="<?php _e("Email Address","agency"); ?>" value="<?php if(isset($_POST['contact-email-address'])) echo $_POST['contact-email-address'];?>">
+        <input type="text" name="contact-email-address" id="email-address" class="<?php agency_error_class($error_log["emailError"]); ?>" placeholder="<?php _e("Email Address","agency"); ?>" value="<?php if(isset($_POST['contact-email-address'])) echo esc_attr($_POST['contact-email-address']);?>">
         <?php agency_error_output($error_log["emailError"]); ?>
 
-        <input type="text" name="contact-phone" id="phone" placeholder="<?php _e("Phone","agency"); ?>" value="<?php if(isset($_POST['contact-phone'])) echo $_POST['contact-phone'];?>">
+        <input type="text" name="contact-phone" id="phone" placeholder="<?php _e("Phone","agency"); ?>" value="<?php if(isset($_POST['contact-phone'])) echo esc_attr($_POST['contact-phone']);?>">
 
-        <input type="text" name="contact-web-url" id="web-url" placeholder="<?php _e("Web URL","agency"); ?>" value="<?php if(isset($_POST['contact-web-url'])) echo $_POST['contact-web-url'];?>">
+        <input type="text" name="contact-web-url" id="web-url" placeholder="<?php _e("Web URL","agency"); ?>" value="<?php if(isset($_POST['contact-web-url'])) echo esc_attr($_POST['contact-web-url']);?>">
       </div>
 
       <div class="_2-3 col-no-right col-no-top">
-        <textarea id="contact-message" class="<?php agency_error_class($error_log["messageError"]); ?>" name="contact-message" placeholder="Your Message Here"><?php if( isset($_POST['contact-message']) ) echo $_POST['contact-message']; ?></textarea>
+        <textarea id="contact-message" class="<?php agency_error_class($error_log["messageError"]); ?>" name="contact-message" placeholder="Your Message Here"><?php if( isset($_POST['contact-message']) ) echo esc_html($_POST['contact-message']); ?></textarea>
 
         <input type="submit" name="send" id="send" value="<?php _e("Send Message","agency"); ?>"/>
         <input type="hidden" id="submitted" name="submitted" value="true" />

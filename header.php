@@ -3,13 +3,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
 <head>
   <title><?php 
-  
+
   if( class_exists('All_in_One_SEO_Pack') ):
     wp_title(); 
   else:
     if( is_front_page() ) echo get_bloginfo('name') . " / " . get_bloginfo('description'); wp_title('',true,'left'); 
   endif;
-  
+
   ?></title>
 
   <?php 
@@ -34,36 +34,33 @@
   <![endif]-->
 
 </head>
-<body>
+<body <?php body_class(); ?>>
   <div id="pagewrap">
     <div id="footerpad" class="clearfix">
   <header>
     <div class="wrap">
-      <a href="<?php echo home_url(); ?>" class="logo">
-        <span><?php bloginfo('name'); ?></span>
-      </a>
-      <nav>
-      <?php
 
+      <?php agency_display_custom_header(); ?>
+
+      <?php
       if ( function_exists( 'wp_nav_menu' ) ) {
-      
+
               $args = array(
-                'container'     => false,
+                'container'     => 'nav',
                 'menu_id'       => 'navigation',
                 'theme_location'=> 'header_menu',
-                'fallback_cb'   => 'agency_nav_callout',
+                'fallback_cb'   => 'agency_wp_page_menu',
                 'link_before'   => '<span>',
                 'link_after'    => '</span>',
                 'depth'         => 2
               );
-              
+
         echo wp_nav_menu( $args );
-      
+
       } else {
-        agency_nav_callout();
+        agency_wp_page_menu();
       }
       ?>
-      </nav>
 
       <div class="clear"></div>
     </div><!--/.wrap-->

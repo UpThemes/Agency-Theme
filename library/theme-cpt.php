@@ -243,7 +243,6 @@ function agency_register_cpt() {
   add_action('after_setup_theme','agency_setup_teammember_metaboxes');
 
 }
-agency_register_cpt();
 
 add_action('init','agency_register_cpt');
 

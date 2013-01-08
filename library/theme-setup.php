@@ -51,7 +51,7 @@ function agency_setup() {
   add_theme_support( 'post-formats', array( 'aside', 'link', 'gallery', 'status', 'quote', 'image' ) );
 
   // Add support for custom backgrounds
-  add_custom_background();
+  add_theme_support('custom_background');
 
   // Add Agency custom image sizes
   add_image_size('responsive', 999, 380, true ); // Bigguns for responsitivity
@@ -84,11 +84,17 @@ function agency_setup() {
   // Larger images will be auto-cropped to fit, smaller ones will be ignored. See header.php.
   set_post_thumbnail_size( HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, true );
 
+  $defaults = array(
+    'flex-height'            => true,
+    'flex-width'             => true,
+    'wp-head-callback'       => 'agency_header_style',
+    'admin-head-callback'    => 'agency_admin_header_style',
+    'admin-preview-callback' => 'agency_admin_header_image',
+  );
+
   // Add a way for the custom header to be styled in the admin panel that controls
   // custom headers. See agency_admin_header_style(), below.
-  add_theme_support( 'custom-header', array( 'flex-width' => true,'flex-height' => true ) );
-  
-  add_custom_image_header( 'agency_header_style', 'agency_admin_header_style', 'agency_admin_header_image' );
+  add_theme_support( 'custom-header', $defaults );
 
 }
 endif; // agency_setup

@@ -9,9 +9,6 @@
  *
  */
 
-
-
-
 function agency_menu_init(){
 
   /**
@@ -23,51 +20,30 @@ function agency_menu_init(){
     'footer_menu'       => __( 'Footer Navigation', 'agency' )
   ) );
 
-
-  /**
-   * Output Navigation menu fallback
-   * 
-   * Outputs a message if either no custom navigation
-   * menu is applied to the current Theme location, or
-   * if the wp_nav_menu() function does not exist (i.e.
-   * if the current version of WordPress is < 3.0). 
-   * 
-   * Template files: header.php & footer.php
-   * 
-   * @link    http://codex.wordpress.org/Function_Reference/_2    __()
-   * 
-   * @since Agency 1.0
-   */
-  function agency_nav_callout(){
-
-    echo '<div id="navigation" class="error">' . __( 'Please configure your menu in the admin panel: Appearance > Menus', 'agency' ) . '</div>';
-
-  }
-
-
-  add_filter('wp_nav_menu_objects', function ($items) {
-      $hasSub = function ($menu_item_id, &$items) {
-          foreach ($items as $item) {
-              if ($item->menu_item_parent && $item->menu_item_parent==$menu_item_id) {
-                  return true;
-              }
-          }
-          return false;
-      };
-
-      foreach ($items as &$item) {
-          if ($hasSub($item->ID, &$items)) {
-              $item->classes[] = 'sub';
-              break;
-          }
-      }
-      return $items;
-  });
+  add_filter('wp_nav_menu_objects', 'agency_nav_menu_objects', 10, 1);
 
 }
 add_action("after_setup_theme","agency_menu_init");
 
+function agency_nav_menu_objects($items) {
 
+    foreach ($items as &$item) {
+        if ( agency_get_menu_object_items($item->ID, &$items) ) {
+            $item->classes[] = 'sub';
+            break;
+        }
+    }
+    return $items;
+}
+
+function agency_get_menu_object_items($the_menu_item_id, $items) {
+    foreach ($items as $item) {
+        if ($item->menu_item_parent && $item->menu_item_parent == $the_menu_item_id) {
+            return true;
+        }
+    }
+    return false;
+}
 
 /**
  * Creates Agency Walker Nav Menu
@@ -182,10 +158,6 @@ class Agency_Walker_Nav_Menu extends Walker_Nav_Menu {
 
 }
 
-
-
-
-
 /**
  * Register Dynamic Sidebars
  * 
@@ -247,43 +219,31 @@ function agency_register_sidebars() {
   ) );
 
   /**
-   * Register Single Top Dynamic Sidebar
+   * Register Sidebar
    */
   register_sidebar( array(
-    'name'          => sprintf( __( 'Default Top' ), 'agency' ),
-    'id'            => 'default-top',
-    'description'   => 'Top Widget Area on the Default Sidebar',
+    'name'          => sprintf( __( 'Default Sidebar' ), 'agency' ),
+    'id'            => 'default',
+    'description'   => 'Widget Area on the Default Sidebar',
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget'  => '</div>',
     'before_title'  => '<h2 class="widgettitle">',
     'after_title'   => '</h2>' 
   ) );
 
-  /**
-   * Register Single Bottom Dynamic Sidebar
-   */
-  register_sidebar( array(
-    'name'          => sprintf( __( 'Default Bottom' ), 'agency' ),
-    'id'            => 'default-bottom',
-    'description'   => 'Bottom Widget Area on the Default Sidebar',
-    'before_widget' => '<div id="%1$s" class="widget %2$s">',
-    'after_widget'  => '</div>',
-    'before_title'  => '<h2 class="widgettitle">',
-    'after_title'   => '</h2>' 
-  ) );
 
 }
-// Hook into 'widgeets_init'
+// Hook into 'widgets_init'
 add_action( 'widgets_init', 'agency_register_sidebars' );
-
-
 
 function agency_styles() {
 
+  $up_options = upfw_get_options();
   wp_enqueue_style('style', get_template_directory_uri() . "/style.css", false, THEME_VERSION, 'all');
 
 }
-add_action('init','agency_styles');
+add_action('wp_enqueue_scripts','agency_styles');
+
 
 
 function agency_scripts() {
@@ -291,20 +251,6 @@ function agency_scripts() {
   wp_enqueue_script("sticky", get_template_directory_uri() . "/assets/jquery.sticky.js", array('jquery'), THEME_VERSION, false);
   wp_enqueue_script("flexslider", get_template_directory_uri() . "/assets/jquery.flexslider-min.js", array('jquery'), THEME_VERSION, false);
   wp_enqueue_script("main", get_template_directory_uri() . "/assets/main.js", array('jquery'), THEME_VERSION, false);
-
+  wp_enqueue_script("view-js", get_template_directory_uri() . "/assets/view.min.js", array('jquery'), THEME_VERSION, false);
 }
-add_action('init','agency_scripts');
-
-function agency_theme_init(){
-
-  if ( function_exists( 'add_theme_support' ) ) {
-    add_theme_support( 'post-thumbnails' );
-    add_theme_support( 'post-formats', array( 'link', 'quote', 'status', 'image', 'video', 'audio', 'gallery' ) );
-  }
-
-  set_post_thumbnail_size( 100, 100, true ); // Normal post thumbnails
-  add_image_size('responsive', 999, 9999, true ); // Bigguns for responsitivity
-
-}
-
-add_action('init','agency_theme_init',1);
+add_action('wp_enqueue_scripts','agency_scripts');
