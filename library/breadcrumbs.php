@@ -7,10 +7,8 @@ function make_breadcrumbs($opts = array(
                                     'showCurrent'   => 1,
                                     'before'        => '<span class="current">',
                                     'after'         => '</span>'
-                                    )) {
+                                  )) {
 
-
-  
 
   $showOnHome   = $opts['show_on_home']; // 1 - show breadcrumbs on the homepage, 0 - don't show
   $delimiter    = $opts['delimiter']; // delimiter between crumbs
@@ -74,10 +72,22 @@ function make_breadcrumbs($opts = array(
 
     } elseif ( is_attachment() ) {
       $parent = get_post($post->post_parent);
-      $cat = get_the_category($parent->ID); $cat = $cat[0];
-      echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
-      echo '  <li><a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a></li>' . "\n";
-      if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . '  <li>'. $before . get_the_title() . $after . '</li>' . "\n";
+
+      if ( has_term('', 'category', $parent->ID ) ) {
+
+        $cat = get_the_category($parent->ID); $cat = $cat[0];
+
+        $cats = get_category_parents($cat, TRUE, "</li>\n  " . $delimiter . "\n  <li>");
+        if ($showCurrent == 0) $cats = preg_replace("/^(.+)\s$delimiter\s$/", "$1", $cats);
+        echo "  <li>" . $cats;
+        echo '  <li><a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a></li>' . "\n";
+        if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . '  <li>'. $before . get_the_title() . $after . '</li>' . "\n";
+      } else {
+        if ($parent->post_title != 'Home') echo '  <li><a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a></li>' . "\n  " . $delimiter . "\n";
+        if ($showCurrent == 1) echo '  <li>'. $before . get_the_title() . $after . '</li>' . "\n";
+      }
+      
+      
 
     } elseif ( is_page() && !$post->post_parent ) {
       if ($showCurrent == 1) echo '  <li>' . $before . get_the_title() . $after . '</li>' . "\n";
@@ -108,7 +118,7 @@ function make_breadcrumbs($opts = array(
 
     if ( get_query_var('paged') ) {
       if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ' (';
-      echo __('Page') . ' ' . get_query_var('paged');
+      echo '  <li><span>&nbsp;&nbsp;-&nbsp;&nbsp;' . __('Page') . ' ' . get_query_var('paged') . '</span></li>'."\n";
       if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
     }
 

@@ -4,7 +4,7 @@
 
 <div class="wrap content">
   <section class="_1">
-    <h1>Our Portfolio</h1>
+    <h1><?php post_type_archive_title(); ?></h1>
     <?php get_sidebar('portfolio-top'); ?>
   </section>
   <section class="_1-5">
@@ -12,32 +12,18 @@
       <?php agency_list_portfolio_categories(); ?>
     </ul>
   </section>
-  <section class="_4-5 _parent _uniform-children">
-	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
-    <div class="_1-3 post">
-
-      <a href="<?php the_permalink(); ?>">
-        <?php
-          $post_img =  get_the_post_thumbnail(get_the_ID(), 'responsive');
-          if ($post_img):
-        ?>
-        <?php echo $post_img; ?>
-        <?php endif; ?>
-      </a>
-      <strong><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></strong>
-      <?php the_excerpt(); ?>
-
+  <section class="_4-5 _parent">
+    <div class="_parent _uniform-children portfolio-listing clearfix">
+      <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+        <?php get_template_part('portfolio/content','grid'); ?>
+      <?php endwhile; ?>
+      <?php else : ?>
+        <?php agency_no_post_content(); ?>
+      <?php endif; ?>
     </div>
-  <?php endwhile; ?>
-
-  <?php agency_navigation(); ?>
-
-  <?php else : ?>
-    <?php agency_the_404_content(); ?>
-  <?php endif; ?>
-
+    <?php agency_navigation(); ?>
   </section>
+
 </div><!--/.wrap-->
 
 <?php get_footer(); ?>

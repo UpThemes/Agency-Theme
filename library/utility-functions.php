@@ -48,31 +48,59 @@ add_filter('previous_posts_link_attributes', 'prev_posts_link_attributes');
 
 
 
-function agency_navigation(){
+function agency_navigation( $type = 'plain', $endsize = 1, $midsize = 1 ) {
 
+echo '  <div class="paging clearfix">'."\n";
   if( function_exists('wp_pagenavi') ) : ?>
-  <div class="paging">
-    <div class="paging-holder">
-      <div class="paging-frame">
-        <?php wp_pagenavi(); ?>
-      </div>
-    </div>
-  </div>
-  <?php else : ?>
-    <div class="navigation">
-      <?php next_posts_link(__('Older Entries','agency')) ?>
-      <?php previous_posts_link(__('Newer Entries','agency')) ?>
-    </div>
-  <?php endif;
 
+    <?php wp_pagenavi(); ?>
+
+  <?php else :
+
+    global $wp_query, $wp_rewrite;  
+    $wp_query->query_vars['paged'] > 1 ? $current = $wp_query->query_vars['paged'] : $current = 1;
+
+    // Sanitize input argument values
+    if ( ! in_array( $type, array( 'plain', 'list', 'array' ) ) ) $type = 'plain';
+    $endsize = (int) $endsize;
+    $midsize = (int) $midsize;
+
+    // Setup argument array for paginate_links()
+    $pagination = array(
+        'base' => @add_query_arg('paged','%#%'),
+        'format' => '',
+        'total' => $wp_query->max_num_pages,
+        'current' => $current,
+        'show_all' => false,
+        'end_size' => $endsize,
+        'mid_size' => $midsize,
+        'type' => $type,
+        'prev_text' => __('&larr; Previous','agency'),
+        'next_text' => __('Next &rarr;','agency')
+    );
+
+    if( $wp_rewrite->using_permalinks() )
+        $pagination['base'] = user_trailingslashit( trailingslashit( remove_query_arg( 's', get_pagenum_link( 1 ) ) ) . 'page/%#%/', 'paged' );
+
+    if( !empty($wp_query->query_vars['s']) )
+        $pagination['add_args'] = array( 's' => get_query_var( 's' ) );
+
+    echo "<p><strong>" . paginate_links( $pagination ) . "</strong></p>";
+
+
+  endif;
+
+  echo '  </div>'."\n";
 }
 
 
-function agency_the_404_content(){ ?>
+function agency_no_post_content(){ ?>
 
-  <h1><?php _e("Not Found","storefrontal"); ?></h1>
-  <h2><?php _e("Sorry, but you are looking for something that isn't here.","storefrontal"); ?></h2> <?php
+  <h1><?php _e("No Posts Found","agency"); ?></h1>
+  <h2><?php _e("We couldn't find any posts that matched your query.","agency"); ?></h2>
+  <?php echo '<div class="widget widget_search">';
   get_search_form();
+  echo '</div>';
 
 }
 
@@ -236,9 +264,9 @@ add_action( 'wp_head', 'agency_custom_styles');
 
 function agency_portfolio_navigation(){ ?>
 
-      <?php previous_post_link('%link', 'Previous Portfolio Item'); ?>
-      <a href="<?php echo home_url('/portfolio'); ?>" class="list-view" title="Portfolio List">Portfolio List View</a>
-      <?php next_post_link('%link', 'Next Portfolio Item'); ?>
+      <?php previous_post_link('%link', __('Previous Portfolio Item','agency')); ?>
+      <a href="<?php echo home_url('/portfolio'); ?>" class="list-view" title="Portfolio List"><?php _e("Portfolio List View","agency"); ?></a>
+      <?php next_post_link('%link', __('Next Portfolio Item','agency')); ?>
 
 <?php }
 
@@ -262,9 +290,9 @@ function agency_portfolio_slide_builder($postID){
 
   $slide_imgs = get_post_meta($postID, 'portslides', true);
 
-  $post_img =  get_the_post_thumbnail($postID, 'responsive', array('class' => '_1'));
+  $post_img =  get_the_post_thumbnail($postID, 'responsive-large', array('class' => '_1'));
 
-  if ( $slide_imgs != null ) {
+  if ( $post_img !=null || $slide_imgs != null ) {
 
     echo '<section class="rotator">   '."\n";
     echo '  <div class="wrap">        '."\n";
@@ -296,7 +324,7 @@ function agency_portfolio_url($postID){
   if ( is_array($portinfo) ){
 
     if( $portinfo[0]['website-url'] )
-      echo '<a href="'. $portinfo[0]['website-url'] .'" class="button light-bg left viewer-visit">Visit Website</a>';
+      echo '<a href="'. $portinfo[0]['website-url'] .'" class="button light-bg left viewer-visit">' . __("Visit Website &rarr;","agency") . '</a>';
 
   } else { }
 
@@ -311,7 +339,7 @@ function agency_portfolio_services($postID){
   if ( is_array($portinfo) ){
 
     if($portinfo[0]['services-provided-paragraph']){
-      echo '<h3><strong>Services Provided</strong></h3>';
+      echo '<h3><strong>' . __("Services Provided","agency") . '</strong></h3>';
       echo '<p>'. $portinfo[0]['services-provided-paragraph'] .'</p>';
     }
 
@@ -327,7 +355,7 @@ function agency_portfolio_testimonials($postID){
   $testimonials = get_post_meta($postID, 'porttestimonials', true);
 
   if(is_array($testimonials)) { // Has Testimonials Associated with Portfolio item
-    echo '    <h3><strong>Testimonials</strong></h3>'."\n"; // Display Section Title
+    echo '    <h3><strong>' . __("Testimonials","agency") . '</strong></h3>'."\n"; // Display Section Title
 
     foreach($testimonials as $testimonial){
       $post_id_and_title = $testimonial["select-associated-testimonial"];
@@ -413,17 +441,20 @@ function agency_portfolio_home_list(){
     while ( $query->have_posts() ) : $query->the_post(); ?>
 
 
-      <div class="portfolio-item _1-4">
+      <div <?php post_class("portfolio-item _1-4"); ?>>
         <a href="<?php the_permalink(); ?>">
           <?php
-            $post_img =  get_the_post_thumbnail(get_the_ID());
+            $post_img =  get_the_post_thumbnail(get_the_ID(),'portfolio-grid');
             if ($post_img):
           ?>
-          <?php echo $post_img; ?>
+            <?php echo $post_img; ?>
+          <?php else: ?>
+            <?php agency_placeholder('portfolio'); ?>
           <?php endif; ?>
-
-          <?php the_title(); ?>
         </a>
+
+        <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+        
       </div><!--/.portfolio-item-->
   
     <?php endwhile;
@@ -437,22 +468,30 @@ function agency_portfolio_home_list(){
 
 // Team member stuff
 
+function agency_team_member_name(){
+  global $post;
+  $name = get_the_title();
+  if( is_singular() ):
+    $name = '<a href="' . get_permalink() . '">' . $name . '</a>';
+  endif;
+  
+  echo $name;
+}
 
-
-function agency_team_member_title($postID){
-
-  $teaminfo = get_post_meta($postID,'team-info',false);
+function agency_team_member_title(){
+  global $post;
+  $teaminfo = get_post_meta($post->ID,'team-info',false);
 
   if( count($teaminfo) > 0 )
-    echo '<em>'. $teaminfo[0][0]['team-member-job-title'] .'</em>';
+    echo $teaminfo[0][0]['team-member-job-title'];
 
 }
 
 
 
-function agency_team_member_social($postID){
-
-  $teamsocial = get_post_meta($postID,'team-social',false);
+function agency_team_member_social(){
+  global $post;
+  $teamsocial = get_post_meta($post->ID,'team-social',false);
 
   if($teamsocial != null)
     agency_social_links( $teamsocial[0] );
@@ -463,7 +502,7 @@ function agency_team_member_social($postID){
 
 function agency_team_members_home_list(){
 
-  $query = new WP_Query(
+  $team_members = new WP_Query(
     array(
       'post_type' => 'team',
       'orderby'   => 'rand',
@@ -471,19 +510,21 @@ function agency_team_members_home_list(){
     )
   );
   
-  if ($query->have_posts() ){
-    while ( $query->have_posts() ) : $query->the_post(); ?>
+  if ($team_members->have_posts() ){
+    while ( $team_members->have_posts() ) : $team_members->the_post(); ?>
 
-      <div class="team-member _1-4">
-        
-        
+      <div <?php post_class("team-member _1-4"); ?>>
         <?php
-          $post_img =  get_the_post_thumbnail(get_the_ID(), 'responsive');
+          $post_img =  get_the_post_thumbnail(get_the_ID(), 'portfolio-grid');
           if ($post_img):
         ?>
         <a href="<?php the_permalink(); ?>"><?php echo $post_img; ?></a>
+        <?php else: ?>
+        <a href="<?php the_permalink(); ?>"><?php agency_placeholder('team'); ?></a>
         <?php endif; ?>
-        <strong><?php the_title(); ?></strong>
+
+
+        <h5><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
         <?php agency_team_member_title(get_the_id()); ?>
 
       </div><!--/.team-member-->
@@ -491,13 +532,19 @@ function agency_team_members_home_list(){
     <?php endwhile;
   }
 
-  wp_reset_postdata();
-
 }
 
 
 
 // Misc
+
+
+function agency_placeholder($type){
+
+  echo '<img src="'. get_template_directory_uri() . '/assets/default-' . $type . '.png" >';
+
+}
+
 
 function agency_blog_home_list(){
 
@@ -512,16 +559,16 @@ function agency_blog_home_list(){
     while ( $query->have_posts() ) : $query->the_post(); ?>
 
 
-    <article class="blog-post">
+    <article <?php post_class(); ?>>
       <?php
         $post_img =  get_the_post_thumbnail(get_the_ID());
         if ($post_img):
       ?>
       <?php echo $post_img; ?>
       <?php endif; ?>
-      <h4><?php the_title(); ?></h4>
-      <p>Yea, I just wanted to make sure you realize how awesome I am.</p>
-      <a href="<?php the_permalink(); ?>">continue reading</a>
+      <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+      <p><?php the_excerpt(); ?></p>
+      <p><a href="<?php the_permalink(); ?>"><?php _e("Continue Reading &rarr;","agency"); ?></a></p>
     </article><!--/.blog-post-->
 
     <?php endwhile;
@@ -544,7 +591,7 @@ function agency_testimonial_home_list(){
   if ($query->have_posts() ){
     while ( $query->have_posts() ) : $query->the_post(); ?>
 
-    <div class="testimonial">
+    <div <?php post_class("testimonial"); ?>>
       <?php the_content(); ?>
       <em>- <?php the_title(); ?></em>
     </div><!--/.testimonial-->
@@ -553,31 +600,6 @@ function agency_testimonial_home_list(){
   }
 
 }
-
-
-function agency_get_post_class($postID){
-
-  $post_format =  get_post_format($postID);
-  if (!$post_format) {
-    echo ' post-standard ';
-  } else if ($post_format == 'link') {
-    echo ' post-link ';
-  } else if ($post_format == 'quote') {
-    echo ' post-quote ';  
-  } else if ($post_format == 'status') {
-    echo ' post-status ';  
-  } else if ($post_format == 'image') {
-    echo ' post-image ';  
-  } else if ($post_format == 'video') {
-    echo ' post-video ';  
-  } else if ($post_format == 'audio') {
-    echo ' post-audio ';  
-  } else if ($post_format == 'gallery') {
-    echo ' post-gallery ';  
-  } else { }
-
-}
-
 
 
 function agency_posts_url() {
@@ -594,6 +616,7 @@ function agency_home_slide_builder() {
 
   global $post;
   $the_slides = agency_get_home_slides();
+  $up_options = upfw_get_options();
 
   if ($the_slides) {
 
@@ -616,7 +639,6 @@ function agency_home_slide_builder() {
     }
 ?>
 
-
 <section class="rotator">
   <div class="wrap">
     <div class="flexslider">
@@ -626,15 +648,17 @@ function agency_home_slide_builder() {
     foreach ($the_slides as $the_slide) {
       echo "\n";
       echo '          <li class="slide">'."\n\n";
-      echo '            <div class="slide-content-wrapper _1-2 clearfix">'."\n";
-      echo '              <div class="slide-content">'."\n";
-      echo '                <h1>' . $the_slide['title'] ."</h1>\n";
-      echo '                <h3>' . $the_slide['blurb'] . "\n";
-      if ($the_slide['link'])
-        echo '                <a href="' . $the_slide['link'] . '" title="'.$the_slide['title'].'">See more</a>'."\n";
-      echo '                </h3>'."\n";
-      echo '                ' . $slides_nav ."\n";
-      echo '              </div>'."\n";
+      echo '            <div class="slide-content-wrapper _1-3 clearfix">'."\n";
+      if( $up_options->enable_carousel_text != 'false' ){
+        echo '              <div class="slide-content">'."\n";
+        echo '                <h1>' . $the_slide['title'] ."</h1>\n";
+        echo '                <div class="teaser">' . $the_slide['blurb'] . "\n";
+        if ($the_slide['link'])
+          echo '                <p><a href="' . $the_slide['link'] . '" title="'.$the_slide['title'].'">'.__("Read More &rarr;","agency").'</a></p>'."\n";
+        echo '                </div>'."\n";
+        echo '                ' . $slides_nav ."\n";
+        echo '              </div>'."\n";
+      }
       echo '            </div>'."\n";
       echo '          ' . $the_slide['image'] ."\n\n";
       echo '        </li>'."\n";
@@ -671,9 +695,11 @@ function agency_get_home_slides() {
 
     while ( $query->have_posts() ) : $query->the_post();
 
+      $size =  is_single() ? 'responsive-tall' : 'responsive';
+
       $slidedata = array(
         'title' => get_the_title(),
-        'image' => get_the_post_thumbnail(get_the_ID(), 'responsive'),
+        'image' => get_the_post_thumbnail(get_the_ID(), $size),
         'blurb' => get_post_meta(get_the_ID(), 'slide_blurb',true),
         'link'  => get_post_meta(get_the_ID(), 'slide_link', true),
         'id'    => get_the_ID()
@@ -699,8 +725,8 @@ function agency_breadcrumbs() {
 
   $args = array(
     'show_on_home'  => 0,
-    'delimiter'     => '<li class="seperator">&#9654;</li>',
-    'home'          => 'Home',
+    'delimiter'     => '<li class="separator"><i class="icon icon-right-open"></i></li>',
+    'home'          => __("Home","agency"),
     'showCurrent'   => 1,
     'before'        => '<span class="current">',
     'after'         => '</span>'
@@ -724,7 +750,7 @@ function agency_error_class($error) {
 }
 
 
-function agency_error_output($error, $format = false){
+function agency_error_output($error, $format=''){
   if(isset($error) && $format == true) {
     echo '<span class="error _1-3 ">' . $error . '</span>';
   } else if(isset($error)){
@@ -740,13 +766,13 @@ function agency_contact_form($error_log = false, $hasError = false, $emailSent =
   <?php if(isset($emailSent) && $emailSent) { ?>
 
     <div class="thanks">
-      <h1 class="_1 success-notification">Thank you, your email was sent successfully.</h1>
+      <h1 class="_1 success-notification"><?php _e("Thank you, your email was sent successfully.","agency"); ?></h1>
     </div>
 
   <?php } else { ?>
 
-    <?php if( isset($hasError) && $hasError == 1 ) { ?>
-        <h3 class="_1 error-notification"><?php _e("There was an error submitting this form. Please try again later.","agency"); ?></h3>
+    <?php if(isset($hasError) || isset($captchaError)) { ?>
+        <h3 class="_1 error-notification"><?php _e("We're sorry, something seems to have gone wrong. Check your errors or reach out on a social media channel.","agency"); ?></h3>
     <?php } ?>
 
     <form id="contact" action="<?php the_permalink(); ?>" method="post">
@@ -756,22 +782,22 @@ function agency_contact_form($error_log = false, $hasError = false, $emailSent =
         <input type="text" name="contact-name" id="name" class="<?php if( isset($error_log["nameError"]) && $error_log["nameError"] ) agency_error_class($error_log["nameError"]); ?>" placeholder="Name" value="<?php if(isset($_POST['contact-name'])) echo esc_html($_POST['contact-name']);?>">
         <?php if( isset($error_log["nameError"]) && $error_log["nameError"] ) agency_error_output($error_log["nameError"]); ?>
 
-        <input type="text" name="contact-company" id="company" placeholder="Company" value="<?php if(isset($_POST['contact-company'])) echo esc_html($_POST['contact-company']); ?>">
+        <input type="text" name="contact-company" id="company" placeholder="<?php _e("Company","agency"); ?>" value="<?php if(isset($_POST['contact-company'])) echo $_POST['company'];?>">
 
-        <input type="text" name="contact-email-address" id="email-address" class="<?php agency_error_class($error_log["emailError"]); ?>" placeholder="Email Address" value="<?php if(isset($_POST['contact-email-address'])) echo esc_html($_POST['contact-email-address']);?>">
-        <?php if( isset($error_log["emailError"]) && $error_log["emailError"] ) agency_error_output($error_log["emailError"]); ?>
+        <input type="text" name="contact-email-address" id="email-address" class="<?php agency_error_class($error_log["emailError"]); ?>" placeholder="<?php _e("Email Address","agency"); ?>" value="<?php if(isset($_POST['contact-email-address'])) echo $_POST['contact-email-address'];?>">
+        <?php agency_error_output($error_log["emailError"]); ?>
 
-        <input type="text" name="contact-phone" id="phone" placeholder="Phone" value="<?php if(isset($_POST['contact-phone'])) echo esc_html($_POST['contact-phone']);?>">
+        <input type="text" name="contact-phone" id="phone" placeholder="<?php _e("Phone","agency"); ?>" value="<?php if(isset($_POST['contact-phone'])) echo $_POST['contact-phone'];?>">
 
-        <input type="text" name="contact-web-url" id="web-url" placeholder="Web URL" value="<?php if(isset($_POST['contact-web-url'])) echo esc_html($_POST['contact-web-url']);?>">
+        <input type="text" name="contact-web-url" id="web-url" placeholder="<?php _e("Web URL","agency"); ?>" value="<?php if(isset($_POST['contact-web-url'])) echo $_POST['contact-web-url'];?>">
       </div>
 
       <div class="_2-3 col-no-right col-no-top">
-        <textarea id="contact-message" class="<?php if( isset($error_log["messageError"]) && $error_log["messageError"] ) agency_error_class($error_log["messageError"]); ?>" name="contact-message"><?php if( isset($_POST['contact-message']) ) echo esc_html($_POST['contact-message']); ?></textarea>
-        <?php if( isset($error_log["messageError"]) && $error_log["messageError"] ) agency_error_output($error_log["messageError"], true); ?>
+        <textarea id="contact-message" class="<?php agency_error_class($error_log["messageError"]); ?>" name="contact-message" placeholder="Your Message Here"><?php if( isset($_POST['contact-message']) ) echo $_POST['contact-message']; ?></textarea>
 
-        <input type="submit" id="send" value="<?php _e("Send Message","agency"); ?>"/>
+        <input type="submit" name="send" id="send" value="<?php _e("Send Message","agency"); ?>"/>
         <input type="hidden" id="submitted" name="submitted" value="true" />
+
       </div>
 
     </form>
@@ -810,3 +836,155 @@ function agency_get_testimonials_list() {
 
 
 }
+
+
+function agency_wp_page_menu(){
+  echo '<nav>';
+  wp_page_menu();
+  echo '</nav>';
+}
+
+
+function agency_default_sidebar() {
+  the_widget('WP_Widget_Categories');
+  the_widget('WP_Widget_Search');
+}
+
+
+function agency_archive_recent($number_of_posts=30) {
+
+
+  $query = new WP_Query(
+    array(
+      'post_type' => 'post',
+      'posts_per_page'  => $number_of_posts
+    )
+  );
+  
+  if ($query->have_posts() ){ ?>
+
+      <h3><strong><?php _e("Latest Posts","agency"); ?></strong></h3>
+      <ul class="recent-posts"><?php
+        while ( $query->have_posts() ) : $query->the_post(); ?>
+
+        <li <?php post_class(); ?>>
+          <strong><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></strong>
+        </li>
+        <?php endwhile; ?>
+  
+      </ul>
+<?php }
+
+  wp_reset_postdata();
+
+}
+
+
+function agency_archive_by_month() {
+
+$args = array(
+
+);
+
+
+?>
+
+      <h3><strong><?php _e("Archives by Month","agency"); ?></strong></h3>
+      <ul>
+      <?php wp_get_archives($args);?>
+      </ul>
+
+
+
+<?php 
+
+}
+
+
+function agency_archive_by_categoty() {
+
+$args = array(
+  'title_li' => __('')
+);
+
+?>
+
+      <h3><strong><?php _e("Archives by Category","agency"); ?></strong></h3>
+      <ul class="categories-list">
+        <?php wp_list_categories($args); ?>
+      </ul>
+
+<?php
+}
+
+
+function calculate_ppp($old_ppp, $columns) {
+
+  if ($old_ppp < $columns) {
+    return $columns;
+  } else {
+    $remainder = $old_ppp % $columns;
+    $new_ppp = $old_ppp - $remainder;
+    return $new_ppp;
+  }
+
+}
+
+
+function agency_get_custom_ppp($type, $set_ppp) {
+
+
+  if($type == 'team') {
+    $team_ppp = calculate_ppp($set_ppp, 4);
+    return $team_ppp;
+  } else if ($type == 'portfolio') {
+    $port_ppp = calculate_ppp($set_ppp, 3);
+    return $port_ppp;
+  } else {
+    return $set_ppp;
+  }
+
+
+}
+
+
+
+function agency_modify_portfolio_posts_query( $query ){
+
+  $post_type = $query->get('post_type');
+  $old_ppp = get_option('posts_per_page');
+
+  if ( ( 'portfolio' == $post_type && is_archive() ) || is_tax() ) {
+    $new_ppp = agency_get_custom_ppp('portfolio', $old_ppp);
+    $query->set('posts_per_page', $new_ppp);
+  }
+
+}
+add_action('pre_get_posts', 'agency_modify_portfolio_posts_query');
+
+
+function agency_modify_team_posts_query( $query ){
+
+  $post_type = $query->get('post_type');
+  $old_ppp = get_option('posts_per_page');
+
+  if ( 'team' == $post_type && is_archive() ) {
+    $new_ppp = agency_get_custom_ppp('team', $old_ppp);
+    $query->set('posts_per_page', $new_ppp);
+  }
+
+}
+add_action('pre_get_posts', 'agency_modify_team_posts_query');
+
+
+
+function agency_excerpt_length($length){
+  return 20;
+}
+add_filter( 'excerpt_length', 'agency_excerpt_length', 999 );
+
+
+function agency_excerpt_more($more){
+	return '..';
+}
+add_filter('excerpt_more', 'agency_excerpt_more');

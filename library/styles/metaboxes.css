@@ -1,7 +1,7 @@
 p.meta{
 	padding: 10px 5px;
 	border-bottom: 1px solid #ddd;
-	font-size: 1.4em;
+	font-size: 1.1em;
 	overflow: auto;
 }
 
@@ -9,7 +9,6 @@ p.meta label{
 	font-weight: bold;
 	width: 170px;
 	display: block;
-	font-size: 1.1em;
 	float: left;
 	margin-right: 5px;
 }
@@ -34,7 +33,7 @@ p.meta a.button{
 
 #slide_container{
 	display: block;
-	clear: both;
+	float: left;
 	font-size: 10px;
 	text-transform: uppercase;
 	font-color: #999;

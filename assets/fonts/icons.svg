@@ -1,0 +1,42 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg>
+<metadata>
+Created by FontForge 20100429 at Tue May 15 03:10:12 2012
+ By root
+Copyright (C) 2012 by original authors @ fontello.com
+</metadata>
+<defs>
+<font id="fontello-19210640" horiz-adv-x="364" >
+  <font-face 
+    font-family="Fontello"
+    font-weight="500"
+    font-stretch="normal"
+    units-per-em="1000"
+    panose-1="2 0 6 3 0 0 0 0 0 0"
+    ascent="800"
+    descent="-200"
+    bbox="13.5 -101 815 698.613"
+    underline-thickness="50"
+    underline-position="-100"
+    unicode-range="U+E73A-1F517"
+  />
+<missing-glyph 
+d="M33 0v666h265v-666h-265zM66 33h199v600h-199v-600z" />
+    <glyph glyph-name=".notdef" 
+d="M33 0v666h265v-666h-265zM66 33h199v600h-199v-600z" />
+    <glyph glyph-name=".null" horiz-adv-x="0" 
+ />
+    <glyph glyph-name="nonmarkingreturn" horiz-adv-x="333" 
+ />
+    <glyph glyph-name="uniE73A" unicode="&#xe73a;" horiz-adv-x="790" 
+d="M15 680q155 0 295.5 -60t242.5 -162t162 -242.5t60 -295.5h-118q0 130 -51 249t-137 205t-205 137t-249 51v118zM15 443q142 0 262.5 -70t190.5 -190.5t70 -262.5h-118q0 167 -119 286t-286 119v118zM128 147q47 0 80.5 -33.5t33.5 -80.5t-33.5 -80t-80.5 -33t-80 33
+t-33 80t33 80.5t80 33.5z" />
+    <glyph glyph-name="uniE75E" unicode="&#xe75e;" horiz-adv-x="370" 
+d="M113 574l225 -235q17 -17 17 -39t-17 -39q-204 -215 -225 -235q-16 -15 -40 -15.5t-41 15.5q-37 37 0 79l188 195l-188 195q-37 42 0 79q17 16 41 15.5t40 -15.5z" />
+    <glyph glyph-name="u1F517" unicode="&#x1f517;" horiz-adv-x="830" 
+d="M308 64q14 14 35 14t35 -14t14 -35t-14 -35l-41 -40q-55 -55 -133 -55q-79 0 -134 55q-55 53 -55 133t55 133l149 147q70 69 143.5 78t127.5 -44q14 -14 14.5 -35t-13.5 -35t-35 -14t-35 14q-49 49 -132 -34l-149 -148q-26 -26 -26 -62q0 -37 26 -63t64 -26t64 26z
+M760 638q55 -55 55 -132q0 -78 -55 -133l-159 -158q-73 -73 -150 -73q-62 0 -111 49q-14 14 -14.5 35t13.5 35t35 14t35 -14q9 -9 16 -13t22.5 -7t36.5 8t47 36l159 158q26 26 26 63q0 36 -26 62q-27 26 -57.5 30.5t-60.5 -20.5l-50 -50q-14 -14 -35 -14t-35 14t-14 35
+t14 35l51 50q54 53 126.5 50.5t130.5 -60.5z" />
+  </font>
+</defs></svg>

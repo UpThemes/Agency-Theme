@@ -4,60 +4,39 @@
 
 <div class="wrap content">
 
-
   <section class="_4-5">
 
-  <?php
-
-  $counter = 0;
-
-  if (have_posts()) : while (have_posts()) : the_post();
-
-    if($counter != 0){
-      echo '     <hr/><br/><br/>'."\n";
-    }
-
-    $counter++;
-
-   ?>
-
-    <div>
-      <article class="<?php agency_get_post_class($post->ID); ?>">
-        <i class="post-icon"></i>
-        <div class="meta post-pad-left">
-          <a href="<?php comments_link(); ?>" title="<?php comments_number('0 Comments', '1 Comment', '% Comments'); ?>" class="comments"><?php comments_number('0', '1', '%'); ?></a> <?php the_category(', '); ?>
-        </div>
-
-        <h1 class="post-pad-left"><?php the_title(); ?></h1>
-        <h4 class="post-pad-left">Posted at <?php the_time(); ?> on <?php the_date(); ?> by <?php the_author_posts_link(); ?></h4>
-
-        <div class="post-pad-left">
-          <?php the_content(); ?>
-        </div>
-
-      </article>
+    <h1 class="archive-title">
+    <?php if ( is_category() ) { ?>
+      <span class="fl cat"><?php _e( 'Category Archive:', 'agency' ); ?> <?php echo single_cat_title(); ?></span>
+        <?php } elseif ( is_day() ) { ?>
+      <?php _e( 'Archive', 'agency' ); ?> | <?php the_time( get_option( 'date_format' ) ); ?>
+      <?php } elseif ( is_month() ) { ?>
+      <?php _e( 'Archive', 'agency' ); ?> | <?php the_time( 'F, Y' ); ?>
+      <?php } elseif ( is_year() ) { ?>
+      <?php _e( 'Archive', 'agency' ); ?> | <?php the_time( 'Y' ); ?>
+      <?php } elseif ( is_author() ) { ?>
+      <?php _e( 'Archive by Author', 'agency' ); ?>
+      <?php } elseif ( is_tag() ) { ?>
+      <?php _e( 'Tag Archives:', 'agency' ); ?> <?php echo single_tag_title( '', true); ?>
+    <?php } ?>
+    </h1>
+  
+    <?php if (have_posts()) : ?>
+    <div class="clearfix">
+    <?php while (have_posts()) : the_post(); ?>
+      <?php get_template_part( 'content', 'default' ); ?>
+    <?php endwhile; ?>
     </div>
-
-<?php endwhile; ?>
-
-<?php else : ?>
-
-<?php 
-/**
- * Output no-post content
- */
-agency_the_404_content(); 
-?>
-
-<?php endif; ?>
-
+      <?php agency_navigation(); ?>
+    <?php else : ?>
+      <?php agency_no_post_content(); ?>
+    <?php endif; ?>
   </section>
-
 
   <section class="_1-5">
     <?php get_sidebar(); ?>
   </section>
-
 
 </div><!--/.wrap-->
 

@@ -1,0 +1,1170 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Agency Theme\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-05-14 15:51-0600\n"
+"PO-Revision-Date: 2012-05-14 15:54-0600\n"
+"Last-Translator: Chris Wallace <chris@upthemes.com>\n"
+"Language-Team: UpThemes <support@upthemes.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_x\n"
+"X-Poedit-Basepath: /Users/chriswallace/Sites/solo/wp-content/themes/agency/\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED STATES\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: archive.php:11
+msgid "Category Archive:"
+msgstr ""
+
+#: archive.php:15
+#: archive.php:18
+#: archive.php:21
+msgid "Archive"
+msgstr ""
+
+#: archive.php:24
+msgid "Archive by Author"
+msgstr ""
+
+#: archive.php:27
+msgid "Tag Archives:"
+msgstr ""
+
+#: comments.php:9
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr ""
+
+#: comments.php:25
+#, php-format
+msgid "<span>%d</span> Responses"
+msgstr ""
+
+#: comments.php:25
+msgid "<span>1</span> Response"
+msgstr ""
+
+#: comments.php:38
+msgid "Comments are closed."
+msgstr ""
+
+#: comments.php:51
+#, php-format
+msgid "<span class=\"loggedin\">Logged in as <a href=\"%1$s\" title=\"Logged in as %2$s\">%2$s</a>.</span> <span class=\"logout\"><a href=\"%3$s\" title=\"Log out of this account\">Log out?</a></span>"
+msgstr ""
+
+#: comments.php:73
+msgid "Post Comment"
+msgstr ""
+
+#: content-search.php:8
+#: content-status.php:10
+#: content.php:10
+#, php-format
+msgid "Posted at %1$s on %2$s by %3$s"
+msgstr ""
+
+#: content-search.php:17
+#: content.php:18
+msgid "0 Comments"
+msgstr ""
+
+#: content-search.php:17
+#: content.php:18
+msgid "1 Comment"
+msgstr ""
+
+#: content-search.php:17
+#: content.php:18
+msgid "% Comments"
+msgstr ""
+
+#: search.php:9
+#, php-format
+msgid "Search Results for: `%s`"
+msgstr ""
+
+#: taxonomy-portfolio_category.php:7
+msgid "Our Portfolio"
+msgstr ""
+
+#: template-page-custom-home.php:15
+msgid "Selections from the Portfolio"
+msgstr ""
+
+#: template-page-custom-home.php:16
+msgid "view complete portfolio"
+msgstr ""
+
+#: template-page-custom-home.php:31
+msgid "Recently on the Blog"
+msgstr ""
+
+#: template-page-custom-home.php:32
+msgid "Read the Blog"
+msgstr ""
+
+#: template-page-custom-home.php:41
+msgid "Testimonials"
+msgstr ""
+
+#: template-page-custom-home.php:54
+msgid "Our Team"
+msgstr ""
+
+#: template-page-custom-home.php:55
+msgid "Meet the Team"
+msgstr ""
+
+#: admin/library/custom.php:155
+msgid "An incidental remark; digression: a message that departs from the main subject."
+msgstr ""
+
+#: admin/library/custom.php:159
+msgid "A sound, or a sound signal; Of or relating to audible sound; Of or relating to the broadcasting or reproduction of sound, especially high-fidelity reproduction."
+msgstr ""
+
+#: admin/library/custom.php:163
+msgid "Any kind of communication over the Internet; primarily direct one-on-one chat or text-based group chat (formally also known as synchronous conferencing), using tools such as instant messengers and Internet Relay Chat."
+msgstr ""
+
+#: admin/library/custom.php:167
+msgid "A collection of art for exhibition."
+msgstr ""
+
+#: admin/library/custom.php:171
+msgid "picture: A visual representation (of an object or scene or person or abstraction) produced on a surface."
+msgstr ""
+
+#: admin/library/custom.php:175
+msgid "A reference to a document that the reader can directly follow, or that is followed automatically. The reference points to a whole document or to a specific element within a document."
+msgstr ""
+
+#: admin/library/custom.php:179
+msgid "A quotation, statement attributed to someone else; To refer to (part of) a statement that has been made by someone else."
+msgstr ""
+
+#: admin/library/custom.php:183
+msgid "state or condition of affairs"
+msgstr ""
+
+#: admin/library/custom.php:187
+msgid "A recording of both visual and audible components; Electronically capturing, recording, processing, storing, transmitting, and reconstructing a sequence of still images representing scenes in motion."
+msgstr ""
+
+#: admin/library/theme-options.php:57
+#: admin/library/theme-options.php:60
+msgid "Theme Options"
+msgstr ""
+
+#: admin/library/theme-options.php:93
+msgid "Theme settings updated successfully."
+msgstr ""
+
+#: admin/library/theme-options.php:104
+msgid "Save Settings"
+msgstr ""
+
+#: admin/library/theme-options.php:105
+msgid "Reset Defaults"
+msgstr ""
+
+#: admin/library/theme-options.php:215
+msgid "Could not update theme options."
+msgstr ""
+
+#: admin/library/theme-options.php:350
+msgid "Add New Field"
+msgstr ""
+
+#: admin/library/theme-options.php:372
+msgid "This option has no valid options. Please create valid options as an array inside the UpThemes Framework."
+msgstr ""
+
+#: admin/theme-options/colors-and-images.php:38
+msgid "Colors and Images"
+msgstr ""
+
+#: admin/theme-options/colors-and-images.php:42
+msgid "Color Scheme"
+msgstr ""
+
+#: admin/theme-options/colors-and-images.php:43
+msgid "Select your color scheme."
+msgstr ""
+
+#: admin/theme-options/colors-and-images.php:53
+msgid "Display header navigation menu above or below the site title/description?"
+msgstr ""
+
+#: admin/theme-options/colors-and-images.php:62
+msgid "Light"
+msgstr ""
+
+#: admin/theme-options/colors-and-images.php:66
+msgid "Dark"
+msgstr ""
+
+#: lib/plugins/custom-fields-creator/wck-cfc.php:65
+msgid "WCK Custom Meta Boxes"
+msgstr ""
+
+#: lib/plugins/custom-fields-creator/wck-cfc.php:66
+msgid "Custom Meta Box"
+msgstr ""
+
+#: lib/plugins/custom-fields-creator/wck-cfc.php:67
+#: lib/plugins/nivo-slider/nivo-slider.php:50
+msgid "Add New"
+msgstr ""
+
+#: lib/plugins/custom-fields-creator/wck-cfc.php:68
+msgid "Add New Meta Box"
+msgstr ""
+
+#: lib/plugins/custom-fields-creator/wck-cfc.php:69
+msgid "Edit Meta Box"
+msgstr ""
+
+#: lib/plugins/custom-fields-creator/wck-cfc.php:70
+msgid "New Meta Box"
+msgstr ""
+
+#: lib/plugins/custom-fields-creator/wck-cfc.php:71
+msgid "Custom Fields Creator"
+msgstr ""
+
+#: lib/plugins/custom-fields-creator/wck-cfc.php:72
+msgid "View Meta Box"
+msgstr ""
+
+#: lib/plugins/custom-fields-creator/wck-cfc.php:73
+msgid "Search Meta Boxes"
+msgstr ""
+
+#: lib/plugins/custom-fields-creator/wck-cfc.php:74
+msgid "No Meta Boxes found"
+msgstr ""
+
+#: lib/plugins/custom-fields-creator/wck-cfc.php:75
+msgid "No Meta Boxes found in Trash"
+msgstr ""
+
+#: lib/plugins/custom-fields-creator/wck-cfc.php:524
+msgid "Overview"
+msgstr ""
+
+#: lib/plugins/custom-fields-creator/wck-cfc.php:525
+msgid "WCK Custom Fields Creator allows you to easily create custom meta boxes for Wordpress without any programming knowledge."
+msgstr ""
+
+#: lib/plugins/custom-fields-creator/wck-cfc.php:530
+msgid "Meta Box Arguments"
+msgstr ""
+
+#: lib/plugins/custom-fields-creator/wck-cfc.php:531
+msgid "Define here the rules for the meta box. This rules are used to set up where the meta box will appear, it's type and also the meta key name stored in the database. The name of the entry (Enter title here) will be used as the meta box title."
+msgstr ""
+
+#: lib/plugins/custom-fields-creator/wck-cfc.php:536
+msgid "Meta Box Fields"
+msgstr ""
+
+#: lib/plugins/custom-fields-creator/wck-cfc.php:537
+msgid "Define here the fields contained in the meta box. From \"Field Title\" a slug will be automatically generated and you will use this slug to display the data in the frontend."
+msgstr ""
+
+#: lib/plugins/custom-fields-creator/wck-cfc.php:542
+msgid "CFC Frontend Example"
+msgstr ""
+
+#: lib/plugins/custom-fields-creator/wck-cfc.php:543
+msgid "Let's consider we have a meta box with the following arguments:<br /> - Meta name: books <br /> - Post Type: post <br />And we also have two fields deffined:<br /> - A text field with the Field Title: Book name <br /> - And another text field with the Field Title: Author name "
+msgstr ""
+
+#: lib/plugins/custom-fields-creator/wck-cfc.php:543
+msgid "You will notice that slugs will automatically be created for the two text fields. For \"Book name\" the slug will be \"book-name\" and for \"Author name\" the slug will be \"author-name\""
+msgstr ""
+
+#: lib/plugins/custom-fields-creator/wck-cfc.php:543
+msgid "Let's see what the code for displaying the meta box values in single.php of your theme would be:"
+msgstr ""
+
+#: lib/plugins/custom-fields-creator/wck-cfc.php:543
+msgid "So as you can see the Meta Name \"books\" is used as the $key parameter of the funtion <a href=\"http://codex.wordpress.org/Function_Reference/get_post_meta\" target=\"_blank\">get_post_meta()</a> and the slugs of the text fields are used as keys for the resulting array. Basically CFC stores the entries as post meta in a multidimensioanl array. In our case the array would be: <br /><pre>array( array( \"book-name\" => \"The Hitchhiker's Guide To The Galaxy\", \"author-name\" => \"Douglas Adams\" ),  array( \"book-name\" => \"Ender's Game\", \"author-name\" => \"Orson Scott Card\" ) );</pre> This is true even for single entries."
+msgstr ""
+
+#: lib/plugins/custom-fields-creator/wordpress-creation-kit-api/wordpress-creation-kit.php:763
+msgid "Select File"
+msgstr ""
+
+#: lib/plugins/custom-fields-creator/wordpress-creation-kit-api/wordpress-creation-kit.php:843
+msgid "Syncronize WCK Translation"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:48
+#: lib/plugins/nivo-slider/nivo-slider.php:49
+msgid "Nivo Slider"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:51
+msgid "Add New Slider"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:52
+msgid "Edit Slider"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:53
+msgid "New Slider"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:54
+msgid "View Slider"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:55
+msgid "Search Sliders"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:56
+msgid "No Sliders found"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:57
+msgid "No Sliders found in Trash"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:95
+#: lib/plugins/nivo-slider/nivo-slider.php:98
+msgid "Slider updated."
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:96
+msgid "Custom field updated."
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:97
+msgid "Custom field deleted."
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:100
+#, php-format
+msgid "Slider restored to revision from %s"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:101
+msgid "Slider published."
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:102
+msgid "Slider saved."
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:103
+msgid "Slider submitted."
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:104
+#, php-format
+msgid "Slider scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" href=\"%2$s\">Preview Slider</a>"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:106
+msgid "M j, Y @ G:i"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:107
+msgid "Slider draft updated."
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:116
+msgid "Title"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:117
+msgid "Shortcode"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:118
+msgid "Author"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:119
+msgid "Images"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:120
+msgid "Date"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:150
+msgid "Upload Images"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:151
+msgid "Settings"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:152
+msgid "Using this Slider"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:153
+msgid "Useful Links"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:198
+msgid "Slider Type"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:201
+msgid "Manual"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:202
+msgid "Gallery"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:203
+#: lib/plugins/nivo-slider/nivo-slider.php:224
+msgid "Category"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:204
+msgid "Sticky Posts"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:206
+msgid "Choose to manually upload images or use post thumbnails"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:209
+msgid "Post"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:221
+msgid "Select the post gallery you want to use"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:235
+msgid "Select the category you want to use for post thumbnails"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:238
+msgid "Enable Captions"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:241
+msgid "Enable automatic captions from post titles"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:244
+msgid "Slider Size"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:247
+msgid "(Size in px) Images will be cropped to these dimensions (eg 400 x 150)"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:250
+msgid "Slider Theme"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:263
+msgid "Use a pre-built theme or provide your own styles. <a href=\"http://nivo.dev7studios.com/theme-demos/\" target=\"_blank\">See theme demos</a>"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:266
+msgid "Transition Effect"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:288
+msgid "Slices"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:290
+msgid "The number of slices to use in the \"Slice\" transitions (eg 15)"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:293
+msgid "Box (Cols x Rows)"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:296
+msgid "The number of columns and rows to use in the \"Box\" transitions (eg 8 x 4)"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:299
+msgid "Animation Speed"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:301
+msgid "The speed of the transition animation in milliseconds (eg 500)"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:304
+msgid "Enable Thumbnail Navigation"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:309
+msgid "Thumbnail Size"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:312
+msgid "The width and height of the thumbnails"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:315
+msgid "Pause Time"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:317
+msgid "The amount of time to show each slide in milliseconds (eg 3000)"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:320
+msgid "Start Slide"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:322
+msgid "Set which slide the slider starts from (zero based index: usually 0)"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:325
+msgid "Enable Direction Navigation"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:328
+msgid "Prev &amp; Next arrows"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:331
+msgid "Hide Direction Navigation on Hover"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:336
+msgid "Enable Control Navigation"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:339
+msgid "eg 1,2,3..."
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:342
+msgid "Enable Keyboard Navigation"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:345
+msgid "Press Left or Right"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:348
+msgid "Pause the Slider on Hover"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:353
+msgid "Manual Transitions"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:356
+msgid "Slider is always paused"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:359
+msgid "Random Start Slide"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:362
+msgid "Overrides Start Slide value"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:448
+msgid "Image Caption"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:450
+msgid "e.g. Example caption (Certain HTML allowed)"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:453
+msgid "Image Link"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:455
+msgid "e.g. http://www.example.com"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:458
+msgid "Save Changes"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:934
+msgid "To use this slider in your posts or pages use the following shortcode:"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:941
+msgid "Website:"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:942
+msgid "Created by:"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:943
+msgid "Support:"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:944
+msgid "Changelog:"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:964
+msgid "Invalid Slider"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:972
+msgid "Invalid Slider Slug"
+msgstr ""
+
+#: lib/plugins/nivo-slider/nivo-slider.php:1260
+msgid "File doesn't  exist: "
+msgstr ""
+
+#: library/breadcrumbs.php:121
+msgid "Page"
+msgstr ""
+
+#: library/comments-callback.php:17
+msgid "says"
+msgstr ""
+
+#: library/comments-callback.php:20
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: library/comments-callback.php:28
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: library/comments-callback.php:30
+msgid "(Edit)"
+msgstr ""
+
+#: library/init.php:19
+msgid "Header Navigation"
+msgstr ""
+
+#: library/init.php:20
+msgid "Home Slideshow Navigation"
+msgstr ""
+
+#: library/init.php:21
+msgid "Footer Navigation"
+msgstr ""
+
+#: library/init.php:171
+msgid "Homepage 1"
+msgstr ""
+
+#: library/init.php:184
+msgid "Homepage 2"
+msgstr ""
+
+#: library/init.php:197
+msgid "Team Top"
+msgstr ""
+
+#: library/init.php:210
+msgid "Portfolio Top"
+msgstr ""
+
+#: library/init.php:223
+msgid "Default Sidebar"
+msgstr ""
+
+#: library/slides.php:20
+msgid "Slides"
+msgstr ""
+
+#: library/slides.php:21
+msgid "Slide"
+msgstr ""
+
+#: library/slides.php:23
+msgid "Add New Slide"
+msgstr ""
+
+#: library/slides.php:24
+msgid "Edit"
+msgstr ""
+
+#: library/slides.php:25
+msgid "Edit Slides"
+msgstr ""
+
+#: library/slides.php:26
+msgid "New Slide"
+msgstr ""
+
+#: library/slides.php:27
+msgid "View Slides"
+msgstr ""
+
+#: library/slides.php:28
+msgid "View Slide"
+msgstr ""
+
+#: library/slides.php:29
+msgid "Search Slides"
+msgstr ""
+
+#: library/slides.php:30
+msgid "No slides found"
+msgstr ""
+
+#: library/slides.php:31
+msgid "No slides found in Trash"
+msgstr ""
+
+#: library/slides.php:32
+msgid "Parent Slide"
+msgstr ""
+
+#: library/slides.php:60
+msgid "Slide Image"
+msgstr ""
+
+#: library/slides.php:61
+msgid "Upload the slide image."
+msgstr ""
+
+#: library/slides.php:66
+msgid "Related Post or Product"
+msgstr ""
+
+#: library/slides.php:67
+msgid "Select a post or product to associate with this slide."
+msgstr ""
+
+#: library/slides.php:73
+msgid "Slide Subtitle"
+msgstr ""
+
+#: library/slides.php:74
+msgid "Appears below the title."
+msgstr ""
+
+#: library/slides.php:79
+msgid "Slide links to"
+msgstr ""
+
+#: library/slides.php:80
+msgid "Enter the full URL or where you would like the slide to link"
+msgstr ""
+
+#: library/slides.php:95
+msgid "Slide Details"
+msgstr ""
+
+#: library/theme-cpt.php:17
+#: library/theme-cpt.php:18
+#: library/theme-cpt.php:28
+msgid "Portfolio"
+msgstr ""
+
+#: library/theme-cpt.php:21
+msgid "Edit Portfolio Item"
+msgstr ""
+
+#: library/theme-cpt.php:22
+msgid "New Portfolio Item"
+msgstr ""
+
+#: library/theme-cpt.php:23
+msgid "View Portfolio Item"
+msgstr ""
+
+#: library/theme-cpt.php:24
+msgid "Search Portfolio"
+msgstr ""
+
+#: library/theme-cpt.php:25
+msgid "No Portfolio Items Found"
+msgstr ""
+
+#: library/theme-cpt.php:26
+msgid "No Portfolio Items Found in Trash"
+msgstr ""
+
+#: library/theme-cpt.php:27
+msgid "Parent Portfolio Item:"
+msgstr ""
+
+#: library/theme-cpt.php:64
+msgid "Testimonial"
+msgstr ""
+
+#: library/theme-cpt.php:66
+msgid "Add New Testimonial"
+msgstr ""
+
+#: library/theme-cpt.php:67
+msgid "Edit Testimonial"
+msgstr ""
+
+#: library/theme-cpt.php:68
+msgid "New Testimonial"
+msgstr ""
+
+#: library/theme-cpt.php:69
+msgid "View Testimonial"
+msgstr ""
+
+#: library/theme-cpt.php:70
+msgid "Search Testimonials"
+msgstr ""
+
+#: library/theme-cpt.php:71
+msgid "No Testimonial Found"
+msgstr ""
+
+#: library/theme-cpt.php:72
+msgid "No Testimonial Found in Trash"
+msgstr ""
+
+#: library/theme-cpt.php:73
+msgid "Parent Testimonial:"
+msgstr ""
+
+#: library/theme-cpt.php:108
+#: library/theme-cpt.php:119
+msgid "Team Members"
+msgstr ""
+
+#: library/theme-cpt.php:109
+msgid "Team Member"
+msgstr ""
+
+#: library/theme-cpt.php:111
+msgid "Add New Team Member"
+msgstr ""
+
+#: library/theme-cpt.php:112
+msgid "Edit Team Member"
+msgstr ""
+
+#: library/theme-cpt.php:113
+msgid "New Team Member"
+msgstr ""
+
+#: library/theme-cpt.php:114
+msgid "View Team Members"
+msgstr ""
+
+#: library/theme-cpt.php:115
+msgid "Search Team Members"
+msgstr ""
+
+#: library/theme-cpt.php:116
+msgid "No Team Members Found"
+msgstr ""
+
+#: library/theme-cpt.php:117
+msgid "No Team Members Found in Trash"
+msgstr ""
+
+#: library/theme-cpt.php:118
+msgid "Parent Team Member:"
+msgstr ""
+
+#: library/theme-cpt.php:255
+#: library/theme-cpt.php:265
+msgid "Portfolio Categories"
+msgstr ""
+
+#: library/theme-cpt.php:256
+msgid "Portfolio Category"
+msgstr ""
+
+#: library/theme-cpt.php:257
+msgid "Search Portfolio Categories"
+msgstr ""
+
+#: library/theme-cpt.php:258
+msgid "All of the Portfolio Categories"
+msgstr ""
+
+#: library/theme-cpt.php:259
+msgid "Parent Portfolio Category"
+msgstr ""
+
+#: library/theme-cpt.php:260
+msgid "Parent Portfolio Category:"
+msgstr ""
+
+#: library/theme-cpt.php:261
+msgid "Edit Portfolio Category"
+msgstr ""
+
+#: library/theme-cpt.php:262
+msgid "Update Portfolio Category"
+msgstr ""
+
+#: library/theme-cpt.php:263
+msgid "Add New Portfolio Category"
+msgstr ""
+
+#: library/theme-cpt.php:264
+msgid "New Portfolio Category Name"
+msgstr ""
+
+#: library/theme-options.php:5
+#: library/theme-options.php:9
+msgid "General"
+msgstr ""
+
+#: library/theme-options.php:10
+msgid "Settings related to the entire theme."
+msgstr ""
+
+#: library/theme-options.php:14
+msgid "Contact"
+msgstr ""
+
+#: library/theme-options.php:15
+msgid "Settings related to the contact info."
+msgstr ""
+
+#: library/theme-options.php:19
+msgid "Homepage Image Carousel"
+msgstr ""
+
+#: library/theme-options.php:20
+msgid "Settings related to the homepage image carousel."
+msgstr ""
+
+#: library/theme-options.php:27
+#: library/theme-options.php:31
+msgid "Social Media"
+msgstr ""
+
+#: library/theme-options.php:32
+msgid "Your social media settings"
+msgstr ""
+
+#: library/theme-options.php:36
+msgid "Social Footer"
+msgstr ""
+
+#: library/theme-options.php:37
+msgid "Which social media link in footer"
+msgstr ""
+
+#: library/theme-options.php:48
+msgid "Enter the highlight color you'd like to use for links & other theme highlights."
+msgstr ""
+
+#: library/theme-options.php:59
+msgid "Enter the color you'd like to have for link hover effects."
+msgstr ""
+
+#: library/theme-options.php:70
+msgid "Enter the text you'd like to have in the footer, below the footer nav."
+msgstr ""
+
+#: library/theme-options.php:81
+msgid "Enter an email"
+msgstr ""
+
+#: library/theme-options.php:92
+msgid "Enter your Street Address"
+msgstr ""
+
+#: library/theme-options.php:103
+msgid "Enter your City, State, Zip"
+msgstr ""
+
+#: library/theme-options.php:114
+msgid "Enter the number you'd like to have in the footer."
+msgstr ""
+
+#: library/theme-options.php:125
+msgid "Enter the email you'd like to have in the footer."
+msgstr ""
+
+#: library/theme-options.php:136
+msgid "Enter your twitter username"
+msgstr ""
+
+#: library/theme-options.php:147
+msgid "Enter the vimeo user number (e.g. 'user12345')"
+msgstr ""
+
+#: library/theme-options.php:158
+msgid "Enter your linkedin public profile link"
+msgstr ""
+
+#: library/theme-options.php:169
+msgid "Enter your dribbble username"
+msgstr ""
+
+#: library/theme-options.php:180
+msgid "Enter your facebook username"
+msgstr ""
+
+#: library/theme-options.php:191
+msgid "Enter your flickr username"
+msgstr ""
+
+#: library/theme-options.php:202
+msgid "Enter your forrst username"
+msgstr ""
+
+#: library/theme-options.php:213
+msgid "Which social media link do you want in your footer?"
+msgstr ""
+
+#: library/theme-options.php:222
+msgid "Twitter"
+msgstr ""
+
+#: library/theme-options.php:226
+msgid "LinkedIn"
+msgstr ""
+
+#: library/theme-options.php:230
+msgid "Facebook"
+msgstr ""
+
+#: library/theme-options.php:234
+msgid "Dribbble"
+msgstr ""
+
+#: library/theme-options.php:238
+msgid "Vimeo"
+msgstr ""
+
+#: library/theme-options.php:242
+msgid "Flickr"
+msgstr ""
+
+#: library/theme-options.php:246
+msgid "Forst"
+msgstr ""
+
+#: library/theme-options.php:254
+msgid "Allows you to enable text overlay on top of images in homepage carousel."
+msgstr ""
+
+#: library/theme-options.php:263
+msgid "Yes"
+msgstr ""
+
+#: library/theme-options.php:267
+msgid "No"
+msgstr ""
+
+#: library/utility-functions.php:99
+msgid "No Posts Found"
+msgstr ""
+
+#: library/utility-functions.php:100
+msgid "We couldn't find any posts that matched your query."
+msgstr ""
+
+#: library/utility-functions.php:267
+msgid "Previous Portfolio Item"
+msgstr ""
+
+#: library/utility-functions.php:268
+msgid "Portfolio List View"
+msgstr ""
+
+#: library/utility-functions.php:269
+msgid "Next Portfolio Item"
+msgstr ""
+
+#: library/utility-functions.php:327
+msgid "Visit Website &rarr;"
+msgstr ""
+
+#: library/utility-functions.php:342
+msgid "Services Provided"
+msgstr ""
+
+#: library/utility-functions.php:570
+msgid "Continue Reading &rarr;"
+msgstr ""
+
+#: library/utility-functions.php:664
+msgid "Read More &rarr;"
+msgstr ""
+
+#: library/utility-functions.php:736
+msgid "Home"
+msgstr ""
+
+#: library/utility-functions.php:777
+msgid "Thank you, your email was sent successfully."
+msgstr ""
+
+#: library/utility-functions.php:783
+msgid "We're sorry, something seems to have gone wrong. Check your errors or reach out on a social media channel."
+msgstr ""
+
+#: library/utility-functions.php:793
+msgid "Company"
+msgstr ""
+
+#: library/utility-functions.php:795
+msgid "Email Address"
+msgstr ""
+
+#: library/utility-functions.php:798
+msgid "Phone"
+msgstr ""
+
+#: library/utility-functions.php:800
+msgid "Web URL"
+msgstr ""
+
+#: library/utility-functions.php:876
+msgid "Latest Posts"
+msgstr ""
+
+#: library/utility-functions.php:902
+msgid "Archives by Month"
+msgstr ""
+
+#: library/utility-functions.php:922
+msgid "Archives by Category"
+msgstr ""
+
+#: library/widgets/team-member-widget/team-member-widget.php:37
+msgid "A widget that displays one or more featured team members."
+msgstr ""
+
+#: library/widgets/team-member-widget/team-member-widget.php:43
+msgid "Team Member Widget"
+msgstr ""
+
+#: library/widgets/team-member-widget/team-member-widget.php:95
+msgid "Title:"
+msgstr ""
+
+#: library/widgets/team-member-widget/team-member-widget.php:101
+msgid "Display Option:"
+msgstr ""
+
+#: library/widgets/team-member-widget/team-member-widget.php:122
+msgid "Member Select:"
+msgstr ""
+
+#: portfolio/content.php:16
+msgid "About"
+msgstr ""
+

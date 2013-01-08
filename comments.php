@@ -22,7 +22,7 @@ foreach ( $comments as $comment )
 ?>
 
       <div id="comments-list" class="comment-list">
-        <h1><?php printf($comment_count > 1 ? __('<span>%d</span> Responses', 'agency') : __('<span>1</span> Response', 'agency'), $comment_count) ?></h1>
+        <h4><?php printf($comment_count > 1 ? __('<span>%d</span> Responses', 'agency') : __('<span>1</span> Response', 'agency'), $comment_count) ?></h4>
 
 <?php wp_list_comments( array('style' => 'div', 'type' => 'comment', 'avatar_size' => 74, 'callback' => 'agency_comment') ); ?>
 
@@ -40,18 +40,17 @@ foreach ( $comments as $comment )
 
 
 <?php } ?>
-      <form id="comment-form" class="_1 _parent" action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post">
+      <form id="comment-form" class="_1" action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post">
         <div class="_1 _parent">
 <?php if ( have_comments() ) { ?>
-          <hr/>
 <?php } ?>
-          <h1>Leave a comment</h1>
+          <h3><?php _e("Leave a comment","agency"); ?></h3>
 
 <?php if ( $user_ID ) : ?>
-          <h2 id="login"><?php printf(__('<span class="loggedin">Logged in as <a href="%1$s" title="Logged in as %2$s">%2$s</a>.</span> <span class="logout"><a href="%3$s" title="Log out of this account">Log out?</a></span>', 'garageband'),
+          <h4 id="login"><?php printf(__('<span class="loggedin">Logged in as <a href="%1$s" title="Logged in as %2$s">%2$s</a>.</span> <span class="logout"><a href="%3$s" title="Log out of this account">Log out?</a></span>', 'agency'),
             get_option('siteurl') . '/wp-admin/profile.php',
             esc_html($user_identity, true),
-            wp_logout_url(get_permalink()) ) ?></h2>
+            wp_logout_url(get_permalink()) ) ?></h4>
         </div>
 <?php else : ?>
         </div>
@@ -69,12 +68,12 @@ foreach ( $comments as $comment )
 <?php endif; /* if ( $user_ID ) */ ?>
 
         <div class="_1 _parent">
-          <textarea name="comment" id="comment"></textarea>
+          <textarea name="comment" id="comment" placeholder="Your Comment Here"></textarea>
           <input type="submit" id="submit" value="<?php _e('Post Comment', 'agency') ?>"  tabindex="7"/>
           <input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" /></div>
 
 <?php comment_id_fields(); ?>
 
-        </div>
+
       </form><!--/#comment-form-->
     </div><!--/.comments-->

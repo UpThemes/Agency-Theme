@@ -13,6 +13,11 @@ $general_tab = array(
       'name' => 'contact',
       'title' => __('Contact', 'agency'),
       'description' => __('Settings related to the contact info.', 'agency')
+    ),
+    'carousel' => array(
+      'name' => 'carousel',
+      'title' => __( 'Homepage Image Carousel', 'agency' ),
+      'description' => __( 'Settings related to the homepage image carousel.','agency' )
     )
   )
 );
@@ -45,7 +50,7 @@ $options = array(
     'since' => '1.0',
     "id" => "general",
     "type" => "color",
-    "default" => "#7CBBBF"
+    "default" => "7CBBBF"
   ),
   'link_color_hover' => array(
     'tab' => "general",
@@ -56,7 +61,7 @@ $options = array(
     'since' => '1.0',
     "id" => "general",
     "type" => "color",
-    "default" => "#468B8F"
+    "default" => "468B8F"
   ),
   'copyright_text' => array(
     'tab' => "general",
@@ -239,6 +244,27 @@ $options = array(
       'Forrst' => array(
         "name" => "forrst",
         "title" => __( 'Forst', 'agency' )
+      )
+    )
+  ),
+  'enable_carousel_text' => array(
+    'tab' => "general",
+    "name" => "enable_carousel_text",
+    "title" => "Enable text for carousel",
+    'description' => __( 'Allows you to enable text overlay on top of images in homepage carousel.', 'agency' ),
+    'section' => 'carousel',
+    'since' => '1.0',
+    "id" => "carousel",
+    "type" => "select",
+    "default" => "false",
+    "valid_options" => array(
+      'true' => array(
+        "name" => "true",
+        "title" => __( 'Yes', 'agency' )
+      ),
+      'false' => array(
+        "name" => "false",
+        "title" => __( 'No', 'agency' )
       )
     )
   ),

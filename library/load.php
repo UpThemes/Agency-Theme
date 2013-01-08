@@ -1,5 +1,7 @@
 <?php
 
+// Load some basic init stuff
+include_once("theme-setup.php");
 
 // Load some basic init stuff
 include_once("init.php");
@@ -26,3 +28,5 @@ include_once("utility-functions.php");
 // Load comments callback
 include_once("comments-callback.php");
 
+// Load Theme Specific Widgets
+include_once("widgets/load.php");

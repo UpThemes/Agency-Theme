@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'icons';
+  src: url('assets/fonts/icons.eot');
+  src: url('assets/fonts/icons.eot?#iefix') format('embedded-opentype'),
+       url('assets/fonts/icons.woff') format('woff'),
+       url('assets/fonts/icons.ttf') format('truetype'),
+       url('assets/fonts/icons.svg#icons') format('svg');
+  font-weight: normal; font-style: normal;
+}
+
+.icon {
+  font-family: icons;
+  font-style: normal;
+  display: inline-block;
+  width: 1em;
+  text-align: center;
+}
+
+.icon-rss:before { content: ""; } /* '\e73a' */
+.icon-right-open:before { content: ""; } /* '\e75e' */
+.icon-link:before { content: "🔗"; } /* '\1f517' */

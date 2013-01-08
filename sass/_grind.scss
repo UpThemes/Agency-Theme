@@ -92,6 +92,8 @@
   ._1-6,
   ._5-6 {
     width:100%;
+    padding-left:0;
+    padding-right:0;
 
     ._1,
     ._1-2,
@@ -110,8 +112,19 @@
   }
 
   ._1-2 {
-    width:50%;
+    width: 50%;
   }
+
+  ._parent._uniform-children
+    ._1-2, ._1-4 {
+      width:50%;
+    }
+    ._1-2:nth-child(2n-1), ._1-4:nth-child(2n-1) {
+      padding-right: .75em;
+    }
+    ._1-2:nth-child(2n), ._1-4:nth-child(2n) {
+      padding-left: .75em;
+    }
 }
 
 @media (max-width: 480px) {
@@ -147,5 +160,6 @@
     }
   }
 
-  ._parent {padding:0}
+  ._parent {padding-top:17px;padding-left:0;padding-right:0;
+  }
 }
