@@ -28,7 +28,7 @@ add_action("after_setup_theme","agency_menu_init");
 function agency_nav_menu_objects($items) {
 
     foreach ($items as &$item) {
-        if ( agency_get_menu_object_items($item->ID, &$items) ) {
+        if ( agency_get_menu_object_items($item->ID, $items) ) {
             $item->classes[] = 'sub';
             break;
         }
