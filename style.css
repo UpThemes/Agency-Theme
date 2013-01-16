@@ -1327,6 +1327,9 @@ header nav ul li.sub:hover > a {
 header nav ul li.sub:hover ul {
   display: block; }
 
+._1-4 h2 {
+  font-size: 1.3em; }
+
 .admin-bar .is-sticky .breadcrumb {
   margin-top: 28px; }
 
