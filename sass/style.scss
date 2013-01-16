@@ -33,8 +33,6 @@ $serif:Georgia,serif;
   position: relative;
 }
 
-a {@include transition(200ms all ease-in-out)}
-
 .clearfix:after               { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
 * html .clearfix              { zoom: 1; } /* IE6 */
 *:first-child+html .clearfix  { zoom: 1; } /* IE7 */
@@ -554,13 +552,11 @@ header {
       padding:0;
 
       ul {
+        position:absolute;
         display:none;
         text-align:left;
-        position:absolute;
-        width:175%;
-        top:1.80em;
-        margin-left: -1px;
         z-index:1;
+        width:175%;
         background:#fff;
         border:solid 1px #999;
         border-bottom:solid 2px #777;
@@ -619,41 +615,7 @@ header {
             color:#fff;
           }
         }
-
-        &.sub:hover,&.sub.current-menu-item:hover {
-
-          > a {
-            border-radius:5px 5px 0 0;
-            background:#fff;
-            color:$heading-color;
-          }
-
-          > ul {
-            display:block;
-            left: 1px;
-          }
-        }
-
-        &.sub ul {
-          border-radius:0 5px 5px 5px;
-          right:0;
-          left:auto;
-
-          li:first-child a {
-            border-radius:0 5px 0 0!important;
-          }
-        }
-
-        &.sub.last ul {
-          border-radius:5px 0 5px 5px;
-          right:0;
-          left:auto;
-
-          li:first-child a {
-            border-radius:5px 0 0 0;
-          }
-        }
-
+        
         &.current-menu-item > a {
           border-radius:1em;
           background:#000;
@@ -668,20 +630,25 @@ header {
         }
 
         &.sub {
+        
           > a {
-            border:solid 1px transparent;
-            border:solid 0 rgba(0,0,0,0);
 
             &:after {
               content:"\25be";
               padding-left:.5em;
             }
           }
-
-          &:hover > a {
-            border:solid 1px #999;
-            border-bottom:0;
-            border:solid 0 rgba(0,0,0,0);
+          
+          &:hover {
+            background:#fff;
+            border-radius:4px 4px 0 0;
+            padding:5px 0px;
+            > a {color:$accent-color}
+            top:-5px;
+          
+            ul {
+              display:block;
+            }
           }
         }
       }
