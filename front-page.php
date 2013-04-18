@@ -56,6 +56,3 @@ Template Name: Front Page
 </div><!--/.wrap-->
 
 <?php get_footer(); ?>
-
-
-<?php  } ?>
