@@ -1,8 +1,7 @@
 <?php
-  if( get_option( 'show_on_front' ) != 'page' ) {
-    include("home.php");
-  } else {
-
+/*
+Template Name: Front Page
+*/
 ?>
 
 <?php get_header(); ?>
